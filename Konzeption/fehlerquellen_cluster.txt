@@ -1,0 +1,27 @@
+Fehlerquellen/Lösungen Kommunikation bramble/RPi-Nodes:
+
+
+1. Defekte Hardware: Mini-USB-Kabel (pi12, pi14, pi19)
+Anzeichen: Rote Status-LED nicht aktiv oder flackert, RPi funktioniert mit anderem Kabel 
+Lösung:  Ersatz 
+
+2. RPi nicht erreichbar/down (ping)
+Anzeichen: Fehlermeldung "Destination Host Unreachable"
+Lösungen:   Mini-USB-Kabel ziehen und wieder einstecken;
+			Netzwerkkabel ziehen und wieder einstecken (Achtung, Netzwerkkabel allein reicht nicht!)
+
+3. RPi nicht erreichbar (ssh)
+Anzeichen: Fehlermeldung "No route to host"
+Lösungen:   Netzwerkkabel ziehen und wieder einstecken
+
+4. RPi nicht erreichbar (ssh)
+Anzeichen: Passwortprompt für root 
+Lösung:  RSA public key von root authorized_keys auf Zielhost eintragen 
+
+5. RPi nicht erreichbar (ssh)
+Anzeichen: Fehlermeldung "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"
+Lösung: RSA public key in known_hosts file auf Zielhost korrigieren 
+
+5. Geshartes Verzeichnis nicht gemountet
+Anzeichen: Fehlermeldung "-bash: /srv/libraries/etc/.sharedprofile: No such file or directory"
+Lösung: mount /srv

@@ -1,0 +1,229 @@
+## Struktur 
+
+
+1. Alle RPis powered STREAM: Plotfile STREAM1
+	a.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Copy/Rate in MB/s
+	b.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Copy/Avg time in s
+	c.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Scale/Rate in MB/s
+	d.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Scale/Avg time in s
+	e.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Add/Rate in MB/s
+	f.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Add/Avg time in s
+	g.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Triad/Rate in MB/s
+	h.  x: RPis active (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Triad/Avg time in s
+		
+2. Nur aktive RPis powered STREAM: Plotfile STREAM2
+	a.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Copy/Rate in MB/s
+	b.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Copy/Avg time in s
+	c.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Scale/Rate in MB/s
+	d.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Scale/Avg time in s
+	e.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Add/Rate in MB/s
+	f.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Add/Avg time in s
+	g.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Triad/Rate in MB/s
+	h.  x: RPis powered (16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Triad/Avg time in s
+
+3. Alle RPis powered HPLinpack: Plotfile HPL1
+	a.  x: RPis active (12;11;10;9;8;7;6;5;4;3;2;1)
+		y: Time in s 
+	b.  x: RPis active (12;11;10;9;8;7;6;5;4;3;2;1)
+		y: CPU Performance in Gflops	
+
+4. Nur aktive RPis powered HPLinpack: PLOTFILE HPL2
+	a.  x: RPis powered (17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Time in s 
+	b.  x: RPis powered (17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: CPU Performance in Gflops
+
+
+## Inputfiles erstellen 
+
+1. DB-Inputfiles für STREAM und HPLinpack runterladen, in /Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources speichern 
+
+2. /Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hplplot.sh und /Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/streamplot.sh ausführen 
+
+3. Resultierende Struktur: 
+	streamplot1.txt:    Column 1: Copy/Rate in MB/s
+						Column 2: Copy/Avg time in s
+						Column 3: Scale/Rate in MB/s
+						Column 4: Scale/Avg time in s
+						Column 5: Add/Rate in MB/s
+						Column 6: Add/Avg time in s
+						Column 7: Triad/Rate in MB/s
+						Column 8: Triad/Avg time in MB/s
+						Column 9: RPis active
+
+	streamplot2.txt:    Column 1: Copy/Rate in MB/s
+						Column 2: Copy/Avg time in s
+						Column 3: Scale/Rate in MB/s
+						Column 4: Scale/Avg time in s
+						Column 5: Add/Rate in MB/s 
+						Column 6: Add/Avg time in s
+						Column 7: Triad/Rate in MB/s 
+						Column 8: Triad/Avg time in MB/s 
+						Column 9: RPis active
+
+	hplplot1.txt:       Column 1: Time in s 
+						Column 2: CPU Performance in Gflops
+						Column 3: RPis active
+
+	hplplot2.txt:       Column 1: Time in s
+						Column 2: CPU Performance in Gflops
+						Column 3: RPis active 
+
+4. hplplot1.txt, hplplot2.txt, streamplot1.txt, streamplot2.txt in /Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot verschieben 
+
+5. Gnuplot aus Verzeichnis /Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot öffnen -> Ergebnisse landen dort 
+
+6. Ergebnisse als pdf in /Users/judith/Documents/Dropbox/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bilder speichern
+
+7. eps-Ergebnisse löschen 
+
+
+## Gnuplot-Skripte für 1-4 (Plotfiles 'STREAM1' - 'STREAM4', 'HPL1' - 'HPL4')
+
+# STREAM1
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "MB/s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, 16 RPis powered"
+set output 'stream1.eps'
+set style data lines
+plot 'streamplot1.txt' using 9:1 title "Copy/Rate", '' using 9:3 title "Scale/Rate", '' using 9:5 title "Add/Rate", '' using 9:7 title "Triad/Rate" 
+
+# STREAM2
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, 16 RPis powered"
+set output 'stream2.eps'
+set style data lines
+plot 'streamplot1.txt' using 9:2 title "Copy/Avg time", '' using 9:4 title "Scale/Avg time", '' using 9:6 title "Add/Avg time", '' using 9:8 title "Triad/Avg time" 
+
+# STREAM3
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "MB/s"
+set xlabel "Number of RPis active/powered"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, n RPis powered"
+set output 'stream3.eps'
+set style data lines
+plot 'streamplot2.txt' using 9:1 title "Copy/Rate", '' using 9:3 title "Scale/Rate", '' using 9:5 title "Add/Rate", '' using 9:7 title "Triad/Rate"
+
+# STREAM4
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active/powered"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, n RPis powered"
+set output 'stream3.eps'
+set style data lines
+plot 'streamplot2.txt' using 9:2 title "Copy/Avg time", '' using 9:4 title "Scale/Avg time", '' using 9:6 title "Add/Avg time", '' using 9:8 title "Triad/Avg time" 
+
+# STREAM5 
+
+set terminal postscript eps 
+set ylabel "MB/s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, 16 RPis powered vs. n RPis active, n RPis powered"
+set output 'stream5.eps'
+set style data lines
+plot 'streamplot1.txt' using 9:1 title "Copy/Rate" linecolor rgb "red", '' using 9:3 title "Scale/Rate" linecolor rgb "red", '' using 9:5 title "Add/Rate" linecolor rgb "red", '' using 9:7 title "Triad/Rate" linecolor rgb "red", 'streamplot2.txt' using 9:1 title "Copy/Rate" linecolor rgb "blue", '' using 9:3 title "Scale/Rate" linecolor rgb "blue", '' using 9:5 title "Add/Rate" linecolor rgb "blue", '' using 9:7 title "Triad/Rate" linecolor rgb "blue"
+
+# STREAM6 
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "STREAM on n RPis active, 16 RPis powered vs. n RPis active, n RPis powered"
+set output 'stream6.eps'
+set style data lines
+plot 'streamplot1.txt' using 9:2 title "Copy/Avg time" linecolor rgb "red", '' using 9:4 title "Scale/Avg time" linecolor rgb "red", '' using 9:6 title "Add/Avg time" linecolor rgb "red", '' using 9:8 title "Triad/Avg time" linecolor rgb "red", streamplot2.txt' using 9:2 title "Copy/Avg time" linecolor rgb "blue", '' using 9:4 title "Scale/Avg time" linecolor rgb "blue", '' using 9:6 title "Add/Avg time" linecolor rgb "blue", '' using 9:8 title "Triad/Avg time" linecolor rgb "blue"
+
+# HPL1
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "Gflops"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, 16 RPis powered"
+set output 'hpl1.eps'
+unset border
+plot 'hplplot1.txt' using 3:2 title "Execution Rate" 
+
+# HPL2
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, 16 RPis powered"
+set output 'hpl2.eps'
+unset border 
+plot 'hplplot1.txt' using 3:1 title "Time to Completion"
+
+# HPL3
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "Gflops"
+set xlabel "Number of RPis active/powered"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, n RPis powered"
+set output 'hpl3.eps'
+unset border
+plot 'hplplot2.txt' using 3:2 title "Execution Rate"
+
+# HPL4
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active/powered"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, n RPis powered"
+set output 'hpl4.eps'
+unset border
+plot 'hplplot2.txt' using 3:1 title "Time to Completion"
+
+# HPL5
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "Gflops"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, 16 RPis powered vs. n RPis active, n RPis powered"
+set output 'hpl5.eps'
+unset border
+plot 'hplplot1.txt' using 3:2 title "Execution Rate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title "Execution Rate" with points linecolor rgb "blue"
+
+# HPL6
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "s"
+set xlabel "Number of RPis active"
+set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4)
+set title "HPLinpack on n RPis active, 16 RPis powered vs. n RPis active, n RPis powered"
+set output 'hpl6.eps'
+unset border
+plot 'hplplot1.txt' using 3:1 title "Time to Completion" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title "Time to Completion" with points linecolor rgb "blue"

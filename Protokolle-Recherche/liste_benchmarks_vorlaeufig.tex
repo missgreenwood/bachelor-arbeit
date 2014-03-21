@@ -1,0 +1,133 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\linespread {1.25}\selectfont
+\usepackage{moreverb}
+\usepackage{ulem}
+
+\begin{document}
+\section{Liste von Benchmarks (Vorschlag)}
+\subsection{Vor"uberlegungen}
+Es gibt eine F"ulle von Benchmarks, die bereits auf dem RPI getestet wurden. Dabei geht es haupts"achlich um die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponenten (GPU, CPU, RAM etc.). 
+
+Diese Benchmarks sind insofern interessant, als dass man zun"achst untersuchen k"onnte, wie sich der eigene RPI verh"alt. F"ur den Fokus der Arbeit bliebe zu kl"aren, ob man sich eher auf die Benchmarks konzentrieren will oder auf die Arbeit mit dem Cluster. Ich habe daher auch einen Benchmark ausgew"ahlt, der bisher nur auf einzelnen RPIs gestestet wurde, eigentlich aber aus dem HPC-Bereich stammt (Linpack). Es w"are zumindest den Versuch wert, diesen und weitere HPC-Benchmarks f"ur einen RPI-Cluster anzupassen (Linpack, LLNL IOR). 
+
+Ein weiterer Aspekt, der h"aufig ins Spiel gebracht wird, sind die niedrigen Kosten (Anschaffung + Energieverbrauch) des RPI. Es gibt z.B. Ans"atze, rechenintensive Operationen auf einen externen Server auszulagern oder die GPU st"arker einzubinden. Zu letzterem gibt es noch wenig Erfahrungswerte oder erfolgreich getestete Benchmarks, sodass sich auch hier eine Untersuchung lohnt. Man kann hier auch den RPI-Cluster einbeziehen. 
+
+Ein vierter Ansatzpunkt ist die letzte Woche releaste neue HPC-Benchmark-Suite HPCG, die Linpack zu weiten Teilen ersetzen soll. Es ist fraglich, ob man diese f"ur den RPI nutzbar machen kann, da noch keine Erfahrungswerte vorliegen. Das w"are zumindest ein g"anzlich neues Feld. 
+%(Leider habe ich kaum Vorkenntnisse bzw. es w"are sehr hilfreich, die Dokumentation oder eine Einf"uhrung von Max zu bekommen.)
+\subsection{Linpack}
+\begin{itemize}
+	\item \textbf{Fokus:} Klassifizierung der Top500 mit Flie\ss punkt-Arithmetik
+	\item \textbf{Architektur:} Cluster + Stand-alone 
+	\item \textbf{Begr"undung:} Erster Schritt f"ur HPC-Benchmark auf RPI, Option auf Erweiterung auf den Cluster
+	\item  \textbf{Details:}
+	\begin{itemize}
+		\item Erfahrungswerte f"ur RPI liegen vor, nicht aber f"ur RPI-Cluster 
+		\item Sehr etabliert und gut dokumentiert
+		\item Viele Vergleichswerte vorhanden 
+	\end{itemize}
+	\item \textbf{Quellen:} 
+	\begin{itemize}
+		\item \uline{servethehome.com/raspberry-pi-model-512mb-linux-test-suite-benchmarks/}
+		\item \uline{raspberrypi-spy.co.uk/2012/06/overclocking-benchmarking-the-raspberry-pi/}
+		\item \uline{www.netlib.org/benchmark/linpackc.new}
+	\end{itemize}	  
+\end{itemize}
+\subsection{Whetstone}
+\begin{itemize}
+	\item \textbf{Fokus:} Performance von Flie\ss komma-Arithmetik zur Messung der Performance von Computersystemen ("ahnlich Linpack)
+	\item \textbf{Architektur:} Stand-alone
+	\item \textbf{Begr"undung:} Standard f"ur die Performance von Mini-Computern
+	\item \textbf{Details:}
+	\begin{itemize}
+		\item Historisch erster Benchmark f"ur industrielle Standards 
+		\item Etabliert und gut dokumentiert
+		\item H"aufig referenziert, da f"ur verschiedene Plattformen/Programmiersprachen angepasst 
+		\item Wurde vom Entwickler Roy Longbottom selbst f"ur den RPI adaptiert
+	\end{itemize}
+	\item \textbf{Quellen:} 
+\end{itemize}
+%Whetstone ist dem Linpack Benchmark insofern "ahnlich, dass auch hier die Performance von Flie\ss kommaarithmetik zu Grunde liegt bzw. gemessen wird. Er ist zudem sehr etabliert: Whetstone wurde als erster Benchmark herangezogen, um industrielle Standards f"ur die Performance von Computersystemen zu setzen. Er wird oft als Vergleichswert herangezogen und ist "uber die Jahre hinweg sehr gut dokumentiert. Er wurde in der Vergangenheit h"aufig erweitert und f"ur verschiedene Plattformen/Programmiersprachen angepasst. 
+%
+%Daneben wird er auch zur Bewertung von Minicomputern herangezogen und wurde vom Entwickler Roy Longbottom auf dem Raspberry Pi getestet (vgl. \uline{www.raspberrypi.org/}\newline\uline{phpBB3/view\- topic.php?f=31\&t=44080}, \uline{www.roylongbottom.org.uk/Raspberry\%20Pi\%}\newline\uline{20Benchmarks.htm}). Er scheint ein geeigneter Kandidat zu sein, bevor man sich an die "Ubertragung noch nicht erprobter Benchmarks macht. 
+%Dies ist einer der Benchmarks, den man sinnvollerweise nicht auf dem RPI selbst kompilieren sollte, wenn man nicht sehr viel Zeit aufwenden m"ochte. Es liegen Erfahrungsberichte vor, nach denen die Dateien zun"achst auf einem anderen Linux-System kompiliert und anschlie\ss end auf den RPI "ubertragen werden. Auch bereits kompilierte Dateien sind u.U. online verf"ugbar. 
+\subsection{SHOC}
+\begin{itemize}
+	\item \textbf{Fokus:} Performance und Stabilit"at von Operationen auf nicht-traditionellen Architekturen, vor allem GPU-basiert 
+	\item \textbf{Architektur:} Cluster + Stand-alone
+	\item \textbf{Begr"undung:} GPU-Performance ist f"ur RPI + RPI-Cluster von Interesse, da leistungsf"ahiger als CPU  	
+	\item \textbf{Details:} 
+	\begin{itemize}
+		\item Keine Erfahrungswerte f"ur RPI 
+		\item Vermutlich nicht lauff"ahig auf dem RPI, da Open CL nicht unterst"utzt wird
+		\item Suche nach Workaround notwendig oder nach einem vergleichbaren Benchmark, um die GPU zu testen (z.B. OpenGL:ES, Gtkperf)
+	\end{itemize}				
+	\item \textbf{Quellen:}
+	\begin{itemize}
+		\item \uline{https://github.com/vetter/shoc/wiki}	
+		\item \uline{gtkperf.sourceforge.net}
+		\item \uline{raspberrypi.stackexchange.com/questions/1224/are-there-any-benchmarking-programs}
+	\end{itemize}
+\end{itemize}	 
+\subsection{Linux-spezifische Benchmarks} 
+\begin{itemize}
+	\item \textbf{Fokus:} Vergleich des RPI/Hardwarekomponenten mit anderen Rechnern 
+	\item \textbf{Architektur:} Stand-alone
+	\item \textbf{Begr"undung:} Grundlage f"ur Performance-Messung des RPI 
+	\item \textbf{Details:} 
+	\begin{itemize}
+		\item Manche Benchmarks k"onnen Single oder Multiple CPU-Performance messen, z.B. UnixBench u. c-ray (Linux Test Suite Benchmarks)
+		\item Diese k"onnten u.U. f"ur den RPI angepasst werden 
+	\end{itemize}		
+	\item \textbf{Beispiele:}
+	\begin{itemize} 
+		\item \textbf{Sysbench CPU Benchmark} (CPU) 
+		\item \textbf{PyBench} (Python-Implementierung)
+		\item \textbf{Apache Benchmark} (Webserver)
+		\item \textbf{OpenSSL} (CPU)
+		\item \textbf{ioquake3} (GPU)
+		\item \textbf{Linux Test Suite Benchmarks} (CPU) 
+	\end{itemize}	
+	\item \textbf{Quellen:}
+	\begin{itemize}
+		\item \uline{en.eladalfassa.com/2012/09/fedora-arm-vs-raspbian-on-the-raspberry-pi-benchmarks/}
+		\item \uline{elinux.org/RPi\_Performance}
+		\item \uline{svn.python.org/projects/python/trunk/Tools/pybench/README}
+	\end{itemize}
+\end{itemize} 
+\subsection{LLNL IOR}
+\begin{itemize}
+	\item \textbf{Fokus:} Skalierbare I/O-Operationen (Verteilte Systeme mit POSIX, MPIIO oder HDF5 Interfaces)
+	\item \textbf{Architektur:} Cluster
+	\item \textbf{Details:} 
+	\begin{itemize}
+		\item Ansatz f"ur paralleles Filesystem
+		\item Wurde von den Autoren von "Characterizing and Predicting the I/O Performance of HPC Applications Using a Parameterized Synthetic Benchmark" verwendet
+		\item Evtl. ist anderer Benchmark f"ur verteilte Systeme sinnvoller 
+	\end{itemize}	 
+	\item \textbf{Quellen:} 
+	\begin{itemize}
+		\item \uline{https://computing.llnl.gov/?set=code\&page=sio\_downloads}
+	\end{itemize}	
+\end{itemize} 
+%\subsection{HPCG}
+%\begin{itemize}
+%	\item \textbf{Fokus:} 
+%	\item \textbf{Architektur:} Cluster
+%	\item \textbf{Details:} 
+%	\item \textbf{Quellen:} 
+%	\begin{itemize}
+%		\item \uline{insidehpc.com/2013/07/10/replacing-linpack-jack-dongarra-announces-new-}\newline \uline{supercomputing-benchmark/}
+%		\item \uline{www.sandia.gov/~maherou/docs/HPCG-Benchmark.pdf}
+%		\item \uline{www.hpcwire.com/2013/11/22/new-benchmark-shake-top500-rankings/}
+%		\item \uline{www.pcworld.idg.com.au/article/520500/move\_over\_linpack\_supercomputers}\newline
+%\uline{\_get\_new\_performance\_test/}
+%	\end{itemize}
+%\end{itemize} 
+\end{document}
+
+
+
+

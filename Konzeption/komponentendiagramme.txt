@@ -1,0 +1,7 @@
+Bestandteile Komponentendiagramm: 
+
+- eine Form des Strukturdiagramms 
+- Komponente: Modularer und ersetzbarer Bestandteil eines Systems (<< component >> EineKomponente) ("Ein paar Klassen, die irgendetwas machen")
+- 2 Typen von Interfaces/Schnittstellen/Ports: benötigtes Interface (Methoden, die von der Komponente aufgerufen werden)/erzeugtes Interface (Methoden, die von der Komponente bereitgestellt werden)
+- Komponenten können Teile von anderen Komponenten sein 
+- Interfaces können delegiert werden (mit gestricheltem Pfeil, "delegates"); ansonsten gibt es Abhängigkeitsbeziehungen und Konnektoren 

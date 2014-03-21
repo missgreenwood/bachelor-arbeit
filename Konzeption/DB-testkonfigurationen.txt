@@ -1,0 +1,76 @@
+DB-Testkonfiguration für HPLinpack 
+
+
+Tabelle								Spalte								Eintrag																
+
+ExperimentSuite					    id                                  8
+									granularityLevel 					' Cluster Blackbox'
+									objective							'Test Setup for HPLinpack' 
+
+LoadGenerator						id                                  2
+									name								'hpl-2.1'		
+									description 					    'Benchmark' 
+
+LoadGeneratorConfiguration			id                                  'hpl-testconfig'
+
+N2M_loadGConf2expSuite              loadGeneratorConfigurationId        1
+                                    experimentSuiteId                   8
+
+ExperimentSuiteConfiguration        id                                  x 
+                                    key                                 'NumberOfActiveRPis'
+                                    value                               y 
+                                    experimentSuiteId                   8
+
+ExperimentSuiteConfiguration        id                                  z 
+                                    key                                 'NumberOfPoweredRPis'
+                                    value                               20
+                                    experimentSuiteId                   8
+
+MeasurementValue					value								u						
+									measuredAt							v
+
+x in {10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42}
+y in {20,19,18,17,16,15,14,13,12,11,10,09,08,07,06,05,04}
+z in {11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43}
+u := aktueller Messwert
+v := aktueller Timestamp
+
+
+DB-Testkonfiguration für STREAM 
+
+
+Tabelle								Spalte								Eintrag																
+
+ExperimentSuite					    id                                  9
+									granularityLevel 					' Cluster Blackbox'
+									objective							'Test Setup for STREAM' 
+
+LoadGenerator						id                                  3
+									name								'STREAM'		
+									description 					    'Benchmark' 
+
+LoadGeneratorConfiguration			id                                  'stream-testconfig'
+
+N2M_loadGConf2expSuite              loadGeneratorConfigurationId        2
+								    experimentSuiteId                   9
+
+ExperimentSuiteConfiguration        id                                  x 
+								    key                                 'NumberOfActiveRPis'
+								    value                               y 
+								    experimentSuiteId                   9
+
+ExperimentSuiteConfiguration        id                                  z 
+                                    key                                 'NumberOfPoweredRPis'
+                                    value                               20
+                                    experimentSuiteId                   9
+
+MeasurementValue					value								u						
+									measuredAt							v
+
+x in {44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76}
+y in {20,19,18,17,16,15,14,13,12,11,10,09,08,07,06,05,04}
+z in {45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77}
+u := aktueller Messwert
+v := aktueller Timestamp
+
+					

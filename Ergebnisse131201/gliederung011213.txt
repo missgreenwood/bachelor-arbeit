@@ -1,0 +1,31 @@
+Gliederung
+
+
+1 Aufgabenstellung und Motivation 
+
+2 Auswahl der Benchmarks 
+
+	2.1 Linpack 
+	2.2 Whetstone
+	2.3 Linux-spezifische Benchmarks
+
+4 Beschreibung und Anpassung der Parameter auf einem Raspberry Pi 
+	
+3 Ergebnisse der Testläufe auf einem Raspberry Pi-Einzelrechner
+
+	2.1 Linpack 
+	2.2 Whetstone
+	2.3 Linux-spezifische Benchmarks 
+	
+4 Beschreibung der Architektur des Raspberry Pi-Clusters
+
+5 Anpassung der Benchmarks für einen Raspberry Pi-Cluster
+
+6 Ergebnisse der Testläufe auf einem Raspberry Pi-Cluster 
+
+	6.1 Performance 
+	6.2 Skalierungsverhalten 
+
+7 Interpretation der Untersuchungsergebnisse
+
+8 Zusammenfassung und Ausblick 

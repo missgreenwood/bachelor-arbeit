@@ -1,0 +1,45 @@
+\chapter{Einleitung}\label{Kapitel 1}
+
+% CONTEXT OF THE PAPER
+
+Seit Beginn seiner Entwicklung im Jahr 2009 boomt der Minicomputer Raspberry Pi\footnote{Im Folgenden als \textit{RPi} bezeichnet.}: Er erhielt z.B. den Designpreis INDEX: award 2013\footnote{Vgl. \url{http://designtoimprovelife.dk/category/s15-award2013/index-award-winners-2013/}.}, wurde als Innovation des Jahres bei den T3 Gadget Awards 2012 ausgezeichnet\footnote{Vgl. \url{http://www.t3.com/news/t3-gadget-awards-2012-award-winners/}.}
+und zum Product of the Year 2012 des Linux Journal gew"ahlt. 
+% Vgl. Linux Journal 12/2012
+Im Februar dieses Jahres war das Modell B "uber 2,5 Millionen Mal verkauft worden. Was sind die Gr"unde f"ur den Erfolg des RPi? 
+
+\section{Hintergrund}\label{Hintergrund}
+
+Der RPi weist eine hohe Energieeffizienz und ein sehr gutes Kosten-Nutzen-Verh"altnis auf, ist flexibel in Anpassung und Verwendung und bietet einen niederschwelligen Zugang. Das macht ihn z.B. f"ur Projekte im p"adagogischen Umfeld interessant, in denen Kinder und Jugendliche an die Grundlagen der Programmierung herangef"uhrt werden. 
+
+Privatpersonen setzen den RPi z.B. als mobilen Video-Player, "Uberwachungskamera oder zur Steuerung von Lichtschaltern und Haushaltsger"aten ein. Im wissenschaftlichen Rahmen werden immer h"aufiger mehrere RPis zu einem Cluster verschaltet, um Rechenoperationen auf mehrere Knoten zu verteilen. Daraus ergeben sich Fragestellungen wie: Welche Rechenleistung erzielt ein RPi im Vergleich zu einem durchschnittlichen Desktop-Rechner oder einem Notebook? Welche CPU-Performance l"asst sich mit einem RPi-Cluster im Verh"altnis zu einem fr"uheren oder aktuellen Supercomputer erreichen? 
+
+Die Leistung von Rechnern, seien es Gro\ss rechner, Desktop-Rechner oder Minicomputer, wird h"aufig durch Benchmarks ermittelt. Das erm"oglicht die Vergleichbarkeit der Testergebnisse unterschiedlicher Systeme. Bekannte und erprobte Benchmark-Suites sind z.B. Linpack und Whetstone, mit denen seit den 70er Jahren die Performance von Supercomputern ermittelt wird. F"ur Einzelrechner mit Linux-Systemen gibt es z.B. die Phoronix Test Suite oder UnixBench, um die Performance der einzlnen Komponenten wie CPU, GPU und RAM zu evaluieren. 
+
+% PROBLEM STATEMENT
+\section{Fragestellung}\label{Fragestellung}
+
+Vor diesem Hintergrund stellt sich die Frage: Wie verh"alt sich ein RPi im Vergleich zu einem Supercomputer, wenn Benchmarks aus dem HPC-Bereich darauf ausgef"uhrt werden? Noch bedeutsamer ist die Untersuchung eines RPi-Clusters: Wie ein Supercomputer implementiert er ein verteiltes System mit RPi-Einzelrechnern als Rechner-Nodes. Welche CPU-Performance l"asst sich damit erzielen und wie verh"alt sich der Cluster bei Hinzunahme von Ressourcen, d.h. RPi-Rechenkernen? Im Zentrum dieser Arbeit stehen daher CPU-Performance und Skalierungsverhalten eines RPi-Clusters unter den Testbedingungen ausgew"ahlter HPC-Benchmarks. Dazu soll zun"achst die die Performance eines RPi-Einzelrechners unter den ausgew"ahlten Benchmarks ermittelt werden. Anschlie\ss end wird versucht, dieselben Benchmarks auf einem RPi-Cluster lauff"ahig zu machen und zu evaluieren. 
+
+% CHALLENGES
+\section{Herausforderungen}\label{Herausforderungen}
+
+Die Anpassung von HPC-Benchmarks an einen RPi und einen RPi-Cluster stellen besondere Anforderungen an den Versuchsaufbau: Es m"ussen geeignete Implementierungen der Benchmarks f"ur den RPi-Einzelrechner und den RPi-Cluster verwendet werden und die Vergleichbarkeit der Ergebnisse muss durch eine geeignete Testumgebung sicher gestellt werden.  
+
+\subsection{Anpassung der Benchmarks}\label{Anpassung}
+
+Bei der Auswahl der Implementierungen ist eine Unterscheidung zwischen RPi-Einzelrechner und dem Cluster notwendig, vor allem hinsichtlich des Betriebssystems. Ist eine passende Implementierung gefunden, muss diese m"oglicherweise auf einem anderen Rechner kompiliert und "ubertragen werden, da die CPU des RPi vergleichsweise schwach gegen"uber einem Desktop-PC ist und die Kompilierung sehr lange dauern k"onnte. F"ur die verteilte Ausf"uhrung der Benchmark auf dem Cluster ist die Installation eines Message Passing Interfaces (MPI) wie OpenMP oder MPICH notwendig. 
+
+\subsection{Testumgebung}\label{Testumgebung}
+
+Die Testumgebung muss an die Testsituation angepasst werden. Es muss sicher gestellt sein, dass keine weiteren Prozesse im Hintergrund ablaufen, die Rechenleistung von den Benchmark-Programmen abziehen und die Untersuchungsergebnisse verf"alschen k"onnen. Auch die Systemzeiten der Rechner-Nodes muss beachtet und gegebenenfalls synchronisiert werden, da ein RPi keine eingebaute Echtzeituhr besitzt. 
+
+\subsection{Ausf"uhrung der Benchmarks auf dem RPi-Cluster}\label{Anpassung Cluster}
+
+Der verwendete Cluster wurde nicht mit dem prim"aren Fokus auf Benchmarking entwickelt. Bevor er daf"ur eingesetzt werden kann, muss ein grunds"atzlicher "Uberblick "uber seine Architektur, die Zugriffsm"oglichkeiten auf seine Komponenten, insbesondere das Filesystems, geschaffen werden. Dann kann ermittelt werden, wie und ob sich die gew"ahlten Benchmarks auf der bestehenden Struktur ausf"uhren lassen. Hierbei ist mit Hindernissen zu rechnen. 
+
+\section{Vorgehensweise und Struktur}\label{Struktur}
+
+Um den Bezugsrahmen zu verdeutlichen, werden in Kapitel 2 zun"achst grundlegende Definitionen gekl"art. Insbesondere werden die Spezifikationen des RPi (vgl. Kap. \ref{RPi Spezifikation}) und des Clusters erl"autert (vgl. Kap. \ref{Spezifikation Bramble}). Anschlie\ss end werden die ausgew"ahlten Benchmarks vorgestellt (vgl. Kap. \ref{Benchmarks}). Versuchsaufbau und -ablauf werden mit Blick auf Auswahl und Anpassung der RPi-spezifischen Parameter im folgenden Kapitel erl"autert (vgl. Kap. \ref{Kapitel 3}). Schlie\ss lich  werden die Messergebnisse auf dem RPi-Einzelrechner und dem Cluster dargestellt (vgl. Kap. \ref{Ergebnisse}) und interpretiert (vgl. Kap. \ref{Kapitel 4}). Den Abschluss bilden eine Zusammenfassung der Untersuchungsergebnisse und ein Ausblick (vgl. Kap. \ref{Kapitel 5}).
+
+% TODO: Textbelege Grundlagenwerke, die sonst nirgends zitiert werden (ZITATE AUS LITERATURVERZEICHNIS (IM TEXT): z. B. \cite{han99})
+\endinput 

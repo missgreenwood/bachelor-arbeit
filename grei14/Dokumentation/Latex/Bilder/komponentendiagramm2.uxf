@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>200</x>
+      <y>570</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ Datenbank </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>750</x>
+      <y>470</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ Strommessgerät</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>560</x>
+      <y>330</y>
+      <w>226</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Stromverbrauch messen 
+lt=&lt;[]-(()-[]&gt;
+</panel_attributes>
+    <additional_attributes>50;30;190;170</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>110</x>
+      <y>290</y>
+      <w>500</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ Bramble</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>570</x>
+      <y>510</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]-(()-[]&gt;
+Stromverbrauch loggen </panel_attributes>
+    <additional_attributes>180;30;40;120</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>580</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()
+Logdaten hochladen
+</panel_attributes>
+    <additional_attributes>30;50;240;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>50</x>
+      <y>120</y>
+      <w>1120</w>
+      <h>690</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ ExperimentSuite</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>160</y>
+      <w>174</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Stromversorgung</panel_attributes>
+    <additional_attributes>90;130;90;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>160</y>
+      <w>186</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Netzwerkanschluss
+</panel_attributes>
+    <additional_attributes>100;130;100;30</additional_attributes>
+  </element>
+</diagram>
