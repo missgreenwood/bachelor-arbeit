@@ -52,26 +52,18 @@
 	"buffers":
 	[
 		{
-			"file": "todo130314.txt",
+			"file": "Konzeption/fehlerquellen_cluster.txt",
 			"settings":
 			{
-				"buffer_size": 1043,
+				"buffer_size": 1241,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/streamplot.sh",
+			"file": "Konzeption/ergebnisplots.txt",
 			"settings":
 			{
-				"buffer_size": 3289,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/hplplot.sh",
-			"settings":
-			{
-				"buffer_size": 2832,
+				"buffer_size": 9254,
 				"line_ending": "Unix"
 			}
 		}
@@ -117,10 +109,15 @@
 	},
 	"file_history":
 	[
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/test.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAMfinal.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1final.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/fehlerquellen_cluster.txt",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hplplot.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/.gitignore",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
+		"/Users/judith/Documents/404Fehlerreduktion/.gitignore",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/streamplot2.sh",
@@ -151,7 +148,6 @@
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM-active_rpis.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-powered_rpis.txt",
 		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_db140312.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_db140312.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM.sh",
@@ -245,6 +241,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$n",
 			"Active RPis",
 			"Active RPis: 20/Powered RPis: 20",
 			"color",
@@ -347,24 +344,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "todo130314.txt",
+					"file": "Konzeption/fehlerquellen_cluster.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1043,
+						"buffer_size": 1241,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1026,
-								1026
+								1227,
+								1227
 							]
 						],
 						"settings":
@@ -375,63 +372,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/streamplot.sh",
-					"semi_transient": false,
+					"file": "Konzeption/ergebnisplots.txt",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3289,
+						"buffer_size": 9254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								9254,
+								9254
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2946.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/hplplot.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2832,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								270,
-								270
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -517,7 +487,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 319.0,
+	"side_bar_width": 272.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

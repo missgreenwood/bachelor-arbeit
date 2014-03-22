@@ -25,3 +25,7 @@ Lösung: RSA public key in known_hosts file auf Zielhost korrigieren
 5. Geshartes Verzeichnis nicht gemountet
 Anzeichen: Fehlermeldung "-bash: /srv/libraries/etc/.sharedprofile: No such file or directory"
 Lösung: mount /srv
+
+6. bash-Befehle werden nicht erkannt 
+Anzeichen: z. B. Fehlermeldung "./STREAM.sh: line 58: mpiexec: command not found"
+Lösung: Logout, erneuter Login von careme auf Zielhost  
