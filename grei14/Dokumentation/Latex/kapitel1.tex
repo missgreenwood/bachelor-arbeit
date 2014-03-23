@@ -33,10 +33,10 @@ Bei der Auswahl der Implementierungen ist eine Unterscheidung zwischen RPi-Einze
 
 Die Testumgebung muss an die Testsituation angepasst werden. Es muss sicher gestellt sein, dass keine weiteren Prozesse im Hintergrund ablaufen, die Rechenleistung von den Benchmark-Programmen abziehen und die Untersuchungsergebnisse verf"alschen k"onnen. Auch die Systemzeiten der Rechner-Nodes muss beachtet und gegebenenfalls synchronisiert werden, da ein RPi keine eingebaute Echtzeituhr besitzt. 
 
-\subsection{Ausf"uhrung der Benchmarks auf dem RPi-Cluster}\label{Anpassung Cluster}
+\subsection{Ausf"uhrung der Benchmarks auf einem RPi-Cluster}\label{Anpassung Cluster}
 
 Der verwendete Cluster wurde nicht mit dem prim"aren Fokus auf Benchmarking entwickelt. Bevor er daf"ur eingesetzt werden kann, muss ein grunds"atzlicher "Uberblick "uber seine Architektur, die Zugriffsm"oglichkeiten auf seine Komponenten, insbesondere das Filesystems, geschaffen werden. Dann kann ermittelt werden, wie und ob sich die gew"ahlten Benchmarks auf der bestehenden Struktur ausf"uhren lassen. Hierbei ist mit Hindernissen zu rechnen. 
-
+\newpage
 \section{Vorgehensweise und Struktur}\label{Struktur}
 
 Um den Bezugsrahmen zu verdeutlichen, werden in Kapitel 2 zun"achst grundlegende Definitionen gekl"art. Insbesondere werden die Spezifikationen des RPi (vgl. Kap. \ref{RPi Spezifikation}) und des Clusters erl"autert (vgl. Kap. \ref{Spezifikation Bramble}). Anschlie\ss end werden die ausgew"ahlten Benchmarks vorgestellt (vgl. Kap. \ref{Benchmarks}). Versuchsaufbau und -ablauf werden mit Blick auf Auswahl und Anpassung der RPi-spezifischen Parameter im folgenden Kapitel erl"autert (vgl. Kap. \ref{Kapitel 3}). Schlie\ss lich  werden die Messergebnisse auf dem RPi-Einzelrechner und dem Cluster dargestellt (vgl. Kap. \ref{Ergebnisse}) und interpretiert (vgl. Kap. \ref{Kapitel 4}). Den Abschluss bilden eine Zusammenfassung der Untersuchungsergebnisse und ein Ausblick (vgl. Kap. \ref{Kapitel 5}).

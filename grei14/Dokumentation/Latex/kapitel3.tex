@@ -3,6 +3,7 @@
 Das folgende Kapitel beschreibt die Ziele der Messung, Versuchsaufbau und -durchf"uhrung. Ziel der Messung ist die Untersuchung des Skalierungsverhaltens der ausgew"ahlten HPC-Benchmarks auf dem Bramble. Die Ergebnisse sollen unter Vergleichswerte des Bramble gegen"uber einem Supercomputer liefern. Dazu wird der Bramble an Hand der Messwerte in die TOP500- und Green 500-Listen eingeordnet (vgl. Kap. \ref{Rankings}). 
 
 \section{Zielsetzung}
+
 Von der Messung werden detaillierte Erkenntnisse "uber das Skalierungsverhalten von HPLinpack und Whetstone auf dem Bramble mit 20 RPi-Nodes erwartet. Alle Messungen werden auf 1 -- n RPi-Nodes des Bramble durchgef"uhrt mit n = 20. Die Messungen werden zwei Mal durchgef"uhrt: Zuerst mit Netzwerkanschluss der gerade nicht beteiligten RPi-Nodes an den Bramble-Server, danach ohne. 
 
 Als Output-Parameter werden der Energieverbrauch des Bramble und die jeweils Benchmark-spezifischen Load-Generatoren betrachtet. Der Stromverbrauch wird durch ein Strommessger"at ermittelt, das an den Bramble-Server angeschlossen wird. Die Benchmark-spezifischen Load-Generatoren sich nat"urlich an den vom jeweiligen Programm vorgegebenen Parametern: HPLinpack liefert 4 Ma\ss zahlen f"ur die CPU-Performance eines Rechners/Rechnersystems. $R_{max}$ entspricht der Performance in GFLOPS bei Ausf"uhrung des gr"o\ss ten Problems, $N_{max}$ bezeichnet das gr"osste ausgef"uhrte Problem, $N_{1/2}$ die Problemgr"o\ss e bei halber $R_{max}$-Rate und $R_{peak}$ die theoretische Peak-Performance in GFLOPS. Whetstone liefert drei Kennzahlen f"ur die CPU-Performance: MWIPS (Millions of Whetstone Instructions per Second), davon abgeleitet MFLOPS f"ur die Ausf"uhrung der Flie\ss punkt-Operationen und MIPS (Millions of Instructions per Second) f"ur die Integer-Tests. 
@@ -46,6 +47,7 @@ Die Benchmark-generierte Workload und die Messung dieser Ergebnisse findet im In
 \end{figure}
 
 \subsection{Automatisierte Durchf"uhrung der Messung f"ur 1 -- n RPi-Nodes}
+
 Die automatisierte Ausf"uhrung der Benchmarks erfolgt mit einem Shellskript auf dem Ausf"uhrungs-Node \texttt{pi03} (vgl. \ref{executeBenchmarksOnAllRPis.sh}). Es ist im gesharten Verzeichnis der RPi-Nodes \texttt{/srv} abgelegt und enth"alt unter anderem folgende Schritte: 
 \begin{enumerate}
 	\item L"osche altes Machinefile.

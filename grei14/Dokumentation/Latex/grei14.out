@@ -4,48 +4,43 @@
 \BOOKMARK [1][-]{section.1.3}{Herausforderungen}{chapter.1}% 4
 \BOOKMARK [2][-]{subsection.1.3.1}{Anpassung der Benchmarks}{section.1.3}% 5
 \BOOKMARK [2][-]{subsection.1.3.2}{Testumgebung}{section.1.3}% 6
-\BOOKMARK [2][-]{subsection.1.3.3}{Ausf\374hrung der Benchmarks auf dem RPi-Cluster}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.3}{Ausf\374hrung der Benchmarks auf einem RPi-Cluster}{section.1.3}% 7
 \BOOKMARK [1][-]{section.1.4}{Vorgehensweise und Struktur}{chapter.1}% 8
 \BOOKMARK [0][-]{chapter.2}{Grundlagen und Begriffsbildung}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Definition: Benchmark}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.1}{Definition: Benchmarking}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{Definition: Leistung}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.3}{Definition: Performance}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.4}{Benchmarks}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.4.1}{Linpack}{section.2.4}% 14
 \BOOKMARK [2][-]{subsection.2.4.2}{Whetstone}{section.2.4}% 15
-\BOOKMARK [1][-]{section.2.5}{STREAM}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.5.1}{Funktionsweise STREAM}{section.2.5}% 17
-\BOOKMARK [2][-]{subsection.2.5.2}{STREAM auf dem Raspberry Pi}{section.2.5}% 18
-\BOOKMARK [1][-]{section.2.6}{Spezifikation des Raspberry Pi Modell B}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.6.1}{SoC, CPU und GPU}{section.2.6}% 20
-\BOOKMARK [2][-]{subsection.2.6.2}{Arbeitsspeicher}{section.2.6}% 21
-\BOOKMARK [2][-]{subsection.2.6.3}{Ausg\344nge, Hauptspeicher und Stromversorgung}{section.2.6}% 22
-\BOOKMARK [2][-]{subsection.2.6.4}{GPIO/CSI}{section.2.6}% 23
-\BOOKMARK [2][-]{subsection.2.6.5}{Betriebssystem}{section.2.6}% 24
-\BOOKMARK [1][-]{section.2.7}{Raspberry Pi-Cluster als Testumfeld}{chapter.2}% 25
-\BOOKMARK [2][-]{subsection.2.7.1}{Aufbau}{section.2.7}% 26
-\BOOKMARK [2][-]{subsection.2.7.2}{Betriebssystem und Filesystem}{section.2.7}% 27
-\BOOKMARK [2][-]{subsection.2.7.3}{Zugriff}{section.2.7}% 28
-\BOOKMARK [0][-]{chapter.3}{Versuchsaufbau und -ablauf}{}% 29
-\BOOKMARK [1][-]{section.3.1}{Zielsetzung}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.2}{Aufbau und Art der Messung}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.2.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.2.2}{Versuchsaufbau Bramble}{section.3.2}% 33
-\BOOKMARK [2][-]{subsection.3.2.3}{Skalierung der Messung auf 1 \205 n RPi-Nodes}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.4}{Automatisierte Durchf\374hrung der Messung f\374r 1 \205 n RPi-Nodes}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.5}{Zeitsynchronisierung der RPi-Nodes}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.6}{Einlesen der Messwerte in die Datenbank}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.7}{Ausgabe und Aufbereitung der Messwerte}{section.3.2}% 38
-\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.1}{Linpack}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.2}{Whetstone}{section.3.3}% 41
-\BOOKMARK [0][-]{chapter.4}{Interpretation}{}% 42
-\BOOKMARK [1][-]{section.4.1}{Linpack}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.2}{Whetstone}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.3}{Einordnung in TOP500 und Green500}{chapter.4}% 45
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 46
-\BOOKMARK [0][-]{chapter.6}{Anhang}{}% 47
-\BOOKMARK [1][-]{section.6.1}{Ergebnisse f\374r Linpack 100 und Whetstone auf dem RPi-Einzelrechner}{chapter.6}% 48
-\BOOKMARK [1][-]{section.6.2}{Shellskript zur Ausf\374hrung der Benchmarks auf n RPi-Nodes}{chapter.6}% 49
-\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 50
-\BOOKMARK [0][-]{chapter*.7}{Literaturverzeichnis}{}% 51
+\BOOKMARK [2][-]{subsection.2.4.3}{STREAM}{section.2.4}% 16
+\BOOKMARK [1][-]{section.2.5}{Spezifikation des Raspberry Pi Modell B}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.5.1}{Physischer Aufbau}{section.2.5}% 18
+\BOOKMARK [2][-]{subsection.2.5.2}{Betriebssystem}{section.2.5}% 19
+\BOOKMARK [1][-]{section.2.6}{Raspberry Pi-Cluster als Testumfeld}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.6.1}{Physischer Aufbau}{section.2.6}% 21
+\BOOKMARK [2][-]{subsection.2.6.2}{Betriebssystem und Filesystem}{section.2.6}% 22
+\BOOKMARK [2][-]{subsection.2.6.3}{Zugriff auf die Cluster-Komponenten}{section.2.6}% 23
+\BOOKMARK [0][-]{chapter.3}{Versuchsaufbau und -ablauf}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Zielsetzung}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Aufbau und Art der Messung}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Versuchsaufbau Bramble}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.3}{Skalierung der Messung auf 1 \205 n RPi-Nodes}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.4}{Automatisierte Durchf\374hrung der Messung f\374r 1 \205 n RPi-Nodes}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.5}{Zeitsynchronisierung der RPi-Nodes}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.6}{Einlesen der Messwerte in die Datenbank}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.7}{Ausgabe und Aufbereitung der Messwerte}{section.3.2}% 33
+\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.1}{Linpack}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.2}{Whetstone}{section.3.3}% 36
+\BOOKMARK [0][-]{chapter.4}{Interpretation}{}% 37
+\BOOKMARK [1][-]{section.4.1}{Linpack}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.2}{Whetstone}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.3}{Einordnung in TOP500 und Green500}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 41
+\BOOKMARK [0][-]{chapter.6}{Anhang}{}% 42
+\BOOKMARK [1][-]{section.6.1}{Ergebnisse f\374r Linpack 100 und Whetstone auf dem RPi-Einzelrechner}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.2}{Shellskript zur Ausf\374hrung der Benchmarks auf n RPi-Nodes}{chapter.6}% 44
+\BOOKMARK [0][-]{chapter*.10}{Abbildungsverzeichnis}{}% 45
+\BOOKMARK [0][-]{chapter*.11}{Literaturverzeichnis}{}% 46

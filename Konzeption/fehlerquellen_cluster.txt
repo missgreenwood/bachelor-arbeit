@@ -1,7 +1,7 @@
 Fehlerquellen/Lösungen Kommunikation bramble/RPi-Nodes:
 
 
-1. Defekte Hardware: Mini-USB-Kabel (pi12, pi14, pi19)
+1. Defekte Hardware: Mini-USB-Kabel
 Anzeichen: Rote Status-LED nicht aktiv oder flackert, RPi funktioniert mit anderem Kabel 
 Lösung:  Ersatz 
 

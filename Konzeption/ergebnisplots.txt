@@ -136,7 +136,7 @@ set ylabel "s"
 set xlabel "Number of RPis active/powered"
 set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
 set title "STREAM on n RPis active, n RPis powered"
-set output 'stream3.eps'
+set output 'stream4.eps'
 set style data lines
 plot 'streamplot2.txt' using 9:2 title "Copy/Avg time", '' using 9:4 title "Scale/Avg time", '' using 9:6 title "Add/Avg time", '' using 9:8 title "Triad/Avg time" 
 
@@ -160,7 +160,7 @@ set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
 set title "STREAM on n RPis active, 16 RPis powered vs. n RPis active, n RPis powered"
 set output 'stream6.eps'
 set style data lines
-plot 'streamplot1.txt' using 9:2 title "Copy/Avg time" linecolor rgb "red", '' using 9:4 title "Scale/Avg time" linecolor rgb "red", '' using 9:6 title "Add/Avg time" linecolor rgb "red", '' using 9:8 title "Triad/Avg time" linecolor rgb "red", streamplot2.txt' using 9:2 title "Copy/Avg time" linecolor rgb "blue", '' using 9:4 title "Scale/Avg time" linecolor rgb "blue", '' using 9:6 title "Add/Avg time" linecolor rgb "blue", '' using 9:8 title "Triad/Avg time" linecolor rgb "blue"
+plot 'streamplot1.txt' using 9:2 title "Copy/Avg time" linecolor rgb "red", '' using 9:4 title "Scale/Avg time" linecolor rgb "red", '' using 9:6 title "Add/Avg time" linecolor rgb "red", '' using 9:8 title "Triad/Avg time" linecolor rgb "red", 'streamplot2.txt' using 9:2 title "Copy/Avg time" linecolor rgb "blue", '' using 9:4 title "Scale/Avg time" linecolor rgb "blue", '' using 9:6 title "Add/Avg time" linecolor rgb "blue", '' using 9:8 title "Triad/Avg time" linecolor rgb "blue"
 
 # HPL1
 

@@ -4,7 +4,7 @@ Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem a
 
 Bei n"aherem Hinschauen erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Eine solche Routine kann f"ur einen Vergleich mit HPC-Rechnern herangezogen werden. Im Folgenden wird daher auf grundlegende Begriffe eingegangen, die f"ur die nachfolgende Untersuchung von Bedeutung sind. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
 
-\section{Definition: Benchmark}\label{Benchmarking}
+\section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
 Unter \textit{Benchmarking} oder "`Ma\ss st"abe vergleichen"' versteht man im Allgemeinen die vergleichende Analyse von Ergebnissen oder Prozessen mit einem festgelegten Bezugswert oder Vergleichsprozess. \textit{Computer-Benchmarks}, die hier von Bedeutung sind, dienen dem Vergleich der Rechenleistung von Computer-Systemen, wozu in der Regel Software verwendet wird\footnote{"`A simple method of measuring performance is by means of a benchmark program. [...] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}."'}. Das \textit{Computer Lexikon 2012} kennt folgende Definition: 
 \begin{quote}
@@ -20,7 +20,7 @@ In dieser Arbeit soll die Leistung von Hardware-Komponenten eines oder mehrerer 
 \end{quote} 
 Daher wird hier hier mit \textit{Benchmarking} kurz das \textbf{\textit{Standardisieren von Arbeit}} bezeichnet.
 
-\section{Definition: Leistung}\label{Leistung}
+\section{Definition: \textit{Leistung}}\label{Leistung}
 
 Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik versteht man darunter meist die \textit{Rechenleistung}. Wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems sind unter anderem
 \begin{quote}
@@ -30,7 +30,7 @@ Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} 
 Weitere Aspekte der Leistungsbewertung sind das zu untersuchende System, die Workload und die Methode zur Leistungsermittlung\footnote{Vgl. \cite{rec06}.}. "Ubertragen auf die vorliegende Untersuchung bedeutet dies: Das zu untersuchende System besteht aus einem RPi-Einzelrechner und einem RPi-Cluster (vgl. Kap. \ref{RPi Spezifikation} bzw. \ref{Spezifikation Bramble}). Methoden zur Leistungsbewertung sind HPC-Benchmarks (vgl. Kap. \ref{Linpack}, \ref{Whetstone} und \ref{STREAM}). Die Workload ist die Ausf"uhrung dieser Programme. 
 Die hier verwendete Definition greift den ersten Aspekt auf: Mit \textit{Leistung} ist die \textbf{\textit{Time to completion}} gemeint, d.h. die Zeit, die ein Prozess oder ein Programm(teil) bis zum erfolgreichen Abschluss ben"otigt. Bei Rechenberg wird dies als "`Programmlaufzeit"' \cite{rec06} bezeichnet\footnote{Andere Klassen von Kenngr"o\ss en, die neben der Zeit zur Leistungsbewertung herangezogen werden, sind \textit{Durchsatz} und \textit{Auslastung}. Abweichende zeitliche Kenngr"o\ss en sind z.B. \textit{Bedienzeit (Service time)} oder \textit{TTR (Time to Response)} (vgl. ebd.).}. 
 
-\section{Definition: Performance}\label{Performance}
+\section{Definition: \textit{Performance}}\label{Performance}
 
 F"ur den Begriff \textit{Performance} im Zusammenhang mit Rechnern existieren verschiedene Definitionen, h"aufig gleichbedeutend mit der \textit{Rechenleistung} oder nicht klar davon abgegrenzt. Erkl"arungen wie "`Zeitverhalten von Programmen und Ger"aten"' oder "`Leistungsf"ahigkeit eines Computersystems"' scheinen der Fragestellung nicht ganz gerecht zu werden: 
 \begin{quote}
@@ -69,16 +69,15 @@ Beim Vergleich Linpack-Ergebnissen ist die Gr"o\ss e des Arrays bzw. der Matrix 
 
 \subsubsection{Linpack auf dem Raspberry Pi}\label{Linpack RPi}
 
-Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht\footnote{Die hier verwendete Implementierung in C f"ur den RPi-Einzelrechner findet sich unter \url{http://www.roylongbottom.org.uk/Raspberry_Pi_Benchmarks.zip}.}. Linpack soll als Ausgangspunkt f"ur die Untersuchung dienen, da er sehr gut dokumentiert ist und Vergleichswerte f"ur einen RPi-Einzelrechner bereits vorliegen. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind im Umlauf\footnote{Vgl. \url{http://www.netlib.org/benchmark/hpl/}.}. Zu pr"ufen wird sein, wie diese f"ur den RPi-Cluster nutzbar gemacht werden k"onnen. 
+Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht\footnote{Die hier verwendete Implementierung in C f"ur den RPi-Einzelrechner findet sich unter \url{http://www.roylongbottom.org.uk/Raspberry_Pi_Benchmarks.zip}.}. Somit liegen bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind im Umlauf\footnote{Vgl. \url{http://www.netlib.org/benchmark/hpl/}.}. Zu pr"ufen wird sein, wie diese f"ur den RPi-Cluster nutzbar gemacht werden k"onnen. 
 
 \subsection{Whetstone}\label{Whetstone}
 
-Auch Whetstone ist als Benchmark sowohl im HPC-Bereich als auch zur Klassifizierung von Einzelrechnern seit langen Jahren etabliert\footnote{"`[\dots] the most common 'stone age' benchmarks (CPU/memory/compiler benchmarks only) [are] in particular the Whetstone, Dhrystone, and Linpack benchmarks. These are the benchmarks whose results are most often cited in manufacturers' publications and in the trade press \cite{wei90}."'}. Er wurde 1976 von Roy Longbottom u.A. entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde\footnote{Vgl. ebd..}. Wie Linpack misst er die CPU-Performance. 
+Auch Whetstone ist als Benchmark im HPC-Bereich und zur Klassifizierung von Einzelrechnern seit vielen Jahren etabliert\footnote{"`[\dots] the most common 'stone age' benchmarks (CPU/memory/compiler benchmarks only) [are] in particular the Whetstone, Dhrystone, and Linpack benchmarks. These are the benchmarks whose results are most often cited in manufacturers' publications and in the trade press \cite{wei90}."'}. Er wurde 1976 von Roy Longbottom u.A. entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde\footnote{Vgl. ebd..}. Wie Linpack misst er die CPU-Performance. 
 
 \subsubsection{Funktionsweise}\label{Funktionsweise Whetstone}
 
 Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Flie\ss komma-Berechnungen ausgef"uhrt, sondern auch mathematische Funktionen, Integer-Arithmetik, If-Statements etc. kommen zur Anwendung\footnote{Ein Grund hierf"ur ist, dass die urspr"ungliche Programmversion nicht komplex genug war, um ein durchschnittliches FORTRAN-Programm zu simulieren. Gegen"uber der urspr"unglichen Implementierung in ALGOL 60 war ein damals "ublicher FORTRAN-Compiler in der Lage, Zwischenergebnisse in schnellen Registern abzuspeichern und darauf zur"uckzugreifen, sodass die gemessene CPU-Leistung deutlich h"oher ausfiel als erwartet (vgl. \cite{cur76}).}. Jedes dieser als genuin betrachteten Module wird in eine For-Schleife eingebettet und viele Male  hintereinander ausgef"uhrt. Die Ausgabe der Berechnungsergebnisse ist Teil des Programms\footnote{Allerdings: "`This output is only required to ensure that the calculations are logically necessary; it is not intended to represent the output from a typical program"' (ebd.).}. Ein Framework bildet den "au\ss eren Programmrahmen und steuert die Ausgaben der einzelnen Module. Die Ergebnisse wurden zun"achst in \textit{Whetstone Instructions per Second} gemessen, heutige Implementierungen liefern Ergebnisse in MFLOPS\footnote{F"ur eine detaillierte Darstellung der Entwicklung und Implementierung von Whetstone vgl. ebd.. Hier findet sich auch der urspr"ungliche Sourcecode in ALGOL 60.}. 
-
 % Least-squares: 
 %Die Methode der kleinsten Quadrate ist das mathematische Standardverfahren zur Ausgleichungsrechnung. Dabei wird zu einer Datenpunktwolke eine Kurve gesucht, die möglichst nahe an den Datenpunkten verläuft.
 
@@ -88,70 +87,65 @@ Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-C
 
 Wie f"ur die meisten etablierten HPC-Benchmarks existieren Implementierungen in zahlreichen h"oheren Programmiersprachen wie C, C++, Fortran und Java\footnote{Vgl. z.B. \url{http://freespace.virgin.net/roy.longbottom/}.}. Auch hier wird aus nahe liegenden Gr"unden auf eine Implementierung in C f"ur den RPi-Einzelrechner zur"uckgegriffen\footnote{Der hier verwendete Sourcecode findet sich ebenfalls unter \url{http://www.roylongbottom.org.uk/Raspberry_Pi_Benchmarks.zip}.}. Ob eine lauff"ahige Implementierung f"ur die Cluster-Architektur existiert, wird sich zeigen m"ussen. 
 % TODO 
-\section{STREAM}\label{STREAM}
+\subsection{STREAM}\label{STREAM}
 % TODO 
-\subsection{Funktionsweise STREAM}\label{Funktionsweise STREAM}
+\subsubsection{Funktionsweise}\label{Funktionsweise STREAM}
 % TODO 
-\subsection{STREAM auf dem Raspberry Pi}\label{STREAM RPi}
+\subsubsection{STREAM auf dem Raspberry Pi}\label{STREAM RPi}
 % TODO 
 \section{Spezifikation des Raspberry Pi Modell B}\label{RPi Spezifikation}
 
-Was dem Nutzer zuerst auff"allt, ist sicherlich die Gr"o\ss e des RPi. Er wird manchmal als "`Scheckkarten-Computer"' bezeichnet und "uberschreitet diese Ma\ss e mit 85.60 mm $\times$ 53.98 mm $\times$ 17 mm tats"achlich nur geringf"ugig. 
+Was dem Nutzer zuerst auff"allt, ist sicherlich die Gr"o\ss e des RPi. Er wird manchmal als "`Scheckkarten-Computer"' bezeichnet und "uberschreitet diese Ma\ss e mit 85.60 mm $\times$ 53.98 mm $\times$ 17 mm tats"achlich nur geringf"ugig. Auf dieser Platine sind alle Komponenten verbaut, die den RPi zu einem voll funktionsf"ahigen Rechner machen:
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{rpi_grafik.pdf}\\ 
-	\caption{Ein Raspberry Pi Modell B\cite{scrguide01}.}\label{fig:RPi-Spezifikation}
+	\caption{Ein Raspberry Pi Modell B (Quelle: \cite{scrguide01}).}\label{fig:RPi-Spezifikation}
 \end{figure}
 
-\noindent Auf dieser Platine sind alle Komponenten verbaut, die den RPi zu einem voll funktionsf"ahigen Rechner machen: 
+\subsection{Physischer Aufbau}\label{RPi Hardware}
 
-\subsection{SoC, CPU und GPU}\label{RPi Hardware}
+\subsubsection{SoC, CPU, GPU und RAM}
 
-Der RPi ist mit einem Broadcom BCM2835 als SoC ausgestattet. Es enth"alt CPU (ein ARM1176JZFS-Prozessor) und GPU (ein Broadcom VideoCore IV-Koprozessor)\footnote{Vgl. \cite{scrguide02}.}. Auff"allig ist, dass die CPU des RPi (ein ARM-Chip, wie er h"aufig in Mobiltelefonen verbaut ist), relativ schwach ist im Vergleich zur GPU, die Full HD-Aufl"osung und das hardwarebeschleunigte Rendern verschiedener Videoformate unterst"utzt. 
+Der RPi ist mit einem Broadcom BCM2835 als SoC ausgestattet. Es enth"alt CPU (ein ARM1176JZFS-Prozessor) und GPU (ein Broadcom VideoCore IV-Koprozessor)\footnote{Vgl. \cite{scrguide02}.}. Auff"allig ist, dass die CPU des RPi (ein ARM-Chip, wie er h"aufig in Mobiltelefonen verbaut ist), relativ schwach ist im Vergleich zur GPU, die Full HD-Aufl"osung und das hardwarebeschleunigte Rendern verschiedener Videoformate unterst"utzt. Das Modell B verf"ugt "uber 512 MB SDRAM\footnote{Gegen"uber dem Modell A mit 256 MB (vgl. \cite{scrguide02}). Dieser kann nicht erweitert werden, doch die Aufteilung zwischen CPU und GPU ist variabel. Da der RPi kein BIOS hat, muss dazu die Datei \texttt{/boot/start.elf} manipuliert werden (vgl. \cite{pow12}).}.
 
-\subsection{Arbeitsspeicher}\label{RPi RAM}
-Das Modell B des RPi verf"ugt "uber 512 MB SDRAM (gegen"uber dem Modell A mit 256 MB)\footnote{Vgl. ebd..}. Dieser kann nicht erweitert werden. Allerdings teilen sich CPU und GPU den Arbeitsspeicher und diese Einteilung kann durchaus ver"andert werden. Da der RPi kein BIOS hat, ist die Manipulation der Datei \verb+/boot/start.elf+ die einzige M"oglichkeit, RAM zu allokieren\footnote{Vgl. \cite{pow12}.}.
+\subsubsection{Schnittstellen}\label{RPi Schnittstellen}
 
-\subsection{Ausg"ange, Hauptspeicher und Stromversorgung}\label{RPi Schnittstellen}
+Der RPi verf"ugt "uber einen HDMI-Ausgang, einen Cinch-Ausgang ("`RCA Jack"') und einen analogen Tonausgang. Er hat zwei USB 2.0-Schnittstellen und eine Ethernet-Schnittstelle. Ein Steckplatz ist f"ur eine SD-Karte vorgesehen, auf der der nicht fl"uchtige Speicher liegt. Die Stromversorgung erfolgt "uber einen Mini-USB-Eingang. Zum Betrieb werden mindestens 700 mA/5 V ben"otigt\footnote{Vgl. ebd.. Der Vollst"andigkeit halber sei auch das Vorhandensein einer GPIO mit sechs Anschl"ussen und jeweils 26 Pins erw"ahnt. Da"uber k"onnen, vergleichbar einem Arduino-Board, z.B. LEDs, Sensoren und Displays angesteuert werden.}. 
 
-Der RPi verf"ugt "uber einen HDMI-Ausgang, einen Cinch-Ausgang ("`RCA Jack"') und einen analogen Tonausgang. Er hat zwei USB 2.0-Schnittstellen und eine Ethernet-Schnittstelle. Ein Steckplatz ist f"ur eine SD-Karte vorgesehen, auf der der nicht fl"uchtige Speicher liegt. Die Stromversorgung erfolgt "uber einen Mini-USB-Eingang. Zum Betrieb werden mindestens 700 mA/5 V ben"otigt\footnote{Vgl. \cite{pow12}.}. 
-
-\subsection{GPIO/CSI}\label{RPi GPIO} 
-
-Der RPi hat eine GPIO mit 6 Anschl"ussen, die jeweils "uber 26 Pins verf"ugen. "Uber die GPIOs k"onnen LEDs, Sensoren, Displays und andere Ger"ate angesteuert werden. I.d.R. wird dazu der GPIO-Connector P1 verwendet. Zur Steuerung der GPIOs existieren Bibliotheken f"ur verschiedene Programmiersprachen wie C, C++ und Python. Sie k"onnen auch "uber ein Terminal oder Web-Interfaces wie WebIOPi angesprochen werden. 
-
-Von den vorhandenen Ein- und Ausg"angen werden beim Versuchsaufbau lediglich Ethernet, Mini-USB und der Steckplatz f"ur die Speicherkarte verwendet. Beim RPi-Einzelrechner erfolgt der Netzanschluss "uber einen DSL-Router, wodurch der RPi ins interne Heimnetz eingebunden wird. Beim RPi-Cluster erfolgen Stromversorgung und Netzanschluss zentral "uber den Server des RPi-Clusters. Jeder RPi-Node verf"ugt "uber eine eigene Speicherkarte. Auf die Cluster-Architektur wird in Kap. \ref{Spezifikation Bramble} genauer eingegangen\footnote{Eine detaillierte Beschreibung findet sich in \cite{kli13}}
+\noindent
+F"ur den Versuchsaufbau sind vor allem Ethernetanschluss, Mini-USB und SD-Karte von Bedeutung. Beim RPi-Einzelrechner erfolgt der Netzanschluss "uber einen DSL-Router. Die Stromversorgung geschieht "uber die Steckdose, w"ahrend beim Cluster Stromversorgung und Netzanschluss zentral "uber den Server des RPi-Clusters erfolgen. RPi-Einzelrechner und jeder RPi-Node verf"ugen "uber eine eigene 4 GB Class 10 SD-Karte (auf die Cluster-Architektur wird in Kap. \ref{Spezifikation Bramble} genauer eingegangen).
 
 \subsection{Betriebssystem}\label{RPi OS}
 
-F"ur den RPi existieren mehrere Implementierungen bzw. Derivate verbreiteter Betriebssysteme, darunter RISC OS und Plan 9. Am verbreitetsten sind Linux/Unix-basierte Systeme wie FreeBSD und NetBSD (BSD-Varianten), Raspbian (Debian-Variante), Pidora (Fedora-Variante) oder eine Variante von Arch Linux\footnote{Vgl. ebd..}.   
+F"ur den RPi existieren mehrere Varianten bzw. Derivate verbreiteter Betriebssysteme. Am verbreitetsten sind Linux/Unix-basierte Systeme wie FreeBSD und NetBSD (BSD-Varianten), Raspbian (Debian-Variante), Pidora (Fedora-Variante) oder eine Variante von Arch Linux\footnote{Vgl. \cite{pow12}. Daneben gibt es Implementierungen von RISC OS und Plan 9.}. Als Betriebssytem f"ur den RPi-Einzelrechner wurde Raspbian gew"ahlt, die offizielle Distribution der Raspberry Pi Foundation\footnote{Vgl. \url{http://www.raspberrypi.org/faqs}. Das verwendete Image findet sich unter \url{http://downloads.raspberrypi.org/raspbian_latest}.}. Auf den Einsatz von NOOBS\footnote{Die Raspberry Pi-Foundation empfiehlt besonders f"ur Einsteiger die \textit{New Out Of Box Software} und bietet entsprechend pr"aparierte SD-Karten zum Kauf an (vgl. \url{http://www.raspberrypi.org/archives/tag/noobs}).} oder anderer zus"atzlicher Bootloader wurde verzichtet\footnote{In diesem Fall fungiert die ausf"uhrbare Datei \texttt{start.elf}, die nach einer ausf"uhrbaren Datei \texttt{kernel.img} sucht und diese l"adt, als Bootloader (vgl. \cite{kli13}).}.
 
 \section{Raspberry Pi-Cluster als Testumfeld}\label{Spezifikation Bramble}
 
-In den letzten Monaten zeigte sich verst"arkt die Tendenz, eine gr"o\ss ere Anzahl von Raspberry Pis zu einem Cluster zu koppeln\footnote{Weitere Cluster-Projekte werden z.B. in \cite{cox13}, \cite{kie01}, \cite{bal12} und \cite{ou13} dargestellt.}. Im Folgenden wird die hier verwendete Architektur kurz vorgestellt\footnote{F"ur eine detaillierte Beschreibung vgl. \cite{kli13}.}. 
+In den letzten Monaten l"asst sich die Tendenz beobachten, eine gr"o\ss ere Anzahl von Raspberry Pis zu einem Cluster zu koppeln\footnote{Weitere Projekte werden in \cite{cox13}, \cite{kie01}, \cite{bal12} und \cite{ou13} dargestellt.}. Die hier verwendete Architektur wird im Folgenden wird umrissen\footnote{F"ur eine detaillierte Darstellung vgl. \cite{kli13}.}. 
 
-\subsection{Aufbau}\label{Bramble Hardware}
-Der RPi-Cluster besteht aus 20 RPi Modell B-Einzelrechnern, die jeweils mit einem Ethernet-Kabel mit einem zentralen x86-Server (bestehend haupts"achlich aus einem Mini-ITX-Mainboard und einer Gigabit Ethernet-Netzwerkkarte) verbunden sind. Sie befinden sich in einem modifizierten Tower-Metallgeh"ause, das auf die Seite gedreht und oben offen gelassen wurde. Darin sind au\ss erdem ein 24 Port Gigabit-Switch, die Stromversorgung des Servers und der RPis sowie die K"uhlung integriert\footnote{Ein solches System relativ kosteng"unstiger Rechnermit einem BSD- oder Linux-Betriebssystem, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01} und \cite{kli13}). H"aufig dient es dem Ersatz oder der Simulation eines Supercomputers. Im Zusammenhang mit RPis ist auch der Begriff \textit{Bramble} gebr"auchlich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}).}. 
-% TODO Cluster fotografieren und Bild einbinden 
+\subsection{Physischer Aufbau}\label{Bramble Hardware}
+
+Der RPi-Cluster besteht aus 20 RPi Modell B-Einzelrechnern (DNS-Namen \texttt{pi01} -- \texttt{pi20}), die jeweils "uber ein Ethernet-Kabel mit dem zentralen x86-Server (im Folgenden mit seinem DNS-Namen \texttt{careme} bezeichnet) verbunden sind. Er besteht haupts"achlich aus einem Mini-ITX-Mainboard und einer Gigabit Ethernet-Netzwerkkarte. Alle Komponenten befinden sich in einem modifizierten Tower-Metallgeh"ause, das auf die Seite gedreht und oben offen gelassen wurde. Darin sind au\ss erdem ein 24 Port Gigabit-Switch, die Stromversorgung des Servers und der RPi-Nodes sowie die K"uhlung integriert\footnote{Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Betriebssystem, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01} und \cite{kli13}). H"aufig dient es dem Ersatz oder der Simulation eines Supercomputers. Im Zusammenhang mit RPis ist auch der Begriff \textit{Bramble} gebr"auchlich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}).}. 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{bramble.pdf}\\ 
 	\caption{Der hier verwendete Bramble.}\label{fig:Bramble}
 \end{figure}
-
 % NIC = Network Interface Card 
 
 \subsection{Betriebssystem und Filesystem}\label{Bramble Systemarchitektur} 
 
-Wie in Kap. \ref{RPi OS} beschrieben, existieren verschiedene Linux-Varianten f"ur den RPi. Als Betriebssytem f"ur den RPi-Einzelrechner und die Bramble-RPis wurde Raspbian, die offizielle Distribution der Raspberry Pi Foundation, gew"ahlt\footnote{Vgl. \url{http://www.raspberrypi.org/faqs}. Das verwendete Image findet sich unter \url{http://downloads.raspberrypi.org/raspbian_latest}.}. Auf den Einsatz von NOOBS\footnote{Die Raspberry Pi-Foundation empfiehlt besonders f"ur Einsteiger die \textit{New Out Of Box Software} und bietet entsprechend pr"aparierte SD-Karten zum Kauf an (vgl. \url{http://www.raspberrypi.org/archives/tag/noobs}).} oder anderer zus"atzlicher Bootloader wurde verzichtet\footnote{In diesem Fall fungiert die ausf"uhrbare Datei \texttt{start.elf}, die nach einer ausf"uhrbaren Datei \texttt{kernel.img} sucht und diese l"adt, als Bootloader (vgl. \cite{kli13}).}. Auf dem Server selbst l"auft eine Standard-Debian-Version. 
+Auf den RPi-Nodes l"auft das o.g. Betriebssytem Raspbian, auf \texttt{careme} eine Standard-Debian-Version. 
 
-Ein Charakteristikum eines Beowulf-Clusters bzw. Bramble ist, dass es im Gegensatz zu einem "`richtigen"' Supercomputer kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Die Kommunikation zwischen den einzelnen Komponenten via Ethernet ist zudem relativ langsam. Es stellt sich daher die Frage nach dem Filesystem und der Synchronisierung der einzelnen Nodes. 
+Ein Charakteristikum eines Beowulf-Clusters bzw. Bramble ist, dass es im Gegensatz zu einem Supercomputer kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Die Kommunikation zwischen den einzelnen Komponenten via Ethernet ist zudem relativ langsam. Es stellt sich daher die Frage nach dem Filesystem und der Synchronisierung der einzelnen Nodes. 
 
-Um das Filesystem der einzelnen Nodes mit dem NFS des Servers zu synchronisieren, wurde hier eine Read-Only-Schicht f"ur die Slaves (Nodes) und eine Read-Write-Schicht f"ur den Master (Server) verwendet\footnote{Vgl. ebd..}. Um trotzdem die M"oglichkeit des gemeinsamen Zugriffs der Nodes auf ein Speichermedium zu haben, wurde ein geshartes Verzeichnis \texttt{/srv} eingerichtet. 
+Um das Filesystem der einzelnen Nodes mit dem NFS des Servers zu synchronisieren, wurde hier eine Read-Only-Schicht f"ur die Slaves (Nodes) und eine Read-Write-Schicht f"ur den Master (Server) verwendet\footnote{Vgl. ebd..}. Um trotzdem den gemeinsamen Zugriff von Server und RPi-Nodes auf ein Speichermedium zu erm"oglichen, wurde ein geshartes Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} eingerichtet. 
 
-\subsection{Zugriff}\label{Bramble Zugriff}
+\subsection{Zugriff auf die Cluster-Komponenten}\label{Bramble Zugriff}
 
-Welche M"oglichkeiten gibt es nun, verteilte Anwendungen auf dem Bramble auszuf"uhren bzw. "uberhaupt die einzelnen Komponenten anzusprechen? Bei einem RPi-Einzelrechner nutzt man normalerweise einen USB-Port und den HDMI-Ausgang als stdin bzw. stdout. Eine andere M"oglichkeit besteht darin, den RPi "uber den Ethernet-Port mit einem Router zu verbinden und via SSH aus dem Intranet darauf zuzugreifen\footnote{Auf dem hier verwendeten Testger"at wurde letztere Variante gew"ahlt. Der Grund hierf"ur sind bekannte Probleme beim Anschluss "alterer Monitore oder Fernseher ohne HDMI-Eingang (vgl. z.B. \url{http://www.raspberrypi.org/forum/viewtopic.php?f=91&t=34061}).}. 
+Welche M"oglichkeiten gibt es nun, verteilte Anwendungen auf dem Bramble auszuf"uhren bzw. "uberhaupt die einzelnen Komponenten anzusprechen? Bei einem RPi-Einzelrechner nutzt man normalerweise einen USB-Port und den HDMI-Ausgang als stdin und stdout. Eine andere M"oglichkeit besteht darin, den RPi "uber den Ethernet-Port mit einem Router zu verbinden und "uber SSH darauf zuzugreifen\footnote{Diese Variante wurde f"ur das hier verwendeten Testger"at gew"ahlt auf Grund von Problemen beim Anschluss "alterer Monitore ohne HDMI-Eingang (vgl. z.B. \url{http://www.raspberrypi.org/forum/viewtopic.php?f=91&t=34061}).}. 
 
-Der Zugriff auf den Bramble erfolgt ebenfalls aus dem internen Netzwerk via IP und SSH. Da sich die Architekturen des Servers und der RPi-Nodes unterscheiden, ist die einzige M"oglichkeit, auf diese zuzugreifen, wiederum via IP und SSH. Es gibt auf jedem RPi den Raspbian-Standard-User \texttt{pi}, der hier nicht ver"andert wurde\footnote{Auf dem RPi-Einzelrechner wurden aus Sicherheitsgr"unden Username und Passwort f"ur den Standard-User ge"andert.}. Um z.B. auf das gesharte Verzeichnis \texttt{/srv} zuzugreifen, sind \texttt{root}-Rechte erforderlich. 
+Der Zugriff auf den Bramble erfolgt aus dem internen Netzwerk "uber IP und SSH. Die einzelnen RPi-Nodes werden von \texttt{careme} aus "uber SSH adressiert (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). Es gibt auf jedem RPi-Node den Raspbian-Standard-User \texttt{pi}, der hier nicht ver"andert wurde\footnote{Auf dem RPi-Einzelrechner wurden aus Sicherheitsgr"unden Username und Passwort f"ur den Standard-User ge"andert.}. Um z.B. auf das gesharte Verzeichnis \texttt{/srv} zuzugreifen, sind \texttt{root}-Berechtigungen erforderlich\footnote{Auf Schwierigkeiten bei dieser Einteilung und Troubleshoots wird in Kap. \ref{Kapitel 5} kurz eingegangen.}. 
+
+Beim hier verwendeten Versuchsaufbau wurde auf \texttt{careme} mit eingeschr"ankten Rechten als User \texttt{rpi-user} gearbeitet, auf den einzelnen RPis als \texttt{root}. Das bedeutet, dass alle "Anderungen im gesharten Verzeichnis notwendigerweise von einem der RPi-Nodes aus vorgenommen werden m"ussen. Dazu wurde vorab RPi-Node \texttt{pi03} als Berechnungs-Node definiert, von dem aus alle Skripte ausgef"uhrt, Programme installiert werden etc.. Da die Skripte zur Ausf"uhrung der Benchmarks h"aufig das Herunterfahren einzelner RPi-Nodes vorsehen (vgl. Kap. \ref{Kapitel 6}), wurde \texttt{pi03} wurden die Benchmarks grunds"atzlich auf maximal \textit{n=19} RPi-Nodes ausgef"uhrt (vgl. Kap. \ref{Kapitel 3}). Zur verteilten Berechnung von Anwendungen auf mehreren CPUs steht auf dem Bramble die MPI-Implementierung MPICH in der Version 3.0.4 zur Verf"ugung. Um die CPUs bzw. RPi-Nodes und die Anzahl der darauf auszuf"uhrenden Prozesse zu spezifizieren, muss ein entsprechendes Machinefile erstellt und im gesharten Verzeichnis abgelegt werden, das der Ausf"uhrung von MPICH mit \texttt{mpiexec} als Parameter "ubergeben wird (vgl. auch Kap. \ref{Kapitel 3} und \ref{Kapitel 5}). 
 \endinput 
