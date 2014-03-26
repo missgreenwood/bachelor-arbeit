@@ -1,4 +1,4 @@
-Enter array size (q to quit) [200]:  200
++Enter array size (q to quit) [200]:  200
 Memory required:  315K.
 
 

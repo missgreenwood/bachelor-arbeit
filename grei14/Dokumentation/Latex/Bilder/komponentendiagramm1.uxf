@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>150</x>
+      <y>370</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ Datenbank </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>110</x>
+      <y>290</y>
+      <w>500</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ Bramble</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>50</x>
+      <y>120</y>
+      <w>650</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>'&lt;&lt;component&gt;&gt;
+ ExperimentSuite</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>160</y>
+      <w>174</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Stromversorgung</panel_attributes>
+    <additional_attributes>90;130;90;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>160</y>
+      <w>186</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Netzwerkanschluss
+</panel_attributes>
+    <additional_attributes>100;130;100;30</additional_attributes>
+  </element>
+</diagram>

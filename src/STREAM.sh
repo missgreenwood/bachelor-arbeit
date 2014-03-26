@@ -1,12 +1,12 @@
 #!/bin/bash                                                                           
 
-# Run STREAM on1 RPi-Nodes, run again and shutdown RPi-Node n a
+# Run STREAM on n downto 4 RPi-Nodes, run again and shutdown RPi-Node i
 
 # create output files                                                                 
 touch results/STREAM_`date +%y%m%d`.txt results/STREAM_shutdown`date +%y%m%d`.txt
 
 # loop over n RPis 
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi11 pi12 pi10 pi09 pi08 pi07 pi06 pi05 
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 
 do
     n=${host/pi/}
     n=$(echo $n|sed 's/^0*//')
@@ -51,16 +51,12 @@ ENDSSH
 
 	echo "Database setup complete"
 
-# log number of active RPis/powered RPis to results/STREAM_`date +%y%m%d`.txt                                                                                                      
-# echo "Active RPis: "$n"/Powered RPis: 16" >> results/STREAM_`date +%y%m%d`.txt
-
 # start benchmark on n RPis, log to results/STREAM_`date +%y%m%d`.txt                                                                                                      
 	mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile -wdir /srv/benchmarks/bin/STREAM /srv/benchmarks/bin/STREAM/stream >> results/STREAM_`date +%y%m%d`.txt
 # add unix timestamp to results file
 	echo "Unixtime: `date +%s`" >> results/STREAM_`date +%y%m%d`.txt
 
 	echo "STREAM finished on $n RPis active, 16 RPis powered"
-#    fi 
 done
 
 
@@ -77,8 +73,8 @@ do
 	starttime=`date +%s`
 	echo "Start time: $starttime"
 
-    # Setup experiment suite in database                                                                                                                                        
-    # One experiment suite for every program run needed
+# Setup experiment suite in database                                                                                                                                        
+# One experiment suite for every program run needed
 	ssh rpi-user@careme<<ENDSSH
     # initialize experiment suite                                                                                                                                               
     mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) VALUES ('Cluster Blackbox','experiment no4',$starttime)"                                                                                                                                                              
@@ -90,11 +86,10 @@ touch /tmp/myid.txt
 mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                            
 ENDSSH
 
-    # read in experiment suite id from tmp file on careme                                                                                                                       
+# read in experiment suite id from tmp file on careme                                                                                                                       
 	myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
-    # echo $myid                                                                                                                                                                
 
-    # remove tmp file from careme                                                                                                                                                                                                                                                                                                                          
+# remove tmp file from careme                                                                                                                                                                                                                                                                                                                          
 	ssh rpi-user@careme "rm /tmp/myid.txt"
     
 	ssh rpi-user@careme<<ENDSSH                                                                                                                                                

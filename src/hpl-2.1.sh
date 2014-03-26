@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Run Hplinpack on n downto 4 RPi-Nodes, run again and shutdown afterwards 
+# Run Hplinpack on n downto 4 RPi-Nodes, run again and shutdown RPi-Node i
 
 # create output files                                                                 
 touch results/hpl-2.1_`date +%y%m%d`.txt results/hpl-2.1_shutdown`date +%y%m%d`.txt

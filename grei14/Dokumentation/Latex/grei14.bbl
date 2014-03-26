@@ -10,23 +10,20 @@
 
 \bibitem[Bal12]{bal12}
 \textsc{Balakrishnan}, Nikilesh:
-\newblock \emph{Building and benchmarking a low power ARM cluster}.
+\newblock \emph{Building and Benchmarking a Low Power ARM Cluster}.
 \newblock 2012. --
 \newblock
   \url{http://www.epcc.ed.ac.uk/sites/default/files/Dissertations/2011-2012/Submission-1126390.pdf}
 
 \bibitem[BCH{\etalchar{+}}12]{scrguide01}
-\textsc{Beale}, Clive ; \textsc{Croston}, Ben ; \textsc{Hague}, Andrew ;
-  \textsc{Hastings}, Graham ; \textsc{K"olling}, Michael ; \textsc{Lockwood},
-  Brian  ; \textsc{Oldknow}, Adrian:
+\textsc{Beale}, Clive ; \textsc{Croston}, Ben ; \textsc{Hague}, Andrew  u.\,a.:
 \newblock \emph{The Raspberry Pi Education Manual}, Dezember 2012. --
 \newblock
   \url{http://downloads.raspberrypi.org/Raspberry_Pi_Education_Manual.pdf}
 
 \bibitem[CCB{\etalchar{+}}13]{cox13}
-\textsc{Cox}, Simon ; \textsc{Cox}, James ; \textsc{Boardman}, Richard ;
-  \textsc{Johnston}, Steven ; \textsc{Scott}, Mark  ; \textsc{O'Brien}, Neil:
-\newblock Iridis-pi: a low-cost, compact demonstration cluster.
+\textsc{Cox}, Simon ; \textsc{Cox}, James ; \textsc{Boardman}, Richard  u.\,a.:
+\newblock Iridis-pi: A Low-cost, Compact Demonstration Cluster.
 \newblock {In: }\emph{Cluster Computing}  (2013), S. 1--10. --
 \newblock \url{http://dx.doi.org/10.1007/s10586-013-0282-7}
 
@@ -40,7 +37,7 @@
 \bibitem[DLP03]{don03}
 \textsc{Dongarra}, Jack ; \textsc{Luszczek}, Piotr  ; \textsc{Petitet},
   Antoine:
-\newblock The LINPACK Benchmark: past, present and future.
+\newblock The LINPACK Benchmark: Past, Present and Future.
 \newblock {In: }\emph{Concurrency and Computation: Practice and Experience}
   (2003), S. 803--820. --
 \newblock \url{http://onlinelibrary.wiley.com/doi/10.1002/cpe.728/pdf}
@@ -57,12 +54,35 @@
 \newblock \emph{Evaluating the Feasibility and Performance of a Model Raspberry
   Pi Beowulf Cluster}.
 \newblock 2013. --
-\newblock \url{zzz}
+\newblock \url{http://www.nm.ifi.lmu.de/pub/Fopras}
 
 \bibitem[Lan12]{scrguide02}
 \textsc{Langer}, Alexander:
 \newblock \emph{Raspberry Pi Handbuch}, Februar 2012. --
 \newblock \url{http://raspberrycenter.de/handbuch/raspberry-pi-handbuch}
+
+\bibitem[LDK{\etalchar{+}}05]{lus05}
+\textsc{Luszcek}, Piotr ; \textsc{Dongarra}, Jack ; \textsc{Koester}, David
+  u.\,a.:
+\newblock Introduction to the HPC Challenge Benchmark Suite / Lawrence Berkeley
+  National Laboratory.
+\newblock Berkeley, April 2005. --
+\newblock Forschungsbericht. --
+\newblock \url{http://escholarship.org/uc/item/6sv079jp}
+
+\bibitem[McC95]{mcc95}
+\textsc{McCalpin}, John:
+\newblock A Survey of Memory Bandwidth and Machine Balance in Current High
+  Performance Computers.
+\newblock {In: }\emph{IEEE TCCA Newsletter}  (1995), S. 19--25. --
+\newblock \url{http://www.cs.virginia.edu/~mccalpin/papers/balance}
+
+\bibitem[McC05]{mcc05}
+\textsc{McCalpin}, John:
+\newblock \emph{STREAM Benchmark}.
+\newblock 2005. --
+\newblock
+  \url{http://www.cs.virginia.edu/~mccalpin/STREAM_Benchmark_2005-01-25.pdf}
 
 \bibitem[Ou13]{ou13}
 \textsc{Ou}, Jun:

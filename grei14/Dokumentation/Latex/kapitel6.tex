@@ -1,5 +1,521 @@
-\chapter{Anhang}\label{Kapitel 6}
-\section{Ergebnisse f"ur Linpack 100 und Whetstone auf dem RPi-Einzelrechner}\label{Ergebnisse_RPi}
+\chapter{Anhang}\label{Anhang}
+
+\section{Shellskripte}\label{skripte}
+
+\subsubsection{startBenchmarks.sh}
+
+\begin{verbatim}
+#!/bin/bash
+
+# Start script for execution of n benchmark scripts on 20 RPi-Nodes
+
+# remove old machinefile
+rm -f /srv/libraries/etc/mpich-3.0.4-shared/machinefile
+
+touch /srv/libraries/etc/mpich-3.0.4-shared/machinefile
+for host in {pi0{1..9},pi{10..20}}
+do 
+	echo "$host" >> /srv/libraries/etc/mpich-3.0.4-shared/machinefile
+done 
+
+# mount shared directory /srv on all RPis
+for host in {pi0{1..9},pi{10..20}}
+do 
+	ssh root@$host 'mount /srv'
+done
+
+# navigate to execution directory
+cd /srv/experimentsuite/ 
+
+# loop over n benchmarks 
+for benchmark in STREAM hpl-2.1
+do 
+	./$benchmark.sh  
+done 
+\end{verbatim}
+
+\subsubsection{loadGeneratorConfigHpl.sh}
+
+\begin{verbatim}
+#!/bin/bash 
+
+# Setup load generator configuration for hplinpack 
+# For documentation purpose 
+# For new setup: change 'hpl-config' into some other string
+
+ssh rpi-user@careme<<'ENDSSH'                                                                                                                                               
+# mysql -B: don't use history file, disable interactive behavior                                                                                                           
+# mysql -s: silent mode                                                                                                                                                                
+# mysql -e: execute query and exit
+
+# define load generator                                                                                                                                                    
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+LoadGenerator (name,description) VALUES ('hpl-2.1','Benchmark')"                                    
+
+# define load generator configuration key                                                                                                                                  
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+ENUM_LoadGeneratorConfigurationKey (\`value\`) VALUES ('hpl-config')"                               
+
+# assign load generator configuration key to load generator configuration                                                                                                  
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+LoadGeneratorConfiguration (\`key\`) VALUES ('hpl-config')"                                            
+ENDSSH
+\end{verbatim}
+
+\subsubsection{loadGeneratorConfigStream.sh}
+
+\begin{verbatim}
+#!/bin/bash 
+
+# Setup load generator configuration for STREAM  
+# For documentation purpose 
+# For new setup: change 'stream-config' into some other string
+
+ssh rpi-user@careme<<'ENDSSH'                                                                                                                                               
+# mysql -B: don't use history file, disable interactive behavior                                                                                                           
+# mysql -s: silent mode                                                                                                                                                                
+# mysql -e: execute query and exit
+
+# define load generator                                                                                                                                                    
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+LoadGenerator (name,description) VALUES ('STREAM','Benchmark')"                                    
+
+# define load generator configuration key                                                                                                                                  
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+ENUM_LoadGeneratorConfigurationKey (\`value\`) VALUES ('stream-config')"                               
+
+# assign load generator configuration key to load generator configuration                                                                                                  
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+LoadGeneratorConfiguration (\`key\`) VALUES ('stream-config')"                                            
+ENDSSH
+\end{verbatim}
+
+\subsubsection{hpl-2.1.sh}
+
+\begin{verbatim}
+#!/bin/bash 
+
+# Run Hplinpack on n downto 4 RPi-nodes, run again and shutdown RPi-node i afterwards 
+
+# create output files                                                                 
+touch results/hpl-2.1_`date +%y%m%d`.txt results/hpl-2.1_shutdown`date +%y%m%d`.txt
+
+# loop over n RPis downto 4                                                           
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08
+do
+    n=${host/pi/}                                         
+    n=$(echo $n|sed 's/^0*//')
+    echo "Number of active RPis: $n"
+    echo "Number of powered RPis: 20"
+    starttime=`date +%s`
+    echo "Start time: $starttime"
+
+# Setup experiment suite in database
+# One experiment suite for every program run needed 
+
+    ssh rpi-user@careme<<ENDSSH
+
+# initialize experiment suite 
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO 
+ExperimentSuite (granularityLevel,objective,executionStartedAt) VALUES 
+('Cluster Blackbox','experiment no1',$starttime)"
+ENDSSH
+
+# get experiment suite id 
+ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
+	touch /tmp/myid.txt                                                                                                                                                         
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM 
+ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                             
+ENDSSH
+
+# read in experiment suite id from tmp file on careme 
+myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
+
+# remove tmp file from careme                                                                                                                                               
+ssh rpi-user@careme "rm /tmp/myid.txt"
+
+ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
+# insert number of active RPis                                                                                                                                              
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,
+experimentSuiteId) VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                            
+                                                                                                                                                                            
+# insert number of powered RPis                                                                                                                                             
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,
+experimentSuiteId) VALUES ('NumberOfPoweredRPis','14',$myid)"                                                                                                                                                             
+                                                                                                                                                                            
+# map load generator configuration to experiment suite                                                                                                                      
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) 
+VALUES (6,$myid)"              
+ENDSSH
+
+echo "Database setup complete"
+
+# log number of active RPis/powered RPis to results/hpl-2.1_`date +%y%m%d`.txt
+echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-2.1_`date +%y%m%d`.txt
+
+# start benchmark on n RPis, log to results/hpl-2.1_`date +%y%m%d`.txt                        
+    mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile 
+-wdir /srv/benchmarks/bin/hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl >> 
+results/hpl-2.1_`date +%y%m%d`.txt
+
+    echo "HPlinpack finished on $n RPis active, 20 RPis powered" 
+done 
+
+# loop over n RPis downto 4                                                           
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08
+do
+    n=${host/pi/}                                         
+    n=$(echo $n|sed 's/^0*//')
+    echo "Number of active RPis: $n"
+    echo "Number of powered RPis: $n"
+    starttime=`date +%s`
+    echo "Start time: $starttime"
+
+# Setup experiment suite in database
+# One experiment suite for every program run needed 
+
+# initialize experiment suite
+    ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
+
+# initialize experiment suite                                                                                                                                               
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO 
+ExperimentSuite (granularityLevel,objective,executionStartedAt) 
+VALUES ('Cluster Blackbox','experiment no2',$starttime)"                                                                                                                                                                          
+ENDSSH
+                                                                                                                                                       
+
+# get experiment suite id 
+ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
+	touch /tmp/myid.txt                                                                                                                                                         
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM 
+ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                             
+ENDSSH
+
+# read in experiment suite id from tmp file on careme 
+myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
+# echo $myid
+
+# remove tmp file from careme                                                                                                                                               
+ssh rpi-user@careme "rm /tmp/myid.txt"
+
+ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
+# insert number of active RPis                                                                                                                                              
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) 
+VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                            
+                                                                                                                                                                            
+# insert number of powered RPis                                                                                                                                             
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) 
+VALUES ('NumberOfPoweredRPis','14',$myid)"                                                                                                                                                             
+                                                                                                                                                                            
+# map load generator configuration to experiment suite                                                                                                                      
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO 
+N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) 
+VALUES (6,$myid)"              
+ENDSSH
+
+echo "Database setup complete"
+
+# log number of active RPis/powered RPis to results/hpl-2.1_`date +%y%m%d`.txt
+echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-2.1_shutdown`date +%y%m%d`.txt
+
+# start benchmark on n RPis, log to results/hpl-2.1_shutdown`date +%y%m%d`.txt                        
+    mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile 
+-wdir /srv/benchmarks/bin/hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl 
+>> results/hpl-2.1_shutdown`date +%y%m%d`.txt
+    echo "HPlinpack finished on $n RPis active, $n RPis powered"
+    ssh $host 'shutdown -hP 0'
+done 
+
+# create input file for database                                                                                                                                            
+touch results/hpl-2.1_db`date +%y%m%d`.txt
+
+# find all lines in first output file beginning with 'WR' (result lines) 
+# and print together with 3 following lines (timestamp lines)                                       
+grep '^WR' results/hpl-2.1_`date +%y%m%d`.txt -A 3 
+> results/hpl-2.1_db`date +%y%m%d`.txt
+
+# find all lines in second output file beginning with 'WR' (result lines) 
+# and print together with 3 following lines (timestamp lines)                                      
+grep '^WR' results/hpl-2.1_shutdown`date +%y%m%d`.txt -A 3 
+>> results/hpl-2.1_db`date +%y%m%d`.txt
+
+# remove all empty lines                                                                                                                                                    
+sed -i '/^$/d' results/hpl-2.1_db`date +%y%m%d`.txt
+
+# remove all lines containing "start" (only "end" needed)                                                                                                                   
+sed -i '/start/d' results/hpl-2.1_db`date +%y%m%d`.txt
+
+# remove all lines containing only '--' (result from grep -A)                                                                                                               
+sed -i '/--/d' results/hpl-2.1_db`date +%y%m%d`.txt
+
+# transform database input file to lines containing space seperated values                                                                                                  
+sed -i 's/ \{2,\}/ /g' results/hpl-2.1_db`date +%y%m%d`.txt
+sed -i 'N;s/\n/ /' results/hpl-2.1_db`date +%y%m%d`.txt
+                                                                                                                                              
+ssh rpi-user@careme<<'ENDSSH'                                                                                                                 
+cat /srv/nfs-share/experimentsuite/results/hpl-2.1_db`date +%y%m%d`.txt | 
+cut -d' ' -f6,7,12,13,14,15 | while read line                                                     
+do                                                                                                                                                                          
+    arr=($line)                                                                                                                                                             
+    time=${arr[0]}                                                                                                                                                          
+    echo "Time: $time"                                                                                                                                                      
+    gflops=${arr[1]}                                                                                                                                                        
+    echo "Gflops: $gflops"                                                                                                                                                  
+    timestamp=${arr[@]:2}                                                                                                                                                   
+    unixtime=$(date -d "${timestamp}" "+%s")                                                                                                                                
+    echo $unixtime                                                                                                                                                          
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+    "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+    VALUES ('Time',$time,$unixtime)"                
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+    "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+    VALUES ('Gflops',$gflops,$unixtime)"
+done
+ENDSSH
+\end{verbatim}
+
+\subsubsection{STREAM.sh}
+
+\begin{verbatim}
+#!/bin/bash                                                                           
+
+# Run STREAM on1 RPi-Nodes, run again and shutdown RPi-Node n a
+
+# create output files                                                                 
+touch results/STREAM_`date +%y%m%d`.txt results/STREAM_shutdown`date +%y%m%d`.txt
+
+# loop over n RPis 
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 
+pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 
+do
+    n=${host/pi/}
+    n=$(echo $n|sed 's/^0*//')
+    n=$(($n - 4))
+#    if [ $n > 0 ]; then 
+	echo "Number of active RPis: $n"
+	echo "Number of powered RPis: 16"
+	starttime=`date +%s`
+	echo "Start time: $starttime"
+
+# Setup experiment suite in database                                                                                                                                        
+# One experiment suite for every program run needed
+
+	ssh rpi-user@careme<<ENDSSH
+# initialize experiment suite                                                                                                                                               
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) 
+VALUES ('Cluster Blackbox','experiment no3',$starttime)"                                                                                                                                                              
+ENDSSH
+
+# get experiment suite id                                                                                                                                                   
+	ssh rpi-user@careme<<ENDSSH                                                                                                                                                                                                                                                                                                                            
+	touch /tmp/myid.txt                                                                                                                                                                                                                                                                                                                                 
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse 
+"SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                            
+ENDSSH
+
+# read in experiment suite id from tmp file on careme                                                                                                                       
+	myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
+# echo $myid                                                                                                                                                                
+
+# remove tmp file from careme                                                                                                                                                                                                                                                                                                                          
+	ssh rpi-user@careme "rm /tmp/myid.txt"
+	ssh rpi-user@careme<<ENDSSH                                                                                                                                                
+                                                                                                                                                                            
+# insert number of active RPis
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,
+experimentSuiteId) VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                           
+
+# insert number of powered RPis                                 
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,
+experimentSuiteId) VALUES ('NumberOfPoweredRPis','16',$myid)"                                                                                                                                                            
+
+# map load generator configuration to experiment suite                                                                                                                     
+	mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) 
+VALUES (7,$myid)"             
+ENDSSH
+
+	echo "Database setup complete"
+
+# start benchmark on n RPis, log to results/STREAM_`date +%y%m%d`.txt                                                                                                      
+	mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile 
+-wdir /srv/benchmarks/bin/STREAM /srv/benchmarks/bin/STREAM/stream 
+>> results/STREAM_`date +%y%m%d`.txt
+
+# add unix timestamp to results file
+	echo "Unixtime: `date +%s`" >> results/STREAM_`date +%y%m%d`.txt
+
+	echo "STREAM finished on $n RPis active, 16 RPis powered"
+done
+
+
+# loop over n RPis 
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 
+pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 
+do
+    n=${host/pi/}
+    n=$(echo $n|sed 's/^0*//')
+    n=$(($n - 4))
+#    if [ $n > 0 ]; then 
+	echo $n
+	echo "Number of active RPis: $n"
+	echo "Number of powered RPis: $n"
+	starttime=`date +%s`
+	echo "Start time: $starttime"
+
+# Setup experiment suite in database                                                                                                                                        
+# One experiment suite for every program run needed
+	ssh rpi-user@careme<<ENDSSH
+# initialize experiment suite                                                                                                                                               
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) 
+VALUES ('Cluster Blackbox','experiment no4',$starttime)"                                                                                                                                                              
+ENDSSH
+
+# get experiment suite id                                                                                                                                                   
+	ssh rpi-user@careme<<ENDSSH                                                                                                                                                                                                                                                                                                                            
+t	ouch /tmp/myid.txt                                                                                                                                                                                                                                                                                                                                 
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse 
+"SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                            
+ENDSSH
+
+# read in experiment suite id from tmp file on careme                                                                                                                       
+	myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
+
+# remove tmp file from careme                                                                                                                                                                                                                                                                                                                          
+	ssh rpi-user@careme "rm /tmp/myid.txt"
+    
+	ssh rpi-user@careme<<ENDSSH                                                                                                                                                
+        # insert number of active RPis
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) 
+VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                           
+
+    # insert number of powered RPis                                 
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) 
+VALUES ('NumberOfPoweredRPis','${n}',$myid)"                                                                                                                                                            
+
+    # map load generator configuration to experiment suite                                                                                                                     
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) 
+VALUES (7,$myid)"             
+ENDSSH
+
+	echo "Database setup complete"
+# log number of active RPis/powered RPis to results/STREAM_`date +%y%m%d`.txt 
+
+# start benchmark on n RPis, log to results/STREAM_`date +%y%m%d`.txt                                                                                                      
+	mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile 
+-wdir /srv/benchmarks/bin/STREAM /srv/benchmarks/bin/STREAM/stream 
+>> results/STREAM_shutdown`date +%y%m%d`.txt
+
+	ssh $host 'shutdown -hP 0'
+    
+# add unix timestamp to results file
+	echo "Unixtime: `date +%s`" >> results/STREAM_shutdown`date +%y%m%d`.txt
+	echo "STREAM finished on $n RPis active, $n RPis powered"
+
+done
+
+# create input file for database                                                                                                                                            
+touch results/STREAM_db`date +%y%m%d`.txt
+
+# find all lines in first output file beginning with 'Copy' (first result line) 
+# and print together with 7 following lines
+grep '^Copy' results/STREAM_`date +%y%m%d`.txt -A 7 
+> results/STREAM_db`date +%y%m%d`.txt
+
+# find all lines in second output file beginning with 'Copy' (result lines) 
+# and print together with 7 following lines (timestamp lines)                                    
+grep '^Copy' results/STREAM_shutdown`date +%y%m%d`.txt -A 7 
+>> results/STREAM_db`date +%y%m%d`.txt
+
+# remove all lines containing only '--' (result from grep -A)                                                                                                              
+sed -i '/--/d' results/STREAM_db`date +%y%m%d`.txt
+
+# remove all lines beginning with blank                                                                                                                                    
+sed -i '/^ /d' results/STREAM_db`date +%y%m%d`.txt
+
+# insert new line delimiter before 'Copy'                                                                                                                                  
+sed -i 's/Copy/|Copy/' results/STREAM_db`date +%y%m%d`.txt
+
+# transform to lines containing space seperated values                                                                                                                     
+sed -i 's/ \{2,\}/ /g' results/STREAM_db`date +%y%m%d`.txt
+
+# transform whole file into one line (for read line)                                                                                                                       
+sed -i ':a;N;$!ba;s/\n/ /g' results/STREAM_db`date +%y%m%d`.txt
+
+# substitute '|' with '\n' (new line delimiter)                                                                                                                            
+sed -i 's/|/\n/g' results/STREAM_db`date +%y%m%d`.txt
+
+# remove empty first line                                                                                                                                                  
+sed -i '/^$/d' results/STREAM_db`date +%y%m%d`.txt
+
+ssh rpi-user@careme<<'ENDSSH'                                                                                                                                               
+cat /srv/nfs-share/experimentsuite/results/STREAM_db`date +%y%m%d`.txt | 
+cut -d' ' -f2,3,7,8,12,13,17,18,22 | while read line                                                    
+do                                                                                                                                                                          
+    # echo $line                                                                                                                                                            
+    arr=($line)                                                                                                                                                            
+    copy_rate=${arr[0]}                                                                                                                                                     
+    # echo $copy_rate                                                                                                                                                       
+    copy_time=${arr[1]}                                                                                                                                                     
+    # echo $copy_time                                                                                                                                                       
+    scale_rate=${arr[2]}                                                                                                                                                    
+    # echo $scale_rate                                                                                                                                                      
+    scale_time=${arr[3]}                                                                                                                                                    
+    # echo $scale_time                                                                                                                                                      
+    add_rate=${arr[4]}                                                                                                                                                      
+    # echo $add_rate                                                                                                                                                        
+    add_time=${arr[5]}
+    # echo $add_time                                                                                                                                                        
+    triad_rate=${arr[6]}                                                                                                                                                    
+    # echo $triad_rate                                                                                                                                                      
+    triad_time=${arr[7]}                                                                                                                                                    
+    # echo $triad_time                                                                                                                                                      
+    unixtime=${arr[8]}                                                                                                                                                      
+    # echo $unixtime                                                                                                                                                        
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Copy/Rate',$copy_rate,$unixtime)"       
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Copy/Avg time',$copy_time,$unixtime)"   
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Scale/Rate',$scale_rate,$unixtime)"     
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Scale/Avg time',$scale_time,$unixtime)"
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Add/Rate',$add_rate,$unixtime)"         
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Add/Avg time',$add_time,$unixtime)"     
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Triad/Rate',$triad_rate,$unixtime)"     
+    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse 
+"INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) 
+VALUES ('Triad/Avg time',$triad_time,$unixtime)"
+done                                                                                                                                                                        
+ENDSSH
+\end{verbatim}
+
+\section{Ergebnisse der ausgew"ahlten Benchmarks auf dem RPi-Einzelrechner}\label{rpi-anhang}
+
+\subsection{Linpack 100}\label{rpi-linpack}
+
 \begin{verbatim}
 ##########################################
 Unrolled Double Precision Linpack Benchmark - Linux Version in 'C/C++'
@@ -79,7 +595,11 @@ Linux version 3.6.11+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease)
 Unrolled Double  Precision       41.31 Mflops 
 
 ##############################################
+\end{verbatim}
 
+\subsection{Whetstone}\label{rpi-whetstone}
+
+\begin{verbatim}
 ##########################################
 Single Precision C Whetstone Benchmark Opt 3 32 Bit, Sat Nov 30 15:22:14 2013
 
@@ -129,14 +649,38 @@ MWIPS                                            255.154             10.190
 
 \end{verbatim}
 
-\section{Shellskript zur Ausf"uhrung der Benchmarks auf n RPi-Nodes}\label{executeBenchmarksOnAllRPis.sh}
+\subsection{STREAM}\label{rpi-stream}
 
+\begin{verbatim}
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 10000000 (elements), Offset = 0 (elements)
+Memory per array = 76.3 MiB (= 0.1 GiB).
+Total memory required = 228.9 MiB (= 0.2 GiB).
+Each kernel will be executed 10 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 736819 microseconds.
+   (= 736819 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:             274.4     0.586838     0.583109     0.599162
+Scale:            209.3     0.766437     0.764583     0.772736
+Add:              287.2     0.838107     0.835557     0.842724
+Triad:            271.1     0.886793     0.885394     0.889097
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+\end{verbatim}
 \endinput 
-
-%Grafik aus PDF-File - diese Variante ist vorzuziehen, da sie die Einbundung echter Vektorgrafiken ermöglicht 
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.6]{BurgerFlowchart}\\ % PDF-File
-%  \caption{Donec tempor leo a massa \cite{scrguide07}}\label{fig:BurgerFlowchart}
-%\end{figure}
-

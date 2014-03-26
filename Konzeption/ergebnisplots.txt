@@ -94,7 +94,7 @@
 7. eps-Ergebnisse löschen 
 
 
-## Gnuplot-Skripte für 1-4 (Plotfiles 'STREAM1' - 'STREAM4', 'HPL1' - 'HPL4')
+## Gnuplot-Skripte für 1-6 (Plotfiles 'STREAM1' - 'STREAM6', 'HPL1' - 'HPL6')
 
 # STREAM1
 
@@ -227,3 +227,15 @@ set title "HPLinpack on n RPis active, 16 RPis powered vs. n RPis active, n RPis
 set output 'hpl6.eps'
 unset border
 plot 'hplplot1.txt' using 3:1 title "Time to Completion" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title "Time to Completion" with points linecolor rgb "blue"
+
+# Top500
+
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "kW"
+set xlabel "Gflops"
+# set xtics (16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set title "Einordnung Bramble in Top500"
+set output 'top500.eps'
+unset border
+plot 'top500.txt' using 1:2 title "Tianhe-2 (MilkyWay-2)", '' using 3:4 title "Titan", '' using 5:6 title "Sequoia", '' using 7:8 title "K computer", '' using 9:10 title "Mira", '' using 11:12 title "Piz Daint", '' using 13:14 title "Stampede", '' using 15:16 title "JUQUEEN", '' using 17:18 title "Vulcan", '' using 19:20 title "SuperMUC", '' using 21:22 title "Bramble"
+

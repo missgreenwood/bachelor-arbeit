@@ -11,49 +11,52 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./Bib/grei14.bib
+Warning--I didn't find a database entry for "mcc"
 Warning--empty edition in scrguide01
 Warning--empty address in scrguide01
 Warning--empty edition in scrguide02
 Warning--empty address in scrguide02
-You've used 13 entries,
+Warning--there's an address but no publisher in lus05
+Warning--empty number in lus05
+You've used 16 entries,
             4793 wiz_defined-function locations,
-            964 strings with 8373 characters,
-and the built_in function-call counts, 7744 in all, are:
-= -- 826
-> -- 201
-< -- 229
-+ -- 256
-- -- 65
-* -- 499
-:= -- 1340
-add.period$ -- 11
-call.type$ -- 13
-change.case$ -- 66
-chr.to.int$ -- 13
-cite$ -- 17
-duplicate$ -- 225
-empty$ -- 515
-format.name$ -- 139
-if$ -- 1519
+            982 strings with 8791 characters,
+and the built_in function-call counts, 8824 in all, are:
+= -- 950
+> -- 225
+< -- 215
++ -- 247
+- -- 73
+* -- 564
+:= -- 1514
+add.period$ -- 14
+call.type$ -- 16
+change.case$ -- 73
+chr.to.int$ -- 16
+cite$ -- 22
+duplicate$ -- 269
+empty$ -- 631
+format.name$ -- 153
+if$ -- 1780
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 58
-newline$ -- 87
-num.names$ -- 39
-pop$ -- 87
+missing$ -- 68
+newline$ -- 106
+num.names$ -- 48
+pop$ -- 97
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 105
 quote$ -- 0
-skip$ -- 420
+skip$ -- 470
 stack$ -- 0
-substring$ -- 519
-swap$ -- 54
-text.length$ -- 43
-text.prefix$ -- 9
+substring$ -- 557
+swap$ -- 60
+text.length$ -- 47
+text.prefix$ -- 11
 top$ -- 0
-type$ -- 130
-warning$ -- 4
-while$ -- 68
-width$ -- 18
-write$ -- 180
-(There were 4 warnings)
+type$ -- 163
+warning$ -- 6
+while$ -- 78
+width$ -- 21
+write$ -- 223
+(There were 7 warnings)
