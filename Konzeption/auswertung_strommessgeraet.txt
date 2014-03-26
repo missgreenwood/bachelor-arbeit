@@ -1,0 +1,16 @@
+Auswertung Strommessgerät
+-------------------------
+
+# Zugriff
+
+1. Web-Interface
+2. Windows-Tools
+3. DB-Dump (SQLite)
+4. evtl. UPNP-Interface
+
+# Schritte
+
+1. Neuer Benchmark-Run, für Datengrundlage 
+2. Tools der Reihe nach ausprobieren 
+3. Messwerte auslesen und in rpiWerte einlesen 
+4. Messwerte matchen (über Timestamp)
