@@ -55,15 +55,40 @@
 			"file": "todo130314.txt",
 			"settings":
 			{
-				"buffer_size": 634,
+				"buffer_size": 1045,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "grei14/Dokumentation/Latex/Bib/grei14.bib",
+			"file": "src/hpl-2.1.sh",
 			"settings":
 			{
-				"buffer_size": 7718,
+				"buffer_size": 13177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/STREAM.sh",
+			"settings":
+			{
+				"buffer_size": 17789,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Konzeption/auswertung_strommessgeraet.txt",
+			"settings":
+			{
+				"buffer_size": 986,
+				"line_ending": "Unix",
+				"name": "Auswertung Strommessgerät"
+			}
+		},
+		{
+			"file": "/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 1015,
 				"line_ending": "Unix"
 			}
 		}
@@ -109,8 +134,10 @@
 	},
 	"file_history":
 	[
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/top500.txt",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/top500.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/whets_rl301113.txt",
@@ -175,7 +202,6 @@
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-active_rpis.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM-active_rpis.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-powered_rpis.txt",
-		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_db140312.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_db140312.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_shutdown140312.txt",
@@ -235,8 +261,7 @@
 		"/Users/judith/Documents/Version3/csv_extract.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/Version 03.sublime-project",
 		"/Users/judith/Documents/Version3/Sources/www.muenchen.de-2013-11.csv",
-		"/Users/judith/Documents/Version3/xen_eval_source.py",
-		"/Users/judith/Documents/Version3/xen_search.py"
+		"/Users/judith/Documents/Version3/xen_eval_source.py"
 	],
 	"find":
 	{
@@ -258,6 +283,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"www.",
 			"cox",
 			"keipert",
 			"al",
@@ -364,7 +390,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -373,35 +399,36 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 634,
+						"buffer_size": 1045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								634,
-								634
+								669,
+								669
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "grei14/Dokumentation/Latex/Bib/grei14.bib",
+					"file": "src/hpl-2.1.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7718,
+						"buffer_size": 13177,
 						"regions":
 						{
 						},
@@ -414,10 +441,101 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 21.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/STREAM.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 35.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Konzeption/auswertung_strommessgeraet.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								760,
+								760
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Auswertung Strommessgerät",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3060.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								893,
+								893
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

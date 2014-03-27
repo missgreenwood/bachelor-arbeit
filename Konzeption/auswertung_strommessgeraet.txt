@@ -4,13 +4,32 @@ Auswertung Strommessgerät
 # Zugriff
 
 1. Web-Interface
-2. Windows-Tools
+-> IP 10.153.7.252 bzw. messgeraet0.nm.ifi.lmu.de (gleiches Subnetz/Broadcast-Domäne)
+-> hauptsächlich für Management-Zwecke (Settings)
+-> Abrufbare Status-Informationen (jeweils aktuell): Voltage in V, Current in A, Power in W, Energy in kWh
+-> Account-Informationen: 
+Server Name: Server 1
+Passwort: rpiWerte
+
+2. Windows-Tool
+-> auf VM einloggen von pcnm15 aus mit "rdesktop -k de -g 1024x768 messi0.nm.ifi.lmu.de -u labuser"
+-> Account-Informationen: 
+Benutzername: root (z.B. SW-Installation)
+Passwort: Eg1PfaP!
+
+Benutzername: labuser
+Passwort: apollo11
+
+-> Dateien übertragen: SCP/Putty
+-> SW installieren: benötigte Dateien hochladen auf pcnm15
+-> übertragen auf VM mit scp
+
 3. DB-Dump (SQLite)
 4. evtl. UPNP-Interface
 
 # Schritte
 
-1. Neuer Benchmark-Run, für Datengrundlage 
-2. Tools der Reihe nach ausprobieren 
+1. Neuer Benchmark-Run, alle Daten runterladen z. Vergleich 
+2. Tools der Reihe nach ausprobieren, evtl. SW auf Datenträger checken 
 3. Messwerte auslesen und in rpiWerte einlesen 
 4. Messwerte matchen (über Timestamp)
