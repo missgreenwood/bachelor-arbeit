@@ -1,18 +1,26 @@
-Auswertung Strommessgerät
+Ergebnisse Strommessgerät
 -------------------------
 
-# Zugriff
+## Zeitsynchronisation
+Damit die NTP-Zeitkorrektur ordnungsgemäß funktioniert, muss die Steckdosenleiste mit den Internet verbunden und ein gültiger DNS-Server eingetragen sein -> evtl. checken 
+
+## Zugriffstools 
 
 1. Web-Interface
 -> IP 10.153.7.252 bzw. messgeraet0.nm.ifi.lmu.de (gleiches Subnetz/Broadcast-Domäne)
--> hauptsächlich für Management-Zwecke (Settings)
--> Abrufbare Status-Informationen (jeweils aktuell): Voltage in V, Current in A, Power in W, Energy in kWh
 -> Account-Informationen: 
 Server Name: Server 1
 Passwort: rpiWerte
 
-2. Windows-Tool
--> auf VM einloggen von pcnm15 aus mit "rdesktop -k de -g 1024x768 messi0.nm.ifi.lmu.de -u labuser"
+ERGEBNISSE: 
+- hauptsächlich für Management-Zwecke (Settings), außer man legt einen Account an, dann auch Internet-Zugriff möglich 
+- Abrufbare Status-Informationen (jeweils aktuell): Voltage in V, Current in A, Power in W, Energy in kWh
+- man kann sich nur einloggen, wenn gerade keine andere Session aktiv ist (auch SW -> man muss jedes Mal das Gerät deaktivieren!)
+
+
+2. Windows-Software
+-> auf pcnm15 (Lehrstuhlnetz) einloggen mit "ssh greif@pcnm15.lab.ifi.lmu.de"
+-> auf VM einloggen mit "rdesktop -kde -g 1280x720 messi0.nm.ifi.lmu.de -u labuser"
 -> Account-Informationen: 
 Benutzername: root (z.B. SW-Installation)
 Passwort: Eg1PfaP!
@@ -24,12 +32,38 @@ Passwort: apollo11
 -> SW installieren: benötigte Dateien hochladen auf pcnm15
 -> übertragen auf VM mit scp
 
+ERGEBNISSE: 
+- es gibt eine Kommandozeilenoption unter Windows, aber nur eingeschränkt (hauptsächlich Geräte-Config, kein Auslesen von Daten)
+- messgeraet0 ist als LAN-Gerät eingetragen 
+- man kann die Messwerte als xls exportieren (2 Timestamps Anfang und Ende, Energieaufnahme in W) 
+- Programm macht nach jedem Schließen reset der Einstellungen, evtl. muss man pm.exe jedes Mal händisch beenden 
+-> immer "automatisch neue Messungen aufzeichnen" anklicken, kleinstmöglicher Messabstand (2 s)  
+
 3. DB-Dump (SQLite)
+- wird grds. im Vz C:\Program Data\PowerManagerDatabase abgelegt 
+
+ERGEBNISSE:
+- besser als xls-Export, da mehr Timestamps 
+- auslesen mit SQLite-Manager (Firefox-Addon): Tabelle LogValues in DB-Dump mit Attributen
+
+
+Stamp INTEGER: Timestamp 
+Vrms DOUBLE: Root-Mean-Square-Spannung in V 
+Irms DOUBLE: Root-Mean-Square-Stromstärke in A
+P DOUBLE: Leistung in W
+Q DOUBLE: ?
+S DOUBLE: ? 
+Cosf DOUBLE: ? (hier immer 1) 
+Fq DOUBLE: Frequenz in Hz (hier immer 50) 
+R DOUBLE: Widerstand in Ohm 
+X DOUBLE: ? (hier immer 0) 
+DeviceID INTEGER: hier immer -1809252057
+PRIMARY KEY (DeviceID, Stamp)
+
+-> exportieren z.B. als CSV/SQL 
+-> wichtige Werte: Stamp (Attr. 1), P (Attr. 4)  
+
 4. evtl. UPNP-Interface
-
-# Schritte
-
-1. Neuer Benchmark-Run, alle Daten runterladen z. Vergleich 
-2. Tools der Reihe nach ausprobieren, evtl. SW auf Datenträger checken 
-3. Messwerte auslesen und in rpiWerte einlesen 
-4. Messwerte matchen (über Timestamp)
+- Port 5000 offen (Strommessgerät) -> wahrscheinlich UPNP aktiv, kann mit UPNP-Browser ausgelesen werden; es gibt ein UPNP-Discovery-Protokoll mit Selbstbeschreibung
+- auslesen vermutlich möglich GUpnp (Linux)/Miranda (Mac)/Wireshark (Mac/Linux)/UPNP-Inspector (Windows)
+- Power Manager-Software greift über einen separaten Port auf die EGM-PWM-LAN zu, welcher auf einen anderen Port abgeändert werden kann (Standard-Port 5000). Port 80 darf für die Software nicht gewählt werden, da dieser von dem Webserver belegt ist. Zur Verwendung der SW muss gewählter Port im Netzwerk freigegeben sein.

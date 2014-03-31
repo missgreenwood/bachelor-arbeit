@@ -52,43 +52,19 @@
 	"buffers":
 	[
 		{
-			"file": "todo130314.txt",
+			"file": "src/parseEnergyValues.sh",
 			"settings":
 			{
-				"buffer_size": 1045,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/hpl-2.1.sh",
-			"settings":
-			{
-				"buffer_size": 13177,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/STREAM.sh",
-			"settings":
-			{
-				"buffer_size": 17789,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Konzeption/auswertung_strommessgeraet.txt",
-			"settings":
-			{
-				"buffer_size": 986,
+				"buffer_size": 203,
 				"line_ending": "Unix",
-				"name": "Auswertung Strommessgerät"
+				"name": "#!/bin/bash"
 			}
 		},
 		{
-			"file": "/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+			"file": "sources/measurements_updated.sql",
 			"settings":
 			{
-				"buffer_size": 1015,
+				"buffer_size": 8040,
 				"line_ending": "Unix"
 			}
 		}
@@ -134,15 +110,23 @@
 	},
 	"file_history":
 	[
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/writeEnergyValues.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM_final.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1_final.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpltest.sh",
+		"/Users/judith/.bash_profile",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-testskript.sh",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM.sh",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
 		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/top500.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/whets_rl301113.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/whets_rl_log301113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1.sh",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/linpack_rl301113.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/linpack_rl_log301113.txt",
 		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
@@ -243,7 +227,6 @@
 		"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/results/modify.py",
 		"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/src/csv_scheme.py",
 		"/Users/judith/Documents/Job/MuenchenDe/404Fehlerreduktion/FinalVersion/sources/www.muenchen.de-2013-12.csv",
-		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/csv_extract.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/xen_eval_source.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/Sources/csv_parsed1.csv",
@@ -254,14 +237,7 @@
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/xen_extract.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/Sources/csv_parsed.csv",
 		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract.py",
-		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/xen_extract.py",
-		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract1.py",
-		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract2.py",
-		"/Users/judith/Documents/Version3/xen_extract.py",
-		"/Users/judith/Documents/Version3/csv_extract.py",
-		"/Users/judith/Documents/Job/MuenchenDe/Version3/Version 03.sublime-project",
-		"/Users/judith/Documents/Version3/Sources/www.muenchen.de-2013-11.csv",
-		"/Users/judith/Documents/Version3/xen_eval_source.py"
+		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/xen_extract.py"
 	],
 	"find":
 	{
@@ -390,119 +366,30 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "todo130314.txt",
+					"file": "src/parseEnergyValues.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1045,
+						"buffer_size": 203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								669,
-								669
+								203,
+								203
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/hpl-2.1.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13177,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 21.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/STREAM.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17789,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 35.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Konzeption/auswertung_strommessgeraet.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 986,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								760,
-								760
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Auswertung Strommessgerät",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"auto_name": "#!/bin/bash",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -512,30 +399,30 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "sources/measurements_updated.sql",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1015,
+						"buffer_size": 8040,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								893,
-								893
+								4862,
+								4878
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 2280.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -624,7 +511,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 272.0,
+	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
