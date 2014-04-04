@@ -4,18 +4,6 @@
 		"selected_items":
 		[
 			[
-				"rpis",
-				"rpis"
-			],
-			[
-				"Load",
-				"LoadGeneratorConfiguration"
-			],
-			[
-				"text-",
-				"text-decoration"
-			],
-			[
 				"FILE_RE",
 				"FILE_REFINED_RESULT"
 			],
@@ -52,19 +40,18 @@
 	"buffers":
 	[
 		{
-			"file": "src/parseEnergyValues.sh",
+			"file": "todo130314.txt",
 			"settings":
 			{
-				"buffer_size": 203,
-				"line_ending": "Unix",
-				"name": "#!/bin/bash"
+				"buffer_size": 627,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "sources/measurements_updated.sql",
+			"file": "Konzeption/auswertung_strommessgeraet.txt",
 			"settings":
 			{
-				"buffer_size": 8040,
+				"buffer_size": 3050,
 				"line_ending": "Unix"
 			}
 		}
@@ -110,123 +97,27 @@
 	},
 	"file_history":
 	[
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/writeEnergyValues.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo130314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM_final.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1_final.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpltest.sh",
-		"/Users/judith/.bash_profile",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-testskript.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAM.sh",
-		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/top500.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/whets_rl301113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/whets_rl_log301113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/linpack_rl301113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse131201/linpack_rl_log301113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/streamplot2.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/hplplot1.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/hplplot2.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/test.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/parseForTabular.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/minmaxavg.py",
-		"/Users/judith/Downloads/stud77/Dokumentation/Latex/kapitel1.tex",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_shutdown140321.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_140321.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_140322.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_shutdown140322.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/tmp16.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/minmaxavg.sh",
-		"/Users/judith/Downloads/stud77/Dokumentation/Latex/stud77.tex",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_db140321.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse140320/stream240314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Raspberry_Pi_Benchmarks/stream/stream.c",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/startBenchmarks.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/loadGeneratorConfigStream.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/loadGeneratorConfigHpl.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/measurements_updated.sql",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/STREAMfinal.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hpl-2.1final.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/fehlerquellen_cluster.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hplplot.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/.gitignore",
-		"/Users/judith/Documents/404Fehlerreduktion/.gitignore",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/streamplot.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/streamplot2.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/hplplot2.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/xaa",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/xab",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/xac",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_shutdown140318.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_140318.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_db140318.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/streamplot2.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/streamplot1.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hplplot2.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hplplot1.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/HPL1",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/STREAM1",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Gnuplot/HPL2",
-		"/Users/judith/Desktop/testfile4.txt",
-		"/Users/judith/Desktop/testfile2.txt",
-		"/Users/judith/Desktop/testfile3.txt",
-		"/Users/judith/Desktop/testfile1.txt",
-		"/Users/judith/Desktop/stream2.txt",
-		"/Users/judith/Desktop/stream1.txt",
-		"/Users/judith/Desktop/testfile.txt",
-		"/Users/judith/Desktop/testfile3.tc´xt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM-powered_rpis.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-active_rpis.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM-active_rpis.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-powered_rpis.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_db140312.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/hpl-2.1_db140312.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_shutdown140312.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/writeResultsHpl.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/measurements.sql",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo100314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/STREAM_140312.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/struktur_stream_shutdown_output.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/struktur_stream_output.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/struktur_hplinpack_output.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Konzeption/DB-testkonfigurationen.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/archive/executeBenchmarkOnAllRPis.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo060314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/src/machinefile",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/sources/struktur_hplinpack_output.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Ergebnisse07-03-14/stream070314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Beispielskripte/shutdownRPis.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Beispielskripte/mountSrvOnAllRpis.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/Beispielskripte/createMachinefile.sh",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo030314.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/komponentendiagramme.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo280114.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo210114.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo140114.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo271113.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/grei14/Dokumentation/Latex/readme-stud77.txt",
-		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo051213.txt",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/404.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/search.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/archive.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/sexyfem/footer.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/twentyfourteen/index.php",
+		"/Users/judith/Documents/Bachelor-Arbeit/Strommessgeraet/miranda-1.3/src/portmapper.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/fehlerquellen_cluster.txt",
+		"/private/var/folders/jc/p7qh78k50b385jcwdhtv6n7w0000gn/T/fz3temp-1/index.php",
+		"/private/var/folders/jc/p7qh78k50b385jcwdhtv6n7w0000gn/T/fz3temp-1/page.php",
+		"/private/var/folders/jc/p7qh78k50b385jcwdhtv6n7w0000gn/T/fz3temp-1/functions.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/single.php",
+		"/Users/judith/Documents/Dropbox/JudithSascha/LeaHampel/htmltemplate/iteration01/index.html",
+		"/Users/judith/Documents/Dropbox/JudithSascha/LeaHampel/FRAGEN.txt",
+		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/.htaccess.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/functions.php",
+		"/Users/judith/Downloads/wordpress/wp-config-sample.php",
+		"/Users/judith/Documents/LeaHampel/struktur.txt",
+		"/Users/judith/Documents/LeaHampel/vorgehensmodell.txt",
 		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/twentyfourteen/style.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/sexyfem/index.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/twentyfourteen/css/editor-style.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/twentythirteen/style.css",
 		"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/index.php",
 		"/Users/judith/Documents/Dropbox/JudithSascha/LeaHampel/vorgehensmodell.txt",
 		"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/results/modify.py",
 		"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/src/csv_scheme.py",
 		"/Users/judith/Documents/Job/MuenchenDe/404Fehlerreduktion/FinalVersion/sources/www.muenchen.de-2013-12.csv",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/csv_extract.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/xen_eval_source.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/Sources/csv_parsed1.csv",
@@ -237,18 +128,32 @@
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/xen_extract.py",
 		"/Users/judith/Documents/Job/MuenchenDe/Version3/Sources/csv_parsed.csv",
 		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract.py",
-		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/xen_extract.py"
+		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/xen_extract.py",
+		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract1.py",
+		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version3/csv_extract2.py",
+		"/Users/judith/Documents/Version3/xen_extract.py",
+		"/Users/judith/Documents/Version3/csv_extract.py",
+		"/Users/judith/Documents/Job/MuenchenDe/Version3/Version 03.sublime-project",
+		"/Users/judith/Documents/Version3/Sources/www.muenchen.de-2013-11.csv",
+		"/Users/judith/Documents/Version3/xen_eval_source.py",
+		"/Users/judith/Documents/Version3/xen_search.py",
+		"/Users/judith/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version2/eval_xen.py",
+		"/Applications/Sublime Text.app/Contents/MacOS/changelog.txt",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/EasyMotion/Default (OSX).sublime-keymap",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/EasyMotion/EasyMotion.sublime-settings",
+		"/Users/judith/Documents/Dropbox/Bachelor-Arbeit/todo051213.txt",
+		"/Users/judith/Library/Application Support/Sublime Text 3/Packages/sublemacspro/Default.sublime-keymap"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
 		"height": 95.0,
 		"where_history":
 		[
-			"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah",
+			"/Users/judith/Documents/Dropbox/JudithSascha/LeaHampel/htmltemplate/iteration01",
 			"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/src",
 			"/Users/judith/Documents/Job/MuenchenDe/404Fehlerreduktion/FinalVersion/",
 			"/Users/judith/Documents/Job/MuenchenDe/404Fehlerreduktion/FinalVersion/src"
@@ -259,71 +164,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"www.",
-			"cox",
-			"keipert",
-			"al",
-			"$n",
-			"Active RPis",
-			"Active RPis: 20/Powered RPis: 20",
-			"color",
-			"Triad: ",
-			"Add: ",
-			"Copy: ",
-			"Unixtime: ",
-			"Scale: ",
-			"Triad: ",
-			"judith",
-			"Unixtime",
-			"results",
-			"unixtime",
-			"-",
-			"judith",
-			"nymphomain",
-			"/results",
-			"	ENUM_Experiment",
-			"ExperimentSuiteConfiguration",
-			"experimentsuiteconfiguration",
-			"ExperimentSuiteConfiguration",
-			"ENUM",
-			"execution",
-			"ExperimentSuite",
-			"measurementvalue",
-			"loadgenerator",
-			"experimentsuiteconfiguration",
-			"loadgeneratorconfiguration",
-			"experimentsuiteconfiguration",
-			"loadgeneratorconfigurationid",
-			"loadgeneratorconfiguration",
-			"loadgeneratorconfigurationkey",
-			"loadgeneratorconfiguration",
-			"loadgenerator",
-			"ENUM",
-			"loadgeneratorconfiguration",
-			"loadgeneratorconfigurationid",
-			"loadgeneratorconfiguration",
-			"experimentsuiteconfigurationkey",
-			"loadgeneratorconfiguration",
-			"loadgenerator",
-			"experimentsuite",
-			"objective",
-			"granularitylevel",
-			"experimentsuiteconfiguration",
-			"experimentsuite",
-			"loadgenerator",
-			"measurementvalue",
-			"experimentsuite",
-			"loadgeneratorconfiguration",
-			"numberOfActiveRPis",
-			"Wichmann",
-			"wich",
-			"linpack",
-			"{}}",
-			"Morawski",
-			"Kohm",
-			"kohm",
-			"\\|",
-			"header",
+			"iherer",
+			"localhost",
 			"wwww.muenchen.de-2013-12",
 			"SOURCE_FILE",
 			"www.muenchen.de-2013-11.csv",
@@ -344,15 +186,12 @@
 			"aufteilen",
 			"Ergebnisse"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": true,
 		"replace_history":
 		[
-			"",
-			"12",
-			"",
 			"www.muenchen.de-2013-12.csv",
 			"www.muenchen.de-2013-11.csv",
 			"www.muenchen.de-2013-12.csv"
@@ -371,25 +210,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/parseEnergyValues.sh",
+					"file": "todo130314.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 203,
+						"buffer_size": 627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								203,
-								203
+								515,
+								515
 							]
 						],
 						"settings":
 						{
-							"auto_name": "#!/bin/bash",
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -400,29 +238,27 @@
 				},
 				{
 					"buffer": 1,
-					"file": "sources/measurements_updated.sql",
-					"semi_transient": true,
+					"file": "Konzeption/auswertung_strommessgeraet.txt",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8040,
+						"buffer_size": 3050,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4862,
-								4878
+								397,
+								397
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 2280.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -433,7 +269,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 36.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -469,7 +305,7 @@
 	"project": "bachelor-arbeit.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -477,10 +313,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"func",
-				"functions.php"
-			]
 		],
 		"width": 0.0
 	},
@@ -491,7 +323,11 @@
 		[
 			[
 				"",
-				"~/Documents/Dropbox/Job/MuenchenDe/404Fehlerreduktion/Version4/404-fehlerreduktion.sublime-workspace"
+				"~/Documents/Dropbox/JudithSascha/LeaHampel/lea-hampel.sublime-project"
+			],
+			[
+				"sey",
+				"~/Documents/LeaHampel/sexyfem.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -511,7 +347,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 235.0,
+	"side_bar_width": 266.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

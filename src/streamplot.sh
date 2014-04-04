@@ -12,7 +12,7 @@
 touch ../sources/streamplot1.txt ../sources/streamplot2.txt ../sources/tmp1.txt ../sources/tmp2.txt
 
 # set number of usable rpis
-rpis=16
+rpis=19
 echo "Usable RPis: $rpis" 
 
 linecount=$(cat ../sources/STREAM_db`date +%y%m%d`.txt | wc -l)
@@ -22,7 +22,7 @@ echo "Linecount: $linecount"
 half=$((linecount / 2))
 split -l $half ../sources/STREAM_db`date +%y%m%d`.txt
 
-# write to plot files sources/hplplot1.txt sources/hplplot2.txt
+# write to plot files sources/streamplot1.txt sources/streamplot2.txt
 cat xaa > ../sources/streamplot1.txt
 cat xab > ../sources/streamplot2.txt
 
@@ -41,36 +41,42 @@ split -l $splitter ../sources/tmp2.txt plot2
 
 # insert number of active RPis as last column in tmp split files
 # write to plot files 
-sed -e 's/$/ 16/' plot1aa > ../sources/streamplot1.txt
-sed -e 's/$/ 15/' plot1ab >> ../sources/streamplot1.txt
-sed -e 's/$/ 14/' plot1ac >> ../sources/streamplot1.txt
-sed -e 's/$/ 13/' plot1ad >> ../sources/streamplot1.txt
-sed -e 's/$/ 12/' plot1ae >> ../sources/streamplot1.txt
-sed -e 's/$/ 11/' plot1af >> ../sources/streamplot1.txt
-sed -e 's/$/ 10/' plot1ag >> ../sources/streamplot1.txt
-sed -e 's/$/ 9/' plot1ah >> ../sources/streamplot1.txt
-sed -e 's/$/ 8/' plot1ai >> ../sources/streamplot1.txt
-sed -e 's/$/ 7/' plot1aj >> ../sources/streamplot1.txt
-sed -e 's/$/ 6/' plot1ak >> ../sources/streamplot1.txt
-sed -e 's/$/ 5/' plot1al >> ../sources/streamplot1.txt
-sed -e 's/$/ 4/' plot1am >> ../sources/streamplot1.txt
-sed -e 's/$/ 3/' plot1an >> ../sources/streamplot1.txt
-sed -e 's/$/ 2/' plot1ao >> ../sources/streamplot1.txt
-sed -e 's/$/ 1/' plot1ap >> ../sources/streamplot1.txt
+sed -e 's/$/ 19/' plot1aa > ../sources/streamplot1.txt
+sed -e 's/$/ 18/' plot1ab >> ../sources/streamplot1.txt
+sed -e 's/$/ 17/' plot1ac >> ../sources/streamplot1.txt
+sed -e 's/$/ 16/' plot1ad >> ../sources/streamplot1.txt
+sed -e 's/$/ 15/' plot1ae >> ../sources/streamplot1.txt
+sed -e 's/$/ 14/' plot1af >> ../sources/streamplot1.txt
+sed -e 's/$/ 13/' plot1ag >> ../sources/streamplot1.txt
+sed -e 's/$/ 12/' plot1ah >> ../sources/streamplot1.txt
+sed -e 's/$/ 11/' plot1ai >> ../sources/streamplot1.txt
+sed -e 's/$/ 10/' plot1aj >> ../sources/streamplot1.txt
+sed -e 's/$/ 9/' plot1ak >> ../sources/streamplot1.txt
+sed -e 's/$/ 8/' plot1al >> ../sources/streamplot1.txt
+sed -e 's/$/ 7/' plot1am >> ../sources/streamplot1.txt
+sed -e 's/$/ 6/' plot1an >> ../sources/streamplot1.txt
+sed -e 's/$/ 5/' plot1ao >> ../sources/streamplot1.txt
+sed -e 's/$/ 4/' plot1ap >> ../sources/streamplot1.txt
+sed -e 's/$/ 3/' plot1aq >> ../sources/streamplot1.txt
+sed -e 's/$/ 2/' plot1ar >> ../sources/streamplot1.txt
+sed -e 's/$/ 1/' plot1as >> ../sources/streamplot1.txt
 
-sed -e 's/$/ 16/' plot2aa > ../sources/streamplot2.txt
-sed -e 's/$/ 15/' plot2ab >> ../sources/streamplot2.txt
-sed -e 's/$/ 14/' plot2ac >> ../sources/streamplot2.txt
-sed -e 's/$/ 13/' plot2ad >> ../sources/streamplot2.txt
-sed -e 's/$/ 12/' plot2ae >> ../sources/streamplot2.txt
-sed -e 's/$/ 11/' plot2af >> ../sources/streamplot2.txt
-sed -e 's/$/ 10/' plot2ag >> ../sources/streamplot2.txt
-sed -e 's/$/ 9/' plot2ah >> ../sources/streamplot2.txt
-sed -e 's/$/ 8/' plot2ai >> ../sources/streamplot2.txt
-sed -e 's/$/ 7/' plot2aj >> ../sources/streamplot2.txt
-sed -e 's/$/ 6/' plot2ak >> ../sources/streamplot2.txt
-sed -e 's/$/ 5/' plot2al >> ../sources/streamplot2.txt
-sed -e 's/$/ 4/' plot2am >> ../sources/streamplot2.txt
+sed -e 's/$/ 19/' plot2aa > ../sources/streamplot2.txt
+sed -e 's/$/ 18/' plot2ab >> ../sources/streamplot2.txt
+sed -e 's/$/ 17/' plot2ac >> ../sources/streamplot2.txt
+sed -e 's/$/ 16/' plot2ad >> ../sources/streamplot2.txt
+sed -e 's/$/ 15/' plot2ae >> ../sources/streamplot2.txt
+sed -e 's/$/ 14/' plot2af >> ../sources/streamplot2.txt
+sed -e 's/$/ 13/' plot2ag >> ../sources/streamplot2.txt
+sed -e 's/$/ 12/' plot2ah >> ../sources/streamplot2.txt
+sed -e 's/$/ 11/' plot2ai >> ../sources/streamplot2.txt
+sed -e 's/$/ 10/' plot2aj >> ../sources/streamplot2.txt
+sed -e 's/$/ 9/' plot2ak >> ../sources/streamplot2.txt
+sed -e 's/$/ 8/' plot2al >> ../sources/streamplot2.txt
+sed -e 's/$/ 7/' plot2am >> ../sources/streamplot2.txt
+sed -e 's/$/ 6/' plot2an >> ../sources/streamplot2.txt
+sed -e 's/$/ 5/' plot2ao >> ../sources/streamplot2.txt
+sed -e 's/$/ 4/' plot2ap >> ../sources/streamplot2.txt
 sed -e 's/$/ 3/' plot2an >> ../sources/streamplot2.txt
 sed -e 's/$/ 2/' plot2ao >> ../sources/streamplot2.txt
 sed -e 's/$/ 1/' plot2ap >> ../sources/streamplot2.txt

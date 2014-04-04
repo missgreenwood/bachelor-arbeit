@@ -1,0 +1,384 @@
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           16
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     732.4 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            4330.0   0.119163     0.118245     0.120672
+Scale:           3301.2   0.156847     0.155093     0.159352
+Add:             4447.1   0.174637     0.172698     0.176729
+Triad:           4300.0   0.179485     0.178606     0.180032
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395419961
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           15
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     686.6 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            4069.2   0.119588     0.117960     0.122509
+Scale:           3092.1   0.156003     0.155236     0.158819
+Add:             4169.3   0.173856     0.172690     0.175205
+Triad:           4037.8   0.179734     0.178313     0.181196
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395419987
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           14
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     640.9 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            3797.4   0.118704     0.117974     0.119254
+Scale:           2888.7   0.155904     0.155089     0.156989
+Add:             3890.0   0.173941     0.172751     0.176409
+Triad:           3777.0   0.179229     0.177918     0.180690
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420013
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           13
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     595.1 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            3535.9   0.118447     0.117651     0.119325
+Scale:           2687.0   0.156090     0.154821     0.157249
+Add:             3616.0   0.174580     0.172567     0.180823
+Triad:           3504.9   0.179147     0.178035     0.180678
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420038
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           12
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     549.3 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            3233.5   0.119951     0.118756     0.124552
+Scale:           2466.2   0.157763     0.155706     0.161690
+Add:             3323.2   0.174163     0.173327     0.175133
+Triad:           3216.7   0.181705     0.179065     0.187363
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420064
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           11
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     503.5 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            2989.1   0.118899     0.117763     0.120214
+Scale:           2274.4   0.155992     0.154763     0.157449
+Add:             3061.0   0.173839     0.172490     0.175126
+Triad:           2965.3   0.179402     0.178058     0.180342
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420088
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =           10
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     457.8 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            2717.6   0.118698     0.117751     0.120167
+Scale:           2068.4   0.156005     0.154708     0.157679
+Add:             2787.6   0.173319     0.172190     0.174681
+Triad:           2695.0   0.178762     0.178105     0.180112
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420111
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            9
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     412.0 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            2449.6   0.118541     0.117569     0.119518
+Scale:           1861.2   0.155639     0.154741     0.156495
+Add:             2505.4   0.173253     0.172431     0.174090
+Triad:           2429.4   0.179024     0.177818     0.180401
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420135
+----------------------------------------------
+Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            8
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     366.2 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            2187.4   0.117927     0.117033     0.119271
+Scale:           1660.8   0.154927     0.154147     0.155400
+Add:             2244.1   0.172277     0.171115     0.173259
+Triad:           2171.8   0.177683     0.176811     0.178383
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420156
+----------------------------------------------
+  Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            7
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     320.4 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            1909.3   0.117998     0.117322     0.119298
+Scale:           1452.1   0.154659     0.154263     0.156223
+Add:             1955.2   0.172279     0.171851     0.173498
+Triad:           1895.8   0.178220     0.177237     0.179274
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420178
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            6
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     274.7 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            1636.5   0.118299     0.117325     0.119388
+Scale:           1240.8   0.155217     0.154741     0.156617
+Add:             1673.3   0.173004     0.172113     0.174403
+Triad:           1620.9   0.178313     0.177674     0.180088
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420201
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            5
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     228.9 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            1363.7   0.118242     0.117330     0.119753
+Scale:           1036.7   0.155487     0.154334     0.157119
+Add:             1397.7   0.172435     0.171707     0.173858
+Triad:           1353.9   0.178045     0.177265     0.179303
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420221
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            4
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     183.1 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:            1098.3   0.117361     0.116546     0.118328
+Scale:            834.9   0.154292     0.153318     0.156102
+Add:             1122.3   0.171531     0.171081     0.173003
+Triad:           1087.2   0.177717     0.176594     0.180245
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420241
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            3
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is     137.3 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:             820.9   0.117524     0.116949     0.118893
+Scale:            623.2   0.154686     0.154035     0.156055
+Add:              839.2   0.172331     0.171584     0.173474
+Triad:            812.2   0.177739     0.177301     0.179423
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420260
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            2
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is      91.6 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:             551.1   0.116600     0.116125     0.117561
+Scale:            417.5   0.153925     0.153283     0.155595
+Add:              563.1   0.170947     0.170497     0.172088
+Triad:            544.8   0.177082     0.176217     0.177955
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420282
+----------------------------------------------
+ Double precision appears to have 16 digits of accuracy
+ Assuming 8 bytes per DOUBLE PRECISION word
+----------------------------------------------
+ Number of processors =            1
+ Array size =    2000000
+ Offset     =          0
+ The total memory requirement is      45.8 MB (     45.8MB/task)
+ You are running each test  10 times
+ --
+ The *best* time for each test is used
+ *EXCLUDING* the first and last iterations
+ ----------------------------------------------------
+ Your clock granularity/precision appears to be      1 microseconds
+ ----------------------------------------------------
+Function     Rate (MB/s)  Avg time   Min time  Max time
+Copy:             278.0   0.115415     0.115128     0.116536
+Scale:            210.4   0.152540     0.152117     0.153686
+Add:              283.2   0.169977     0.169477     0.171033
+Triad:            274.0   0.176024     0.175199     0.177433
+ -----------------------------------------------
+ Solution Validates!
+ -----------------------------------------------
+Unixtime: 1395420301
