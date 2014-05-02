@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 MAR 2014 02:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAY 2014 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -264,8 +264,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks18
 \@floatcapt=\box28
 )
-(./hyphenation.tex) (./grei14.aux (./Titel/titel-lmu.aux)
-(./Titel/erklaerung-lmu.aux) (./abstract.aux))
+(./hyphenation.tex) (./grei14.aux)
 \openout1 = `grei14.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -342,7 +341,7 @@ LaTeX Info: Redefining \nameref on input line 25.
 \openout2 = `./Titel/titel-lmu.aux'.
 
  (./Titel/titel-lmu.tex
-<./Bilder/lmu_siegel.pdf, id=192, 201.75375pt x 201.75375pt>
+<./Bilder/lmu_siegel.pdf, id=4, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
 
 <use ./Bilder/lmu_siegel.pdf>
@@ -392,11 +391,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 
-] (./grei14.toc [9])
+]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write4
 \openout4 = `grei14.toc'.
 
- [10] (./kapitel1.tex
+[9] [10
+
+
+] (./kapitel1.tex
 Kapitel 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -405,29 +410,46 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              Support for \float@addtolists may be removed from
 (scrbook)              `scrbook' soon .
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
-[1
+)
+Runaway argument?
+{http://designtoimprovelife.dk/category/s15-award2013/index-award-win\ETC.
+! File ended while scanning use of \hyper@n@rmalise.
+<inserted text> 
+                \par 
+l.44     \input{kapitel1}
+                         
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+(./kapitel2.tex [1
 
 
-
-
-]
-Overfull \hbox (5.58846pt too wide) in paragraph at lines 34--35
-\OT1/cmr/m/n/10.95 Benchmark-Programmen ab-zie-hen und die Un-ter-su-chungs-er-
-geb-nis-se verf[]alschen k[]onnen. Auch
- []
-
-[2]) (./kapitel2.tex [3] [4
+] [2
 
 
 ]
 Kapitel 2.
 
+LaTeX Warning: Reference `Benchmarks' on page 3 undefined on input line 6.
+
+
+LaTeX Warning: Reference `Aufbau' on page 3 undefined on input line 6.
+
+
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 8.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+
+LaTeX Warning: Citation `cur76' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Citation `pre11' on page 3 undefined on input line 13.
 
 
 Overfull \hbox (2.27312pt too wide) in paragraph at lines 13--14
@@ -435,828 +457,204 @@ Overfull \hbox (2.27312pt too wide) in paragraph at lines 13--14
 er-schie-de-ne Benchmark-
  []
 
-[5] [6] [7] [8]
-Underfull \hbox (badness 2790) in paragraph at lines 89--89
-[][]\OT1/cmr/m/n/9 Der hier ver-wen-de-te Sour-ce-co-de fin-det sich eben-falls
- un-ter []$\OT1/cmtt/m/n/9 http : / / www . roylongbottom . org . uk /
- []
 
-[9]
-Overfull \hbox (1.35309pt too wide) in paragraph at lines 105--105
-[][]\OT1/cmr/m/n/9 Der Quell-co-de fin-det sich un-ter []| 
- []
-
-<./Bilder/rpi_grafik.pdf, id=476, 596.66481pt x 426.23732pt>
-File: ./Bilder/rpi_grafik.pdf Graphic file (type pdf)
-
-<use ./Bilder/rpi_grafik.pdf>
-Package pdftex.def Info: ./Bilder/rpi_grafik.pdf used on input line 112.
-(pdftex.def)             Requested size: 306.22148pt x 218.75046pt.
-
-Overfull \vbox (0.94289pt too high) has occurred while \output is active []
+LaTeX Warning: Reference `RPi-Spezi' on page 3 undefined on input line 15.
 
 
-[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.2.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.128 
-       <./Bilder/rpi_grafik.pdf>]
-Overfull \hbox (3.66992pt too wide) in paragraph at lines 131--132
-\OT1/cmr/m/n/10.95 ver-brei-tet-sten sind Linux/Unix-basierte Sy-ste-me wie Fre
-eBSD und NetBSD (BSD-Varianten),
- []
-
-<./Bilder/bramble.pdf, id=573, 3661.68pt x 2746.26pt>
-File: ./Bilder/bramble.pdf Graphic file (type pdf)
-
-<use ./Bilder/bramble.pdf>
-Package pdftex.def Info: ./Bilder/bramble.pdf used on input line 142.
-(pdftex.def)             Requested size: 306.22148pt x 229.63666pt.
- [12] [13pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.2.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.158 
-       <./Bilder/bramble.pdf>]) (./kapitel3.tex [14]
-Kapitel 3.
-[15
+LaTeX Warning: Reference `Bramble-Spezi' on page 3 undefined on input line 15.
 
 
-] <./Bilder/komponentendiagramm1.pdf, id=648, 692.5875pt x 481.8pt>
-File: ./Bilder/komponentendiagramm1.pdf Graphic file (type pdf)
-
-<use ./Bilder/komponentendiagramm1.pdf>
-Package pdftex.def Info: ./Bilder/komponentendiagramm1.pdf used on input line 3
-6.
-(pdftex.def)             Requested size: 437.46118pt x 304.32957pt.
- [16]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 47.
-
-Overfull \hbox (3.21527pt too wide) in paragraph at lines 49--51
-\OT1/cmtt/m/n/10.95 host \OT1/cmr/m/n/10.95 beim Ver-such, von \OT1/cmtt/m/n/10
-.95 careme \OT1/cmr/m/n/10.95 oder ei-nem an-de-ren RPi-Node aus ei-ne SSH-Verb
-indung
- []
-
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.54 
-      <./Bilder/komponentendiagramm1.pdf>]
-<./Bilder/aktivitaetsdiagramm1.pdf, id=675, 1027.84pt x 770.88pt>
-File: ./Bilder/aktivitaetsdiagramm1.pdf Graphic file (type pdf)
-
-<use ./Bilder/aktivitaetsdiagramm1.pdf>
-Package pdftex.def Info: ./Bilder/aktivitaetsdiagramm1.pdf used on input line 7
-1.
-(pdftex.def)             Requested size: 513.91875pt x 385.43906pt.
-
-Overfull \hbox (76.45757pt too wide) in paragraph at lines 71--71
- [][] 
- []
-
-[18] [19pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.3.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.98 			\item L
-               oggen der Egebnisdaten. <./Bilder/aktivitaetsdiagramm1.pdf>]
-Overfull \hbox (14.95435pt too wide) in paragraph at lines 104--106
-\OT1/cmr/m/n/10.95 Dazu wur-den drei Shell-skrip-te \OT1/cmtt/m/n/10.95 startBe
-nchmarks.sh \OT1/cmr/m/n/10.95 (Schrit-te 1--3), \OT1/cmtt/m/n/10.95 STREAM.sh 
-\OT1/cmr/m/n/10.95 und \OT1/cmtt/m/n/10.95 hpl-2.1.sh
- []
+LaTeX Warning: Reference `Aufbau' on page 3 undefined on input line 15.
 
 
-Overfull \hbox (9.90494pt too wide) in paragraph at lines 117--118
-\OT1/cmr/m/n/10.95 ge-legt, was durch zwei wei-te-re Shell-skrip-te \OT1/cmtt/m
-/n/10.95 loadGeneratorConfigHpl.sh \OT1/cmr/m/n/10.95 und \OT1/cmtt/m/n/10.95 l
-oadGenerator-
- []
+LaTeX Warning: Citation `rec06' on page 3 undefined on input line 17.
 
-[20]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 130.
 
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Warning: Citation `rec06' on page 3 undefined on input line 20.
+
+[3]
+
+LaTeX Warning: Citation `rec06' on page 4 undefined on input line 29.
+
+
+LaTeX Warning: Citation `rec06' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `RPi-Spezi' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `Bramble-Spezi' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `Linpack' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `Whetstone' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `STREAM' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Citation `rec06' on page 4 undefined on input line 32.
+
+
+LaTeX Warning: Citation `don03' on page 4 undefined on input line 39.
+
+
+LaTeX Warning: Citation `rec06' on page 4 undefined on input line 44.
+
+[4]
+
+LaTeX Warning: Citation `cur76' on page 5 undefined on input line 46.
+
+
+LaTeX Warning: Citation `wei90' on page 5 undefined on input line 50.
+
+
+LaTeX Warning: Reference `STREAM RPi' on page 5 undefined on input line 50.
+
+
+LaTeX Warning: Citation `don03' on page 5 undefined on input line 56.
+
+
+LaTeX Warning: Citation `wei90' on page 5 undefined on input line 56.
+
+
+LaTeX Warning: Citation `don03' on page 5 undefined on input line 56.
+
+
+LaTeX Warning: Citation `don03' on page 5 undefined on input line 56.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 61.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
-
-<./Bilder/hpl1.pdf, id=737, 361.35pt x 252.945pt>
-File: ./Bilder/hpl1.pdf Graphic file (type pdf)
- <use ./Bilder/hpl1.pdf>
-Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 163.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/hpl2.pdf, id=738, 361.35pt x 252.945pt>
-File: ./Bilder/hpl2.pdf Graphic file (type pdf)
- <use ./Bilder/hpl2.pdf>
-Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 169.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/hpl3.pdf, id=739, 361.35pt x 252.945pt>
-File: ./Bilder/hpl3.pdf Graphic file (type pdf)
- <use ./Bilder/hpl3.pdf>
-Package pdftex.def Info: ./Bilder/hpl3.pdf used on input line 175.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/hpl4.pdf, id=740, 361.35pt x 252.945pt>
-File: ./Bilder/hpl4.pdf Graphic file (type pdf)
- <use ./Bilder/hpl4.pdf>
-Package pdftex.def Info: ./Bilder/hpl4.pdf used on input line 181.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[21] <./Bilder/stream1.pdf, id=765, 361.35pt x 252.945pt>
-File: ./Bilder/stream1.pdf Graphic file (type pdf)
-
-<use ./Bilder/stream1.pdf>
-Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 192.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/stream2.pdf, id=766, 361.35pt x 252.945pt>
-File: ./Bilder/stream2.pdf Graphic file (type pdf)
-
-<use ./Bilder/stream2.pdf>
-Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 198.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/stream3.pdf, id=767, 361.35pt x 252.945pt>
-File: ./Bilder/stream3.pdf Graphic file (type pdf)
-
-<use ./Bilder/stream3.pdf>
-Package pdftex.def Info: ./Bilder/stream3.pdf used on input line 204.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-<./Bilder/stream4.pdf, id=768, 361.35pt x 252.945pt>
-File: ./Bilder/stream4.pdf Graphic file (type pdf)
-
-<use ./Bilder/stream4.pdf>
-Package pdftex.def Info: ./Bilder/stream4.pdf used on input line 210.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-) (./kapitel4.tex [22pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.3.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4}pdfTeX warning (ext4): destination
- with the same identifier (name{figure.3.4}) has been already used, duplicate i
-gnored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4} <./Bilder/hpl1.pdf> <./Bilder/hpl
-2.pdf>] [23pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.3.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4}pdfTeX warning (ext4): destination
- with the same identifier (name{figure.3.6}) has been already used, duplicate i
-gnored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4} <./Bilder/hpl3.pdf> <./Bilder/hpl
-4.pdf>] [24pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.3.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4}pdfTeX warning (ext4): destination
- with the same identifier (name{figure.3.8}) has been already used, duplicate i
-gnored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4} <./Bilder/stream1.pdf> <./Bilder/
-stream2.pdf>] [25pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.3.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4}pdfTeX warning (ext4): destination
- with the same identifier (name{figure.3.10}) has been already used, duplicate 
-ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kapitel 4} <./Bilder/stream3.pdf> <./Bilder/
-stream4.pdf>] [26
-
-
-]
-Kapitel 4.
-<./Bilder/hpl5.pdf, id=892, 361.35pt x 252.945pt>
-File: ./Bilder/hpl5.pdf Graphic file (type pdf)
- <use ./Bilder/hpl5.pdf>
-Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 11.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
 
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.14 \newpage
-              <./Bilder/hpl5.pdf>]
-<./Bilder/hpl6.pdf, id=912, 361.35pt x 252.945pt>
-File: ./Bilder/hpl6.pdf Graphic file (type pdf)
- <use ./Bilder/hpl6.pdf>
-Package pdftex.def Info: ./Bilder/hpl6.pdf used on input line 17.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-Overfull \hbox (13.04053pt too wide) in paragraph at lines 21--23
-\OT1/cmr/m/n/10.95 Die Dia-gram-me las-sen ver-mu-ten, dass kei-ne si-gni-fi-ga
-n-ten Un-ter-schie-de zwi-schen der Ausf[]uhrung
- []
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...amm umsetzen, bietet es sich an, den GauÃŸ
+                                                  algorithmus als LR-Zerlegu...
 
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
-Underfull \hbox (badness 1038) in paragraph at lines 43--43
-[][]\OT1/cmr/m/n/10.95 Gegen[]uber-stel-lung HP-Lin-pack al-le RPis po-we-red v
-s. nur ak-ti-ve RPis
- []
 
-<./Bilder/stream5.pdf, id=913, 361.35pt x 252.945pt>
-File: ./Bilder/stream5.pdf Graphic file (type pdf)
+! LaTeX Error: Command \textcurrency unavailable in encoding OT1.
 
-<use ./Bilder/stream5.pdf>
-Package pdftex.def Info: ./Bilder/stream5.pdf used on input line 56.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...ieren. Dies ist eine Zerlegung der regulÃ¤
+                                                  ren Matrix A in das Produk...
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
- [28pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-2}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.58 \end{figure}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.4.3}) has been already used, duplicate ignored
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.58 \end{figure}
-                  <./Bilder/hpl6.pdf>]
-<./Bilder/stream6.pdf, id=931, 361.35pt x 252.945pt>
-File: ./Bilder/stream6.pdf Graphic file (type pdf)
-
-<use ./Bilder/stream6.pdf>
-Package pdftex.def Info: ./Bilder/stream6.pdf used on input line 61.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-Overfull \hbox (8.61502pt too wide) in paragraph at lines 65--66
-[]\OT1/cmr/m/n/10.95 4.7[] mit der Ge-gen[]uber-stel-lung der ma-xi-ma-len, mi-
-ni-ma-len und durch-schnitt-li-chen Ausf[]uhrungs-
- []
-
-
-Overfull \hbox (15.74768pt too wide) in paragraph at lines 137--138
-\OT1/cmr/m/n/10.95 gen[]uber der Ausf[]uhrung mit 16 RPi-Nodes po-we-red. Die S
-tei-ge-rung der mi-ni-ma-len Ausf[]uhrungs-
- []
-
-
-Underfull \vbox (badness 1242) has occurred while \output is active []
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...ren Dreiecksmatrix L (links, bzw. engl. â€
+                                                  žlowerâ€œ) und einer recht...
 
- [29pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.144 \newpage
-               <./Bilder/stream5.pdf>] [30pdfTeX warning (ext4): destination wi
-th the same identifier (name{figure.4.5}) has been already used, duplicate igno
-red
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.144 \newpage
-               <./Bilder/stream6.pdf>]
-Overfull \hbox (35.87332pt too wide) in paragraph at lines 147--154
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (9.04517pt too wide) in paragraph at lines 159--168
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
-<./Bilder/top500.pdf, id=988, 361.35pt x 252.945pt>
-File: ./Bilder/top500.pdf Graphic file (type pdf)
- <use ./Bilder/top500.pdf>
-Package pdftex.def Info: ./Bilder/top500.pdf used on input line 202.
-(pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (1.99927pt too wide) in paragraph at lines 209--211
-\OT1/cmr/m/n/10.95 R[]uck-ga-be-wer-te, je nach-dem ob ei-ne MPI-Implementierun
-g oder ei-ne Single-CPU-Imple-
- []
-
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.214 D
-       as gilt insbesondere f"ur HPLinpack zum Tragen. Die in Kap. \ref{inte...
-] [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.7}) has been already used, duplicate ignored
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.215 	\item \textbf
-                    {Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikatio...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8}) 
-has been already used, duplicate ignored
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...en Dreiecksmatrix L (links, bzw. engl. â€ž
+                                                  lowerâ€œ) und einer rechte...
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.215 	\item \textbf
-                    {Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikatio...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9}) 
-has been already used, duplicate ignored
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.215 	\item \textbf
-                    {Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikatio...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.10})
- has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.215 	\item \textbf
-                    {Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikatio...
-]) (./kapitel5.tex [33pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.4.11}) has been already used, duplicate ignored
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Zusammenfassung und Ausblick}\label{Kapitel 5} <./Bilder/top500.pd
-f>] [34
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...ecksmatrix L (links, bzw. engl. â€žlowerâ€
+                                                  œ) und einer rechten obere...
 
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
-]
-Kapitel 5.
-[35]) (./kapitel6.tex [36]
-Kapitel 6.
-[37
 
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-]
-Overfull \hbox (51.17728pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # Run Hplinpack on n downto 4 RPi-nodes, run again and sh
-utdown RPi-node i afterwards[] 
- []
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...cksmatrix L (links, bzw. engl. â€žlowerâ€œ
+                                                  ) und einer rechten oberen...
 
-[38]
-Overfull \hbox (39.6799pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 touch results/hpl-2.1_`date +%y%m%d`.txt results/hpl-2.1_
-shutdown`date +%y%m%d`.txt[] 
- []
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
-[39]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
 
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
 
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/hpl-2
-.1_`date +%y%m%d`.txt[] 
- []
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...echts, auch mit U bezeichnet, von engl. â€
+                                                  župperâ€œ)
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
 
 
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-
-2.1_`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (22.43384pt too wide) in paragraph at lines 280--280
-[]    \OT1/cmtt/m/n/10.95 mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3
-.0.4-shared/machinefile[] 
- []
-
-[40]
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/hpl-2
-.1_`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-
-2.1_shutdown`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # start benchmark on n RPis, log to results/hpl-2.1_shutd
-own`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (22.43384pt too wide) in paragraph at lines 280--280
-[]    \OT1/cmtt/m/n/10.95 mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3
-.0.4-shared/machinefile[] 
- []
-
-[41] [42]
-Overfull \hbox (28.18253pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 touch results/STREAM_`date +%y%m%d`.txt results/STREAM_sh
-utdown`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "SELECT id FROM ExperimentSuite WHERE executionStartedAt=
-$starttime" > /tmp/myid.txt[] 
- []
-
-[43]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
-
-[44]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "SELECT id FROM ExperimentSuite WHERE executionStartedAt=
-$starttime" > /tmp/myid.txt[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\
-\`value\\\`,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\
-\`value\\\`,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (5.18777pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/STREA
-M_`date +%y%m%d`.txt[] 
- []
-
-[45]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 # find all lines in first output file beginning with 'Cop
-y' (first result line)[] 
- []
-
-[46] [47] [48]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 598--598
-[]\OT1/cmtt/m/n/10.95 Linux version 3.6.11+ (dc4@dc4-arm-01) (gcc version 4.7.2
- 20120731 (prerelease)[] 
- []
-
-
-Overfull \hbox (5.18777pt too wide) in paragraph at lines 650--650
-[]\OT1/cmtt/m/n/10.95 Single Precision C Whetstone Benchmark Opt 3 32 Bit, Sat 
-Nov 30 15:22:14 2013[] 
- []
-
-[49]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 650--650
-[]\OT1/cmtt/m/n/10.95 Linux version 3.6.11+ (dc4@dc4-arm-01) (gcc version 4.7.2
- 20120731 (prerelease)[] 
- []
-
-[50]) [51] [52
-
-
-] (./grei14.lof)
-\tf@lof=\write5
-\openout5 = `grei14.lof'.
-
- (./grei14.bbl [53
-
-
-] [54
-
-
-]
-Underfull \hbox (badness 4193) in paragraph at lines 12--17
-\OT1/cmr/m/it/10.95 Clu-ster\OT1/cmr/m/n/10.95 .  2012. --  []$\OT1/cmtt/m/n/10
-.95 http : / / www . epcc . ed . ac . uk / sites / default / files /
- []
-
-
-Underfull \hbox (badness 6625) in paragraph at lines 46--51
-[]\OT1/cmr/m/sc/10.95 Kiepert\OT1/cmr/m/n/10.95 , Jos-hua:  \OT1/cmr/m/it/10.95
- Crea-ting a Raspber-ry Pi-Based Be-woulf Clu-ster\OT1/cmr/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 3219) in paragraph at lines 46--51
-\OT1/cmr/m/n/10.95 2013. --  []$\OT1/cmtt/m/n/10.95 http : / / coen . boisestat
-e . edu / ece / files / 2013 / 05 / Creating . a .
- []
-
-[55]
-Underfull \hbox (badness 2229) in paragraph at lines 113--118
-\OT1/cmr/m/it/10.95 pu-ter \OT1/cmr/m/n/10.95 (1990), S. 65--75. --  []$\OT1/cm
-tt/m/n/10.95 http : / / dlojewski . dl . funpic . de / download /
- []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
- [56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
- (./grei14.aux (./Titel/titel-lmu.aux) (./Titel/erklaerung-lmu.aux)
-(./abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
-Package rerunfilecheck Info: File `grei14.out' has not changed.
-(rerunfilecheck)             Checksum: 39144E01C46079CFECC4810FF14EE1A1;3237.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
- ) 
-Here is how much of TeX's memory you used:
- 7268 strings out of 493488
- 110436 string characters out of 3141326
- 237837 words of memory out of 3000000
- 10119 multiletter control sequences out of 15000+200000
- 13274 words of font info for 46 fonts, out of 3000000 for 9000
- 999 hyphenation exceptions out of 8191
- 36i,8n,39p,1687b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.65} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.64} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.63} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.62} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.61} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.60} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.59} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.58} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.57} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.56} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.55} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.54} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.53} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.52} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.51} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.50} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.49} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.48} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.47} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.46} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.45} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.44} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.42} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.41} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.40} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.39} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.38} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.37} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.36} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.35} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.34} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.33} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.32} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.31} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.26} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/20
-12/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-12/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2012
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2012/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2012/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on grei14.pdf (66 pages, 20092872 bytes).
-PDF statistics:
- 1339 PDF objects out of 1440 (max. 8388607)
- 1175 compressed objects within 12 object streams
- 275 named destinations out of 1000 (max. 500000)
- 467 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...chts, auch mit U bezeichnet, von engl. â€ž
+                                                  upperâ€œ)
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...uch mit U bezeichnet, von engl. â€župperâ€
+                                                  œ)
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                
