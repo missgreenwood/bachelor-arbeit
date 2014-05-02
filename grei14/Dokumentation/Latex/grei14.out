@@ -1,47 +1,44 @@
 \BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Hintergrund}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Fragestellung}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Herausforderungen}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.3.1}{Anpassung der Benchmarks}{section.1.3}% 5
-\BOOKMARK [2][-]{subsection.1.3.2}{Testumgebung}{section.1.3}% 6
-\BOOKMARK [2][-]{subsection.1.3.3}{Ausf\374hrung der Benchmarks auf einem RPi-Cluster}{section.1.3}% 7
-\BOOKMARK [1][-]{section.1.4}{Vorgehensweise und Struktur}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Grundlagen und Begriffsbildung}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Definition: Benchmarking}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Definition: Leistung}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Definition: Performance}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{Benchmarks}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.4.1}{Linpack}{section.2.4}% 14
-\BOOKMARK [2][-]{subsection.2.4.2}{Whetstone}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.3}{STREAM}{section.2.4}% 16
-\BOOKMARK [1][-]{section.2.5}{Spezifikation des RPi Modell B}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.5.1}{Physischer Aufbau}{section.2.5}% 18
-\BOOKMARK [2][-]{subsection.2.5.2}{Betriebssystem}{section.2.5}% 19
-\BOOKMARK [1][-]{section.2.6}{Raspberry Pi-Cluster als Testumfeld}{chapter.2}% 20
-\BOOKMARK [2][-]{subsection.2.6.1}{Physischer Aufbau}{section.2.6}% 21
-\BOOKMARK [2][-]{subsection.2.6.2}{Betriebssystem und Filesystem}{section.2.6}% 22
-\BOOKMARK [2][-]{subsection.2.6.3}{Zugriff auf die Cluster-Komponenten}{section.2.6}% 23
-\BOOKMARK [0][-]{chapter.3}{Versuchsaufbau und -ablauf}{}% 24
-\BOOKMARK [1][-]{section.3.1}{Zielsetzung}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.2}{Aufbau und Art der Messung}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.2.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.2}{Versuchsaufbau Bramble}{section.3.2}% 28
-\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.1}{RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{section.3.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.2}{Bramble: HPLinpack}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.3}{Bramble: STREAM}{section.3.3}% 32
-\BOOKMARK [0][-]{chapter.4}{Interpretation}{}% 33
-\BOOKMARK [1][-]{section.4.1}{HPLinpack/Bramble}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.2}{STREAM/Bramble}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.3}{Vergleich Bramble/RPi-Einzelrechner}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.4}{Einordnung in Top500}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.5}{Grenzen des Versuchsaufbaus}{chapter.4}% 38
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 39
-\BOOKMARK [0][-]{chapter.6}{Anhang}{}% 40
-\BOOKMARK [1][-]{section.6.1}{Shellskripte}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.2}{Ergebnisse der ausgew\344hlten Benchmarks auf dem RPi-Einzelrechner}{chapter.6}% 42
-\BOOKMARK [2][-]{subsection.6.2.1}{Linpack 100}{section.6.2}% 43
-\BOOKMARK [2][-]{subsection.6.2.2}{Whetstone}{section.6.2}% 44
-\BOOKMARK [2][-]{subsection.6.2.3}{STREAM}{section.6.2}% 45
-\BOOKMARK [0][-]{chapter*.20}{Abbildungsverzeichnis}{}% 46
-\BOOKMARK [0][-]{chapter*.21}{Literaturverzeichnis}{}% 47
+\BOOKMARK [1][-]{section.1.3}{Vorgehensweise}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Struktur}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Grundlagen und Begriffsbildung}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Definition: Benchmarking}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{Definition: Leistung}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Definition: Performance}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Benchmarks}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.4.1}{Linpack}{section.2.4}% 11
+\BOOKMARK [2][-]{subsection.2.4.2}{Whetstone}{section.2.4}% 12
+\BOOKMARK [2][-]{subsection.2.4.3}{STREAM}{section.2.4}% 13
+\BOOKMARK [1][-]{section.2.5}{Spezifikation des RPi Modell B}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.5.1}{Physischer Aufbau}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.2}{Betriebssystem}{section.2.5}% 16
+\BOOKMARK [1][-]{section.2.6}{Raspberry Pi-Cluster als Testumfeld}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.6.1}{Physischer Aufbau}{section.2.6}% 18
+\BOOKMARK [2][-]{subsection.2.6.2}{Betriebssystem und Filesystem}{section.2.6}% 19
+\BOOKMARK [2][-]{subsection.2.6.3}{Zugriff auf die Cluster-Komponenten}{section.2.6}% 20
+\BOOKMARK [0][-]{chapter.3}{Versuchsaufbau und -ablauf}{}% 21
+\BOOKMARK [1][-]{section.3.1}{Zielsetzung}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{Aufbau und Art der Messung}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.2}{Versuchsaufbau Bramble}{section.3.2}% 25
+\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.2}{Bramble: HPLinpack}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.3}{Bramble: STREAM}{section.3.3}% 29
+\BOOKMARK [0][-]{chapter.4}{Interpretation}{}% 30
+\BOOKMARK [1][-]{section.4.1}{HPLinpack/Bramble}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{STREAM/Bramble}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.3}{Vergleich Bramble/RPi-Einzelrechner}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.4}{Einordnung in Top500}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.5}{Grenzen des Versuchsaufbaus}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 36
+\BOOKMARK [0][-]{chapter.6}{Anhang}{}% 37
+\BOOKMARK [1][-]{section.6.1}{Shellskripte}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.2}{Ergebnisse der ausgew\344hlten Benchmarks auf dem RPi-Einzelrechner}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.6.2.1}{Linpack 100}{section.6.2}% 40
+\BOOKMARK [2][-]{subsection.6.2.2}{Whetstone}{section.6.2}% 41
+\BOOKMARK [2][-]{subsection.6.2.3}{STREAM}{section.6.2}% 42
+\BOOKMARK [0][-]{chapter*.20}{Abbildungsverzeichnis}{}% 43
+\BOOKMARK [0][-]{chapter*.21}{Literaturverzeichnis}{}% 44

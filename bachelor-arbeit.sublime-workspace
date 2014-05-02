@@ -43,15 +43,7 @@
 			"file": "todo130314.txt",
 			"settings":
 			{
-				"buffer_size": 627,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Konzeption/auswertung_strommessgeraet.txt",
-			"settings":
-			{
-				"buffer_size": 3050,
+				"buffer_size": 760,
 				"line_ending": "Unix"
 			}
 		}
@@ -97,6 +89,8 @@
 	},
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Strommessgeraet/miranda-1.3/src/portmapper.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/fehlerquellen_cluster.txt",
 		"/private/var/folders/jc/p7qh78k50b385jcwdhtv6n7w0000gn/T/fz3temp-1/index.php",
@@ -205,7 +199,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -214,43 +208,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 627,
+						"buffer_size": 760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								515,
-								515
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Konzeption/auswertung_strommessgeraet.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3050,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								397,
-								397
+								651,
+								651
 							]
 						],
 						"settings":
@@ -321,6 +287,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"prin",
+				"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/sexyfem/prinzessin-leah.sublime-workspace"
+			],
 			[
 				"",
 				"~/Documents/Dropbox/JudithSascha/LeaHampel/lea-hampel.sublime-project"

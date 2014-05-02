@@ -1,65 +1,62 @@
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Hintergrund}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Fragestellung}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Herausforderungen}{2}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Anpassung der Benchmarks}{2}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Testumgebung}{2}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Ausf\active@dq \dq@prtct {u}hrung der Benchmarks auf einem RPi-Cluster}{2}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}Vorgehensweise und Struktur}{3}{section.1.4}
-\contentsline {chapter}{\numberline {2}Grundlagen und Begriffsbildung}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Definition: \textit {Benchmarking}}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Definition: \textit {Leistung}}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}Definition: \textit {Performance}}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Benchmarks}{7}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Linpack}{7}{subsection.2.4.1}
-\contentsline {subsubsection}{Funktionsweise}{8}{section*.2}
-\contentsline {subsubsection}{Linpack auf dem Raspberry Pi}{8}{section*.3}
-\contentsline {subsection}{\numberline {2.4.2}Whetstone}{8}{subsection.2.4.2}
-\contentsline {subsubsection}{Funktionsweise}{9}{section*.4}
-\contentsline {subsubsection}{Whetstone auf dem Raspberry Pi}{9}{section*.5}
-\contentsline {subsection}{\numberline {2.4.3}STREAM}{9}{subsection.2.4.3}
-\contentsline {subsubsection}{Funktionsweise}{10}{section*.6}
-\contentsline {subsubsection}{STREAM auf dem Raspberry Pi}{10}{section*.7}
-\contentsline {section}{\numberline {2.5}Spezifikation des RPi Modell B}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Physischer Aufbau}{11}{subsection.2.5.1}
-\contentsline {subsubsection}{SoC, CPU, GPU und RAM}{11}{section*.8}
-\contentsline {subsubsection}{Schnittstellen}{11}{section*.9}
-\contentsline {subsection}{\numberline {2.5.2}Betriebssystem}{12}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Raspberry Pi-Cluster als Testumfeld}{12}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Physischer Aufbau}{12}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{13}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Zugriff auf die Cluster-Komponenten}{13}{subsection.2.6.3}
-\contentsline {chapter}{\numberline {3}Versuchsaufbau und -ablauf}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Zielsetzung}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Aufbau und Art der Messung}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Versuchsaufbau Ri-Einzelrechner}{16}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Versuchsaufbau Bramble}{16}{subsection.3.2.2}
-\contentsline {subsubsection}{Modifikationen der RPi-Nodes}{16}{section*.10}
-\contentsline {subsubsection}{Zeitsynchronisation der RPi-Nodes}{18}{section*.11}
-\contentsline {subsubsection}{Skalierung der Messung auf 19--n RPi-Nodes}{18}{section*.12}
-\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf 19--n RPi-Nodes}{18}{section*.13}
-\contentsline {subsubsection}{Einlesen der Messwerte in eine geeignete Datenstruktur}{20}{section*.14}
-\contentsline {section}{\numberline {3.3}Ergebnisse}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{21}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Bramble: HPLinpack}{21}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Bramble: STREAM}{22}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Interpretation}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}HPLinpack/Bramble}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}STREAM/Bramble}{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Vergleich Bramble/RPi-Einzelrechner}{30}{section.4.3}
-\contentsline {section}{\numberline {4.4}Einordnung in Top500}{31}{section.4.4}
-\contentsline {section}{\numberline {4.5}Grenzen des Versuchsaufbaus}{31}{section.4.5}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{35}{chapter.5}
-\contentsline {chapter}{\numberline {6}Anhang}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Shellskripte}{37}{section.6.1}
-\contentsline {subsubsection}{startBenchmarks.sh}{37}{section*.15}
-\contentsline {subsubsection}{loadGeneratorConfigHpl.sh}{37}{section*.16}
-\contentsline {subsubsection}{loadGeneratorConfigStream.sh}{38}{section*.17}
-\contentsline {subsubsection}{hpl-2.1.sh}{38}{section*.18}
-\contentsline {subsubsection}{STREAM.sh}{42}{section*.19}
-\contentsline {section}{\numberline {6.2}Ergebnisse der ausgew\active@dq \dq@prtct {a}hlten Benchmarks auf dem RPi-Einzelrechner}{47}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Linpack 100}{47}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Whetstone}{49}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}STREAM}{50}{subsection.6.2.3}
-\contentsline {chapter}{Abbildungsverzeichnis}{53}{chapter*.20}
-\contentsline {chapter}{Literaturverzeichnis}{55}{chapter*.21}
+\contentsline {section}{\numberline {1.3}Vorgehensweise}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}Struktur}{2}{section.1.4}
+\contentsline {chapter}{\numberline {2}Grundlagen und Begriffsbildung}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Definition: \textit {Benchmarking}}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Definition: \textit {Leistung}}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Definition: \textit {Performance}}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Benchmarks}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Linpack}{5}{subsection.2.4.1}
+\contentsline {subsubsection}{Funktionsweise}{6}{section*.2}
+\contentsline {subsubsection}{Linpack auf dem Raspberry Pi}{6}{section*.3}
+\contentsline {subsection}{\numberline {2.4.2}Whetstone}{6}{subsection.2.4.2}
+\contentsline {subsubsection}{Funktionsweise}{7}{section*.4}
+\contentsline {subsubsection}{Whetstone auf dem Raspberry Pi}{7}{section*.5}
+\contentsline {subsection}{\numberline {2.4.3}STREAM}{7}{subsection.2.4.3}
+\contentsline {subsubsection}{Funktionsweise}{8}{section*.6}
+\contentsline {subsubsection}{STREAM auf dem Raspberry Pi}{8}{section*.7}
+\contentsline {section}{\numberline {2.5}Spezifikation des RPi Modell B}{9}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Physischer Aufbau}{9}{subsection.2.5.1}
+\contentsline {subsubsection}{SoC, CPU, GPU und RAM}{9}{section*.8}
+\contentsline {subsubsection}{Schnittstellen}{9}{section*.9}
+\contentsline {subsection}{\numberline {2.5.2}Betriebssystem}{10}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Raspberry Pi-Cluster als Testumfeld}{10}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Physischer Aufbau}{10}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{11}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Zugriff auf die Cluster-Komponenten}{11}{subsection.2.6.3}
+\contentsline {chapter}{\numberline {3}Versuchsaufbau und -ablauf}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Zielsetzung}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Aufbau und Art der Messung}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Versuchsaufbau Ri-Einzelrechner}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Versuchsaufbau Bramble}{14}{subsection.3.2.2}
+\contentsline {subsubsection}{Modifikationen der RPi-Nodes}{14}{section*.10}
+\contentsline {subsubsection}{Zeitsynchronisation der RPi-Nodes}{16}{section*.11}
+\contentsline {subsubsection}{Skalierung der Messung auf 19--n RPi-Nodes}{16}{section*.12}
+\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf 19--n RPi-Nodes}{16}{section*.13}
+\contentsline {subsubsection}{Einlesen der Messwerte in eine geeignete Datenstruktur}{18}{section*.14}
+\contentsline {section}{\numberline {3.3}Ergebnisse}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Bramble: HPLinpack}{19}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Bramble: STREAM}{20}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Interpretation}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}HPLinpack/Bramble}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}STREAM/Bramble}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Vergleich Bramble/RPi-Einzelrechner}{28}{section.4.3}
+\contentsline {section}{\numberline {4.4}Einordnung in Top500}{29}{section.4.4}
+\contentsline {section}{\numberline {4.5}Grenzen des Versuchsaufbaus}{29}{section.4.5}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{33}{chapter.5}
+\contentsline {chapter}{\numberline {6}Anhang}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Shellskripte}{35}{section.6.1}
+\contentsline {subsubsection}{startBenchmarks.sh}{35}{section*.15}
+\contentsline {subsubsection}{loadGeneratorConfigHpl.sh}{35}{section*.16}
+\contentsline {subsubsection}{loadGeneratorConfigStream.sh}{36}{section*.17}
+\contentsline {subsubsection}{hpl-2.1.sh}{36}{section*.18}
+\contentsline {subsubsection}{STREAM.sh}{40}{section*.19}
+\contentsline {section}{\numberline {6.2}Ergebnisse der ausgew\active@dq \dq@prtct {a}hlten Benchmarks auf dem RPi-Einzelrechner}{45}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Linpack 100}{45}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Whetstone}{47}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}STREAM}{48}{subsection.6.2.3}
+\contentsline {chapter}{Abbildungsverzeichnis}{51}{chapter*.20}
+\contentsline {chapter}{Literaturverzeichnis}{53}{chapter*.21}

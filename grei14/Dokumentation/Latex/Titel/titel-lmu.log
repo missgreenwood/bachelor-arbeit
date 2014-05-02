@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  1 DEC 2013 17:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAY 2014 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -224,7 +224,70 @@ Overfull \hbox (103.93138pt too wide) in paragraph at lines 22--22
 
 ! Undefined control sequence.
 l.24 {\Huge
-            \textbf{ausgewählter Benchmarks}}\\
+            \textbf{eines Raspberry Pi-Clusters}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (24.66098pt too wide) in paragraph at lines 24--24
+ []\OT1/cmr/bx/n/10 eines 
+ []
+
+
+Overfull \hbox (28.97342pt too wide) in paragraph at lines 24--24
+ \OT1/cmr/bx/n/10 Rasp- 
+ []
+
+
+Overfull \hbox (27.52072pt too wide) in paragraph at lines 24--24
+ \OT1/cmr/bx/n/10 berry 
+ []
+
+
+Overfull \hbox (14.88881pt too wide) in paragraph at lines 24--24
+ \OT1/cmr/bx/n/10 Pi- 
+ []
+
+
+Overfull \hbox (41.44005pt too wide) in paragraph at lines 24--24
+ \OT1/cmr/bx/n/10 Clusters 
+ []
+
+! Undefined control sequence.
+l.26 {\Huge
+            \textbf{unter der Workload}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (26.93738pt too wide) in paragraph at lines 26--26
+ []\OT1/cmr/bx/n/10 unter 
+ []
+
+
+Overfull \hbox (16.39577pt too wide) in paragraph at lines 26--26
+ \OT1/cmr/bx/n/10 der 
+ []
+
+
+Overfull \hbox (31.31929pt too wide) in paragraph at lines 26--26
+ \OT1/cmr/bx/n/10 Work- 
+ []
+
+
+Overfull \hbox (20.92348pt too wide) in paragraph at lines 26--26
+ \OT1/cmr/bx/n/10 load 
+ []
+
+! Undefined control sequence.
+l.28 {\Huge
+            \textbf{ausgewählter HPC-Benchmarks}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -233,61 +296,22 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ä in font cmbx10!
 
-Overfull \hbox (59.90384pt too wide) in paragraph at lines 24--24
+Overfull \hbox (59.90384pt too wide) in paragraph at lines 28--28
  []\OT1/cmr/bx/n/10 ausgewhlter 
  []
 
 
-Overfull \hbox (34.85399pt too wide) in paragraph at lines 24--24
- \OT1/cmr/bx/n/10 Bench- 
+Overfull \hbox (28.99985pt too wide) in paragraph at lines 28--28
+ \OT1/cmr/bx/n/10 HPC- 
  []
 
 
-Overfull \hbox (30.51509pt too wide) in paragraph at lines 24--24
- \OT1/cmr/bx/n/10 marks 
- []
-
-! Undefined control sequence.
-l.26 {\Huge
-            \textbf{auf einem Raspberry Pi-Cluster}}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (15.49295pt too wide) in paragraph at lines 26--26
- []\OT1/cmr/bx/n/10 auf 
- []
-
-
-Overfull \hbox (29.70819pt too wide) in paragraph at lines 26--26
- \OT1/cmr/bx/n/10 einem 
- []
-
-
-Overfull \hbox (28.97342pt too wide) in paragraph at lines 26--26
- \OT1/cmr/bx/n/10 Rasp- 
- []
-
-
-Overfull \hbox (27.52072pt too wide) in paragraph at lines 26--26
- \OT1/cmr/bx/n/10 berry 
- []
-
-
-Overfull \hbox (14.88881pt too wide) in paragraph at lines 26--26
- \OT1/cmr/bx/n/10 Pi- 
- []
-
-
-Overfull \hbox (36.90398pt too wide) in paragraph at lines 26--26
- \OT1/cmr/bx/n/10 Cluster 
+Overfull \hbox (61.53577pt too wide) in paragraph at lines 28--28
+ \OT1/cmr/bx/n/10 Benchmarks 
  []
 
 ! Undefined control sequence.
-l.29 {\LARGE
+l.31 {\LARGE
              Judith Greif} % Name des Autors
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -306,23 +330,6 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no f in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-! Undefined control sequence.
-l.32 Draft vom \today
-                      % erleichtert den Betreuern die Zuordnung - für finale...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 ! LaTeX Error: The font size command \normalsize is not defined:
                there is probably something wrong with the class file.
@@ -331,19 +338,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 \newpage
+l.35 \newpage
              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (20.0pt too wide) in paragraph at lines 49--49
+Overfull \hbox (20.0pt too wide) in paragraph at lines 48--48
 [] 
  []
 
 ! Undefined control sequence.
-l.53 {\Huge
+l.52 {\Huge
             INSTITUT FÜR INFORMATIK\\[1mm]}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -415,7 +422,7 @@ Missing character: There is no H in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no N in font nullfont!
 ! Undefined control sequence.
-l.58 \includegraphics
+l.57 \includegraphics
                      [width=0.3\textwidth]{lmu_siegel}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -436,7 +443,7 @@ Missing character: There is no 3 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.58 \includegraphics[width=0.3\textwidth]
+l.57 \includegraphics[width=0.3\textwidth]
                                           {lmu_siegel}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -445,7 +452,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.58 \includegraphics[width=0.3\textwidth]
+l.57 \includegraphics[width=0.3\textwidth]
                                           {lmu_siegel}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -461,13 +468,13 @@ Missing character: There is no u in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.58 \includegraphics[width=0.3\textwidth]{lmu_
+l.57 \includegraphics[width=0.3\textwidth]{lmu_
                                                siegel}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.58 ...egraphics[width=0.3\textwidth]{lmu_siegel}
+l.57 ...egraphics[width=0.3\textwidth]{lmu_siegel}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -478,7 +485,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.59 
+l.58 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -486,7 +493,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.59 
+l.58 
      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -495,12 +502,12 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (25.34102pt too wide) in paragraph at lines 58--59
+Overfull \hbox (25.34102pt too wide) in paragraph at lines 57--58
  []$[]\OML/cmm/m/it/10 iegel[]$ 
  []
 
 ! Undefined control sequence.
-l.62 {\Large
+l.61 {\Large
              \textbf{Bachelorarbeit}}\\ % oder Fortgeschrittenenpraktikum, S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -509,12 +516,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (73.8746pt too wide) in paragraph at lines 62--62
+Overfull \hbox (73.8746pt too wide) in paragraph at lines 61--61
  []\OT1/cmr/bx/n/10 Bachelorarbeit 
  []
 
 ! Undefined control sequence.
-l.65 {\Huge
+l.64 {\Huge
             \textbf{Skalierungsverhalten}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -523,13 +530,76 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (103.93138pt too wide) in paragraph at lines 65--65
+Overfull \hbox (103.93138pt too wide) in paragraph at lines 64--64
  []\OT1/cmr/bx/n/10 Skalierungsverhalten 
  []
 
 ! Undefined control sequence.
-l.67 {\Huge
-            \textbf{ausgewählter Benchmarks}}\\
+l.66 {\Huge
+            \textbf{eines Raspberry Pi-Clusters}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (24.66098pt too wide) in paragraph at lines 66--66
+ []\OT1/cmr/bx/n/10 eines 
+ []
+
+
+Overfull \hbox (28.97342pt too wide) in paragraph at lines 66--66
+ \OT1/cmr/bx/n/10 Rasp- 
+ []
+
+
+Overfull \hbox (27.52072pt too wide) in paragraph at lines 66--66
+ \OT1/cmr/bx/n/10 berry 
+ []
+
+
+Overfull \hbox (14.88881pt too wide) in paragraph at lines 66--66
+ \OT1/cmr/bx/n/10 Pi- 
+ []
+
+
+Overfull \hbox (41.44005pt too wide) in paragraph at lines 66--66
+ \OT1/cmr/bx/n/10 Clusters 
+ []
+
+! Undefined control sequence.
+l.68 {\Huge
+            \textbf{unter der Workload}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (26.93738pt too wide) in paragraph at lines 68--68
+ []\OT1/cmr/bx/n/10 unter 
+ []
+
+
+Overfull \hbox (16.39577pt too wide) in paragraph at lines 68--68
+ \OT1/cmr/bx/n/10 der 
+ []
+
+
+Overfull \hbox (31.31929pt too wide) in paragraph at lines 68--68
+ \OT1/cmr/bx/n/10 Work- 
+ []
+
+
+Overfull \hbox (20.92348pt too wide) in paragraph at lines 68--68
+ \OT1/cmr/bx/n/10 load 
+ []
+
+! Undefined control sequence.
+l.70 {\Huge
+            \textbf{ausgewählter HPC-Benchmarks}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -538,61 +608,22 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ä in font cmbx10!
 
-Overfull \hbox (59.90384pt too wide) in paragraph at lines 67--67
+Overfull \hbox (59.90384pt too wide) in paragraph at lines 70--70
  []\OT1/cmr/bx/n/10 ausgewhlter 
  []
 
 
-Overfull \hbox (34.85399pt too wide) in paragraph at lines 67--67
- \OT1/cmr/bx/n/10 Bench- 
+Overfull \hbox (28.99985pt too wide) in paragraph at lines 70--70
+ \OT1/cmr/bx/n/10 HPC- 
  []
 
 
-Overfull \hbox (30.51509pt too wide) in paragraph at lines 67--67
- \OT1/cmr/bx/n/10 marks 
- []
-
-! Undefined control sequence.
-l.69 {\Huge
-            \textbf{auf einem Raspberry Pi-Cluster}}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (15.49295pt too wide) in paragraph at lines 69--69
- []\OT1/cmr/bx/n/10 auf 
- []
-
-
-Overfull \hbox (29.70819pt too wide) in paragraph at lines 69--69
- \OT1/cmr/bx/n/10 einem 
- []
-
-
-Overfull \hbox (28.97342pt too wide) in paragraph at lines 69--69
- \OT1/cmr/bx/n/10 Rasp- 
- []
-
-
-Overfull \hbox (27.52072pt too wide) in paragraph at lines 69--69
- \OT1/cmr/bx/n/10 berry 
- []
-
-
-Overfull \hbox (14.88881pt too wide) in paragraph at lines 69--69
- \OT1/cmr/bx/n/10 Pi- 
- []
-
-
-Overfull \hbox (36.90398pt too wide) in paragraph at lines 69--69
- \OT1/cmr/bx/n/10 Cluster 
+Overfull \hbox (61.53577pt too wide) in paragraph at lines 70--70
+ \OT1/cmr/bx/n/10 Benchmarks 
  []
 
 ! Undefined control sequence.
-l.72 {\LARGE
+l.73 {\LARGE
              Judith Greif} % Name des Autors
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -618,7 +649,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 \end{large}}
+l.86 \end{large}}
                  \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -675,23 +706,6 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no : in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -713,23 +727,6 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -759,33 +756,33 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no : in font nullfont!
-Missing character: There is no 2 in font nullfont!
+Missing character: There is no 3 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no p in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no " in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no l in font nullfont!
+Missing character: There is no z in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 
-! LaTeX Error: \begin{center} on input line 49 ended by \end{large}.
+! LaTeX Error: \begin{center} on input line 48 ended by \end{large}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 \end{large}}
+l.86 \end{large}}
                  \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 85--85
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 86--86
  []$[]$ 
  []
 

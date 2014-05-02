@@ -3,11 +3,16 @@
 
 Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem ausgef"uhrt wurden. Dabei steht oft die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponen\-ten im Vordergrund. Zu diesem Zweck werden haupts"achlich Linux-spezifische Benchmarks verwendet wie Sysbench CPU Benchmark (CPU), PyBench (Python-Implementierung), Apache Benchmark (Webserver), Open\-SSL (CPU) oder ioquake3 (GPU). 
 
-Bei n"aherem Hinschauen erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Eine solche Routine kann f"ur einen Vergleich mit HPC-Rechnern herangezogen werden. Im Folgenden wird daher auf grundlegende Begriffe eingegangen, die f"ur die nachfolgende Untersuchung von Bedeutung sind. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
+Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Eine solche Routine kann f"ur einen Vergleich mit HPC-Rechnern herangezogen werden. Im Folgenden wird daher auf grundlegende Begriffe eingegangen, die f"ur die nachfolgende Untersuchung von Bedeutung sind. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
 
 \section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
-Unter \textit{Benchmarking} oder "`Ma\ss st"abe vergleichen"' versteht man im Allgemeinen die vergleichende Analyse von Ergebnissen oder Prozessen mit einem festgelegten Bezugswert oder Vergleichsprozess. \textit{Computer-Benchmarks}, die hier von Bedeutung sind, dienen dem Vergleich der Rechenleistung von Computer-Systemen, wozu in der Regel Software verwendet wird\footnote{"`A simple method of measuring performance is by means of a benchmark program. [...] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}."'}. Das \textit{Computer Lexikon 2012} kennt folgende Definition: 
+Unter \textit{Benchmarking} oder "`Ma\ss st"abe vergleichen"' versteht man im Allgemeinen die vergleichende Analyse von Ergebnissen oder Prozessen mit einem festgelegten Bezugswert oder Vergleichsprozess. \textit{Computer-Benchmarks}, die hier von Bedeutung sind, dienen dem Vergleich der Rechenleistung von Computer-Systemen, wozu in der Regel Software verwendet wird:
+\begin{quote}
+\onehalfspacing
+A simple method of measuring performance is by means of a benchmark program. [...] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}.
+\end{quote}
+Das \textit{Computer Lexikon 2012} kennt folgende Definition: 
 \begin{quote}
 \onehalfspacing
 Mit einem Benchmark-Programm werden Hardwarekomponenten meist auf Geschwindigkeit getestet, wie z.B. die CPU, das Mainboard, die Festplatte (Schreib-Lese-Geschwindigkeit), die Grafikkarte (Frames/s) usw. Verschiedene Benchmark-Programme liefern oft unterschiedliche Ergebnisse, so dass ein direkter Vergleich zwischen den erreichten Werten kaum aussagekr"aftig ist \cite{pre11}. 
@@ -23,12 +28,12 @@ Daher wird hier hier mit \textit{Benchmarking} kurz das \textbf{\textit{Standard
 
 \section{Definition: \textit{Leistung}}\label{Leistung}
 
-Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik versteht man darunter meist die \textit{Rechenleistung}. Wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems sind unter anderem
-\begin{quote}
-\onehalfspacing
-[...] die \textit{Leistungskenngr"o\ss en} oder \textit{-ma\ss zahlen} (\textit{performance metrics}), die f"ur das vorliegende Rechnersystem und die Ziele der Leistungsanalyse relevant sind \cite{rec06}.
-\end{quote}
-Weitere Aspekte der Leistungsbewertung sind das zu untersuchende System, die Workload und die Methode zur Leistungsermittlung\footnote{Vgl. \cite{rec06}.}. "Ubertragen auf die vorliegende Untersuchung bedeutet dies: Das zu untersuchende System besteht aus einem RPi-Einzelrechner und einem RPi-Cluster (vgl. Kap. \ref{RPi-Spezi} bzw. \ref{Bramble-Spezi}). Methoden zur Leistungsbewertung sind HPC-Benchmarks (vgl. Kap. \ref{Linpack}, \ref{Whetstone} und \ref{STREAM}). Die Workload ist die Ausf"uhrung dieser Programme. 
+Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik hingegen wird damit meist die \textit{Rechenleistung} bezeichnet, also Datenverarbeitungsgeschwindigkeit, Geschwindigkeit der eingesetzten Maschinenteile sowie einzelner Anwendungen. % Quelle
+
+Wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems sind das zu untersuchende System, die Workload und die Methode zur Leistungsermittlung (vgl. \cite{rec06}), au\ss erdem 
+
+[...] die \textit{Leistungskenngr"o\ss en} oder \textit{-ma\ss zahlen} (\textit{performance metrics}), die f"ur das vorliegende Rechnersystem und die Ziele der Leistungsanalyse relevant sind \cite{rec06}. 
+
 Die hier verwendete Definition greift den ersten Aspekt auf: Mit \textit{Leistung} ist die \textbf{\textit{Time to completion}} gemeint, d.h. die Zeit, die ein Prozess oder ein Programm(teil) bis zum erfolgreichen Abschluss ben"otigt. Bei Rechenberg wird dies als "`Programmlaufzeit"' \cite{rec06} bezeichnet\footnote{Andere Klassen von Kenngr"o\ss en, die neben der Zeit zur Leistungsbewertung herangezogen werden, sind \textit{Durchsatz} und \textit{Auslastung}. Abweichende zeitliche Kenngr"o\ss en sind z.B. \textit{Bedienzeit (Service time)} oder \textit{TTR (Time to Response)} (vgl. ebd.).}. 
 
 \section{Definition: \textit{Performance}}\label{Performance}
