@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAY 2014 19:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAY 2014 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -265,7 +265,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box28
 )
 (./hyphenation.tex) (./grei14.aux (./Titel/titel-lmu.aux)
-(./Titel/erklaerung-lmu.aux) (./abstract.aux))
+(./Titel/erklaerung-lmu.aux) (./abstract.aux)
+
+LaTeX Warning: Label `Hintergrund' multiply defined.
+
+)
 \openout1 = `grei14.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -282,8 +286,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/german/german.sty
+ (/usr/local/texlive/2012/texmf-dist/tex/generic/german/german.sty
 v2.5e 1998-07-08
 Package: german 1998/07/08 v2.5e Support for writing german texts (br)
 \grmnU@D=\dimen108
@@ -342,7 +345,7 @@ LaTeX Info: Redefining \nameref on input line 25.
 \openout2 = `./Titel/titel-lmu.aux'.
 
  (./Titel/titel-lmu.tex
-<./Bilder/lmu_siegel.pdf, id=180, 201.75375pt x 201.75375pt>
+<./Bilder/lmu_siegel.pdf, id=184, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
 
 <use ./Bilder/lmu_siegel.pdf>
@@ -448,7 +451,7 @@ Overfull \hbox (1.35309pt too wide) in paragraph at lines 110--110
 [][]\OT1/cmr/m/n/9 Der Quell-co-de fin-det sich un-ter []| 
  []
 
-<./Bilder/rpi_grafik.pdf, id=440, 596.66481pt x 426.23732pt>
+<./Bilder/rpi_grafik.pdf, id=445, 596.66481pt x 426.23732pt>
 File: ./Bilder/rpi_grafik.pdf Graphic file (type pdf)
 
 <use ./Bilder/rpi_grafik.pdf>
@@ -470,7 +473,7 @@ Overfull \hbox (3.66992pt too wide) in paragraph at lines 136--137
 eBSD und NetBSD (BSD-Varianten),
  []
 
-<./Bilder/bramble.pdf, id=538, 3661.68pt x 2746.26pt>
+<./Bilder/bramble.pdf, id=543, 3661.68pt x 2746.26pt>
 File: ./Bilder/bramble.pdf Graphic file (type pdf)
 
 <use ./Bilder/bramble.pdf>
@@ -487,7 +490,7 @@ Kapitel 3.
 [13
 
 
-] <./Bilder/komponentendiagramm1.pdf, id=611, 692.5875pt x 481.8pt>
+] <./Bilder/komponentendiagramm1.pdf, id=616, 692.5875pt x 481.8pt>
 File: ./Bilder/komponentendiagramm1.pdf Graphic file (type pdf)
 
 <use ./Bilder/komponentendiagramm1.pdf>
@@ -511,7 +514,7 @@ indung
                                                   \fi \fi 
 l.54 
       <./Bilder/komponentendiagramm1.pdf>]
-<./Bilder/aktivitaetsdiagramm1.pdf, id=639, 1027.84pt x 770.88pt>
+<./Bilder/aktivitaetsdiagramm1.pdf, id=644, 1027.84pt x 770.88pt>
 File: ./Bilder/aktivitaetsdiagramm1.pdf Graphic file (type pdf)
 
 <use ./Bilder/aktivitaetsdiagramm1.pdf>
@@ -552,25 +555,25 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
 
-<./Bilder/hpl1.pdf, id=700, 361.35pt x 252.945pt>
+<./Bilder/hpl1.pdf, id=705, 361.35pt x 252.945pt>
 File: ./Bilder/hpl1.pdf Graphic file (type pdf)
  <use ./Bilder/hpl1.pdf>
 Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 163.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl2.pdf, id=701, 361.35pt x 252.945pt>
+<./Bilder/hpl2.pdf, id=706, 361.35pt x 252.945pt>
 File: ./Bilder/hpl2.pdf Graphic file (type pdf)
  <use ./Bilder/hpl2.pdf>
 Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 169.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl3.pdf, id=702, 361.35pt x 252.945pt>
+<./Bilder/hpl3.pdf, id=707, 361.35pt x 252.945pt>
 File: ./Bilder/hpl3.pdf Graphic file (type pdf)
  <use ./Bilder/hpl3.pdf>
 Package pdftex.def Info: ./Bilder/hpl3.pdf used on input line 175.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl4.pdf, id=703, 361.35pt x 252.945pt>
+<./Bilder/hpl4.pdf, id=708, 361.35pt x 252.945pt>
 File: ./Bilder/hpl4.pdf Graphic file (type pdf)
  <use ./Bilder/hpl4.pdf>
 Package pdftex.def Info: ./Bilder/hpl4.pdf used on input line 181.
@@ -582,28 +585,28 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] <./Bilder/stream1.pdf, id=728, 361.35pt x 252.945pt>
+[19] <./Bilder/stream1.pdf, id=733, 361.35pt x 252.945pt>
 File: ./Bilder/stream1.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream1.pdf>
 Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 192.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream2.pdf, id=729, 361.35pt x 252.945pt>
+<./Bilder/stream2.pdf, id=734, 361.35pt x 252.945pt>
 File: ./Bilder/stream2.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream2.pdf>
 Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 198.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream3.pdf, id=730, 361.35pt x 252.945pt>
+<./Bilder/stream3.pdf, id=735, 361.35pt x 252.945pt>
 File: ./Bilder/stream3.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream3.pdf>
 Package pdftex.def Info: ./Bilder/stream3.pdf used on input line 204.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream4.pdf, id=731, 361.35pt x 252.945pt>
+<./Bilder/stream4.pdf, id=736, 361.35pt x 252.945pt>
 File: ./Bilder/stream4.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream4.pdf>
@@ -670,7 +673,7 @@ stream4.pdf>] [24
 
 ]
 Kapitel 4.
-<./Bilder/hpl5.pdf, id=856, 361.35pt x 252.945pt>
+<./Bilder/hpl5.pdf, id=861, 361.35pt x 252.945pt>
 File: ./Bilder/hpl5.pdf Graphic file (type pdf)
  <use ./Bilder/hpl5.pdf>
 Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 11.
@@ -683,7 +686,7 @@ Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 11.
                                                   \fi \fi 
 l.14 \newpage
               <./Bilder/hpl5.pdf>]
-<./Bilder/hpl6.pdf, id=875, 361.35pt x 252.945pt>
+<./Bilder/hpl6.pdf, id=880, 361.35pt x 252.945pt>
 File: ./Bilder/hpl6.pdf Graphic file (type pdf)
  <use ./Bilder/hpl6.pdf>
 Package pdftex.def Info: ./Bilder/hpl6.pdf used on input line 17.
@@ -700,7 +703,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 43--43
 s. nur ak-ti-ve RPis
  []
 
-<./Bilder/stream5.pdf, id=876, 361.35pt x 252.945pt>
+<./Bilder/stream5.pdf, id=881, 361.35pt x 252.945pt>
 File: ./Bilder/stream5.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream5.pdf>
@@ -722,7 +725,7 @@ ame{figure.4.3}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.58 \end{figure}
                   <./Bilder/hpl6.pdf>]
-<./Bilder/stream6.pdf, id=894, 361.35pt x 252.945pt>
+<./Bilder/stream6.pdf, id=899, 361.35pt x 252.945pt>
 File: ./Bilder/stream6.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream6.pdf>
@@ -775,7 +778,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Bilder/top500.pdf, id=951, 361.35pt x 252.945pt>
+<./Bilder/top500.pdf, id=956, 361.35pt x 252.945pt>
 File: ./Bilder/top500.pdf Graphic file (type pdf)
  <use ./Bilder/top500.pdf>
 Package pdftex.def Info: ./Bilder/top500.pdf used on input line 202.
@@ -1020,21 +1023,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `grei14.out' has not changed.
-(rerunfilecheck)             Checksum: 3D6798A2520AB41FDD095D4E970EFA3A;2967.
+(rerunfilecheck)             Checksum: FB224FD04DA22F4394D22F9BA143366A;3025.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
  ) 
 Here is how much of TeX's memory you used:
- 7252 strings out of 493488
- 110213 string characters out of 3141326
- 237620 words of memory out of 3000000
- 10113 multiletter control sequences out of 15000+200000
+ 7254 strings out of 493488
+ 110237 string characters out of 3141326
+ 237659 words of memory out of 3000000
+ 10114 multiletter control sequences out of 15000+200000
  13274 words of font info for 46 fonts, out of 3000000 for 9000
  999 hyphenation exceptions out of 8191
  36i,8n,39p,1687b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1240,10 +1243,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2012/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on grei14.pdf (64 pages, 20088654 bytes).
+Output written on grei14.pdf (64 pages, 20088900 bytes).
 PDF statistics:
- 1302 PDF objects out of 1440 (max. 8388607)
- 1140 compressed objects within 12 object streams
- 265 named destinations out of 1000 (max. 500000)
- 443 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1307 PDF objects out of 1440 (max. 8388607)
+ 1145 compressed objects within 12 object streams
+ 266 named destinations out of 1000 (max. 500000)
+ 451 words of extra memory for PDF output out of 10000 (max. 10000000)
 

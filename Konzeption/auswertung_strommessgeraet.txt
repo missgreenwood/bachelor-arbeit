@@ -65,5 +65,5 @@ PRIMARY KEY (DeviceID, Stamp)
 
 4. evtl. UPNP-Interface
 - Port 5000 offen (Strommessgerät) -> wahrscheinlich UPNP aktiv, kann mit UPNP-Browser ausgelesen werden; es gibt ein UPNP-Discovery-Protokoll mit Selbstbeschreibung
-- auslesen vermutlich möglich GUpnp (Linux)/Miranda (Mac)/Wireshark (Mac/Linux)/UPNP-Inspector (Windows)
+- auslesen vermutlich möglich mit GUpnp (Linux)/Wireshark (Mac/Linux)/UPNP-Inspector (Windows)
 - Power Manager-Software greift über einen separaten Port auf die EGM-PWM-LAN zu, welcher auf einen anderen Port abgeändert werden kann (Standard-Port 5000). Port 80 darf für die Software nicht gewählt werden, da dieser von dem Webserver belegt ist. Zur Verwendung der SW muss gewählter Port im Netzwerk freigegeben sein.

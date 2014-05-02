@@ -43,7 +43,19 @@
 			"file": "todo130314.txt",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 760,
+=======
+				"buffer_size": 627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Konzeption/auswertung_strommessgeraet.txt",
+			"settings":
+			{
+				"buffer_size": 3036,
+>>>>>>> 139f1f46c60b90761f2976b1bff5b07eb9d0b1da
 				"line_ending": "Unix"
 			}
 		}
@@ -208,15 +220,52 @@
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< HEAD
 						"buffer_size": 760,
+=======
+						"buffer_size": 627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Konzeption/auswertung_strommessgeraet.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3036,
+>>>>>>> 139f1f46c60b90761f2976b1bff5b07eb9d0b1da
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
 								651,
 								651
+=======
+								438,
+								438
+>>>>>>> 139f1f46c60b90761f2976b1bff5b07eb9d0b1da
 							]
 						],
 						"settings":
