@@ -3,7 +3,7 @@
 
 Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem ausgef"uhrt wurden. Dabei steht oft die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponen\-ten im Vordergrund. Zu diesem Zweck werden haupts"achlich Linux-spezifische Benchmarks verwendet wie Sysbench CPU Benchmark (CPU), PyBench (Python-Implementierung), Apache Benchmark (Webserver), Open\-SSL (CPU) oder ioquake3 (GPU). 
 
-Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Eine solche Routine kann f"ur einen Vergleich mit HPC-Rechnern herangezogen werden. Im Folgenden wird daher auf grundlegende Begriffe eingegangen, die f"ur die nachfolgende Untersuchung von Bedeutung sind. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
+Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
 
 \section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
@@ -24,31 +24,46 @@ In dieser Arbeit soll die Leistung von Hardware-Komponenten eines oder mehrerer 
 \onehalfspacing
 [F]"ur diese Aufgaben, die die etwa im Zuge einer Rechnerbeschaffung anfallen, wurde in Form von standardisierten Me\ss programmen und -methoden (\textit{benchmarking}) eine solide Basis geschaffen \cite{rec06}. 
 \end{quote} 
-Daher wird hier hier mit \textit{Benchmarking} kurz das \textbf{\textit{Standardisieren von Arbeit}} bezeichnet.
+Daher wird hier hier mit \textit{Benchmarking} das \textbf{\textit{Standardisieren von Arbeit}} bezeichnet.
 
-\section{Definition: \textit{Leistung}}\label{Leistung}
-
-Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik hingegen wird damit meist die \textit{Rechenleistung} bezeichnet, also Datenverarbeitungsgeschwindigkeit, Geschwindigkeit der eingesetzten Maschinenteile sowie einzelner Anwendungen. % Quelle
-
-Wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems sind das zu untersuchende System, die Workload und die Methode zur Leistungsermittlung (vgl. \cite{rec06}), au\ss erdem 
-
-[...] die \textit{Leistungskenngr"o\ss en} oder \textit{-ma\ss zahlen} (\textit{performance metrics}), die f"ur das vorliegende Rechnersystem und die Ziele der Leistungsanalyse relevant sind \cite{rec06}. 
-
-Die hier verwendete Definition greift den ersten Aspekt auf: Mit \textit{Leistung} ist die \textbf{\textit{Time to completion}} gemeint, d.h. die Zeit, die ein Prozess oder ein Programm(teil) bis zum erfolgreichen Abschluss ben"otigt. Bei Rechenberg wird dies als "`Programmlaufzeit"' \cite{rec06} bezeichnet\footnote{Andere Klassen von Kenngr"o\ss en, die neben der Zeit zur Leistungsbewertung herangezogen werden, sind \textit{Durchsatz} und \textit{Auslastung}. Abweichende zeitliche Kenngr"o\ss en sind z.B. \textit{Bedienzeit (Service time)} oder \textit{TTR (Time to Response)} (vgl. ebd.).}. 
-
+% Def. Performance = Rechenleistung 
 \section{Definition: \textit{Performance}}\label{Performance}
 
-F"ur den Begriff \textit{Performance} im Zusammenhang mit Rechnern existieren verschiedene Definitionen, h"aufig gleichbedeutend mit der \textit{Rechenleistung} oder nicht klar davon abgegrenzt. Erkl"arungen wie "`Zeitverhalten von Programmen und Ger"aten"' oder "`Leistungsf"ahigkeit eines Computersystems"' scheinen der Fragestellung nicht ganz gerecht zu werden: 
+Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik wird der Begriff meist abweichend als Rechenleistung verwendet, d.h. das Zeitverhalten von Programmen und Ger"aten oder die Leistungsf"ahigkeit eines Computersystems. Eine Abgrenzung erscheint jedoch schwierig: 
 \begin{quote}
 \onehalfspacing
 The performance of a computer is a complicated issue, a function of many interrelated quantities. These quantities include the application, the algorithm, the size of a problem, the high-level language, the implementation, the human level of effort used to optimize the program, the compiler's ability to optimize, the age of the compiler, the operating system, the architecture of the computer and the hardware characteristics \cite{don03}.
 \end{quote}
-Das \textit{Informatik-Handbuch} liefert eine genauere Definition:
+Das \textit{Informatik-Handbuch} liefert folgende Aspekte:
 \begin{quote} 
 \onehalfspacing
 Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [...] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen \cite{rec06}.
 \end{quote}
-In dieser Arbeit werden Performance eines RPis und eines RPi-Clusters ermittelt und der Leistungsf"ahigkeit eines Supercomputers gegen"ubergestellt. Der Ma\ss stab f"ur die Performance ist dabei die \textit{Time to Completion} eines gegebenen Benchmark-Programms\footnote{Vgl. hierzu Curnow in Bezug auf Whetstone: "`We are not claiming [to reflect] the overall performance of a given system. On the contrary, we believe that no single number ever can. It does, however, reflect the performance of a dedicated machine for solving a dense system of linear equations \cite{cur76}."'}. \textit{Performance} soll daher hier als \textbf{\textit{Arbeit pro Zeit}} verstanden werden. 
+In dieser Arbeit soll die Performance eines RPis und eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen ermittelt werden. Curnow erl"autert in Bezug auf Whetstone: 
+\begin{quote}
+\onehalfspacing
+We are not claiming [to reflect] the overall performance of a given system. On the contrary, we believe that no single number ever can. It does, however, reflect the performance of a dedicated machine for solving a dense system of linear equations \cite{cur76}.
+\end{quote}
+Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in diesem abgegrenzten Sinn bezeichnet, d.h. die Datenverarbeitungsgeschwindigkeit eines spezifischen Systems, nicht dessen Leistung im physikalischen Sinn. 
+
+% Def.: Leistung = Time to Completion (lt. Christian, aber m.E. falsch - daher ersetzt durch Energieverbrauch)
+%\section{Definition: \textit{Leistung}}\label{Leistung}
+%
+%Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik wird der Begriff meist abweichend verwendet: Laut Rechenberg sind wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems das zu untersuchende System, die Arbeitslast und die Methode zur Leistungsermittlung (vgl. \cite{rec06}), au\ss erdem 
+%\begin{quote}
+%\onehalfspacing
+%[...] die \textit{Leistungskenngr"o\ss en} oder \textit{-ma\ss zahlen} (\textit{performance metrics}), die f"ur das vorliegende Rechnersystem und die Ziele der Leistungsanalyse relevant sind \cite{rec06}. 
+%\end{quote}
+%Die hier verwendete Definition greift den ersten Aspekt auf: Mit \textit{Leistung} ist die \textbf{\textit{Time to completion}} gemeint, d.h. die Zeit, die ein Prozess oder ein Programm(teil) bis zum erfolgreichen Abschluss ben"otigt. Bei Rechenberg wird dies als "`Programmlaufzeit"' \cite{rec06} bezeichnet\footnote{Andere Klassen von Kenngr"o\ss en, die neben der Zeit zur Leistungsbewertung herangezogen werden, sind \textit{Durchsatz} und \textit{Auslastung}. Abweichende zeitliche Kenngr"o\ss en sind z.B. \textit{Bedienzeit (Service time)} oder \textit{TTR (Time to Response)} (vgl. \cite{rec06}).}. 
+
+% Energieverbrauch = Exergieverbrauch/Entropieerzeugung in Watt
+\section{Definition: \textit{Energieverbrauch}}\label{Energieverbrauch}
+
+Obwohl der Begriff \textit{Energieverbrauch} weit verbreitet ist (vgl. z.B. \cite{fic13} und \cite{}), entstammt er nicht der Wissenschaftssprache. Nach dem Energieerhaltungssatz der Physik kann die Energie in einem geschlossenen System nicht verbraucht, sondern ledigich umgewandelt werden, d.h. die Gesamtenergie bleibt konstant. Dennoch wird der Begriff auch in der Informatik h"aufig verwendet, um die Leistungsf"ahigkeit eines Rechners oder Rechensystems in Abh"angigkeit von der Energieaufnahme zu charakterisieren:
+\begin{quote}
+\onehalfspacing
+\end{quote}
+In dieser Arbeit liegt ein Schwerpunkt der Leistungsbewertung auf der Energieaufnahme eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen unter verschiedenen Bedingungen. Mit \textit{Energieverbrauch} wird hier der Exergieverbrauch bzw. die Entropieerzeugung in Watt im physikalischen Sinn bezeichnet.     
 
 \section{Benchmarks}\label{Benchmarks}
 

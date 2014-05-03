@@ -6,10 +6,6 @@ Seit Beginn seiner Entwicklung im Jahr 2009 boomt der Minicomputer Raspberry Pi 
 
 \section{Hintergrund}\label{Hintergrund}
 
-Die Leistung von Rechnern, seien es Gro\ss rechner, Desktop-Rechner oder Minicomputer, wird h"aufig durch Benchmarks ermittelt. Das erm"oglicht die Vergleichbarkeit der Testergebnisse unterschiedlicher Systeme. Bekannte und erprobte Benchmark-Suites sind z.B. Linpack und Whetstone, mit denen seit den 70er Jahren die Performance von Supercomputern ermittelt wird. F"ur Einzelrechner mit Linux-Systemen gibt es z.B. die Phoronix Test Suite oder UnixBench, um die Performance der einzlnen Komponenten wie CPU, GPU und RAM zu evaluieren.  
-
-\section{Hintergrund}\label{Hintergrund}
-
 Die Leistung von Rechnern, seien es Gro\ss rechner, Desktop-Rechner oder Minicomputer, wird h"aufig durch Benchmarks ermittelt. Das erm"oglicht die Vergleichbarkeit der Testergebnisse unterschiedlicher Systeme. Bekannte und erprobte Benchmark-Suites sind z.B. Linpack und Whetstone, mit denen seit den 70er Jahren die Performance von Supercomputern ermittelt wird. F"ur Einzelrechner mit Linux-Systemen gibt es z.B. die Phoronix Test Suite oder UnixBench, um die Performance der einzlnen Komponenten wie CPU, GPU und RAM zu evaluieren. 
 
 % PROBLEM STATEMENT
@@ -29,13 +25,13 @@ Grunds"atzlich stellt sich die Frage, welche Benchmarks sich f"ur das zu untersu
 F"ur den physischen Versuchsaufbau muss sicher gestellt sein, dass alle erforderlichen Komponenten (RPi-Cluster, RPi-Einzelrechner und Strommessger"at) m"oglichst zuverl"assig arbeiten. Dies muss regelm"a\ss ig "uberpr"uft werden, z.B. durch Kontrolle des Netzwerkstatus der Komponenten.  
 
 % Automatisierung durch Skripte
-Die Ausf"uhrung der Benchmarks mit unterschiedlichen Anzahlen aktiver und gepowerter RPi-Nodes erfolgt sinnvollerweise automatisiert durch entsprechende Shellskripte. Die Resultate m"ussen in geeigneter Form in eine Datenbank geloggt werden, was ebenfalls durch Shellskripte realisiert wird. 
+Die Ausf"uhrung der Benchmarks mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes erfolgt sinnvollerweise automatisiert durch entsprechende Shellskripte. Die Resultate m"ussen in geeigneter Form in eine Datenbank geloggt werden, was ebenfalls durch Shellskripte realisiert wird. 
 
 % Strommessgerät 
-Der Stromverbrauch des RPi-Clusters mit unterschiedlichen Anzahlen aktiver und gepowerter RPi-Nodes wird durch ein Strommessger"at ermittelt, das an die Stromversorgung des RPi-Clusters angeschlossen wird. Seine Messwerte m"ussen ebenfalls in geeigneter Form in eine Datenbank geloggt werden.  
+Der Stromverbrauch des RPi-Clusters mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes wird durch ein Strommessger"at ermittelt, das an die Stromversorgung des RPi-Clusters angeschlossen wird. Seine Messwerte m"ussen ebenfalls in geeigneter Form in eine Datenbank geloggt werden.  
 
 % Evaluierung der Ergebnisse
-Die Messwerte der Benchmarks m"ussen mit denen des Strommessger"ats gematcht werden, um Aussagen "uber den Stromverbrauch treffen zu k"onnen. F"ur die Interpretation der ermittelten Versuchsergebnisse ist eine grafische Aufbereitung erforderlich.
+Die Messwerte der Benchmarks m"ussen mit denen des Strommessger"ats abgeglichen werden, um Aussagen "uber den Stromverbrauch treffen zu k"onnen. F"ur die Interpretation der ermittelten Versuchsergebnisse ist eine grafische Aufbereitung erforderlich.
 
 \section{Struktur}\label{Struktur}
 
