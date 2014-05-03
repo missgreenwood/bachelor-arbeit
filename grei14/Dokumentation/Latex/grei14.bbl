@@ -21,6 +21,13 @@
 \newblock
   \url{http://downloads.raspberrypi.org/Raspberry_Pi_Education_Manual.pdf}
 
+\bibitem[BL08]{buh08}
+\textsc{Buhl}, Hans ; \textsc{Laartz}, J"urgen:
+\newblock Warum Green IT nicht ausreicht -- oder: Wo m"ussen wir heute
+  anpacken, damit es uns "ubermorgen immer noch gut geht.
+\newblock {In: }\emph{Wirtschaftsinformatik}  (2008), S. 261--265. --
+\newblock \url{http://dx.doi.org/10.1365/s11576-008-0058-5}
+
 \bibitem[CCB{\etalchar{+}}13]{cox13}
 \textsc{Cox}, Simon ; \textsc{Cox}, James ; \textsc{Boardman}, Richard  u.\,a.:
 \newblock Iridis-pi: A Low-cost, Compact Demonstration Cluster.
@@ -70,6 +77,12 @@
 \textsc{Langer}, Alexander:
 \newblock \emph{Raspberry Pi Handbuch}, Februar 2012. --
 \newblock \url{http://raspberrycenter.de/handbuch/raspberry-pi-handbuch}
+
+\bibitem[LB12]{lan13}
+\textsc{Lange}, Walter ; \textsc{Bogdan}, Martin:
+\newblock \emph{Entwurf und Synthese von Eingebetteten Systemen: Ein Lehrbuch}.
+\newblock M"unchen : Oldenbourg, 2012. --
+\newblock ISBN 3486718401
 
 \bibitem[LDK{\etalchar{+}}05]{lus05}
 \textsc{Luszcek}, Piotr ; \textsc{Dongarra}, Jack ; \textsc{Koester}, David

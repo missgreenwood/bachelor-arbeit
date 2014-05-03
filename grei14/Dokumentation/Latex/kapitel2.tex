@@ -10,7 +10,7 @@ Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die
 Unter \textit{Benchmarking} oder "`Ma\ss st"abe vergleichen"' versteht man im Allgemeinen die vergleichende Analyse von Ergebnissen oder Prozessen mit einem festgelegten Bezugswert oder Vergleichsprozess. \textit{Computer-Benchmarks}, die hier von Bedeutung sind, dienen dem Vergleich der Rechenleistung von Computer-Systemen, wozu in der Regel Software verwendet wird:
 \begin{quote}
 \onehalfspacing
-A simple method of measuring performance is by means of a benchmark program. [...] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}.
+A simple method of measuring performance is by means of a benchmark program. [\dots] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}.
 \end{quote}
 Das \textit{Computer Lexikon 2012} kennt folgende Definition: 
 \begin{quote}
@@ -37,7 +37,7 @@ The performance of a computer is a complicated issue, a function of many interre
 Das \textit{Informatik-Handbuch} liefert folgende Aspekte:
 \begin{quote} 
 \onehalfspacing
-Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [...] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen \cite{rec06}.
+Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [\dots] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen \cite{rec06}.
 \end{quote}
 In dieser Arbeit soll die Performance eines RPis und eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen ermittelt werden. Curnow erl"autert in Bezug auf Whetstone: 
 \begin{quote}
@@ -59,24 +59,42 @@ Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in
 % Energieverbrauch = Exergieverbrauch/Entropieerzeugung in Watt
 \section{Definition: \textit{Energieverbrauch}}\label{Energieverbrauch}
 
-Obwohl der Begriff \textit{Energieverbrauch} weit verbreitet ist (vgl. z.B. \cite{fic13} und \cite{}), entstammt er nicht der Wissenschaftssprache. Nach dem Energieerhaltungssatz der Physik kann die Energie in einem geschlossenen System nicht verbraucht, sondern ledigich umgewandelt werden, d.h. die Gesamtenergie bleibt konstant. Dennoch wird der Begriff auch in der Informatik h"aufig verwendet, um die Leistungsf"ahigkeit eines Rechners oder Rechensystems in Abh"angigkeit von der Energieaufnahme zu charakterisieren:
+Obwohl der Begriff \textit{Energieverbrauch} (engl. \textit{energy consumption} oder \textit{power consumption}) weit verbreitet ist (vgl. z.B. \cite{fic13} und \cite{buh08}), stimmt er nicht mit der physikalischen Definition "uberein: Nach dem Energieerhaltungssatz bleibt die Gesamtenergie in einem geschlossenen System konstant. Dennoch wird der Begriff auch in der Informatik h"aufig verwendet, um die Leistungsf"ahigkeit eines Rechners oder Rechensystems in Abh"angigkeit von der Energieaufnahme zu charakterisieren:
 \begin{quote}
 \onehalfspacing
+Vom physikalischen Standpunkt aus betrachtet, ist der Ausdruck "`Energieverbrauch"' falsch. Energie kann nicht verbraucht oder erzeugt, sondern nur umgewandelt werden. Trotzdem hat sich dieser Bergriff eingeb"urgert [\dots]. Bei elektronischen Systemen wird elektrische Energie verwendet, um Rechenleistung in einer bestimmten Zeitspanne zu generieren, physikalisch gesehen wird die elektrische Energie jedoch zu nahezu hundert Prozent in W"armeenergie umgewandelt \cite{lan13}. 
 \end{quote}
-In dieser Arbeit liegt ein Schwerpunkt der Leistungsbewertung auf der Energieaufnahme eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen unter verschiedenen Bedingungen. Mit \textit{Energieverbrauch} wird hier der Exergieverbrauch bzw. die Entropieerzeugung in Watt im physikalischen Sinn bezeichnet.     
+In dieser Arbeit liegt ein Schwerpunkt der Leistungsbewertung auf der Energieaufnahme eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen. Mit \textit{Energieverbrauch} ist hier der Exergieverbrauch bzw. die Entropieerzeugung in Watt im physikalischen Sinn gemeint.     
 
 \section{Benchmarks}\label{Benchmarks}
 
-Aus der F"ulle an existierenden Benchmarks wurden drei f"ur die Untersuchung ausgew"ahlt. Kriterien waren dabei Erprobtheit, Verl"asslichkeit und Angemessenheit f"ur das zu untersuchende System\footnote{Vgl. Weickers Kriterien f"ur die Auswahl eines Benchmarks: "`the [\dots] best benchmark (1) is written in a high-level language, making it portable across different machines, (2) is representative for some kind of programming style (for example, systems programming, numerical programming, or commercial programming), (3) can be measured easily, and (4) has wide distribution \cite{wei90}."'}. Au\ss erdem muss gew"ahrleistet sein, dass der Benchmark "uberhaupt auf das gew"ahlte System anwendbar und an dieses anpassbar ist\footnote{Aus diesem Grund mussten z.B. SHOC und LLNL IOR ausscheiden. SHOC ist nicht lauff"ahig auf dem RPi, da Open CL nicht unterst"utzt wird. LLNL IOR wiederum ben"otigt ein POSIX-, MPIIO- oder HDF5-Interface. Zum Ausscheiden von Whetstone auf dem RPi-Cluster vgl. Kap. \ref{STREAM RPi}.}. 
+Aus der F"ulle an existierenden Benchmarks eine Auswahl zu treffen erweist sich als trickreich. M"ogliche Kriterien f"ur die Auswahl nennt Weicker: 
+\begin{quote}
+\onehalfspacing
+The [\dots] best benchmark (1) is written in a high-level language, making it portable across different machines, (2) is representative for some kind of programming style (for example, systems programming, numerical programming, or commercial programming), (3) can be measured easily, and (4) has wide distribution \cite{wei90}. 
+\end{quote}
+Der Benchmark muss zudem "uberhaupt auf das gew"ahlte System anwendbar sein, d.h. das System muss dessen Spezifikationen erf"ullen bzw. es muss eine geeignete Implementierung vorliegen. Aus diesem Grund musste z.B. SHOC ausscheiden. SHOC ist nicht lauff"ahig auf dem RPi, da Open CL nicht unterst"utzt wird. 
 
-Mit dem Ziel, das Skalierungsverhalten eines RPi-Clusters zu untersuchen, wurden drei etablierte HPC-Benchmarks ausgew"ahlt, die sowohl auf Cluster-Architekturen als auch Einzelrechnern zur Anwendung kommen: Linpack, Whetstone und STREAM. Sie werden im Folgenden vorgestellt. 
+F"ur die Untersuchung wurden drei etablierte HPC-Benchmarks vorgegeben, die sowohl auf Cluster-Architekturen als auch Einzelrechnern zur Anwendung kommen: Linpack, Whetstone und STREAM. Sie werden im Folgenden vorgestellt. 
 
 \subsection{Linpack}\label{Linpack}
 
-Grunds"atzlich muss man zwischen der Linpack-Library und dem Linpack-Benchmark unterscheiden: Die Library ist eine numerische Programmbibliothek zum L"osen von linearen Gleichungssystemen. Sie wurde inzwischen von anderen Bibliotheken abgel"ost, galt aber lange als Standard\footnote{F"ur die genaue Spezifikation von Linpack vgl. \cite{don03}. Der Sourcecode f"ur Linpack 1000 in Fortran findet sich unter \url{http://www.netlib.org/benchmark/1000d}.}. Der Linpack-Benchmark basiert auf zwei Programmen dieser Bibliothek\footnote{"`Linpack was designed out of a real, purposeful program that is now used as a benchmark \cite{wei90}."'}. Er wurde haupts"achlich von Jack Dongarra, einem der Autoren der Linpack-Bibliothek, entwickelt und wird seit den 1970er Jahren zur Klassifizierung von Rechnern verwendet\footnote{"`Over the years additional performance data was added [...] and today the collection includes over 1300 different computer systems \cite{don03}."'}. Seit 1993 werden die leistungsf"ahigsten Supercomputer der Welt durch die Top500-Rankings ermittelt. Hierzu dient die Variante HPLinpack, auch $N\times N$ Linpack oder High Parallel Computing genannt\footnote{"`Over recent years, the LINPACK Benchmark has evolved from a simple listing for one matrix problem to an expanded benchmark describing the performance at three levels of problem size on several hundred computers. The benchmark today is used by scientists worldwide to evaluate computer performance, particularly for innovative advanced-architecture machines \cite{don03}."' Eine detaillierte Beschreibung des Sourcecode von HPLinpack findet sich ebd..}. 
-
-% MPI: Message Passing Interface
-
+Grunds"atzlich muss zwischen der Linpack-Library und dem Linpack-Benchmark unterschieden werden: Erstere ist eine numerische Programmbibliothek zum L"osen von linearen Gleichungssystemen und galt darin lange Zeit als Standard. Der Linpack-Benchmark basiert auf zwei ihrer Routinen: 
+\begin{quote}
+\onehalfspacing
+Linpack was designed out of a real, purposeful program that is now used as a benchmark \cite{wei90}. 
+\end{quote}
+Er wurde haupts"achlich von Jack Dongarra entwickelt und wird seit den 1970er Jahren zur Klassifizierung von Rechnern verwendet: 
+\begin{quote}
+\onehalfspacing
+Over the years additional performance data was added [\dots] and today the collection includes over 1300 different computer systems \cite{don03}.
+\end{quote}
+Seit 1993 werden die leistungsf"ahigsten Supercomputer der Welt durch die Top500-Rankings ermittelt. Hierzu dient die Variante HPLinpack, auch $N\times N$ Linpack oder High Parallel Computing genannt:  
+\begin{quote}
+\onehalfspacing
+Over recent years, the LINPACK Benchmark has evolved from a simple listing for one matrix problem to an expanded benchmark describing the performance at three levels of problem size on several hundred computers. The benchmark today is used by scientists worldwide to evaluate computer performance, particularly for innovative advanced-architecture machines \cite{don03}. 
+\end{quote}
+Dort findet sich auch eine vertiefte Darstellung des Linpack-Benchmarks. Der Quellcode findet sich unter \url{http://www.netlib.org/benchmark/1000d}.
 % LU Factorization: 
 %Will man das Lösen eines quadratischen eindeutig lösbaren Gleichungssystems Ax=b als Computerprogramm umsetzen, bietet es sich an, den Gaußalgorithmus als LR-Zerlegung (auch LU-Zerlegung oder Dreieckszerlegung genannt) zu interpretieren. Dies ist eine Zerlegung der regulären Matrix A in das Produkt einer linken unteren Dreiecksmatrix L (links, bzw. engl. „lower“) und einer rechten oberen Dreiecksmatrix R (rechts, auch mit U bezeichnet, von engl. „upper“)
 
@@ -84,9 +102,9 @@ Grunds"atzlich muss man zwischen der Linpack-Library und dem Linpack-Benchmark u
 
 \subsubsection{Funktionsweise}\label{Funktionsweise Linpack}
 
-Linpack ist ein Benchmark zur Ermittlung der CPU-Performance. Dazu werden Flie\ss punkt-Operationen auf einer Matrix\footnote{LINPACK 100: $100 \times 100$-Matrix; LINPACK 1000: $1000\times 1000$-Matrix; HPLinpack: $n\times n$-Matrix (vgl. ebd.).}, die intern in eine lineare Darstellung umgewandelt wird, durchgef"uhrt und das Ergebnis in \textit{FLOPS} ("`Floating Point Operations Per Second"') ausgegeben\footnote{Genau genommen ist es so, dass zwar haupts"achlich, aber nicht ausschlie\ss lich Floating Point-Operationen ausgef"uhrt werden. Der Anteil der Nicht-Flie\ss punkt-Operationen wie Berechnungen auf Integer-Werten werden bei der Auswertung entweder vernachl"assigt oder in die Flie\ss punkt-Operationen integriert (vgl. \cite{wei90}).}. Dabei erreicht der derzeit leistungsf"ahigste Supercomputer, \textit{Tianhe-2 (Milky\-Way-2)}, z.B. einen \textit{Rmax}-Wert ("`Maximal LINPACK performance achieved"') von 33862.7 TFLOPS. SuperMUC, der j"ungst auf Platz 10 der Top500 gerankt wurde, erreicht einen Rmax-Wert von 2897.0 TFLOPS.
+Linpack dient der Ermittlung der CPU-Performance. Dazu werden Flie\ss punkt-Operationen auf einer Matrix durchgef"uhrt, die intern in eine lineare Darstellung umgewandelt wird. Das Ergebnis wird als \textit{Performance} in FLOPs ("`Floating Point Operations Per second"') ermittelt. Der Anteil der Nicht-Flie\ss punkt-Operationen wie Berechnungen auf Integer-Werten werden bei der Auswertung entweder vernachl"assigt oder in die Flie\ss punkt-Operationen integriert (vgl. \cite{wei90}). Die Linpack-Varianten Linpack 100, Linpack 1000 und HPLinpack verwenden Matrizen der Gr"o\ss e 100 $\times$ 100, 1000 $\times$ 1000 bzw. $n\times n$, d.h. eine Matrix variabler Gr"o\ss e, zur Berechnung. HPLinpack liefert Messergebnisse f"ur $R_{max}$ ("`Performance for the largest problem"'), $N_{max}$ ("`Size of the largest problem run"'), $N_{1/2}$ ("'Size where half the $R_{max}$ execution rate is achieved"') und $R_{peak}$ ("`Theoretical peak performance"') in \textit{FLOPs}. Entscheidend f"ur die Positionierung in der Top500-Liste ist dabei der $R_{max}$-Wert. Dabei erreicht der derzeit leistungsf"ahigste Supercomputer, \textit{Tianhe-2 (Milky\-Way-2)}, 33862.7 TFLOPS. \textit{SuperMUC}, der zuletzt auf Platz 10 der Top500 gerankt wurde, erzielte 2897.0 TFLOPS.
 
-Beim Vergleich Linpack-Ergebnissen ist die Gr"o\ss e des Arrays bzw. der Matrix von Bedeutung, da eine "Anderung wegen geringerer Datenlokalit"at zu starken Abweichungen der Ergebnisse f"uhren kann\footnote{Vgl. ebd..}. Wichtig ist das beim Vergleich der Ergebnisdaten verschiedener Rechnerarchitekturen. I.d.R. werden daher o.g. standardisierte Gr"o\ss en verwendet, auch wenn der Quellcode eine Ver"anderung der Matrixgr"o\ss e zul"asst. 
+Beim Vergleich der Ergebnisse von Linpack ist die Matrixgr"o\ss e von Bedeutung, da ihre Ab"anderung bei unterschiedlichen Rechnerarchitekturen zu geringerer Datenlokalit"at und damit zu starken Abweichungen der Ergebnisse f"uhren kann (vgl. \cite{wei90}). In der Regel werden daher die oben genannten Matrixgr"o\ss en verwendet, obwohl der Quellcode eine "Anderung zul"asst. 
 
 \subsubsection{Linpack auf dem Raspberry Pi}\label{Linpack RPi}
 
@@ -104,7 +122,7 @@ Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Fl
 
 \subsubsection{Whetstone auf dem Raspberry Pi}\label{Whetstone RPi}
 
-Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-Computer etabliert hat\footnote{Ein Grund hierf"ur ist, dass Whetstone in den 70er Jahren f"ur Maschinen mit signifikant geringerer Rechenleistung entwickelt worden war. Auch damals gingen die Entwickler von notwendigen Anpassungen f"ur neue Speicherhierarchien aus: "`When more is known about the characteristics of programs running on these multi-level store machines it may be possible to produce a typical program for particular types of machine. [...] Despite these limitations the program described should be of some value, particularly in relation to smaller machines (ebd.)."'}. Er wurde vom Entwickler selbst f"ur den RPi adaptiert und auf diesem getestet\footnote{Vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}.}. Auch hier liegen also bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
+Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-Computer etabliert hat\footnote{Ein Grund hierf"ur ist, dass Whetstone in den 70er Jahren f"ur Maschinen mit signifikant geringerer Rechenleistung entwickelt worden war. Auch damals gingen die Entwickler von notwendigen Anpassungen f"ur neue Speicherhierarchien aus: "`When more is known about the characteristics of programs running on these multi-level store machines it may be possible to produce a typical program for particular types of machine. [\dots] Despite these limitations the program described should be of some value, particularly in relation to smaller machines (ebd.)."'}. Er wurde vom Entwickler selbst f"ur den RPi adaptiert und auf diesem getestet\footnote{Vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}.}. Auch hier liegen also bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
 
 Wie f"ur die meisten etablierten HPC-Benchmarks existieren Implementierungen in zahlreichen h"oheren Programmiersprachen wie C, C++, Fortran und Java\footnote{Vgl. z.B. \url{http://freespace.virgin.net/roy.longbottom}.}. Auch hier wird aus nahe liegenden Gr"unden auf eine Implementierung in C f"ur den RPi-Einzelrechner zur"uckgegriffen\footnote{Der hier verwendete Sourcecode findet sich ebenfalls unter \url{http://www.roylongbottom.org.uk/Raspberry_Pi_Benchmarks.zip}.}. Ob eine lauff"ahige Implementierung f"ur die Cluster-Architektur existiert, wird sich zeigen m"ussen. 
 

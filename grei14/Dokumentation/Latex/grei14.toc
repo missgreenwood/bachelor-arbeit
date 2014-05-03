@@ -10,22 +10,22 @@
 \contentsline {section}{\numberline {2.4}Benchmarks}{5}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Linpack}{5}{subsection.2.4.1}
 \contentsline {subsubsection}{Funktionsweise}{6}{section*.2}
-\contentsline {subsubsection}{Linpack auf dem Raspberry Pi}{6}{section*.3}
-\contentsline {subsection}{\numberline {2.4.2}Whetstone}{6}{subsection.2.4.2}
+\contentsline {subsubsection}{Linpack auf dem Raspberry Pi}{7}{section*.3}
+\contentsline {subsection}{\numberline {2.4.2}Whetstone}{7}{subsection.2.4.2}
 \contentsline {subsubsection}{Funktionsweise}{7}{section*.4}
-\contentsline {subsubsection}{Whetstone auf dem Raspberry Pi}{7}{section*.5}
-\contentsline {subsection}{\numberline {2.4.3}STREAM}{7}{subsection.2.4.3}
-\contentsline {subsubsection}{Funktionsweise}{8}{section*.6}
-\contentsline {subsubsection}{STREAM auf dem Raspberry Pi}{8}{section*.7}
+\contentsline {subsubsection}{Whetstone auf dem Raspberry Pi}{8}{section*.5}
+\contentsline {subsection}{\numberline {2.4.3}STREAM}{8}{subsection.2.4.3}
+\contentsline {subsubsection}{Funktionsweise}{9}{section*.6}
+\contentsline {subsubsection}{STREAM auf dem Raspberry Pi}{9}{section*.7}
 \contentsline {section}{\numberline {2.5}Spezifikation des RPi Modell B}{9}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Physischer Aufbau}{9}{subsection.2.5.1}
 \contentsline {subsubsection}{SoC, CPU, GPU und RAM}{9}{section*.8}
-\contentsline {subsubsection}{Schnittstellen}{9}{section*.9}
+\contentsline {subsubsection}{Schnittstellen}{10}{section*.9}
 \contentsline {subsection}{\numberline {2.5.2}Betriebssystem}{10}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Raspberry Pi-Cluster als Testumfeld}{10}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Physischer Aufbau}{10}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{11}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Zugriff auf die Cluster-Komponenten}{11}{subsection.2.6.3}
+\contentsline {section}{\numberline {2.6}Raspberry Pi-Cluster als Testumfeld}{11}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Physischer Aufbau}{11}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{12}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Zugriff auf die Cluster-Komponenten}{12}{subsection.2.6.3}
 \contentsline {chapter}{\numberline {3}Versuchsaufbau und -ablauf}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Zielsetzung}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}Aufbau und Art der Messung}{13}{section.3.2}

@@ -19,45 +19,45 @@ Warning--empty edition in scrguide02
 Warning--empty address in scrguide02
 Warning--there's an address but no publisher in lus05
 Warning--empty number in lus05
-You've used 17 entries,
+You've used 19 entries,
             4793 wiz_defined-function locations,
-            987 strings with 9105 characters,
-and the built_in function-call counts, 9432 in all, are:
-= -- 1020
-> -- 244
-< -- 229
-+ -- 265
-- -- 79
-* -- 601
-:= -- 1616
-add.period$ -- 15
-call.type$ -- 17
-change.case$ -- 78
-chr.to.int$ -- 17
-cite$ -- 25
-duplicate$ -- 284
-empty$ -- 679
-format.name$ -- 164
-if$ -- 1908
+            999 strings with 9455 characters,
+and the built_in function-call counts, 10745 in all, are:
+= -- 1159
+> -- 282
+< -- 262
++ -- 304
+- -- 91
+* -- 690
+:= -- 1834
+add.period$ -- 17
+call.type$ -- 19
+change.case$ -- 88
+chr.to.int$ -- 19
+cite$ -- 27
+duplicate$ -- 321
+empty$ -- 777
+format.name$ -- 186
+if$ -- 2175
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 68
-newline$ -- 113
-num.names$ -- 51
-pop$ -- 102
+missing$ -- 78
+newline$ -- 125
+num.names$ -- 57
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 126
 quote$ -- 0
-skip$ -- 511
+skip$ -- 579
 stack$ -- 0
-substring$ -- 581
-swap$ -- 63
-text.length$ -- 49
+substring$ -- 687
+swap$ -- 72
+text.length$ -- 55
 text.prefix$ -- 11
 top$ -- 0
-type$ -- 176
+type$ -- 192
 warning$ -- 8
-while$ -- 83
-width$ -- 22
-write$ -- 239
+while$ -- 96
+width$ -- 24
+write$ -- 266
 (There were 8 warnings)
