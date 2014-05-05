@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {2.5.2}Betriebssystem}{9}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}Raspberry Pi-Cluster als Testumfeld}{10}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Physischer Aufbau}{10}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{11}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.2}Betriebssystem und Filesystem}{10}{subsection.2.6.2}
 \contentsline {subsection}{\numberline {2.6.3}Zugriff auf die Cluster-Komponenten}{11}{subsection.2.6.3}
 \contentsline {chapter}{\numberline {3}Versuchsaufbau und -ablauf}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Zielsetzung}{13}{section.3.1}

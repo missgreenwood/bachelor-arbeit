@@ -185,27 +185,47 @@ Seit einiger Zeit l"asst sich die Tendenz beobachten, eine gr"o\ss ere Anzahl vo
 
 \subsection{Physischer Aufbau}\label{Bramble-Hardware}
 
-Der RPi-Cluster besteht aus 20 RPi Modell B-Einzelrechnern (DNS-Namen \texttt{pi01} -- \texttt{pi20}), die jeweils "uber ein Ethernet-Kabel mit dem zentralen x86-Server (im Folgenden mit seinem DNS-Namen \texttt{careme} bezeichnet) verbunden sind. Er besteht haupts"achlich aus einem Mini-ITX-Mainboard und einer Gigabit Ethernet-Netzwerkkarte. Alle Komponenten befinden sich in einem modifizierten Tower-Metallgeh"ause, das auf die Seite gedreht und oben offen gelassen wurde. Darin sind au\ss erdem ein 24 Port Gigabit-Switch, die Stromversorgung des Servers und der RPi-Nodes sowie die K"uhlung integriert
+Der RPi-Cluster besteht aus 20 RPi Modell B-Einzelrechnern ((1), DNS-Namen \texttt{pi01} -- \texttt{pi20}). Sie sind jeweils "uber ein Ethernet-Kabel (2) mit einem 24 Port Gigabit-Switch (3) verbunden, der an einen zentralen x86-Server (DNS-Name \texttt{careme}) angeschlossen ist. 
 
-Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Betriebssystem, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01}). Es kann der Simulation eines Supercomputers dienen. Im Zusammenhang mit RPis wird auch der Begriff \textit{Bramble} "ublich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}). 
+Er besteht aus einem Mini-ITX-Mainboard (4) und % TODO: wie viele? 
+Festplatten mit einem Software-RAID Level 5-System f"ur den Netzwerkzugriff und einem RAID Level 1-System f"ur das Betriebssystem (5).  
+
+Die Stromversorgung erfolgt "uber ein zentrales Netzteil (6). Daran sind zwei Verteiler (7) angeschlossen, an die jeweils 10 RPi-Einzelrechner "uber Mini-USB-Kabel (8) verbunden sind. 
+
+Alle Komponenten befinden sich in einem Metallgeh"ause, in dessen Mitte drei K"uhlgebl"ase angebracht sind. 
+%\begin{enumerate}
+%	\item RPi-Einzelrechner
+%	\item Ethernet-Kabel
+%	\item 24 Port-Gigabit-Switch  
+%	\item Mini-ITX-Mainboard
+%	\item Festplatten (RAID Level 5 als I/O-Shield, RAID Level 1 f"ur Betriebssystem)
+%	\item Netzteil
+%	\item Verteiler 
+%	\item Mini-USB-Kabel 
+%	\item K"uhlgebl"ase
+%\end{enumerate}
 \begin{figure}[htb]
 	\centering
-%	\includegraphics[width=0.7\textwidth]{bramble.pdf}\\ 
+	\includegraphics[width=0.7\textwidth]{bramble.pdf}\\ 
 	\caption{Schematischer Aufbau des hier verwendeten Bramble.}\label{fig:Bramble}
 \end{figure}
 % NIC = Network Interface Card 
-\newpage
-\subsection{Betriebssystem und Filesystem}\label{Bramble-Architektur} 
+Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Betriebs\-system, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01}). Es kann der Simulation eines Supercomputers dienen. Im Zusammenhang mit RPis wird auch der Begriff \textit{Bramble} "ublich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}). 
+\subsection{Betriebssystem und Dateisystem}\label{Bramble-Architektur} 
 
-Auf den RPi-Nodes l"auft das o.g. Betriebssytem Raspbian, auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters bzw. Bramble ist, dass es im Gegensatz zu einem Supercomputer kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Die Kommunikation zwischen den einzelnen Komponenten via Ethernet ist zudem relativ langsam. Es stellt sich daher die Frage nach dem Filesystem und der Synchronisierung der einzelnen Nodes. 
+Auf den RPi-Nodes l"auft das o.g. Betriebssytem Raspbian, auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters bzw. Bramble ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie der M"oglichkeit eines gemeinsamen Speicherzugriffs. 
 
-Um das Filesystem der einzelnen Nodes mit dem NFS des Servers zu synchronisieren, wurde hier eine Read-Only-Schicht f"ur die Slaves (Nodes) und eine Read-Write-Schicht f"ur den Master (Server) verwendet\footnote{Vgl. \cite{kli13}.}. Um trotzdem den gemeinsamen Zugriff von Server und RPi-Nodes auf ein Speichermedium zu erm"oglichen, wurde ein geshartes Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} eingerichtet. 
+Grunds"atzlich werden zwei Dateisysteme auf dem Bramble eingesetzt: NFS ("`Network File System"') f"ur die root-Verzeichnisse der RPi-Knoten und ein Union-Dateisystem 
+% NFS 
+% Union Dateisystem
+% Synchronisation 
+% gemeinsames Verzeichnis 
+
+%Um das Filesystem der einzelnen Nodes mit dem NFS des Servers zu synchronisieren, wurde hier eine Read-Only-Schicht f"ur die Slaves (Nodes) und eine Read-Write-Schicht f"ur den Master (Server) verwendet\footnote{Vgl. \cite{kli13}.}. Um trotzdem den gemeinsamen Zugriff von Server und RPi-Nodes auf ein Speichermedium zu erm"oglichen, wurde ein geshartes Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} eingerichtet. 
 
 \subsection{Zugriff auf die Cluster-Komponenten}\label{Zugriff}
 
-Welche M"oglichkeiten gibt es nun, verteilte Anwendungen auf dem Bramble auszuf"uhren bzw. "uberhaupt die einzelnen Komponenten anzusprechen? Bei einem RPi-Einzelrechner nutzt man normalerweise einen USB-Port und den HDMI-Ausgang als stdin und stdout. Eine andere M"oglichkeit besteht darin, den RPi "uber den Ethernet-Port mit einem Router zu verbinden und "uber SSH darauf zuzugreifen\footnote{Diese Variante wurde f"ur das hier verwendeten Testger"at gew"ahlt auf Grund von Problemen beim Anschluss "alterer Monitore ohne HDMI-Eingang (vgl. z.B. \url{http://www.raspberrypi.org/forum/viewtopic.php?f=91&t=34061}).}. 
-
-Der Zugriff auf den Bramble erfolgt aus dem internen Netzwerk "uber IP und SSH. Die einzelnen RPi-Nodes werden von \texttt{careme} aus "uber SSH adressiert (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). Es gibt auf jedem RPi-Node den Raspbian-Standard-User \texttt{pi}, der hier nicht ver"andert wurde\footnote{Auf dem RPi-Einzelrechner wurden aus Sicherheitsgr"unden Username und Passwort f"ur den Standard-User ge"andert.}. Um z.B. auf das gesharte Verzeichnis \texttt{/srv} zuzugreifen, sind \texttt{root}-Berechtigungen erforderlich\footnote{Auf Schwierigkeiten dieser Einteilung und L"osungsans"atze wird in Kap. \ref{Bramble-Versuchsaufbau} eingegangen.}. 
+Welche M"oglichkeiten gibt es nun, verteilte Anwendungen auf dem Bramble auszuf"uhren bzw. "uberhaupt die einzelnen Komponenten anzusprechen? Der Zugriff auf den Bramble erfolgt aus dem internen Netz "uber IP und SSH. Die einzelnen RPi-Nodes werden von \texttt{careme} aus "uber SSH adressiert (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). Es gibt auf jedem RPi-Knoten den Raspbian-Standard-User \texttt{pi}, der hier nicht ver"andert wurde\footnote{Auf dem RPi-Einzelrechner wurden aus Sicherheitsgr"unden Username und Passwort f"ur den Standard-User ge"andert.}. Um z.B. auf das gesharte Verzeichnis \texttt{/srv} zuzugreifen, sind \texttt{root}-Berechtigungen erforderlich\footnote{Auf Schwierigkeiten dieser Einteilung und L"osungsans"atze wird in Kap. \ref{Bramble-Versuchsaufbau} eingegangen.}. 
 
 Beim hier verwendeten Versuchsaufbau wurde auf \texttt{careme} mit eingeschr"ankten Rechten als User \texttt{rpi-user} gearbeitet, auf den einzelnen RPis als \texttt{root}. Das bedeutet, dass alle "Anderungen im gesharten Verzeichnis notwendigerweise von einem der RPi-Nodes aus vorgenommen werden m"ussen. Dazu wurde vorab RPi-Node \texttt{pi03} als Berechnungs-Node definiert, von dem aus alle Skripte ausgef"uhrt, Programme installiert werden etc.. Da die Skripte zur Ausf"uhrung der Benchmarks h"aufig das Herunterfahren einzelner RPi-Nodes vorsehen (vgl. Kap. \ref{Anhang}), wurden die Benchmarks grunds"atzlich auf maximal n=19 RPi-Nodes ausgef"uhrt (vgl. Kap. \ref{Kapitel 3}). Zur verteilten Berechnung von Anwendungen auf mehreren CPUs steht auf dem Bramble die MPI-Implementierung MPICH in der Version 3.0.4 zur Verf"ugung. Um die CPUs bzw. RPi-Nodes und die Anzahl der darauf auszuf"uhrenden Prozesse zu spezifizieren, muss ein entsprechendes Machinefile erstellt und im gesharten Verzeichnis abgelegt werden, das der Ausf"uhrung von MPICH mit \texttt{mpiexec} als Parameter "ubergeben wird (vgl. Kap. \ref{Kapitel 3}). 
 \endinput 
