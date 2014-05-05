@@ -43,7 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 757,
+				"buffer_size": 813,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,6 +95,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/judith/Documents/Bachelor-Arbeit"
+	],
 	"file_history":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit/todo140128.txt",
@@ -212,7 +216,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -221,15 +225,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 757,
+						"buffer_size": 813,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								692,
-								692
+								615,
+								615
 							]
 						],
 						"settings":
@@ -240,7 +244,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -256,8 +260,8 @@
 						"selection":
 						[
 							[
-								288,
-								288
+								345,
+								345
 							]
 						],
 						"settings":
@@ -268,7 +272,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
