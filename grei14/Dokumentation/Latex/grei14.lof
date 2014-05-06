@@ -4,7 +4,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Komponentendiagramm des Versuchsaufbaus.}}{15}{figure.3.1}
 \contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Aktivit\active@dq \dq@prtct {a}tsdiagramm der ExperimentSuite.}}{17}{figure.3.2}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{19}{figure.3.3}
 \contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{20}{figure.3.4}
 \contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{21}{figure.3.5}
 \contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{21}{figure.3.6}

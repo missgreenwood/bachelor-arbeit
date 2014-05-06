@@ -1,8 +1,8 @@
-\chapter{Interpretation}\label{Kapitel 4}
+\chapter{Interpretation}\label{Kap4}
 
 Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Messwerte. Dazu werden zun"achst die Messwerte f"ur alle RPi-Nodes powered vs. nur aktive RPi-Nodes powered verglichen. Anschlie\ss end werden sie den Messwerten des RPi-Einzelrechners gegen"ubergestellt, sowohl den selbst ermittelten als auch den bisher publizierten. Abschlie\ss end werden eine Einordnung in die Top500-Liste vorgenommen und Grenzen des Versuchsaufbaus diskutiert. 
 
-\section{HPLinpack/Bramble}\label{interpret-linpack}
+\section{HPLinpack/Bramble}\label{Interpretation-Linpack}
 
 Tabellen \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Messergebnisse f"ur beide Ausf"uhrungen von HPLinpack gegen"uber: 
 
@@ -47,7 +47,7 @@ Leichte Unterschiede zeigen sich somit in der mimimalen, maximalen und durchschn
 
 Hieran ist von Bedeutung, dass das Herunterfahren nicht aktiver RPi-Nodes lediglich bei der maximalen und durchschnittlichen Ausf"uhrungsrate einen positiven Effekt erzielt. Die "ubrigen Abweichungen zeigen sogar einen negativen Effekt: Die mimimale Ausf"uhrungsrate sinkt um 6.40E-06 = 0.0000064 GFLOPS, die durchschnittliche Ausf"uhrungsrate um 5.00E-06 = 0.0000050 GFLOPS und die maximale Ausf"uhrungsdauer steigt um 0.08 s. 
 
-\section{STREAM/Bramble}\label{interpret-stream}
+\section{STREAM/Bramble}\label{Interpretation-Stream}
 
 Noch deutlicher zeigt sich dieser Effekt bei STREAM: 
 
@@ -138,9 +138,11 @@ Die Abweichungen sind auch hier nur teilweise erwartungsgem"a\ss : Lediglich die
 
 Schlussfolgernd l"asst sich feststellen, dass das Herunterfahren nicht aktiver RPi-Nodes wie bei HPLinpack keinen nennenswerten Einfluss auf Ausf"uhrungsrate und Ausf"uhrungsdauer der STREAM-Module hat. 
 
-\section{Vergleich Bramble/RPi-Einzelrechner}\label{vergleich}
+\section{Vergleich Bramble/RPi-Einzelrechner}\label{Vergleich}
 
-Eine Gegen"uberstellung der Messwerte von Bramble und RPi-Einzelrechner ist nur mit Einschr"ankungen m"oglich. Wie bereits dargestellt bestehen gro\ss e Unterschiede zwischen den Betriebssystemen und den verwendeten Implementierungen der Benchmarks, die zudem teilweise unterschiedliche Ergebnisparameter haben. Tabellen \ref{fig:overall1}, \ref{fig:overall2} und \ref{fig:overall3} stellen die Ergebnisse von Linpack, Whetstone und STREAM auf Bramble, RPi-Einzelrechner den Ergebnissen der Benchmark-Autoren\footnote{Quellen: \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm} und \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}.} gegen"uber.\footnote{Soweit ermittelbar, vgl. Kap. \ref{STREAM RPi}. Mit "`Linpack"' ist HPLinpack f"ur den Bramble und Linpack 100 f"ur die RPi-Einzelrechner gemeint. Ausf"uhrungsrate und Ausf"uhrungsdauer auf dem Bramble sind als Mittelwerte angegeben. Die Ergebniswerte wurden jeweils auf die geringste Genauigkeit der vorhandenen Messdaten gerundet.} 
+Eine Gegen"uberstellung der Messwerte von Bramble und RPi-Einzelrechner ist nur mit Einschr"ankungen m"oglich. Wie bereits dargestellt bestehen gro\ss e Unterschiede zwischen den Betriebssystemen und den verwendeten Implementierungen der Benchmarks, die zudem teilweise unterschiedliche Ergebnisparameter haben. Tabellen \ref{fig:overall1}, \ref{fig:overall2} und \ref{fig:overall3} stellen die Ergebnisse von Linpack, Whetstone und STREAM auf Bramble, RPi-Einzelrechner den Ergebnissen der Benchmark-Autoren\footnote{Quellen: \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm} und \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}.} gegen"uber.
+
+%\footnote{Soweit ermittelbar, vgl. Kap. . Mit "`Linpack"' ist HPLinpack f"ur den Bramble und Linpack 100 f"ur die RPi-Einzelrechner gemeint. Ausf"uhrungsrate und Ausf"uhrungsdauer auf dem Bramble sind als Mittelwerte angegeben. Die Ergebniswerte wurden jeweils auf die geringste Genauigkeit der vorhandenen Messdaten gerundet.} 
 \newpage
 \begin{figure}[h!]
   \centering
@@ -203,7 +205,7 @@ Die Klassifizierung der Supercomputer in der Top500-Liste basiert auf den Ergebn
   \caption{Einordnung des Bramble in Top500 Nov. 2013.}\label{fig:top500}
 \end{figure}
 
-\section{Grenzen des Versuchsaufbaus}\label{grenzen}
+\section{Grenzen des Versuchsaufbaus}\label{Grenzen}
 Der dargestellte Versuchsaufbau st"o\ss t in drei Bereichen an seine Grenzen: 
 \begin{enumerate}
 	\item \textbf{Vergleichbarkeit der Benchmark-Implementierungen}\\ 
@@ -211,7 +213,7 @@ Die ausgew"ahlten Benchmarks liefern teilweise h"ochst unterschiedliche Paramete
 	\item \textbf{Vergleichbarkeit des Benchmark-Designs}\\
 Auch zwischen den Designs der Benchmarks bestehen gro\ss e Unterschiede. Whetstone in der gew"ahlten, an den RPi-Einzelrechner angepassten Implementierung liefert nach wie vor lediglich Ergebnisse in MWIPS. STREAM liefert standardm"a\ss ig Durchschnittswerte f"ur die Ausf"uhrungszeit jedes Moduls. HPLinpack testet deutlich mehr Module als die vorgenannten Benchmarks, liefert jedoch nur Einzelergebnisse f"ur Ausf"uhrungsrate und -dauer, keine Mittelwerte. Vergleichbarkeit zwischen den Ergebnissen unterschiedlicher Benchmarks ist daher noch weniger gegeben als zwischen den verschiedenen Implementierungen eines Benchmarks, selbst wenn sie dieselbe Komponente testen. 
 
-Das gilt insbesondere f"ur HPLinpack zum Tragen. Die in Kap. \ref{interpret-linpack} dargestellten Abweichungen sind deutlich geringer als die unterschiedlichen Ergebnisse der einzelnen Module einer einzigen Ausf"uhrung auf n RPi-Nodes. Auch wenn das dem Design des Benchmarks vorgesehen ist, ist die Interpretation an Hand selbst ermittelter Mittelwerte sicherlich weniger aussagekr"aftig als eine Interpretation von Mittelwerten als Teil des Designs. 
+Das gilt insbesondere f"ur HPLinpack zum Tragen. Die in Kap. \ref{Interpretation-Linpack} dargestellten Abweichungen sind deutlich geringer als die unterschiedlichen Ergebnisse der einzelnen Module einer einzigen Ausf"uhrung auf n RPi-Nodes. Auch wenn das dem Design des Benchmarks vorgesehen ist, ist die Interpretation an Hand selbst ermittelter Mittelwerte sicherlich weniger aussagekr"aftig als eine Interpretation von Mittelwerten als Teil des Designs. 
 	\item \textbf{Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikation des Bramble}\\
 Schlie\ss lich erweist sich das Setup des RPi-Clusters als limitierender Faktor. Auch nach weitestgehendem Ausschluss aller in Kap. \ref{Bramble-Versuchsaufbau} genannten St"orfaktoren blieb der Versuchsaufbau fehleranf"allig. Die Durchf"uhrung erforderte i.d.R. die Anwesenheit einer Aufsichtsperson, um bei St"orungen die LEDs zu kontrollieren, Kabel zu "uberpr"ufen etc.. Der aktuelle Status Bramble kann kaum als stabil bezeichnet werden und es ist nicht auszuschlie\ss en, dass Fehlerf"alle stellenweise Einfluss auf die Messergebnisse nehmen. 
 

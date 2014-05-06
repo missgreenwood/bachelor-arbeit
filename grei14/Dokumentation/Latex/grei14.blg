@@ -11,8 +11,6 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./Bib/grei14.bib
-Warning--empty edition in scrguide01
-Warning--empty address in scrguide01
 Warning--there's an address but no publisher in fic13
 Warning--empty number in fic13
 Warning--empty edition in scrguide02
@@ -21,43 +19,43 @@ Warning--there's an address but no publisher in lus05
 Warning--empty number in lus05
 You've used 19 entries,
             4793 wiz_defined-function locations,
-            999 strings with 9455 characters,
-and the built_in function-call counts, 10745 in all, are:
-= -- 1159
-> -- 282
-< -- 262
-+ -- 304
-- -- 91
-* -- 690
-:= -- 1834
-add.period$ -- 17
+            1001 strings with 9374 characters,
+and the built_in function-call counts, 10552 in all, are:
+= -- 1133
+> -- 259
+< -- 249
++ -- 281
+- -- 81
+* -- 672
+:= -- 1780
+add.period$ -- 18
 call.type$ -- 19
-change.case$ -- 88
+change.case$ -- 86
 chr.to.int$ -- 19
-cite$ -- 27
+cite$ -- 25
 duplicate$ -- 321
-empty$ -- 777
-format.name$ -- 186
-if$ -- 2175
+empty$ -- 793
+format.name$ -- 172
+if$ -- 2157
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 78
-newline$ -- 125
+missing$ -- 80
+newline$ -- 126
 num.names$ -- 57
 pop$ -- 116
 preamble$ -- 1
-purify$ -- 126
+purify$ -- 124
 quote$ -- 0
-skip$ -- 579
+skip$ -- 561
 stack$ -- 0
-substring$ -- 687
-swap$ -- 72
-text.length$ -- 55
-text.prefix$ -- 11
+substring$ -- 713
+swap$ -- 69
+text.length$ -- 54
+text.prefix$ -- 12
 top$ -- 0
-type$ -- 192
-warning$ -- 8
-while$ -- 96
-width$ -- 24
-write$ -- 266
-(There were 8 warnings)
+type$ -- 184
+warning$ -- 6
+while$ -- 93
+width$ -- 23
+write$ -- 267
+(There were 6 warnings)

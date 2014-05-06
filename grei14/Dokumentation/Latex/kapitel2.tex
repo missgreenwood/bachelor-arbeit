@@ -1,8 +1,8 @@
-\chapter{Grundlagen und Begriffsbildung}\label{Kapitel 2}
+\chapter{Grundlagen und Begriffsbildung}\label{Kap2}
 
 Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem ausgef"uhrt wurden. Dabei steht oft die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponen\-ten im Vordergrund. Zu diesem Zweck werden haupts"achlich Linux-spezifische Benchmarks verwendet wie Sysbench CPU Benchmark (CPU), PyBench (Python-Implementierung), Apache Benchmark (Webserver), Open\-SSL (CPU) oder ioquake3 (GPU). 
 
-Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Anpassung an den RPi erl"autert (vgl. \ref{Aufbau}). 
+Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Ausf"uhrung auf dem RPi erl"autert (vgl. \ref{Aufbau}). 
 
 \section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
@@ -78,7 +78,7 @@ F"ur die Untersuchung wurden drei etablierte HPC-Benchmarks vorgegeben, die sowo
 
 \subsection{Linpack}\label{Linpack}
 
-Grunds"atzlich muss zwischen der Linpack-Library und dem Linpack-Benchmark unterschieden werden: Erstere ist eine numerische Programmbibliothek zum L"osen von linearen Gleichungssystemen und galt darin lange Zeit als Standard. Der Linpack-Benchmark basiert auf zwei ihrer Routinen: 
+Grunds"atzlich muss zwischen der Linpack-Bibliothek und dem Linpack-Benchmark unterschieden werden. Erstere ist eine numerische Programmbibliothek zum L"osen von linearen Gleichungssystemen und galt darin lange Zeit als Standard. Der Linpack-Benchmark basiert auf zwei ihrer Routinen: 
 \begin{quote}
 \onehalfspacing
 Linpack was designed out of a real, purposeful program that is now used as a benchmark \cite{wei90}. 
@@ -99,15 +99,15 @@ Dort findet sich auch eine vertiefte Darstellung des Linpack-Benchmarks. Der Que
 
 % BLAS: Basic Linear Algebra Subroutines
 
-\subsubsection{Funktionsweise}\label{Funktionsweise Linpack}
+\subsubsection{Funktionsweise}\label{Funktion-Linpack}
 
-Linpack dient der Ermittlung der CPU-Leistung. Dazu werden Flie\ss punkt-Operationen auf einer Matrix durchgef"uhrt, die intern in eine lineare Darstellung umgewandelt wird. Das Ergebnis wird als \textit{Performance} in FLOPs ("`Floating Point Operations Per second"') ermittelt. Der Anteil der Nicht-Flie\ss punkt-Operationen wie Berechnungen auf Integer-Werten werden bei der Auswertung entweder vernachl"assigt oder in die Flie\ss punkt-Operationen integriert (vgl. \cite{wei90}). Die Linpack-Varianten Linpack 100, Linpack 1000 und HPLinpack verwenden Matrizen der Gr"o\ss e 100 $\times$ 100, 1000 $\times$ 1000 bzw. $n\times n$, d.h. eine Matrix variabler Gr"o\ss e, zur Berechnung. HPLinpack liefert Messergebnisse f"ur $R_{max}$ ("`Performance for the largest problem"'), $N_{max}$ ("`Size of the largest problem run"'), $N_{1/2}$ ("'Size where half the $R_{max}$ execution rate is achieved"') und $R_{peak}$ ("`Theoretical peak performance"') in \textit{FLOPs}. Entscheidend f"ur die Positionierung in der Top500-Liste ist dabei der $R_{max}$-Wert. Dabei erreicht der derzeit leistungsf"ahigste Supercomputer, \textit{Tianhe-2 (Milky\-Way-2)}, 33862.7 TFLOPS. \textit{SuperMUC}, der zuletzt auf Platz 10 der Top500 gerankt wurde, erzielte 2897.0 TFLOPS.
+Linpack dient der Ermittlung der CPU-Leistung. Dazu werden Flie\ss punkt-Operationen auf einer Matrix durchgef"uhrt, die intern in eine lineare Darstellung umgewandelt wird. Das Ergebnis wird als \textit{Performance} in FLOPs ("`Floating Point Operations Per second"') ermittelt. Der Anteil der Nicht-Flie\ss punkt-Operationen wie Berechnungen auf Integer-Werten werden bei der Auswertung entweder vernachl"assigt oder in die Flie\ss punkt-Operationen integriert (vgl. \cite{wei90}). Die Linpack-Varianten Linpack 100, Linpack 1000 und HPLinpack verwenden Matrizen der Gr"o\ss e 100 $\times$ 100, 1000 $\times$ 1000 bzw. $n\times n$, d.h. eine Matrix variabler Gr"o\ss e, zur Berechnung. HPLinpack liefert Messergebnisse f"ur $R_{max}$ ("`Performance for the largest problem"'), $N_{max}$ ("'Size of the largest problem run"'), $N_{1/2}$ ("'Size where half the $R_{max}$ execution rate is achieved"') und $R_{peak}$ ("`Theoretical peak performance"') in \textit{FLOPs}. Entscheidend f"ur die Positionierung in der Top500-Liste ist dabei der $R_{max}$-Wert. Dabei erreicht der derzeit leistungsf"ahigste Supercomputer, \textit{Tianhe-2 (Milky\-Way-2)}, 33862.7 TFLOPs. \textit{SuperMUC}, der zuletzt auf Platz 10 der Top500 gerankt wurde, erzielte 2897.0 TFLOPs.
 
 Beim Vergleich der Ergebnisse von Linpack ist die Matrixgr"o\ss e von Bedeutung, da ihre Ab"anderung bei unterschiedlichen Rechnerarchitekturen zu geringerer Datenlokalit"at und damit zu starken Abweichungen der Ergebnisse f"uhren kann (vgl. \cite{wei90}). In der Regel werden daher die oben genannten Matrixgr"o\ss en verwendet, obwohl der Quellcode eine "Anderung zul"asst. 
 
-\subsubsection{Linpack auf dem Raspberry Pi}\label{Linpack RPi}
+\subsubsection{Linpack auf dem Raspberry Pi}\label{Linpack-RPi}
 
-Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht. Die hier verwendete Implementierung in C f"ur den RPi-Einzelrechner findet sich unter \url{http://www.roylongbottom.org.uk/Raspberry_Pi_Benchmarks.zip}. Somit liegen bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind im Umlauf (vgl. \url{http://www.netlib.org/benchmark/hpl}).
+Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht. Somit liegen bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind im Umlauf (vgl. \url{http://www.netlib.org/benchmark/hpl}).
 
 \subsection{Whetstone}\label{Whetstone}
 
@@ -118,9 +118,9 @@ Auch Whetstone ist als Benchmark im HPC-Bereich und zur Klassifizierung von Einz
 \end{quote}
 Er wurde 1976 von Roy Longbottom u.A. entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde (vgl. \cite{wei90}). Wie Linpack misst er die CPU-Leistung. 
 
-\subsubsection{Funktionsweise}\label{Funktionsweise Whetstone}
+\subsubsection{Funktionsweise}\label{Funktion-Whetstone}
 
-Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Flie\ss komma-Berechnungen ausgef"uhrt, sondern auch mathematische Funktionen, Integer-Arithmetik, bedingte Anweisungen etc. kommen zur Anwendung, da die urspr"ungliche Programmversion nicht komplex genug war, um ein durchschnittliches FORTRAN-Programm zu simulieren: Gegen"uber der urspr"unglichen Implementierung in ALGOL 60 war ein damals g"angiger FORTRAN-Compiler in der Lage, Zwischenergebnisse in schnellen Registern abzuspeichern und darauf zur"uckzugreifen. So fiel die gemessene CPU-Leistung deutlich h"oher aus als erwartet (vgl. \cite{cur76}). 
+Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Flie\ss komma-Berechnungen ausgef"uhrt. Auch mathematische Funktionen, Integer-Arithmetik, bedingte Anweisungen etc. kommen zur Anwendung, da die urspr"ungliche Programmversion nicht komplex genug war, um ein durchschnittliches FORTRAN-Programm zu simulieren. Gegen"uber der urspr"unglichen Implementierung in ALGOL 60 war ein damals g"angiger FORTRAN-Compiler in der Lage, Zwischenergebnisse in schnellen Registern abzuspeichern und darauf zur"uckzugreifen. So fiel die gemessene CPU-Leistung deutlich h"oher aus als erwartet (vgl. \cite{cur76}). 
 
 Die einzelnen Teile werden als Module bezeichnet und sind jeweils in eine For-Schleife eingebettet, die viele Male  hintereinander ausgef"uhrt wird. Ein Rahmenprogramm steuert Aufruf der Module und Ausgabe der Ergebnisse. Auch die Ausgabe ist Teil des Benchmarks, allerdings bemerkt Curnow hierzu: 
 \begin{quote}
@@ -131,7 +131,7 @@ Die Ergebnisse wurden zun"achst in \textit{Whetstone Instructions per Second} ge
 % Least-squares: 
 %Die Methode der kleinsten Quadrate ist das mathematische Standardverfahren zur Ausgleichungsrechnung. Dabei wird zu einer Datenpunktwolke eine Kurve gesucht, die möglichst nahe an den Datenpunkten verläuft.
 
-\subsubsection{Whetstone auf dem Raspberry Pi}\label{Whetstone RPi}
+\subsubsection{Whetstone auf dem Raspberry Pi}\label{Whetstone-RPi}
 
 Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-Computer etabliert hat: Der Benchmark war in den 70er Jahren f"ur Maschinen mit deutlich geringerer Rechenleistung als heute entwickelt worden. Bereits damals gingen die Entwickler von notwendigen Anpassungen f"ur neue Speicherhierarchien aus: 
 \begin{quote}
@@ -140,35 +140,33 @@ When more is known about the characteristics of programs running on these multi-
 \end{quote}
 Er wurde vom Entwickler selbst f"ur den RPi angepasst und und auf diesem getestet (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm.}. Auch hier liegen also Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
 
-Wie f"ur die meisten etablierten HPC-Benchmarks existieren Implementierungen in h"oheren Programmiersprachen wie C, C++, Fortran und Java (vgl. \url{http://freespace.virgin.net/roy.longbottom}). Auch hier wird auf eine Implementierung in C f"ur den RPi-Einzelrechner zur"uckgegriffen. Der Quellcode findet sich unter \url{http://www.roylongbottom.org.uk/}\newline \url{Raspberry_Pi_Benchmarks.zip}. Ob eine lauff"ahige Implementierung f"ur die Cluster-Archi\-tektur existiert, wird sich zeigen m"ussen. 
+Wie f"ur die meisten etablierten HPC-Benchmarks existieren Implementierungen in h"oheren Programmiersprachen wie C, C++, Fortran und Java (vgl. \url{http://freespace.virgin.net/roy.longbottom}). Ob eine lauff"ahige Implementierung f"ur die Cluster-Archi\-tektur existiert, wird sich zeigen m"ussen. 
 
 \subsection{STREAM}\label{STREAM}
 
-Mit zunehmender Rechenleistung der Prozessoren und der Zunahme an Prozessorkernen innerhalb eines Rechnersystems zeigte sich, dass es nicht ausreicht, die Leistungsf"ahigkeit lediglich an Hand der CPU-Leistung zu bewerten. Zudem l"asst sich eine Tendenz beobachten, dass Rechnersysteme gezielt f"ur die Ausf"uhrung bestimmter Benchmarks wie HPLinpack optimiert werden, um z.B. in Rankings bessere Wertungen zu erreichen. 
+Mit zunehmender Rechenleistung der Prozessoren und der Zunahme an Prozessorkernen innerhalb eines Rechnersystems zeigte sich, dass es nicht ausreicht, die Leistungsf"ahigkeit lediglich an Hand der CPU-Leistung zu bewerten. Zudem l"asst sich eine Tendenz beobachten, dass Rechnersysteme gezielt f"ur die Ausf"uhrung bestimmter Benchmarks wie HPLinpack optimiert werden, um in Ranglisten bessere Pl"atze zu erreichen. 
 
-STREAM wurde mit dem Ziel entwickelt, das Verh"altnis von CPU-Leistung zu Speichergeschwindigkeit in die Bewertung einzubeziehen. Mittlerweile ist STREAM auch Bestandteil der HPCChallenge Benchmark-Suite, ein Rahmenwerk mit der Zielsetzung, Anforderungen aus der Anwendungspraxis in die Bewertung von HPC-Rechnersystemen einflie\ss en zu lassen (vgl. \cite{lus05}).
+STREAM wurde mit dem Ziel entwickelt, das Verh"altnis von CPU-Leistung zu Speichergeschwindigkeit in die Bewertung einzubeziehen. Mittlerweile ist STREAM auch Bestandteil der HPCChallenge Benchmark-Suite. Sie wurde mit der Zielsetzung entwickelt, Anforderungen aus der Anwendungspraxis in die Bewertung von HPC-Rechnersystemen einflie\ss en zu lassen (vgl. \cite{lus05}).
 
 %Die Zunahme an Prozessorleistung f"uhrt jedoch nicht notwendigerweise zu einer Verbesserung der Gesamtleistung eines Systems. Gerade bei Supercomputern besteht ein potenzieller Flaschenhals oft nicht in der mangelnden Leistung der einzelnen Rechnerkerne, sondern in der Performance von I/O-Zugriffen auf den nicht fl"uchtigen Speicher\footnote{Vgl. \cite{mcc95}.}. Zudem besteht zwischen der Performance, die mit Benchmarks wie HPLinpack ermittelt wird, und den tats"achlichen Anforderungen heutiger Programme oft kein proportionaler Zusammenhang. D.h. Maschinen, die sehr gute Werte bei Linpack oder Whetstone erzielen, k"onnen diese unter der Workload konkreter Anwendungen unter Umst"anden oftmals nicht halten. Andererseits k"onnen deutlich leistungsschw"achere Rechnersysteme bei bestimmten Anwendungen "ahnlich gute Werte erreichen wie weitaus besser gerankte Maschinen aus den Top500, wenn diese gr"o\ss tenteils auf gecachten Daten arbeitet und wenige Zugriffe auf den nicht fl"uchtigen Speicher erfordert\footnote{Vgl. ebd.. Dieses Ph"anomen zeigte sich im HPC-Bereich seit ca. 1990 und wurde von Eugene Brooks bei der Supercomputing-Konferenz 1989 als "`attack of the killer micros"' bezeichnet (vgl. ebd.).}. 
 
-\subsubsection{Funktionsweise}\label{Funktionsweise STREAM}
+\subsubsection{Funktionsweise}\label{Funktion-STREAM}
 
-STREAM ist ein synthetischer Benchmark und basiert auf einem Programm aus der wissenschaftlichen Praxis von John McCalpin, das die dauerhafte Speicher-Bandbreite (engl. "`sustainable memory bandwidth"' \cite{mcc95}) f"ur angrenzende Speicherzugriffe langer Vektoren (engl. "`sustainable memory bandwidth for contiguous, long-vector memory accesses"'\cite{mcc95}) ermittelt. Die Vektoren m"ussen lang genug sein, dass sie nicht im Prozessor-Cache vorgehalten, sondern aus dem nicht fl"uchtigen Speicher geladen werden. STREAM ist somit Teil eines neuen Modells, das als Performance-Ma\ss zahl die Gesamtzeit $T_{total} = T_{cpu}$ (CPU-Performance) + $T_{memory}$ (Speicher-Performance, ermittelt durch STREAM) festlegt (vgl. \cite{mcc95} und \cite{mcc05}). 
+STREAM ist ein synthetischer Benchmark und basiert auf einem Programm aus der wissenschaftlichen Praxis von John McCalpin. Es ermittelt die dauerhafte Speicher-Bandbreite (engl. "`sustainable memory bandwidth"' \cite{mcc95}) f"ur angrenzende Speicherzugriffe langer Vektoren (engl. "`sustainable memory bandwidth for contiguous, long-vector memory accesses"'\cite{mcc95}). Die Vektoren m"ussen lang genug sein, dass sie nicht im Prozessor-Cache vorgehalten, sondern aus dem nicht fl"uchtigen Speicher geladen werden. STREAM ist somit Teil eines neuen Modells, das als Performance-Ma\ss zahl die Gesamtzeit $T_{total} = T_{cpu}$ (CPU-Performance) + $T_{memory}$ (Speicher-Performance, ermittelt durch STREAM) festlegt (vgl. \cite{mcc95} und \cite{mcc05}). 
 
 STREAM durchl"auft bei seiner Ausf"uhrung vier Module (Copy, Scale, Add und Triad) und liefert f"ur jedes Modul die durchschnittliche, maximale und minimale Ausf"uhrungszeit sowie die Ausf"uhrungsrate. Jedes Modul wird mehrfach ausgef"uhrt, um verl"assliche Mittelwerte zu erhalten. Zwischen dem Programmcode der Module bestehen Abh"angigkeiten, um starke Optimierungen durch den Compiler zu verhindern (vgl. \cite{mcc05}). Quellcode und Ergebnisse f"ur STREAM auf verschiedenen Systemen finden sich unter \url{http://www.cs.virginia.edu/stream}.   
 
-\subsubsection{STREAM auf dem Raspberry Pi}\label{STREAM RPi}
+\subsubsection{STREAM auf dem Raspberry Pi}\label{STREAM-RPi}
 
-Auch f"ur STREAM wurden Ergebnisse auf einem RPi-Einzelrechner bereits ver"offentlicht (vgl. \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}). Der auf dem RPi-Einzelrechner verwendete Quellcode findet sich unter \url{http://www.cs.virginia.edu/stream/FTP/Code/stream.c}. Die auf dem RPi-Cluster verwendete Implementierung findet sich unter \url{http://www.cs.virginia.edu/stream/FTP/Code/Versions/stream_mpi.f}.  
+Auch f"ur STREAM wurden bereits Ergebnisse auf einem RPi-Einzelrechner bereits ver"offentlicht (vgl. \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}). Die auf dem RPi-Cluster verwendete Implementierung findet sich unter \url{http://www.cs.virginia.edu/stream/FTP/Code/Versions/stream_mpi.f}.  
 
 \section{Spezifikation des RPi Modell B}\label{RPi-Spezi}
 
 Was dem Nutzer zuerst auff"allt, ist sicherlich die Gr"o\ss e des RPi. Er wird manchmal als "`Scheckkarten-Computer"' bezeichnet und "uberschreitet diese Ma\ss e mit 85.60 mm $\times$ 53.98 mm $\times$ 17 mm tats"achlich nur geringf"ugig. Auf dieser Platine sind alle Komponenten verbaut, die den RPi zu einem voll funktionsf"ahigen Rechner machen.
 
-\subsection{System on a Chip, CPU, GPU und Arbeitsspeicher}\label{RPi-Hardware}
+\subsection{Physischer Aufbau}\label{RPi-Hardware}
 
 Der RPi ist mit einem Broadcom BCM2835 als System on a Chip ausgestattet. Es enth"alt CPU (ein ARM1176JZFS-Prozessor) und GPU (ein Broadcom VideoCore IV-Koprozessor, vgl. \cite{scrguide02}). Auff"allig ist, dass die CPU des RPi (ein ARM-Chip, wie er auch in Mobiltelefonen zur Anwendung kommt), relativ schwach ist im Vergleich zur GPU. Diese unterst"utzt Full HD-Aufl"osung und das Hardware-beschleunigte Rendern verschiedener Videoformate. Das Modell B verf"ugt "uber 512 MB SDRAM. Er kann nicht erweitert werden, doch die Aufteilung zwischen CPU und GPU ist variabel. Da der RPi kein BIOS hat, muss dazu die Datei \texttt{/boot/start.elf} manipuliert werden (vgl. \cite{pow12}).
-
-\subsubsection{Schnittstellen}\label{RPi-Schnittstellen}
 
 Der RPi verf"ugt "uber einen HDMI-Ausgang, einen Cinch-Ausgang ("`RCA Jack"') und einen analogen Tonausgang. Er hat zwei USB 2.0-Schnittstellen und eine RJ45-Buchse zum Anschluss einer 10/100 Base-T Ethernet-Schnittstelle. Ein Steckplatz ist f"ur eine SD-Karte vorgesehen, auf der der nicht fl"uchtige Speicher liegt. Die Stromversorgung erfolgt "uber einen Mini-USB-Eingang. Zum Betrieb werden 700 mA/5 V ben"otigt (vgl. \cite{pow12}). Der Vollst"andigkeit halber sei das Vorhandensein einer Allzweckeingabe/-ausgabe mit sechs Anschl"ussen und jeweils 26 Pins erw"ahnt. Dar"uber k"onnen, "ahnlich wie bei einem Arduino-Board, z.B. LEDs, Sensoren und Displays angesteuert werden. 
 
@@ -177,7 +175,7 @@ Der RPi verf"ugt "uber einen HDMI-Ausgang, einen Cinch-Ausgang ("`RCA Jack"') un
 
 \subsection{Betriebssystem}\label{RPi-OS}
 
-F"ur den RPi existieren mehrere Varianten bzw. Derivate verbreiteter Betriebssysteme. Am verbreitetsten sind Linux/Unix-basierte Systeme wie FreeBSD und NetBSD (BSD-Varianten), Raspbian (Debian-Variante), Pidora (Fedora-Variante) oder eine Variante von Arch Linux (vgl. \cite{pow12}). Daneben gibt es Implementierungen von RISC OS und Plan 9. Als Betriebssytem f"ur den RPi-Einzelrechner wurde Raspbian gew"ahlt, die offizielle Distribution der Raspberry Pi Foundation (vgl. \url{http://www.raspberrypi.org/faqs}). Das hier verwendete Abbild findet sich unter \url{http://downloads.raspberrypi.org/raspbian_latest}. 
+F"ur den RPi existieren mehrere Varianten bzw. Derivate verbreiteter Betriebssysteme. Am verbreitetsten sind Linux/Unix-basierte Systeme wie FreeBSD und NetBSD (BSD-Varianten), Raspbian (Debian-Variante), Pidora (Fedora-Variante) oder eine Variante von Arch Linux (vgl. \cite{pow12}). Daneben gibt es Implementierungen von RISC OS und Plan 9. Als Betriebssytem f"ur die RPi-Einzelrechner war Raspbian gew"ahlt worden, die offizielle Distribution der Raspberry Pi Foundation (vgl. \url{http://www.raspberrypi.org/faqs}). Das Abbild findet sich unter \url{http://downloads.raspberrypi.org/raspbian_latest}. 
 
 \section{Raspberry Pi-Cluster als Testumfeld}\label{Bramble-Spezi}
 
@@ -206,26 +204,32 @@ Alle Komponenten befinden sich in einem Metallgeh"ause, in dessen Mitte drei K"u
 %\end{enumerate}
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{bramble.pdf}\\ 
+	\includegraphics[width=1.0\textwidth]{bramble.pdf}\\ 
 	\caption{Schematischer Aufbau des hier verwendeten Bramble.}\label{fig:Bramble}
 \end{figure}
 % NIC = Network Interface Card 
-Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Betriebs\-system, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01}). Es kann der Simulation eines Supercomputers dienen. Im Zusammenhang mit RPis wird auch der Begriff \textit{Bramble} "ublich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}). 
+Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Betriebs\-system, die "uber IP kommunizieren, wird im Allgemeinen als \textit{Beowulf} bezeichnet (vgl. \cite{kie01}). F"ur einen Beowulf-Cluster aus RPis ist der Begriff \textit{Bramble} gebr"auchlich, der im Folgenden verwendet wird (vgl. \url{www.raspberrypi.org/archives/tag/bramble}). 
+ 
 \subsection{Betriebssystem und Dateisystem}\label{Bramble-Architektur} 
 
-Auf den RPi-Nodes l"auft das o.g. Betriebssytem Raspbian, auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters bzw. Bramble ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie der M"oglichkeit eines gemeinsamen Speicherzugriffs. 
+Auf den RPi-Knoten ist das oben genannte Betriebssytem Raspbian installiert (vgl. \ref{RPi-OS}), auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie den M"oglichkeiten des gemeinsamen Speicherzugriffs. 
 
-Grunds"atzlich werden zwei Dateisysteme auf dem Bramble eingesetzt: NFS ("`Network File System"') f"ur die root-Verzeichnisse der RPi-Knoten und ein Union-Dateisystem 
-% NFS 
-% Union Dateisystem
-% Synchronisation 
-% gemeinsames Verzeichnis 
+Die Datei-Synchronisation des Servers und der RPi-Knoten erfolgt "uber ein Netz-Dateisys\-tem (hier: \texttt{nfs}). Dessen Verwaltung erfolgt auf dem Server "uber ein Union-Dateisystem (hier: \texttt{aufs}), das mehrere Schichten des Dateisystems anlegt: Die unteren Schichten haben nur Leseberechtigungen, die oberste Lese-Schreib-Berechtigungen. Werden Daten in einem geteilten Verzeichnis ver"andert, so bleiben die unteren Schichten unver"andert. Die "Anderungen werden nur auf der obersten Schicht geschrieben. F"ur gemeinsam genutzte Daten des Servers und der Clients steht auf dem Server das Verzeichnis \texttt{/srv/nfs-share} bzw. auf den Clients \texttt{/srv} zur Verf"ugung. Eine genaue Darstellung findet sich bei \cite{kli13}.
 
-%Um das Filesystem der einzelnen Nodes mit dem NFS des Servers zu synchronisieren, wurde hier eine Read-Only-Schicht f"ur die Slaves (Nodes) und eine Read-Write-Schicht f"ur den Master (Server) verwendet\footnote{Vgl. \cite{kli13}.}. Um trotzdem den gemeinsamen Zugriff von Server und RPi-Nodes auf ein Speichermedium zu erm"oglichen, wurde ein geshartes Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} eingerichtet. 
+\subsection{Implikationen f"ur den Versuchsaufbau}\label{Versuchsaufbau}
 
-\subsection{Zugriff auf die Cluster-Komponenten}\label{Zugriff}
+Welche Zugriffsm"oglichkeiten auf die Komponenten des Bramble gibt es, und wie k"onnen verteilte Berechnungen darauf ausgef"uhrt werden? 
 
-Welche M"oglichkeiten gibt es nun, verteilte Anwendungen auf dem Bramble auszuf"uhren bzw. "uberhaupt die einzelnen Komponenten anzusprechen? Der Zugriff auf den Bramble erfolgt aus dem internen Netz "uber IP und SSH. Die einzelnen RPi-Nodes werden von \texttt{careme} aus "uber SSH adressiert (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). Es gibt auf jedem RPi-Knoten den Raspbian-Standard-User \texttt{pi}, der hier nicht ver"andert wurde\footnote{Auf dem RPi-Einzelrechner wurden aus Sicherheitsgr"unden Username und Passwort f"ur den Standard-User ge"andert.}. Um z.B. auf das gesharte Verzeichnis \texttt{/srv} zuzugreifen, sind \texttt{root}-Berechtigungen erforderlich\footnote{Auf Schwierigkeiten dieser Einteilung und L"osungsans"atze wird in Kap. \ref{Bramble-Versuchsaufbau} eingegangen.}. 
+\subsubsection{Netzzugriff}
 
-Beim hier verwendeten Versuchsaufbau wurde auf \texttt{careme} mit eingeschr"ankten Rechten als User \texttt{rpi-user} gearbeitet, auf den einzelnen RPis als \texttt{root}. Das bedeutet, dass alle "Anderungen im gesharten Verzeichnis notwendigerweise von einem der RPi-Nodes aus vorgenommen werden m"ussen. Dazu wurde vorab RPi-Node \texttt{pi03} als Berechnungs-Node definiert, von dem aus alle Skripte ausgef"uhrt, Programme installiert werden etc.. Da die Skripte zur Ausf"uhrung der Benchmarks h"aufig das Herunterfahren einzelner RPi-Nodes vorsehen (vgl. Kap. \ref{Anhang}), wurden die Benchmarks grunds"atzlich auf maximal n=19 RPi-Nodes ausgef"uhrt (vgl. Kap. \ref{Kapitel 3}). Zur verteilten Berechnung von Anwendungen auf mehreren CPUs steht auf dem Bramble die MPI-Implementierung MPICH in der Version 3.0.4 zur Verf"ugung. Um die CPUs bzw. RPi-Nodes und die Anzahl der darauf auszuf"uhrenden Prozesse zu spezifizieren, muss ein entsprechendes Machinefile erstellt und im gesharten Verzeichnis abgelegt werden, das der Ausf"uhrung von MPICH mit \texttt{mpiexec} als Parameter "ubergeben wird (vgl. Kap. \ref{Kapitel 3}). 
+Der Zugriff auf den Bramble erfolgt aus dem internen Netz "uber IP und SSH. Auf die einzelnen RPi-Knoten wird von \texttt{careme} aus ebenfalls "uber IP und SSH zugegriffen (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). 
+
+
+Es gibt auf jedem RPi-Knoten den Raspbian-Standard-User \texttt{pi}, der nicht ver"andert wurde. Aus Sicherheitsgr"unden wurden f"ur \texttt{careme} keine root-Rechte erteilt, nur f"ur die einzelnen RPi-Knoten. Stattdessen wurde der Benutzer \texttt{rpi-user} eingerichtet. Das bedeutet, dass alle "Anderungen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/nfs-share/srv} von einem der RPi-Nodes aus vorgenommen werden m"ussen, da \texttt{rpi-user} hierauf keine Schreibberechtigungen hat. Somit wurde vorab RPi-Node \texttt{pi03} als Berechnungsknoten definiert, von dem aus alle Skripte ausgef"uhrt, Programme installiert werden etc.. Die Datenbank zur Speicherung von Konfigurationen und Messwerten war hingegen auf dem Server angelegt worden. Dadurch wird h"aufiges Navigieren zwischen dem Server und dem Berechnungsknoten mit unterschiedlichen Benutzern notwendig.
+
+Die Skripte zur Ausf"uhrung der Benchmarks sehen h"aufig das Herunterfahren einzelner RPi-Knoten vor, um den Energieverbrauch beim Abschalten nicht aktiver RPi-Knoten zu ermitteln. Alle Anwendungen wurden daher auf maximal n=19 RPi-Nodes ausgef"uhrt und von \texttt{pi03} aus gesteuert. 
+
+\subsubsection{Ausf"uhrung verteilter Anwendungen}
+
+Der Versuchsaufbau sieht vor, verteilte Anwendungen auf unterschiedlichen Anzahlen von RPi-Knoten auszuf"uhren. Zur verteilten Berechnung von Anwendungen auf mehreren CPUs steht auf dem Bramble die MPI-Implementierung MPICH in der Version 3.0.4 zur Verf"ugung. Um die CPUs bzw. RPi-Knoten und die Anzahl der darauf auszuf"uhrenden Prozesse zu spezifizieren, muss ein entsprechendes Machinefile erstellt und im gesharten Verzeichnis abgelegt werden. Dieses wird der Ausf"uhrung von MPICH mit \texttt{mpiexec} als Parameter "ubergeben (vgl. Kap. \ref{Bramble-Versuchsaufbau}). 
 \endinput 
