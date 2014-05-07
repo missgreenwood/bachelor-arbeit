@@ -43,15 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 813,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "grei14/Dokumentation/Latex/Bib/grei14.bib",
-			"settings":
-			{
-				"buffer_size": 8711,
+				"buffer_size": 847,
 				"line_ending": "Unix"
 			}
 		}
@@ -97,12 +89,16 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit"
+		"/Users/judith/Documents/Bachelor-Arbeit",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib"
 	],
 	"file_history":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit/todo140128.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
+		"/Users/judith/Documents/Bachelor-Arbeit/todo140128.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Strommessgeraet/miranda-1.3/src/portmapper.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/fehlerquellen_cluster.txt",
@@ -225,15 +221,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 813,
+						"buffer_size": 847,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								615,
-								615
+								847,
+								847
 							]
 						],
 						"settings":
@@ -245,34 +241,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "grei14/Dokumentation/Latex/Bib/grei14.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8711,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								345
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
