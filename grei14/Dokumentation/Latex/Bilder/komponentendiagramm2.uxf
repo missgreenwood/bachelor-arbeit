@@ -31,12 +31,12 @@
       <x>560</x>
       <y>330</y>
       <w>226</w>
-      <h>190</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>Stromverbrauch messen 
 lt=&lt;[]-(()-[]&gt;
 </panel_attributes>
-    <additional_attributes>50;30;190;170</additional_attributes>
+    <additional_attributes>50;30;190;160</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.Component</type>
@@ -54,13 +54,13 @@ lt=&lt;[]-(()-[]&gt;
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>570</x>
-      <y>510</y>
+      <y>520</y>
       <w>210</w>
-      <h>140</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;[]-(()-[]&gt;
 Stromverbrauch loggen </panel_attributes>
-    <additional_attributes>180;30;40;120</additional_attributes>
+    <additional_attributes>180;30;40;110</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -71,6 +71,8 @@ Stromverbrauch loggen </panel_attributes>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;[]()
+
+
 Logdaten hochladen
 </panel_attributes>
     <additional_attributes>30;50;240;50</additional_attributes>
@@ -90,7 +92,32 @@ Logdaten hochladen
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>360</x>
+      <x>920</x>
+      <y>470</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Stromversorgung</panel_attributes>
+    <additional_attributes>30;50;200;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>160</x>
+      <y>160</y>
+      <w>154</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;[]()&gt;
+Netzanschluss
+</panel_attributes>
+    <additional_attributes>80;130;80;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>380</x>
       <y>160</y>
       <w>174</w>
       <h>150</h>
@@ -98,18 +125,5 @@ Logdaten hochladen
     <panel_attributes>lt=&lt;[]()&gt;
 Stromversorgung</panel_attributes>
     <additional_attributes>90;130;90;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>140</x>
-      <y>160</y>
-      <w>186</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;[]()&gt;
-Netzwerkanschluss
-</panel_attributes>
-    <additional_attributes>100;130;100;30</additional_attributes>
   </element>
 </diagram>

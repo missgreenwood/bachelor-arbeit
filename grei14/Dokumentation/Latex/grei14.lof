@@ -3,15 +3,15 @@
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Schematischer Aufbau des hier verwendeten Bramble.}}{10}{figure.2.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Komponentendiagramm des Versuchsaufbaus.}}{15}{figure.3.1}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Aktivit\active@dq \dq@prtct {a}tsdiagramm der ExperimentSuite.}}{17}{figure.3.2}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{19}{figure.3.3}
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{20}{figure.3.4}
-\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{21}{figure.3.5}
-\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{21}{figure.3.6}
-\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in MB/s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{22}{figure.3.7}
-\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{22}{figure.3.8}
-\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in MB/s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{23}{figure.3.9}
-\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{23}{figure.3.10}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Aktivit\active@dq \dq@prtct {a}tsdiagramm der ExperimentSuite.}}{16}{figure.3.2}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{21}{figure.3.4}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{22}{figure.3.5}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{22}{figure.3.6}
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in MB/s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{23}{figure.3.7}
+\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}}{23}{figure.3.8}
+\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in MB/s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{24}{figure.3.9}
+\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}}{24}{figure.3.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungsrate in GFLOPS f\active@dq \dq@prtct {u}r HPLinpack mit allen RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}}{25}{figure.4.1}
 \contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Ausf\active@dq \dq@prtct {u}hrungszeit in s f\active@dq \dq@prtct {u}r HPLinpack alle RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}}{26}{figure.4.2}

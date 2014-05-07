@@ -221,6 +221,23 @@ Erschwerend kommt hinzu, dass sich die RPi-Nodes des Bramble beim Herunterfahren
 
 Beim Bramble hingegen sind alle Status-LEDs weiterhin aktiv, auch wenn der RPi-Node nicht mehr auf ein \texttt{ping} reagiert, d.h. keine IP-Verbindung vom Server oder einem anderen RPi-Node aus aufgebaut werden kann. Der Broadcast einer Shutdown-Nachricht wurde nur nur gelegentlich festgestellt. Somit erscheint es schwierig, den Zeitpunkt festzustellen, an dem ein RPi-Node tats"achlich vom Netz gegangen ist. Der aktuelle Versuchsaufbau d"urfte hierdurch jedoch nicht beeintr"achtigt werden: Auch wenn die Status-LEDs weiterhin aktiv sind, ist der Rechner nicht mehr durch \texttt{ping} zu erreichen und somit nicht mehr im Netzwerk aktiv. 
 \end{enumerate}
+%\begin{enumerate}
+%	\item \textbf{Defekte Hardware (Mini-USB-Kabel)}\\
+%Einige Mini-USB-Kabel waren bereits zu Beginn der Untersuchung defekt oder hatten einen Wackelkontakt. Sie mussten durch funktionsf"ahige Kabel ersetzt werden. 
+%	\item \textbf{RPi-Node nicht erreichbar (\texttt{ping})}\\
+%H"aufig reagierte ein RPi-Node nicht auf ein \texttt{ping} von einem RPi-Node oder von \texttt{careme} aus (Fehlermeldung \texttt{Destination Host Unreachable}), obwohl die Status-LEDs aktiv waren. Als einzige L"osung erwies sich Ziehen und Wiedereinstecken des Mini-USB-Kabels; war das nicht erfolgreich, musste das Vorgehen mit dem Netzwerkkabel wiederholt werden (das Netzwerkkabel allein reicht nicht aus). Danach war der Host i.d.R. wieder mit \texttt{ping} erreichbar. 
+%	\item \textbf{RPi-Node nicht erreichbar (SSH)}\\ 
+%Hier traten drei Fehlerf"alle auf: Am h"aufigsten war die Fehlermeldung \texttt{No route to host} beim Versuch, von \texttt{careme} oder einem anderen RPi-Node aus eine SSH-Verbindung zum Zielhost herzustellen. Die einzige L"osung ist Ziehen und wieder Einstecken des Netzwerkkabels. Nach einigen Minuten ist der Host i.d.R. wieder erreichbar. 
+%
+%Ein weiterer Fehlerfall war ein "uberraschender Passwortprompt f"ur \texttt{root} beim Versuch, eine SSH-Verbindung zu einem RPi-Node zu einem anderen RPi-Zielnode aufzubauen. Dieses Problem lie\ss sich durch Eintragen des RSA Public Key von 
+%\texttt{root} in die Datei \texttt{\textasciitilde/.ssh/authorized\_keys} auf dem Zielhost l"osen. 
+%
+%Seltener trat die Fehlermeldung \texttt{WARNING: REMOTE HOST IDENTIFICATION HAS CHAN\-GED!} auf. Dies konnte durch Korrektur des RSA Public Key des Anfragehosts in der Datei \texttt{\textasciitilde/.ssh/known\_hosts} auf dem Zielhost gel"ost werden. 
+%	\item \textbf{Geshartes Verzeichnis nicht gemountet}\\
+%Beim Neustart eines RPi-Nodes oder des gesamten Clusters wurde h"aufig das gesharte Verzeichnis nicht gemountet, was zu Fehlermeldungen wie \texttt{-bash: /srv/libraries/ etc/.sharedprofile: No such file or directory} f"uhrte und sich durch Mounten des Verzeichnisses mit \texttt{mount /srv} beheben lie\ss .
+%	\item \textbf{bash-Befehle werden nicht erkannt}\\
+%Aus unklaren Gr"unden wurden manchmal von einzelnen RPi-Nodes h"aufig verwendete bash-Befehle nicht mehr erkannt, was sich an Fehlermeldungen wie \texttt{mpiexec: command not found} zeigt. Latenzen beim Zugriff auf den gemeinsamen Speicherbereich k"onnten der Grund hierf"ur sein, da sich ein Logout und erneuter Login auf dem betreffenden RPi-Node als einzige L"osung erwies. 
+%\end{enumerate}
 \endinput 
 % Seit einigen Jahren zeigt sich auch in der HPC-Welt ein zunehmendes Problembewusstsein betreffend den Energieverbrauch und -effizienz der verwendeten und untersuchten Systeme. Daraus resultiert das Green500-Ranking, das seit dem Jahr 2006 die Kandidaten der TOP500-Liste unter dem Aspekt der Energieeffizienz untersucht. Die Bestenliste liefert die Supercomputer mit dem besten Verh"altnis zwischen Leistung und Stromverbrauch (FLOPS pro Watt)\footnote{Vgl. \url{http://www.green500.org/}.}.
 % Quelle: \url{http://www.green500.org/docs/pubs/RunRules_Ver1.0.pdf}

@@ -11,15 +11,15 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./Bib/grei14.bib
-Warning--there's an address but no publisher in fic13
-Warning--empty number in fic13
+Warning--there's an address but no publisher in fich13
+Warning--empty number in fich13
 Warning--empty edition in scrguide02
 Warning--empty address in scrguide02
 Warning--there's an address but no publisher in lus05
 Warning--empty number in lus05
 You've used 19 entries,
             4793 wiz_defined-function locations,
-            1001 strings with 9374 characters,
+            1001 strings with 9377 characters,
 and the built_in function-call counts, 10552 in all, are:
 = -- 1133
 > -- 259

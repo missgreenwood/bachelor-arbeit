@@ -31,15 +31,15 @@
 \contentsline {section}{\numberline {3.2}Aufbau und Art der Messung}{13}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Versuchsaufbau Ri-Einzelrechner}{13}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Versuchsaufbau Bramble}{14}{subsection.3.2.2}
-\contentsline {subsubsection}{Modifikationen der RPi-Nodes}{14}{section*.10}
-\contentsline {subsubsection}{Zeitsynchronisation der RPi-Nodes}{16}{section*.11}
-\contentsline {subsubsection}{Skalierung der Messung auf 19--n RPi-Nodes}{16}{section*.12}
-\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf 19--n RPi-Nodes}{16}{section*.13}
-\contentsline {subsubsection}{Einlesen der Messwerte in eine geeignete Datenstruktur}{18}{section*.14}
-\contentsline {section}{\numberline {3.3}Ergebnisse}{18}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{18}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Bramble: HPLinpack}{19}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Bramble: STREAM}{20}{subsection.3.3.3}
+\contentsline {subsubsection}{Modifikation der RPi-Knoten}{14}{section*.10}
+\contentsline {subsubsection}{Zeitsynchronisation der RPi-Nodes}{14}{section*.11}
+\contentsline {subsubsection}{Konfiguration der Datenbank}{15}{section*.12}
+\contentsline {subsubsection}{Skalierung der Messung auf 19--n RPi-Nodes}{16}{section*.13}
+\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf 19--n RPi-Nodes}{17}{section*.14}
+\contentsline {section}{\numberline {3.3}Ergebnisse}{19}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Bramble: HPLinpack}{20}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Bramble: STREAM}{21}{subsection.3.3.3}
 \contentsline {chapter}{\numberline {4}Interpretation}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}HPLinpack/Bramble}{25}{section.4.1}
 \contentsline {section}{\numberline {4.2}STREAM/Bramble}{27}{section.4.2}
