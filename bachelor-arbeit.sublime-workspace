@@ -43,25 +43,23 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 905,
+				"buffer_size": 989,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 458 files for \"shapes\" (regex)\n\n/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/grei14.log:\n 1016  \n 1017  \n 1018: LaTeX Font Warning: Some font shapes were not available, defaults substituted.\n 1019  \n 1020  \n\n1 match in 1 file\n",
+			"file": "src/loadGeneratorConfigStream.sh",
 			"settings":
 			{
-				"buffer_size": 258,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
+				"buffer_size": 1765,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "archive/aktivitaetsdiagramm1.shapes",
+			"file": "src/loadGeneratorConfigHpl.sh",
 			"settings":
 			{
-				"buffer_size": 188045,
+				"buffer_size": 1759,
 				"line_ending": "Unix"
 			}
 		}
@@ -108,15 +106,21 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
-		"/Users/judith/Documents/Bachelor-Arbeit/archive",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bilder"
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bilder",
+		"/Users/judith/Documents/Bachelor-Arbeit/src"
 	],
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_db140331.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_db140404.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1final.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAMfinal.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigHpl.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigStream.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/todo140128.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
@@ -243,15 +247,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 905,
+						"buffer_size": 989,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								652,
-								652
+								641,
+								641
 							]
 						],
 						"settings":
@@ -267,24 +271,13 @@
 				},
 				{
 					"buffer": 1,
+					"file": "src/loadGeneratorConfigStream.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 258,
+						"buffer_size": 1765,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										174,
-										180
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
@@ -295,14 +288,7 @@
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -313,11 +299,11 @@
 				},
 				{
 					"buffer": 2,
-					"file": "archive/aktivitaetsdiagramm1.shapes",
-					"semi_transient": true,
+					"file": "src/loadGeneratorConfigHpl.sh",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 188045,
+						"buffer_size": 1759,
 						"regions":
 						{
 						},
@@ -330,7 +316,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
