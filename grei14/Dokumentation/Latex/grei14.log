@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 MAY 2014 18:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  8 MAY 2014 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -342,7 +342,7 @@ LaTeX Info: Redefining \nameref on input line 25.
 \openout2 = `./Titel/titel-lmu.aux'.
 
  (./Titel/titel-lmu.tex
-<./Bilder/lmu_siegel.pdf, id=180, 201.75375pt x 201.75375pt>
+<./Bilder/lmu_siegel.pdf, id=156, 201.75375pt x 201.75375pt>
 File: ./Bilder/lmu_siegel.pdf Graphic file (type pdf)
 
 <use ./Bilder/lmu_siegel.pdf>
@@ -432,19 +432,13 @@ er-schie-de-ne Benchmark-
 [3
 
 
-] [4] [5] [6]
-Overfull \hbox (16.61334pt too wide) in paragraph at lines 123--124
-\OT1/cmr/m/n/10.95 gen[]uber der ur-spr[]ung-li-chen Im-ple-men-tie-rung in AL-
-GOL 60 war ein da-mals g[]angi-ger FORTRAN-
- []
-
-[7] [8]
+] [4] [5] [6] [7] [8]
 Overfull \hbox (3.66992pt too wide) in paragraph at lines 178--179
 \OT1/cmr/m/n/10.95 ver-brei-tet-sten sind Linux/Unix-basierte Sy-ste-me wie Fre
 eBSD und NetBSD (BSD-Varianten),
  []
 
-[9] <./Bilder/bramble.pdf, id=416, 1284.8pt x 803.0pt>
+[9] <./Bilder/bramble.pdf, id=386, 1284.8pt x 803.0pt>
 File: ./Bilder/bramble.pdf Graphic file (type pdf)
 
 <use ./Bilder/bramble.pdf>
@@ -477,7 +471,7 @@ Overfull \hbox (3.17029pt too wide) in paragraph at lines 23--24
 ww . raspberrypi . org / introducing-[]turbo-[]mode-[]up-[]to-[]50-[]$[]
  []
 
-[13] <./Bilder/komponentendiagramm2.pdf, id=645, 1164.35pt x 732.7375pt>
+[13] <./Bilder/komponentendiagramm2.pdf, id=614, 1164.35pt x 732.7375pt>
 File: ./Bilder/komponentendiagramm2.pdf Graphic file (type pdf)
 
 <use ./Bilder/komponentendiagramm2.pdf>
@@ -490,34 +484,36 @@ Overfull \hbox (6.80516pt too wide) in paragraph at lines 51--52
 erver gibt es da-her einen OpenNTP-
  []
 
-[14]
-
-LaTeX Warning: Reference `fig:Dbconfig1' on page 15 undefined on input line 63.
-
-
-
-Overfull \hbox (29.8581pt too wide) in paragraph at lines 63--64
-\OT1/cmr/m/n/10.95 f[]ur STREAM und HP-Lin-pack fest-ge-legt, was durch zwei Sh
-ell-skrip-te \OT1/cmtt/m/n/10.95 loadGeneratorConfigHpl.sh
- []
-
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.66 
-      <./Bilder/komponentendiagramm2.pdf>]
-<./Bilder/aktivitaetsdiagramm1.pdf, id=674, 1027.84pt x 770.88pt>
+<./Bilder/aktivitaetsdiagramm1.pdf, id=619, 1027.84pt x 770.88pt>
 File: ./Bilder/aktivitaetsdiagramm1.pdf Graphic file (type pdf)
 
 <use ./Bilder/aktivitaetsdiagramm1.pdf>
-Package pdftex.def Info: ./Bilder/aktivitaetsdiagramm1.pdf used on input line 7
-2.
+Package pdftex.def Info: ./Bilder/aktivitaetsdiagramm1.pdf used on input line 5
+7.
 (pdftex.def)             Requested size: 513.91875pt x 385.43906pt.
+ [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.3.1}) has been already used, duplicate ignored
 
-Overfull \hbox (76.45757pt too wide) in paragraph at lines 72--72
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.71 	\item V
+             erkn"upfung von Benchmark-Konfiguration und Versuchsaufbau. <./Bil
+der/komponentendiagramm2.pdf>]
+<./Bilder/dbconfig1.pdf, id=647, 1284.8pt x 803.0pt>
+File: ./Bilder/dbconfig1.pdf Graphic file (type pdf)
+
+<use ./Bilder/dbconfig1.pdf>
+Package pdftex.def Info: ./Bilder/dbconfig1.pdf used on input line 76.
+(pdftex.def)             Requested size: 642.39844pt x 401.49902pt.
+
+Overfull \hbox (204.93726pt too wide) in paragraph at lines 76--77
  [][] 
+ []
+
+
+Overfull \hbox (3.33528pt too wide) in paragraph at lines 73--81
+\OT1/cmr/m/n/10.95 nen f[]ur STREAM und HP-Lin-pack fest-ge-legt, was durch zwe
+i Shell-skrip-te \OT1/cmtt/m/n/10.95 loadGeneratorCon-
  []
 
 [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
@@ -525,108 +521,122 @@ Overfull \hbox (76.45757pt too wide) in paragraph at lines 72--72
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.80 
-      <./Bilder/aktivitaetsdiagramm1.pdf>]
+l.82 \subsubsection
+                   {Automatisierte Durchf"uhrung der Messung auf 19--n RPi-N...
+ <./Bilder/aktivitaetsdiagramm1.pdf>] [17pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.3.3}) has been already used, duplicate ignor
+ed
 
-LaTeX Warning: Reference `fig:Dbconfig2' on page 17 undefined on input line 97.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.89 
+      <./Bilder/dbconfig1.pdf>]
+<./Bilder/dbconfig2.pdf, id=690, 1284.8pt x 803.0pt>
+File: ./Bilder/dbconfig2.pdf Graphic file (type pdf)
 
+<use ./Bilder/dbconfig2.pdf>
+Package pdftex.def Info: ./Bilder/dbconfig2.pdf used on input line 104.
+(pdftex.def)             Requested size: 642.39844pt x 401.49902pt.
 
-[17] [18]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 159.
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[][]\OT1/cmr/m/n/10.95 Aktivit[]ats-dia-gramm zur Vor-be-rei-tung der Da-ten-ba
+nk f[]ur ei-ne
+ []
+
+[18] [19pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 		\end{enumerate}
+                        <./Bilder/dbconfig2.pdf>]
+Overfull \hbox (5.19305pt too wide) in paragraph at lines 154--155
+\OT1/cmr/m/n/10.95 Der fol-gen-de Ab-schnitt pr[]asen-tiert die Un-ter-su-chung
+s-er-geb-nis-se f[]ur HP-Lin-pack und STREAM
+ []
+
+[20]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
 
  (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 159.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
 
-[19] <./Bilder/hpl1.pdf, id=734, 361.35pt x 252.945pt>
+
+LaTeX Warning: Reference `rpi-anhang' on page 21 undefined on input line 192.
+
+<./Bilder/hpl1.pdf, id=739, 361.35pt x 252.945pt>
 File: ./Bilder/hpl1.pdf Graphic file (type pdf)
  <use ./Bilder/hpl1.pdf>
-Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 192.
+Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 200.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl2.pdf, id=735, 361.35pt x 252.945pt>
+<./Bilder/hpl2.pdf, id=740, 361.35pt x 252.945pt>
 File: ./Bilder/hpl2.pdf Graphic file (type pdf)
  <use ./Bilder/hpl2.pdf>
-Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 198.
+Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 206.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl3.pdf, id=736, 361.35pt x 252.945pt>
+<./Bilder/hpl3.pdf, id=741, 361.35pt x 252.945pt>
 File: ./Bilder/hpl3.pdf Graphic file (type pdf)
  <use ./Bilder/hpl3.pdf>
-Package pdftex.def Info: ./Bilder/hpl3.pdf used on input line 204.
+Package pdftex.def Info: ./Bilder/hpl3.pdf used on input line 212.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl4.pdf, id=737, 361.35pt x 252.945pt>
+<./Bilder/hpl4.pdf, id=742, 361.35pt x 252.945pt>
 File: ./Bilder/hpl4.pdf Graphic file (type pdf)
  <use ./Bilder/hpl4.pdf>
-Package pdftex.def Info: ./Bilder/hpl4.pdf used on input line 210.
+Package pdftex.def Info: ./Bilder/hpl4.pdf used on input line 218.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
+[21]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.215 \newpage
-               <./Bilder/hpl1.pdf>]
-<./Bilder/stream1.pdf, id=771, 361.35pt x 252.945pt>
+l.223 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.3.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.223 \newpage
+               <./Bilder/hpl1.pdf> <./Bilder/hpl2.pdf>]
+<./Bilder/stream1.pdf, id=796, 361.35pt x 252.945pt>
 File: ./Bilder/stream1.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream1.pdf>
-Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 221.
+Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 229.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream2.pdf, id=772, 361.35pt x 252.945pt>
+<./Bilder/stream2.pdf, id=797, 361.35pt x 252.945pt>
 File: ./Bilder/stream2.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream2.pdf>
-Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 227.
+Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 235.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream3.pdf, id=773, 361.35pt x 252.945pt>
+<./Bilder/stream3.pdf, id=798, 361.35pt x 252.945pt>
 File: ./Bilder/stream3.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream3.pdf>
-Package pdftex.def Info: ./Bilder/stream3.pdf used on input line 233.
+Package pdftex.def Info: ./Bilder/stream3.pdf used on input line 241.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream4.pdf, id=774, 361.35pt x 252.945pt>
+<./Bilder/stream4.pdf, id=799, 361.35pt x 252.945pt>
 File: ./Bilder/stream4.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream4.pdf>
-Package pdftex.def Info: ./Bilder/stream4.pdf used on input line 239.
+Package pdftex.def Info: ./Bilder/stream4.pdf used on input line 247.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
-) (./kapitel4.tex [21pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.3.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kap4} <./Bilder/hpl2.pdf>] [22pdfTeX warning
- (ext4): destination with the same identifier (name{figure.3.5}) has been alrea
-dy used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kap4}pdfTeX warning (ext4): destination with
- the same identifier (name{figure.3.6}) has been already used, duplicate ignore
-d
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kap4} <./Bilder/hpl3.pdf> <./Bilder/hpl4.pdf
->] [23pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3.7}) has been already used, duplicate ignored
+) (./kapitel4.tex [23pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.3.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -638,9 +648,9 @@ d
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Interpretation}\label{Kap4} <./Bilder/stream1.pdf> <./Bilder/strea
-m2.pdf>] [24pdfTeX warning (ext4): destination with the same identifier (name{f
-igure.3.9}) has been already used, duplicate ignored
+            {Interpretation}\label{Kap4} <./Bilder/hpl3.pdf> <./Bilder/hpl4.pdf
+>] [24pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -652,26 +662,40 @@ ed
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
+            {Interpretation}\label{Kap4} <./Bilder/stream1.pdf> <./Bilder/strea
+m2.pdf>] [25pdfTeX warning (ext4): destination with the same identifier (name{f
+igure.3.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Interpretation}\label{Kap4}pdfTeX warning (ext4): destination with
+ the same identifier (name{figure.3.12}) has been already used, duplicate ignor
+ed
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
             {Interpretation}\label{Kap4} <./Bilder/stream3.pdf> <./Bilder/strea
-m4.pdf>]
+m4.pdf>] [26
+
+
+]
 Kapitel 4.
-<./Bilder/hpl5.pdf, id=883, 361.35pt x 252.945pt>
+<./Bilder/hpl5.pdf, id=895, 361.35pt x 252.945pt>
 File: ./Bilder/hpl5.pdf Graphic file (type pdf)
  <use ./Bilder/hpl5.pdf>
 Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 11.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-[25
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
-has been already used, duplicate ignored
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.14 \newpage
               <./Bilder/hpl5.pdf>]
-<./Bilder/hpl6.pdf, id=902, 361.35pt x 252.945pt>
+<./Bilder/hpl6.pdf, id=915, 361.35pt x 252.945pt>
 File: ./Bilder/hpl6.pdf Graphic file (type pdf)
  <use ./Bilder/hpl6.pdf>
 Package pdftex.def Info: ./Bilder/hpl6.pdf used on input line 17.
@@ -688,7 +712,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 43--43
 s. nur ak-ti-ve RPis
  []
 
-<./Bilder/stream5.pdf, id=903, 361.35pt x 252.945pt>
+<./Bilder/stream5.pdf, id=916, 361.35pt x 252.945pt>
 File: ./Bilder/stream5.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream5.pdf>
@@ -697,7 +721,7 @@ Package pdftex.def Info: ./Bilder/stream5.pdf used on input line 56.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [28pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -710,7 +734,7 @@ ame{figure.4.3}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.58 \end{figure}
                   <./Bilder/hpl6.pdf>]
-<./Bilder/stream6.pdf, id=921, 361.35pt x 252.945pt>
+<./Bilder/stream6.pdf, id=934, 361.35pt x 252.945pt>
 File: ./Bilder/stream6.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream6.pdf>
@@ -731,13 +755,13 @@ tei-ge-rung der mi-ni-ma-len Ausf[]uhrungs-
 
 Underfull \vbox (badness 1242) has occurred while \output is active []
 
- [27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [29pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.144 
-       <./Bilder/stream5.pdf>] [28pdfTeX warning (ext4): destination with the s
+       <./Bilder/stream5.pdf>] [30pdfTeX warning (ext4): destination with the s
 ame identifier (name{figure.4.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -762,7 +786,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Bilder/top500.pdf, id=976, 361.35pt x 252.945pt>
+<./Bilder/top500.pdf, id=989, 361.35pt x 252.945pt>
 File: ./Bilder/top500.pdf Graphic file (type pdf)
  <use ./Bilder/top500.pdf>
 Package pdftex.def Info: ./Bilder/top500.pdf used on input line 204.
@@ -777,14 +801,14 @@ Overfull \hbox (1.99927pt too wide) in paragraph at lines 211--213
 g oder ei-ne Single-CPU-Imple-
  []
 
-[29pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.216 D
        as gilt insbesondere f"ur HPLinpack zum Tragen. Die in Kap. \ref{Inte...
-] [30pdfTeX warning (ext4): destination with the same identifier (name{figure.4
+] [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -812,166 +836,28 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4.10})
                                                   \fi \fi 
 l.217 	\item \textbf
                     {Zuverl"assigkeit von Hardware, IP- und SSH-Kommunikatio...
-]) (./kapitel5.tex [31pdfTeX warning (ext4): destination with the same identifi
+]) (./kapitel5.tex [33pdfTeX warning (ext4): destination with the same identifi
 er (name{figure.4.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {Zusammenfassung und Ausblick}\label{Kap5} <./Bilder/top500.pdf>]
-[32
+[34
 
 
 ]
 Kapitel 5.
-[33]) (./kapitel6.tex [34]
-Kapitel 6.
-[35
-
-
-]
-Overfull \hbox (51.17728pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # Run Hplinpack on n downto 4 RPi-nodes, run again and sh
-utdown RPi-node i afterwards[] 
- []
-
-[36]
-Overfull \hbox (39.6799pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 touch results/hpl-2.1_`date +%y%m%d`.txt results/hpl-2.1_
-shutdown`date +%y%m%d`.txt[] 
- []
-
-[37]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/hpl-2
-.1_`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-
-2.1_`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (22.43384pt too wide) in paragraph at lines 280--280
-[]    \OT1/cmtt/m/n/10.95 mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3
-.0.4-shared/machinefile[] 
- []
-
-[38]
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/hpl-2
-.1_`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-
-2.1_shutdown`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (10.93646pt too wide) in paragraph at lines 280--280
-[]\OT1/cmtt/m/n/10.95 # start benchmark on n RPis, log to results/hpl-2.1_shutd
-own`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (22.43384pt too wide) in paragraph at lines 280--280
-[]    \OT1/cmtt/m/n/10.95 mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3
-.0.4-shared/machinefile[] 
- []
-
-[39] [40]
-Overfull \hbox (28.18253pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 touch results/STREAM_`date +%y%m%d`.txt results/STREAM_sh
-utdown`date +%y%m%d`.txt[] 
- []
-
-
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "SELECT id FROM ExperimentSuite WHERE executionStartedAt=
-$starttime" > /tmp/myid.txt[] 
- []
-
-[41]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
-
-[42]
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "SELECT id FROM ExperimentSuite WHERE executionStartedAt=
-$starttime" > /tmp/myid.txt[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\
-\`value\\\`,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (62.67465pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\
-\`value\\\`,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (45.42859pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigu
-rationId,experimentSuiteId)[] 
- []
-
-
-Overfull \hbox (5.18777pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 # log number of active RPis/powered RPis to results/STREA
-M_`date +%y%m%d`.txt[] 
- []
-
-[43]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 513--513
-[]\OT1/cmtt/m/n/10.95 # find all lines in first output file beginning with 'Cop
-y' (first result line)[] 
- []
-
-[44] [45] [46]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 598--598
-[]\OT1/cmtt/m/n/10.95 Linux version 3.6.11+ (dc4@dc4-arm-01) (gcc version 4.7.2
- 20120731 (prerelease)[] 
- []
-
-
-Overfull \hbox (5.18777pt too wide) in paragraph at lines 650--650
-[]\OT1/cmtt/m/n/10.95 Single Precision C Whetstone Benchmark Opt 3 32 Bit, Sat 
-Nov 30 15:22:14 2013[] 
- []
-
-[47]
-Overfull \hbox (16.68515pt too wide) in paragraph at lines 650--650
-[]\OT1/cmtt/m/n/10.95 Linux version 3.6.11+ (dc4@dc4-arm-01) (gcc version 4.7.2
- 20120731 (prerelease)[] 
- []
-
-[48]) [49] [50
-
-
-] (./grei14.lof)
+[35]) [36] (./grei14.lof)
 \tf@lof=\write5
 \openout5 = `grei14.lof'.
 
- (./grei14.bbl [51
+ (./grei14.bbl [37
 
 
-] [52
+
+
+] [38
 
 
 ]
@@ -992,22 +878,22 @@ Underfull \hbox (badness 3281) in paragraph at lines 57--62
 e . edu / ece / files / 2013 / 05 / Creating . a .
  []
 
-[53]
+[39]
 Underfull \hbox (badness 2261) in paragraph at lines 136--141
 \OT1/cmr/m/it/10.95 pu-ter \OT1/cmr/m/n/10.95 (1990), S. 65--75. --  []$\OT1/cm
 tt/m/n/10.95 http : / / dlojewski . dl . funpic . de / download /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
- [54]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+ [40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (./grei14.aux (./Titel/titel-lmu.aux) (./Titel/erklaerung-lmu.aux)
 (./abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `grei14.out' has not changed.
-(rerunfilecheck)             Checksum: D80B96F81402AB0F299C3663B893D723;2980.
+(rerunfilecheck)             Checksum: EACC73E5A8E4A48382CD9D852BD340B5;2577.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1018,16 +904,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7193 strings out of 493488
- 109397 string characters out of 3141326
- 236652 words of memory out of 3000000
- 10110 multiletter control sequences out of 15000+200000
+ 7164 strings out of 493488
+ 109206 string characters out of 3141326
+ 236561 words of memory out of 3000000
+ 10104 multiletter control sequences out of 15000+200000
  12929 words of font info for 45 fonts, out of 3000000 for 9000
  999 hyphenation exceptions out of 8191
- 36i,8n,39p,1317b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,8n,39p,1317b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1074,10 +960,10 @@ ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 12/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/201
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on grei14.pdf (64 pages, 1516209 bytes).
+Output written on grei14.pdf (50 pages, 1530954 bytes).
 PDF statistics:
- 1304 PDF objects out of 1440 (max. 8388607)
- 1072 compressed objects within 11 object streams
- 211 named destinations out of 1000 (max. 500000)
- 438 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1243 PDF objects out of 1440 (max. 8388607)
+ 1017 compressed objects within 11 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 

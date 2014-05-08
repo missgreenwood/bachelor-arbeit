@@ -50,29 +50,34 @@ Zu Beginn der Untersuchung zeigte sich, dass bei einige Mini-USB-Kabel zur Strom
 
 Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{schmi13}), sondern synchronisiert sich beim Booten gegen einen NTP-Server im Internet. F"ur die parallele Ausf"uhrung eines Programms auf mehreren Rechnerkernen ist die Zeitsynchronisation der RPi-Knoten und des Servers essentiell. Auf dem Bramble-Server gibt es daher einen OpenNTP-Server, gegen den sich die RPi-Knoten synchronisieren (vgl. \cite{kli13}). 
 
-\subsubsection{Konfiguration der Datenbank}
-
-Die Konfigurationen der Benchmarks und der ExperimentSuites sowie die Messergebnisse der Benchmarks werden in einer MySQL-Datenbank auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die Bramble-ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. W"ahrend der praktischen Arbeit wurde das Schema an einigen Stellen an die tats"achlichen Erfordernisse angepasst: Z.B. wurde f"ur jedes ausgef"uhrte Teilmodul eines Benchmarks ein Parameter definiert, der Unix-Timestamp seines Ausf"uhrungsendes ermittelt und zusammen mit dem jeweiligen Messwert in die Datenbank eingelesen.
-
-Die Vorbereitung der Datenbank f"ur den Versuchaufbau erfolgt in drei Schritten:  
-\begin{enumerate}
-	\item Benennung und Beschreibung des Benchmarks 
-	\item Benennung und Beschreibung des Versuchsaufbaus 
-	\item Konfiguration des Versuchsaufbaus 
-\end{enumerate} 
-Das Aktivit"atsdiagramm \ref{fig:Dbconfig1} visualisiert Schritt 1. Hier werden die statischen Konfigurationen f"ur STREAM und HPLinpack festgelegt, was durch zwei Shellskripte \texttt{loadGeneratorConfigHpl.sh} und \texttt{loadGenerator\-ConfigStream.sh} realisiert wird. Sie werden zu Beginn des Versuchs einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: In der Tabelle \texttt{LoadGenerator} muss ein Eintrag mit Werten f"ur Name und Beschreibung des Benchmarks eingegeben werden. In der Tabelle \texttt{ENUM\_ LoadGeneratorConfigurationKey} muss Eintrag mit einem Wert f"ur den Konfigurationsschl"ussel des Benchmarks erstellt werden. In der Tabelle \texttt{LoadGeneratorConfiguration} muss ebenfalls ein Eintrag mit diesem Wert erstellt werden.
-
-Die dynamischen Schritte 2 und 3, die pro ExperimentSuite ausgef"uhrt werden, (Benennung, Beschreibung und Konfiguration des Versuchsaufbaus, Einlesen der Messwerte und Verkn"upfung von ExperimentSuite und  Benchmark-Konfiguration) sind in die folgenden Ausf"uhrungsskripte der Benchmarks integriert. 
-
 \subsubsection{Skalierung der Messung auf 19--n RPi-Nodes} 
 
 Das Aktivit"atsdiagramm \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht f"ur die Durchf"uhr\-ung einer ExperimentSuite, d.h. der Ausf"uhrung eines Benchmarks auf einer gew"ahlten Anzahl aktiver und angeschalteter RPi-Knoten erforderlich sind. Es wird mit n=19 RPi-Nodes begonnen und einmal "uber alle Nodes von 20--1 (ohne den Ausf"uhrungsknoten \texttt{pi03}) iteriert. Danach wird die zweite Messung durchgef"uhrt, wobei nach jedem Iterationsschritt der nicht mehr ben"otigte RPi-Node abgeschaltet wird. Jede Iteration der Benchmark-Ausf"uhrung l"auft prinzipell gleich ab, w"ahrend am Anfang und am Ende spezielle Vorkehrungen zu treffen sind. 
 \begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.5]{aktivitaetsdiagramm1.pdf}\\ 
-  \caption{Aktivit"atsdiagramm der ExperimentSuite.}
+  \centerline{\includegraphics[scale=0.5]{aktivitaetsdiagramm1.pdf}} 
+  \caption{Aktivit"atsdiagramm einer ExperimentSuite.}
   \label{fig:Aktivitaetsdiagramm}
 \end{figure}
+
+\subsubsection{Konfiguration der Datenbank}
+
+Die Konfigurationen der Benchmarks und der ExperimentSuites sowie die Messergebnisse der Benchmarks werden in einer MySQL-Datenbank auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die Bramble-ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. W"ahrend der praktischen Arbeit wurde das Schema geringf"ugig an die tats"achlichen Erfordernisse angepasst. Z.B. wurde f"ur jedes ausgef"uhrte Teilmodul eines Benchmarks ein Messpaarameter definiert, der Unix-Timestamp seines Ausf"uhrungsendes ermittelt und zusammen mit dem jeweiligen Messwert in die Datenbank eingelesen.
+
+Die Vorbereitung der Datenbank f"ur den Versuchaufbau erfolgt in vier Schritten:  
+\begin{enumerate}\bfseries
+	\item Name und Beschreibung des Benchmarks. 
+	\item Beschreibung des Versuchsaufbaus. 
+	\item Konfiguration des Versuchsaufbaus. 
+	\item Verkn"upfung von Benchmark-Konfiguration und Versuchsaufbau.
+\end{enumerate} 
+Das Aktivit"atsdiagramm \ref{fig:Dbconfig1} visualisiert Schritt 1. Hier werden die statischen Konfigurationen f"ur STREAM und HPLinpack festgelegt, was durch zwei Shellskripte \texttt{loadGeneratorCon\-figHpl.sh} und \texttt{loadGenerator\-ConfigStream.sh} realisiert wird. Sie werden zu Beginn des Versuchs einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: In der Tabelle \texttt{LoadGenerator} muss ein Eintrag mit Werten f"ur Name und Beschreibung des Benchmarks eingegeben werden. In der Tabelle \texttt{ENUM\_LoadGeneratorConfigura\-tionKey} muss Eintrag mit einem Wert f"ur den Konfigurationsschl"ussel des Benchmarks erstellt werden. In der Tabelle \texttt{LoadGeneratorConfiguration} muss ebenfalls ein Eintrag mit diesem Wert erstellt werden.
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{dbconfig1.pdf}
+\caption{Aktivit"atsdiagramm zur Vorbereitung der Datenbank f"ur einen Benchmark.}
+\label{fig:Dbconfig1}
+\end{figure}
+Die dynamischen Schritte 2 -- 4, die pro ExperimentSuite ausgef"uhrt werden (Name, Beschreibung und Konfiguration des Versuchsaufbaus sowie Verkn"upfung von ExperimentSuite und Benchmark-Konfiguration) m"ussen pro Benchmark-Ausf"uhrung einmal erfolgen. Daher sind sie in die Ausf"uhrungsskripte f"ur die Benchmarks integriert, die im Folgenden dargestellt werden. Sie werden in Diagramm \ref{fig:Dbconfig2} veranschaulicht. 
 
 \subsubsection{Automatisierte Durchf"uhrung der Messung auf 19--n RPi-Nodes} 
 
@@ -95,12 +100,11 @@ Alle Shellskripte zur Konfiguration und Ausf"uhrung der Experimentsuites wurden 
 		\begin{enumerate}\bfseries
 			\item Datenbank f"ur Experimentsuite vorbereiten.\\ 
 \normalfont{Das Aktivit"atsdiagramm \ref{fig:Dbconfig2} zeigt das Vorbereiten der Datenbank \texttt{rpiWerte} f"ur die aktuelle Iteration: F"ur jede Ausf"uhrung eines Benchmark-Programms muss ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Werten f"ur Granularit"at, Ziel und Startzeitpunkt erstellt werden. In der Tabelle \texttt{Experiment\-Suite\-Configuration} muss ein Eintrag mit Werten f"ur die Anzahlen aktiver und angeschalteter RPi-Knoten erstellt werden. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_loadConf3expSuite} miteinander verkn"upft, in der ein Eintrag mit Werten f"ur  die ID des Benchmarks und die ID der Experimentsuite erstellt werden muss.}
-%%\begin{figure}[htb]
-%%  \centering
-%%  \includegraphics[scale=0.5]{dbconfig1.pdf}\\ 
-%%  \caption{Aktivit"atsdiagramm zur Vorbereitung der Datenbank f"ur eine Experimentsuite.}
-%%  \label{fig:Dbconfig1}
-%%\end{figure}
+\begin{figure}[htb]
+\centerline{\includegraphics[scale=0.5]{dbconfig2.pdf}}
+\caption{Aktivit"atsdiagramm zur Vorbereitung der Datenbank f"ur eine Experimentsuite.}
+\label{fig:Dbconfig2}
+\end{figure}
 			\textbf{\item Verteilte Ausf"uhrung des Benchmarks auf n RPi-Knoten.}\\ 
 Die verteilte Ausf"uhrung eines Benchmark-Programms wird mit dem Befehl 
 \begin{verbatim}
@@ -145,75 +149,48 @@ Falls die Zeitstempel in der Datenbank-Eingabedatei noch nicht dem Format des Un
 \noindent
 Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{startBenchmarks.sh} zum Erstellen des Machinefile, Einh"angen des geteilten Verzeichnisses und Aufruf der Skripte \texttt{STREAM.sh} und \texttt{hpl-2.1.\-sh} (Schritte 1--3). Schritt 4 wird f"ur den jeweiligen Benchmark durch die Shellskripte \texttt{STREAM.sh} und \texttt{hpl-2.1.sh} ausgef"uhrt, die von \texttt{startBenchmarks.sh} aufgerufen werden. 
 
+%TODO: 
+\section{Strommessung}
+
 \section{Ergebnisse}\label{Ergebnisse}
 
-Der n"achste Abschnitt pr"asentiert die Untersuchungsergebnisse mit Schwerpunkt auf dem Bramble. F"ur die Durchf"uhrung standen auf Grund der oben beschriebenen Probleme nur 17 RPi-Nodes zuverl"assig zur Verf"ugung. Zur besseren Lesbarkeit der Ergebnisse wurde entschieden, beide Benchmarks auf gleich vielen RPi-Nodes auszuf"uhren. Da HPLinpack mindestens vier Prozessoren bzw. Prozesse ben"otigt, wurde die Anzahl der Prozessoren f"ur STREAM hieran angepasst. Beide Benchmarks wurden demnach auf n=16 RPi-Nodes ausgef"uhrt, \texttt{pi03} dient als Ausf"uhr\-ungsknoten und wird in der Messung nicht ber"ucksichtigt.
+Der folgende Abschnitt pr"asentiert die Untersuchungsergebnisse f"ur HPLinpack und STREAM auf dem Bramble. Jeder Benchmark wurde zweimal ausgef"uhrt. Beim ersten Lauf waren alle RPi-Knoten angeschaltet, beim zweiten Lauf nur die, auf denen tats"achlich gerechnet wurde. \texttt{pi03} als Berechnungsknoten blieb immer angeschaltet und wurde aus der Untersuchung ausgenommen (vgl. Kap. \ref{Versuchsaufbau}).
 
-\subsection{RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}\label{rpi-ergebnisse}
+Da keine Implementierung von Whetstone f"ur eine verteilte Berechnung auf Raspbian existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPLinpack in der verwendeten Implementierung ben"otigt mindestens vier Rechenkerne, also CPUs oder parallele Prozesse. Hier wurde mit einer CPU, d.h. einem RPi-Knoten pro Prozess gerechnet, sodass HPLinpack mindestens vier angeschaltete und aktive RPi-Knoten zu seiner Ausf"uhrung ben"otigt. 
 
-Bei der Ausf"uhrung von Linpack 100, Whetstone und STREAM in den ausgew"ahlten Implementierungen erreichte der RPi-Einzelrechner folgende Ergebnisse: 
+Der besseren Lesbarkeit halber wurde die verteilte Ausf"uhrung von STREAM daran angepasst, d.h. auch STREAM wurde auf maximal 16 RPi-Knoten parallel ausgef"uhrt. 
 
-\begin{enumerate}
-	\item \textbf{Linpack 100} 
-	\begin{itemize}
-		\item \textbf{Ausf"uhrungsrate:} 41.31 MFLOPS = 0.04131 GFLOPS
-	\end{itemize}
-	\item \textbf{Whetstone} 
-	\begin{itemize}
-		\item \textbf{Ausf"uhrungsrate:} 255.154 MWIPS
-		\item \textbf{Ausf"uhrungszeit:} 10.190 s  
-	\end{itemize}
-	\item \textbf{STREAM} 
-	\begin{itemize}
-		\item \textbf{Ausf"uhrungsrate:}
-		\begin{enumerate}
-			\item COPY: 274.4. MB/s
-			\item SCALE: 209.3 MB/s
-			\item ADD: 287.2 MB/s
-			\item TRIAD: 271.1 MB/s
-		\end{enumerate}					 
-		\item \textbf{Ausf"uhrungszeit:}
-		\begin{enumerate}
-			\item COPY: 0.586838 s
-			\item SCALE: 0.766437 s
-			\item ADD: 0.838107 s
-			\item TRIAD: 0.886793 s
-		\end{enumerate}
-	\end{itemize}
-\end{enumerate} 
-Detaillierte Ergebnisdateien finden sich im Anhang (vgl. Kap. \ref{rpi-anhang}). 
- 
-\subsection{Bramble: HPLinpack}\label{Ergebnisse-HPL}
+\subsection{HPLinpack}\label{Ergebnisse-HPL}
 
-Die folgenden Diagramme zeigen die Ergebnisse f"ur HPLinpack auf dem Bramble mit zwei Ausgabeparametern: Time to Completion und CPU-Performance in MFLOPS, jeweils skaliert auf 16--4 RPi-Nodes. Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse f"ur n RPi-Nodes aktiv/16 RPi-Nodes powered (d.h. alle). Diagramme \ref{fig:hpl3} und \ref{fig:hpl4} zeigen das Verhalten bei n RPis aktiv/n RPis powered.
+Die folgenden Diagramme zeigen die Ergebnisse f"ur HPLinpack auf dem Bramble mit zwei Ausgabeparametern: Ausf"uhrungsdauer in s und Performance in GFLOPs, jeweils skaliert auf 16--4 RPi-Knoten. Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse mit n aktiven und 20 angeschalteten RPi-Knoten. Diagramme \ref{fig:hpl3} und \ref{fig:hpl4} zeigen das Verhalten mit n aktiven und n angeschalteten RPi-Knoten.
 \enlargethispage*{2cm}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl1.pdf}\\ 
-  \caption{Ausf"uhrungsrate in GFLOPS f"ur HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}
+  \caption{Performance in GFLOPs f"ur HPLinpack auf n RPi-Knoten aktiv/16 RPi-Knoten angeschaltet.}
   \label{fig:hpl1}		
 \end{figure}
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{hpl2.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}
+  \caption{Ausf"uhrungszeit in s f"ur HPLinpack auf n RPi-Knoten aktiv/16 RPi-Knoten angeschaltet.}
   \label{fig:hpl2}		
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl3.pdf}\\ 
-  \caption{Ausf"uhrungsrate in GFLOPS f"ur HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}
+  \caption{Performance in GFLOPs f"ur HPLinpack auf n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}
   \label{fig:hpl3}		
 \end{figure}
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{hpl4.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur HPLinpack auf n RPi-Nodes aktiv/n RPi-Nodes powered.}
+  \caption{Ausf"uhrungsdauer in s f"ur HPLinpack auf n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}
   \label{fig:hpl4}		
 \end{figure}
 
 \newpage
-\subsection{Bramble: STREAM}\label{Ergebnisse-Stream}
+\subsection{STREAM}\label{Ergebnisse-Stream}
 Die folgenden Diagramme zeigen die Ergebnisse von STREAM auf dem Bramble f"ur die Module Copy, Scale, Add und Triad, jeweils mit zwei Ausgabeparametern und skaliert auf 16--4 RPi-Nodes. Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur n RPi-Nodes aktiv/16 RPi-Nodes powered, Diagramme \ref{fig:stream3} und \ref{fig:stream4} f"ur n RPi-Nodes aktiv/n RPi-Nodes powered. 
 
 \begin{figure}[htb]

@@ -120,7 +120,7 @@ Er wurde 1976 von Roy Longbottom u.A. entwickelt und gilt als erstes Programm, d
 
 \subsubsection{Funktionsweise}\label{Funktion-Whetstone}
 
-Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Flie\ss komma-Berechnungen ausgef"uhrt. Auch mathematische Funktionen, Integer-Arithmetik, bedingte Anweisungen etc. kommen zur Anwendung, da die urspr"ungliche Programmversion nicht komplex genug war, um ein durchschnittliches FORTRAN-Programm zu simulieren. Gegen"uber der urspr"unglichen Implementierung in ALGOL 60 war ein damals g"angiger FORTRAN-Compiler in der Lage, Zwischenergebnisse in schnellen Registern abzuspeichern und darauf zur"uckzugreifen. So fiel die gemessene CPU-Leistung deutlich h"oher aus als erwartet (vgl. \cite{cur76}). 
+Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Flie\ss komma-Berechnungen ausgef"uhrt. Auch mathematische Funktionen, Integer-Arithmetik, bedingte Anweisungen etc. kommen zur Anwendung, da die urspr"ungliche Programmversion nicht komplex genug war, um ein durchschnittliches FORTRAN-Programm zu simulieren. Gegen"uber der urspr"unglichen Implementierung in ALGOL 60 war ein damals g"angiger FOR\-TRAN-Compiler in der Lage, Zwischenergebnisse in schnellen Registern abzuspeichern und darauf zur"uckzugreifen. So fiel die gemessene CPU-Leistung deutlich h"oher aus als erwartet (vgl. \cite{cur76}). 
 
 Die einzelnen Teile werden als Module bezeichnet und sind jeweils in eine For-Schleife eingebettet, die viele Male  hintereinander ausgef"uhrt wird. Ein Rahmenprogramm steuert Aufruf der Module und Ausgabe der Ergebnisse. Auch die Ausgabe ist Teil des Benchmarks, allerdings bemerkt Curnow hierzu: 
 \begin{quote}
@@ -138,7 +138,7 @@ Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-C
 \onehalfspacing
 When more is known about the characteristics of programs running on these multi-level store machines it may be possible to produce a typical program for particular types of machine. [\dots] Despite these limitations the program described should be of some value, particularly in relation to smaller machines \cite{cur76}. 
 \end{quote}
-Er wurde vom Entwickler selbst f"ur den RPi angepasst und und auf diesem getestet (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm.}. Auch hier liegen also Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
+Er wurde vom Entwickler selbst f"ur den RPi angepasst und und auf diesem getestet (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}). Auch hier liegen also Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
 
 Wie f"ur die meisten etablierten HPC-Benchmarks existieren Implementierungen in h"oheren Programmiersprachen wie C, C++, Fortran und Java (vgl. \url{http://freespace.virgin.net/roy.longbottom}). Ob eine lauff"ahige Implementierung f"ur die Cluster-Archi\-tektur existiert, wird sich zeigen m"ussen. 
 

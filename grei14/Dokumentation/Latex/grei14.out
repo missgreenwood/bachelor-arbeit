@@ -34,11 +34,5 @@
 \BOOKMARK [1][-]{section.4.4}{Einordnung in Top500}{chapter.4}% 34
 \BOOKMARK [1][-]{section.4.5}{Grenzen des Versuchsaufbaus}{chapter.4}% 35
 \BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 36
-\BOOKMARK [0][-]{chapter.6}{Anhang}{}% 37
-\BOOKMARK [1][-]{section.6.1}{Shellskripte}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.2}{Ergebnisse der ausgew\344hlten Benchmarks auf dem RPi-Einzelrechner}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.2.1}{Linpack 100}{section.6.2}% 40
-\BOOKMARK [2][-]{subsection.6.2.2}{Whetstone}{section.6.2}% 41
-\BOOKMARK [2][-]{subsection.6.2.3}{STREAM}{section.6.2}% 42
-\BOOKMARK [0][-]{chapter*.20}{Abbildungsverzeichnis}{}% 43
-\BOOKMARK [0][-]{chapter*.21}{Literaturverzeichnis}{}% 44
+\BOOKMARK [0][-]{chapter*.15}{Abbildungsverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 38
