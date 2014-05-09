@@ -6,17 +6,7 @@ Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Messwert
 
 Tabellen \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Messergebnisse f"ur beide Ausf"uhrungen von HPLinpack gegen"uber: 
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=.8]{hpl5.pdf}\\ 
-  \caption{Ausf"uhrungsrate in GFLOPS f"ur HPLinpack mit allen RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}\label{fig:hpl5}
-\end{figure}
-\newpage
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=.8]{hpl6.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur HPLinpack alle RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}\label{fig:hpl6}
-\end{figure}
+
 
 \noindent
 Die Diagramme lassen vermuten, dass keine signifiganten Unterschiede zwischen der Ausf"uhrung von HPLinpack auf n RPi-Nodes aktiv/16 RPi-Nodes powered (rot) und n RPi-Nodes aktiv/n RPi-Nodes powered (blau) bestehen. Die folgende Tabelle stellt die minimalen, maximalen und durchschnittlichen Werte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer beider L"aufe gegen"uber: 
@@ -51,16 +41,6 @@ Hieran ist von Bedeutung, dass das Herunterfahren nicht aktiver RPi-Nodes ledigl
 
 Noch deutlicher zeigt sich dieser Effekt bei STREAM: 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=.8]{stream5.pdf}\\ 
-  \caption{Ausf"uhrungsrate in MB/s f"ur STREAM alle RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}\label{fig:stream5}
-\end{figure}
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=.8]{stream6.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur STREAM alle RPi-Nodes powered vs. nur aktive RPi-Nodes powered.}\label{fig:stream6}
-\end{figure}
 
 Auch hier zeigen die nahezu deckungsgleichen Ergebnisdaten mit 16 RPis powered (rote) vs. n RPi-Nodes powered (blau), keinen  nennenswerten Effekt des Herunterfahrens nicht aktiver RPi-Nodes auf Ausf"uhrungsrate und Ausf"uhrungsdauer. Die folgenden Tabellen \ref{fig:stream-vgl1} und \ref{fig:stream-vgl2} mit der Gegen"uberstellung der maximalen, minimalen und durchschnittlichen Ausf"uhrungsrate und Ausf"uhrungsdauer der STREAM-Module best"atigen dies: 
 
@@ -194,15 +174,6 @@ Eine Gegen"uberstellung der Messwerte von Bramble und RPi-Einzelrechner ist nur 
     \hline  
     \end{tabular} 
   \caption{STREAM auf Bramble und RPi-Einzelrechnern.}\label{fig:overall3}
-\end{figure}
-
-\section{Einordnung in Top500}\label{top500}
-
-Die Klassifizierung der Supercomputer in der Top500-Liste basiert auf den Ergebnissen von HPLinpack (Ausf"uhrungsrate in GFLOPS). Eine fiktive Einordnung des Bramble in die aktuelle Bestenliste vom November 2013\footnote{Vgl. \url{http://www.top500.org/list/2013/11}.} zeigt Schaubild \ref{fig:top500}.
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=.8]{top500.pdf}\\ 
-  \caption{Einordnung des Bramble in Top500 Nov. 2013.}\label{fig:top500}
 \end{figure}
 
 \section{Grenzen des Versuchsaufbaus}\label{Grenzen}

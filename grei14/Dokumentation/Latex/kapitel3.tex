@@ -90,19 +90,19 @@ Die automatisierte Durchf"uhrung der Messung erfolgt durch Shellskripte. Sie wer
 Hierbei ist darauf zu achten, dass nur so viele Prozesse vergeben werden, wie auch angeschaltete RPi-Knoten zur Verf"ugung stehen. Die CPUs der RPi-Knoten m"ussen in der Reihenfolge angegeben werden, in der das Ausf"uhrungsskript das Herunterfahren der RPi-Knoten vorsieht. Das Machinefile muss in dem Verzeichnis abgelegt werden, von dem aus das auszuf"uhrende Programm gestartet wird. Um Verwechslungen vorzubeugen, wird ein eventuell dort liegendes, veraltetes Machinefile gel"oscht.}
 	\textbf{\item Einh"angen des geteilten Verzeichnisses auf allen RPis.}\\
 Alle die ExperimentSuites betreffenden Dateien, z.B. die ausf"uhrbaren Dateien der Benchmark-Programme und das Machinefile, liegen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share}. Um sicherzustellen, dass ein Benchmark-Programm auf einem RPi-Knoten ausgef"uhrt werden kann, muss das geteilte Verzeichnis auf dem jeweiligen RPi-Knoten eingeh"angt sein. 
-	\textbf{\item Navigation ins Arbeitsverzeichnis der Experimentsuite.}\\
-Alle Shellskripte zur Konfiguration und Ausf"uhrung der Experimentsuites wurden in einem Verzeichnis \texttt{experimentsuite} im geteilten Verzeichnis \texttt{/srv} abgelegt. Die Ergebnisdaten werden ebenfalls dort abgelegt. 
+	\textbf{\item Navigation ins Arbeitsverzeichnis der ExperimentSuite.}\\
+Alle Shellskripte zur Konfiguration und Ausf"uhrung der ExperimentSuites wurden in einem Verzeichnis \texttt{experimentsuite} im geteilten Verzeichnis \texttt{/srv} abgelegt. Die Ergebnisdaten werden ebenfalls dort abgelegt. 
 	\textbf{\item Iteration "uber n ausgew"ahlte Benchmarks:}
 	\begin{enumerate}\bfseries		
 		\item Erstellen von Logdateien.\\
 \normalfont{F"ur die Ergebnisse der Benchmarks werden Logdateien vorbereitet, in die sp"ater die Ausgabe der Benchmarks geschrieben wird.}  
 		\textbf{\item Iteration "uber n RPi-Knoten:}
 		\begin{enumerate}\bfseries
-			\item Datenbank f"ur Experimentsuite vorbereiten.\\ 
-\normalfont{Das Aktivit"atsdiagramm \ref{fig:Dbconfig2} zeigt das Vorbereiten der Datenbank \texttt{rpiWerte} f"ur die aktuelle Iteration: F"ur jede Ausf"uhrung eines Benchmark-Programms muss ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Werten f"ur Granularit"at, Ziel und Startzeitpunkt erstellt werden. In der Tabelle \texttt{Experiment\-Suite\-Configuration} muss ein Eintrag mit Werten f"ur die Anzahlen aktiver und angeschalteter RPi-Knoten erstellt werden. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_loadConf3expSuite} miteinander verkn"upft, in der ein Eintrag mit Werten f"ur  die ID des Benchmarks und die ID der Experimentsuite erstellt werden muss.}
+			\item Datenbank f"ur ExperimentSuite vorbereiten.\\ 
+\normalfont{Das Aktivit"atsdiagramm \ref{fig:Dbconfig2} zeigt das Vorbereiten der Datenbank \texttt{rpiWerte} f"ur die aktuelle Iteration: F"ur jede Ausf"uhrung eines Benchmark-Programms muss ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Werten f"ur Granularit"at, Ziel und Startzeitpunkt erstellt werden. In der Tabelle \texttt{Experiment\-Suite\-Configuration} muss ein Eintrag mit Werten f"ur die Anzahlen aktiver und angeschalteter RPi-Knoten erstellt werden. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_loadConf3expSuite} miteinander verkn"upft, in der ein Eintrag mit Werten f"ur  die ID des Benchmarks und die ID der ExperimentSuite erstellt werden muss.}
 \begin{figure}[htb]
 \centerline{\includegraphics[scale=0.5]{dbconfig2.pdf}}
-\caption{Aktivit"atsdiagramm zur Vorbereitung der Datenbank f"ur eine Experimentsuite.}
+\caption{Aktivit"atsdiagramm zur Vorbereitung der Datenbank f"ur eine ExperimentSuite.}
 \label{fig:Dbconfig2}
 \end{figure}
 			\textbf{\item Verteilte Ausf"uhrung des Benchmarks auf n RPi-Knoten.}\\ 
@@ -131,7 +131,7 @@ Beim zweiten Lauf eines Benchmark-Programms auf n RPi-Knoten wird der nun nicht 
 Analog zu Schritt b iii.
 		\end{enumerate}
 		\textbf{\item Parsen der Logdateien f"ur die Datenbank-Eingabe.}\\
-Die Ausgabe der Benchmarks ist h"ochst unterschiedlich und entspricht nat"urlich nicht dem Eingabeformat f"ur die Datenbank \texttt{rpiWerte}. Daher wird pro ausgef"uhrtem Benchmark eine Eingabedatei f"ur die Datenbank erstellt, die pro Experimentsuite eine Zeile mit den Messergebnissen und Zeitstempel enth"alt, getrennt durch Leerzeichen. So enth"alt z.B. eine Zeile einer Datenbank-Eingabedatei f"ur STREAM: 
+Die Ausgabe der Benchmarks ist h"ochst unterschiedlich und entspricht nat"urlich nicht dem Eingabeformat f"ur die Datenbank \texttt{rpiWerte}. Daher wird pro ausgef"uhrtem Benchmark eine Eingabedatei f"ur die Datenbank erstellt, die pro ExperimentSuite eine Zeile mit den Messergebnissen und Zeitstempel enth"alt, getrennt durch Leerzeichen. So enth"alt z.B. eine Zeile einer Datenbank-Eingabedatei f"ur STREAM: 
 \begin{verbatim}
 Copy: 3649.3 0.167595 0.166607 0.168846 Scale: 3428.0 0.178749 
 0.177361 0.180439 Add: 4749.8 0.192614 0.192010 0.193745 Triad: 
@@ -154,70 +154,88 @@ Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{sta
 
 \section{Ergebnisse}\label{Ergebnisse}
 
-Der folgende Abschnitt pr"asentiert die Untersuchungsergebnisse f"ur HPLinpack und STREAM auf dem Bramble. Jeder Benchmark wurde zweimal ausgef"uhrt. Beim ersten Lauf waren alle RPi-Knoten angeschaltet, beim zweiten Lauf nur die, auf denen tats"achlich gerechnet wurde. \texttt{pi03} als Berechnungsknoten blieb immer angeschaltet und wurde aus der Untersuchung ausgenommen (vgl. Kap. \ref{Versuchsaufbau}).
+Der folgende Abschnitt pr"asentiert die Untersuchungsergebnisse f"ur HPLinpack und STREAM auf dem Bramble. Jeder Benchmark wurde zweimal ausgef"uhrt. Bei Messreihe 1 waren alle RPi-Knoten angeschaltet, bei Messreihe 2 nur die, auf denen die Benchmark-Programme tats"achlich ausgef"uhrt wurden. \texttt{pi03} als Berechnungsknoten blieb immer angeschaltet und wurde in der Untersuchung nicht ber"ucksichtigt (vgl. Kap. \ref{Versuchsaufbau}).
 
-Da keine Implementierung von Whetstone f"ur eine verteilte Berechnung auf Raspbian existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPLinpack in der verwendeten Implementierung ben"otigt mindestens vier Rechenkerne, also CPUs oder parallele Prozesse. Hier wurde mit einer CPU, d.h. einem RPi-Knoten pro Prozess gerechnet, sodass HPLinpack mindestens vier angeschaltete und aktive RPi-Knoten zu seiner Ausf"uhrung ben"otigt. 
+Da keine Implementierung von Whetstone f"ur eine verteilte Berechnung auf Raspbian existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPLinpack in der verwendeten Implementierung ben"otigt mindestens vier CPUs oder parallele Prozesse. Hier wurde jeder CPU, d.h. einem RPi-Knoten, genau ein Prozess zugewiesen, sodass zur Ausf"uhrung von HPLinpack mindestens vier angeschaltete und aktive RPi-Knoten ben"otigt werden. 
 
-Der besseren Lesbarkeit halber wurde die verteilte Ausf"uhrung von STREAM daran angepasst, d.h. auch STREAM wurde auf maximal 16 RPi-Knoten parallel ausgef"uhrt. 
+Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran angepasst, d.h. auch STREAM wurde auf mindestens vier RPi-Knoten parallel ausgef"uhrt. 
 
-\subsection{HPLinpack}\label{Ergebnisse-HPL}
+\subsection{HPLinpack: Performance}\label{Ergebnisse-HPL}
 
-Die folgenden Diagramme zeigen die Ergebnisse f"ur HPLinpack auf dem Bramble mit zwei Ausgabeparametern: Ausf"uhrungsdauer in s und Performance in GFLOPs, jeweils skaliert auf 16--4 RPi-Knoten. Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse mit n aktiven und 20 angeschalteten RPi-Knoten. Diagramme \ref{fig:hpl3} und \ref{fig:hpl4} zeigen das Verhalten mit n aktiven und n angeschalteten RPi-Knoten.
-\enlargethispage*{2cm}
+HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
+
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Werte f"ur die Eingabeparameter entstammen der Datei HPL.dat, welche im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmarks liegen muss. Darin werden u.a. die Problemgr"o\ss en \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N} und die hierf"ur zu verwendenden Blockgr"o\ss en \texttt{NB} beziffert.
+
+Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer geliefert. Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl1.pdf}\\ 
-  \caption{Performance in GFLOPs f"ur HPLinpack auf n RPi-Knoten aktiv/16 RPi-Knoten angeschaltet.}
+  \caption{Ausf"uhrungsrate von HPLinpack, Messreihe 1.}
   \label{fig:hpl1}		
-\end{figure}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.8]{hpl2.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur HPLinpack auf n RPi-Knoten aktiv/16 RPi-Knoten angeschaltet.}
-  \label{fig:hpl2}		
 \end{figure}
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{hpl3.pdf}\\ 
-  \caption{Performance in GFLOPs f"ur HPLinpack auf n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}
-  \label{fig:hpl3}		
-\end{figure}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.8]{hpl4.pdf}\\ 
-  \caption{Ausf"uhrungsdauer in s f"ur HPLinpack auf n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}
-  \label{fig:hpl4}		
+  \includegraphics[scale=0.8]{hpl2.pdf}\\ 
+  \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1.}
+  \label{fig:hpl2}		
 \end{figure}
 
 \newpage
-\subsection{STREAM}\label{Ergebnisse-Stream}
-Die folgenden Diagramme zeigen die Ergebnisse von STREAM auf dem Bramble f"ur die Module Copy, Scale, Add und Triad, jeweils mit zwei Ausgabeparametern und skaliert auf 16--4 RPi-Nodes. Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur n RPi-Nodes aktiv/16 RPi-Nodes powered, Diagramme \ref{fig:stream3} und \ref{fig:stream4} f"ur n RPi-Nodes aktiv/n RPi-Nodes powered. 
+\noindent
+Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 denen von Messreihe 2 gegen"uber, in der nicht mehr aktive RPi-Knoten nach der Ausf"uhrung des Benchmarks heruntergefahren werden. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{hpl5.pdf}\\ 
+  \caption{Ausf"uhrungsrate von HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{hpl6.pdf}\\ 
+  \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
+\end{figure}
+\newpage 
+\subsection{STREAM: Performance}\label{Ergebnisse-Stream}
 
+Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM mit zwei Ausgabeparametern: Ausf"uhrungsrate in MB/s und Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream1.pdf}\\ 
-  \caption{Ausf"uhrungsrate in MB/s f"ur STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}
+  \caption{Ausf"uhrungsrate von STREAM, Messreihe 1.}
   \label{fig:stream1}		
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream2.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur STREAM auf n RPi-Nodes aktiv/16 RPi-Nodes powered.}
+  \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1.}
   \label{fig:stream2}		
 \end{figure}
+\newpage
+\noindent
+Analog dazu werden in den Diagrammen \ref{fig:stream5} und\ref{fig:stream6} die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"ubergestellt. Auch hier sind die Ergebnisse von Messreihe 1 rot, die von Messreihe 2 blau markiert. 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{stream3.pdf}\\ 
-  \caption{Ausf"uhrungsrate in MB/s f"ur STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}
-  \label{fig:stream3}		
+  \includegraphics[scale=.8]{stream5.pdf}\\ 
+  \caption{Ausf"uhrungsrate von STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
 \end{figure}
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{stream4.pdf}\\ 
-  \caption{Ausf"uhrungszeit in s f"ur STREAM auf n RPi-Nodes aktiv/n RPi-Nodes powered.}
-  \label{fig:stream4}		
+  \includegraphics[scale=.8]{stream6.pdf}\\ 
+  \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
+\newpage
+\subsection{Stromverbrauch}\label{Ergebnisse-Energiegenie}
 
+Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur die Messreihen 1 und 2. Diagramm \ref{fig:strom1} zeigt den Energieverbrauch in Watt, wenn alle 20 RPi-Knoten angeschaltet sind. Diagramm \ref{fig:strom2} zeigt den Energieverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden. 
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{strom1.pdf}\\ 
+%  \caption{Energieverbrauch in W f"ur HPLinpack mit n RPi-Knoten aktiv/20 RPi-Knoten angeschaltet.}\label{fig:strom1}
+%\end{figure}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{strom2.pdf}\\ 
+%  \caption{Energieverbrauch in W f"ur STREAM mit n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}\label{fig:strom2}
+%\end{figure}
 \endinput 
 
 

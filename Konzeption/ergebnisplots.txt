@@ -100,23 +100,23 @@
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "MB/s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM on n RPis active, 20 RPis powered"
+set title "STREAM mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'stream1.eps'
 set style data lines
-plot 'streamplot1.txt' using 9:1 title "Copy/Rate", '' using 9:3 title "Scale/Rate", '' using 9:5 title "Add/Rate", '' using 9:7 title "Triad/Rate" 
+plot 'streamplot1.txt' using 9:1 title "Copy", '' using 9:3 title "Scale", '' using 9:5 title "Add", '' using 9:7 title "Triad" 
 
 # STREAM2
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM on n RPis active, 20 RPis powered"
+set title "STREAM mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'stream2.eps'
 set style data lines
-plot 'streamplot1.txt' using 9:2 title "Copy/Avg time", '' using 9:4 title "Scale/Avg time", '' using 9:6 title "Add/Avg time", '' using 9:8 title "Triad/Avg time" 
+plot 'streamplot1.txt' using 9:2 title "Copy", '' using 9:4 title "Scale", '' using 9:6 title "Add", '' using 9:8 title "Triad" 
 
 # STREAM3
 
@@ -144,45 +144,45 @@ plot 'streamplot2.txt' using 9:2 title "Copy/Avg time", '' using 9:4 title "Scal
 
 set terminal postscript eps 
 set ylabel "MB/s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM on n RPis active, 20 RPis powered vs. n RPis active, n+1 RPis powered"
+set title "STREAM Testreihe 1 vs. Testreihe 2"
 set output 'stream5.eps'
 set style data lines
-plot 'streamplot1.txt' using 9:1 title "Copy/Rate" linecolor rgb "red", '' using 9:3 title "Scale/Rate" linecolor rgb "red", '' using 9:5 title "Add/Rate" linecolor rgb "red", '' using 9:7 title "Triad/Rate" linecolor rgb "red", 'streamplot2.txt' using 9:1 title "Copy/Rate" linecolor rgb "blue", '' using 9:3 title "Scale/Rate" linecolor rgb "blue", '' using 9:5 title "Add/Rate" linecolor rgb "blue", '' using 9:7 title "Triad/Rate" linecolor rgb "blue"
+plot 'streamplot1.txt' using 9:1 title "Copy" linecolor rgb "red", '' using 9:3 title "Scale" linecolor rgb "red", '' using 9:5 title "Add" linecolor rgb "red", '' using 9:7 title "Triad" linecolor rgb "red", 'streamplot2.txt' using 9:1 title "Copy" linecolor rgb "blue", '' using 9:3 title "Scale" linecolor rgb "blue", '' using 9:5 title "Add" linecolor rgb "blue", '' using 9:7 title "Triad" linecolor rgb "blue"
 
 # STREAM6 
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM on n RPis active, 20 RPis powered vs. n RPis active, n+1 RPis powered"
+set title "STREAM Testreihe 1 vs. Testreihe 2"
 set output 'stream6.eps'
 set style data lines
-plot 'streamplot1.txt' using 9:2 title "Copy/Avg time" linecolor rgb "red", '' using 9:4 title "Scale/Avg time" linecolor rgb "red", '' using 9:6 title "Add/Avg time" linecolor rgb "red", '' using 9:8 title "Triad/Avg time" linecolor rgb "red", 'streamplot2.txt' using 9:2 title "Copy/Avg time" linecolor rgb "blue", '' using 9:4 title "Scale/Avg time" linecolor rgb "blue", '' using 9:6 title "Add/Avg time" linecolor rgb "blue", '' using 9:8 title "Triad/Avg time" linecolor rgb "blue"
+plot 'streamplot1.txt' using 9:2 title "Copy" linecolor rgb "red", '' using 9:4 title "Scale" linecolor rgb "red", '' using 9:6 title "Add" linecolor rgb "red", '' using 9:8 title "Triad" linecolor rgb "red", 'streamplot2.txt' using 9:2 title "Copy" linecolor rgb "blue", '' using 9:4 title "Scale" linecolor rgb "blue", '' using 9:6 title "Add" linecolor rgb "blue", '' using 9:8 title "Triad" linecolor rgb "blue"
 
 # HPL1
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "Gflops"
-set xlabel "Number of RPis active"
+set ylabel "GFLOPs"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack on n RPis active, 20 RPis powered"
+set title "HPLinpack mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'hpl1.eps'
 unset border
-plot 'hplplot1.txt' using 3:2 title "Execution Rate" 
+plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" 
 
 # HPL2
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack on n RPis active, 20 RPis powered"
+set title "HPLinpack mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'hpl2.eps'
 unset border 
-plot 'hplplot1.txt' using 3:1 title "Time to Completion"
+plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer"
 
 # HPL3
 
@@ -209,24 +209,24 @@ plot 'hplplot2.txt' using 3:1 title "Time to Completion"
 # HPL5
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "Gflops"
-set xlabel "Number of RPis active"
+set ylabel "GFLOPs"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack on n RPis active, 20 RPis powered vs. n RPis active, n+1 RPis powered"
+set title "HPLinpack Testreihe 1 vs. Testreihe 2"
 set output 'hpl5.eps'
 unset border
-plot 'hplplot1.txt' using 3:2 title "Execution Rate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title "Execution Rate" with points linecolor rgb "blue"
+plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title " " with points linecolor rgb "blue"
 
 # HPL6
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
-set xlabel "Number of RPis active"
+set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack on n RPis active, 20 RPis powered vs. n RPis active, n+1 RPis powered"
+set title "HPLinpack Testreihe 1 vs. Testreihe 2"
 set output 'hpl6.eps'
 unset border
-plot 'hplplot1.txt' using 3:1 title "Time to Completion" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title "Time to Completion" with points linecolor rgb "blue"
+plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title " " with points linecolor rgb "blue"
 
 # Top500
 

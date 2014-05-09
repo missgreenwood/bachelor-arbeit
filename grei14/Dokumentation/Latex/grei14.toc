@@ -36,16 +36,16 @@
 \contentsline {subsubsection}{Skalierung der Messung auf 19--n RPi-Nodes}{15}{section*.12}
 \contentsline {subsubsection}{Konfiguration der Datenbank}{15}{section*.13}
 \contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf 19--n RPi-Nodes}{17}{section*.14}
-\contentsline {section}{\numberline {3.3}Ergebnisse}{21}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}RPi-Einzelrechner: Linpack 100, Whetstone und STREAM}{21}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Bramble: HPLinpack}{22}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Bramble: STREAM}{23}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Interpretation}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}HPLinpack/Bramble}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}STREAM/Bramble}{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Vergleich Bramble/RPi-Einzelrechner}{30}{section.4.3}
-\contentsline {section}{\numberline {4.4}Einordnung in Top500}{31}{section.4.4}
-\contentsline {section}{\numberline {4.5}Grenzen des Versuchsaufbaus}{31}{section.4.5}
+\contentsline {section}{\numberline {3.3}Strommessung}{21}{section.3.3}
+\contentsline {section}{\numberline {3.4}Ergebnisse}{21}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}HPLinpack: Performance}{21}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}STREAM: Performance}{23}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Stromverbrauch}{25}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Interpretation}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}HPLinpack/Bramble}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}STREAM/Bramble}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}Vergleich Bramble/RPi-Einzelrechner}{31}{section.4.3}
+\contentsline {section}{\numberline {4.4}Grenzen des Versuchsaufbaus}{32}{section.4.4}
 \contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{35}{chapter.5}
 \contentsline {chapter}{Abbildungsverzeichnis}{37}{chapter*.15}
 \contentsline {chapter}{Literaturverzeichnis}{39}{chapter*.16}
