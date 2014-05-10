@@ -38,22 +38,12 @@ Das \textit{Informatik-Handbuch} liefert folgende Aspekte:
 \onehalfspacing
 Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [\dots] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen \cite{rec06}.
 \end{quote}
-In dieser Arbeit soll die Performance eines RPis und eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen ermittelt werden. Curnow erl"autert in Bezug auf Whetstone: 
+In dieser Arbeit soll die Performance eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen ermittelt werden. Curnow erl"autert in Bezug auf Whetstone: 
 \begin{quote}
 \onehalfspacing
 We are not claiming [to reflect] the overall performance of a given system. On the contrary, we believe that no single number ever can. It does, however, reflect the performance of a dedicated machine for solving a dense system of linear equations \cite{cur76}.
 \end{quote}
-Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in diesem abgegrenzten Sinn bezeichnet, d.h. die Datenverarbeitungsgeschwindigkeit eines spezifischen Systems, nicht dessen Leistung im physikalischen Sinn. 
-
-% Def.: Leistung = Time to Completion (lt. Christian, aber m.E. falsch - daher ersetzt durch Energieverbrauch)
-%\section{Definition: \textit{Leistung}}\label{Leistung}
-%
-%Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik wird der Begriff meist abweichend verwendet: Laut Rechenberg sind wichtige Aspekte bei der Leistungsbewertung eines Rechnersystems das zu untersuchende System, die Arbeitslast und die Methode zur Leistungsermittlung (vgl. \cite{rec06}), au\ss erdem 
-%\begin{quote}
-%\onehalfspacing
-%[...] die \textit{Leistungskenngr"o\ss en} oder \textit{-ma\ss zahlen} (\textit{performance metrics}), die f"ur das vorliegende Rechnersystem und die Ziele der Leistungsanalyse relevant sind \cite{rec06}. 
-%\end{quote}
-%Die hier verwendete Definition greift den ersten Aspekt auf: Mit \textit{Leistung} ist die \textbf{\textit{Time to completion}} gemeint, d.h. die Zeit, die ein Prozess oder ein Programm(teil) bis zum erfolgreichen Abschluss ben"otigt. Bei Rechenberg wird dies als "`Programmlaufzeit"' \cite{rec06} bezeichnet\footnote{Andere Klassen von Kenngr"o\ss en, die neben der Zeit zur Leistungsbewertung herangezogen werden, sind \textit{Durchsatz} und \textit{Auslastung}. Abweichende zeitliche Kenngr"o\ss en sind z.B. \textit{Bedienzeit (Service time)} oder \textit{TTR (Time to Response)} (vgl. \cite{rec06}).}. 
+Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in diesem abgegrenzten Sinn bezeichnet, d.h. die Datenverarbeitungsgeschwindigkeit eines spezifischen Systems, nicht dessen Leistung im physikalischen Sinn. Dabei werden die \textbf{\textit{Ausf"uhrungsrate}} und die \textbf{\textit{Ausf"uhrungszeit}} als ma\ss gebliche Zahlen betrachtet. 
 
 % Energieverbrauch = Exergieverbrauch/Entropieerzeugung in Watt
 \section{Definition: \textit{Energieverbrauch}}\label{Energieverbrauch}
@@ -116,7 +106,7 @@ Auch Whetstone ist als Benchmark im HPC-Bereich und zur Klassifizierung von Einz
 \onehalfspacing
 [T]he most common 'stone age' benchmarks (CPU/memory/compiler benchmarks only) [are] in particular the Whetstone, Dhrystone, and Linpack benchmarks. These are the benchmarks whose results are most often cited in manufacturers' publications and in the trade press \cite{wei90}.
 \end{quote}
-Er wurde 1976 von Roy Longbottom u.A. entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde (vgl. \cite{wei90}). Wie Linpack misst er die CPU-Leistung. 
+Er wurde 1976 von Roy Longbottom und anderen entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde (vgl. \cite{wei90}). Wie Linpack misst er die CPU-Leistung. 
 
 \subsubsection{Funktionsweise}\label{Funktion-Whetstone}
 
@@ -148,13 +138,18 @@ Mit zunehmender Rechenleistung der Prozessoren und der Zunahme an Prozessorkerne
 
 STREAM wurde mit dem Ziel entwickelt, das Verh"altnis von CPU-Leistung zu Speichergeschwindigkeit in die Bewertung einzubeziehen. Mittlerweile ist STREAM auch Bestandteil der HPCChallenge Benchmark-Suite. Sie wurde mit der Zielsetzung entwickelt, Anforderungen aus der Anwendungspraxis in die Bewertung von HPC-Rechnersystemen einflie\ss en zu lassen (vgl. \cite{lus05}).
 
-%Die Zunahme an Prozessorleistung f"uhrt jedoch nicht notwendigerweise zu einer Verbesserung der Gesamtleistung eines Systems. Gerade bei Supercomputern besteht ein potenzieller Flaschenhals oft nicht in der mangelnden Leistung der einzelnen Rechnerkerne, sondern in der Performance von I/O-Zugriffen auf den nicht fl"uchtigen Speicher\footnote{Vgl. \cite{mcc95}.}. Zudem besteht zwischen der Performance, die mit Benchmarks wie HPLinpack ermittelt wird, und den tats"achlichen Anforderungen heutiger Programme oft kein proportionaler Zusammenhang. D.h. Maschinen, die sehr gute Werte bei Linpack oder Whetstone erzielen, k"onnen diese unter der Workload konkreter Anwendungen unter Umst"anden oftmals nicht halten. Andererseits k"onnen deutlich leistungsschw"achere Rechnersysteme bei bestimmten Anwendungen "ahnlich gute Werte erreichen wie weitaus besser gerankte Maschinen aus den Top500, wenn diese gr"o\ss tenteils auf gecachten Daten arbeitet und wenige Zugriffe auf den nicht fl"uchtigen Speicher erfordert\footnote{Vgl. ebd.. Dieses Ph"anomen zeigte sich im HPC-Bereich seit ca. 1990 und wurde von Eugene Brooks bei der Supercomputing-Konferenz 1989 als "`attack of the killer micros"' bezeichnet (vgl. ebd.).}. 
-
 \subsubsection{Funktionsweise}\label{Funktion-STREAM}
 
-STREAM ist ein synthetischer Benchmark und basiert auf einem Programm aus der wissenschaftlichen Praxis von John McCalpin. Es ermittelt die dauerhafte Speicher-Bandbreite (engl. "`sustainable memory bandwidth"' \cite{mcc95}) f"ur angrenzende Speicherzugriffe langer Vektoren (engl. "`sustainable memory bandwidth for contiguous, long-vector memory accesses"'\cite{mcc95}). Die Vektoren m"ussen lang genug sein, dass sie nicht im Prozessor-Cache vorgehalten, sondern aus dem nicht fl"uchtigen Speicher geladen werden. STREAM ist somit Teil eines neuen Modells, das als Performance-Ma\ss zahl die Gesamtzeit $T_{total} = T_{cpu}$ (CPU-Performance) + $T_{memory}$ (Speicher-Performance, ermittelt durch STREAM) festlegt (vgl. \cite{mcc95} und \cite{mcc05}). 
+STREAM ist ein synthetischer Benchmark und basiert auf einem Programm aus der wissenschaftlichen Praxis von John McCalpin. Es ermittelt die dauerhafte Speicher-Bandbreite (engl. "`sustainable memory bandwidth"' \cite{mcc95}) f"ur angrenzende Speicherzugriffe langer Vektoren (engl. "`sustainable memory bandwidth for contiguous, long-vector memory accesses"'\cite{mcc95}). Die Vektoren m"ussen lang genug sein, dass sie nicht im Prozessor-Cache vorgehalten, sondern aus dem Arbeitsspeicher geladen werden m"ussen. STREAM ist somit Teil eines neuen Modells, das als Performance-Ma\ss zahl die Gesamtzeit $T_{total} = T_{cpu}$ (CPU-Performance) + $T_{memory}$ (Speicher-Performance, ermittelt durch STREAM) festlegt (vgl. \cite{mcc95} und \cite{mcc05}). 
 
-STREAM durchl"auft bei seiner Ausf"uhrung vier Module (Copy, Scale, Add und Triad) und liefert f"ur jedes Modul die durchschnittliche, maximale und minimale Ausf"uhrungszeit sowie die Ausf"uhrungsrate. Jedes Modul wird mehrfach ausgef"uhrt, um verl"assliche Mittelwerte zu erhalten. Zwischen dem Programmcode der Module bestehen Abh"angigkeiten, um starke Optimierungen durch den Compiler zu verhindern (vgl. \cite{mcc05}). Quellcode und Ergebnisse f"ur STREAM auf verschiedenen Systemen finden sich unter \url{http://www.cs.virginia.edu/stream}.   
+STREAM durchl"auft bei seiner Ausf"uhrung vier Module (Copy, Scale, Add und Triad) und liefert f"ur jedes Modul die durchschnittliche, maximale und minimale Ausf"uhrungszeit sowie die Ausf"uhrungsrate. Jedes Modul wird mehrfach ausgef"uhrt, um verl"assliche Mittelwerte zu erhalten. Folgende Berechnungen werden dabei durchgef"uhrt: 
+\begin{enumerate}
+	\item Copy: $a(i) = b(i)$
+    \item Scale: $a(i) = q\ast b(i)$
+    \item Add: $a(i) = b(i) + c(i)$
+    \item Triad: $a(i) = b(i) + q\times c(i)$
+\end{enumerate}
+Zwischen dem Programmcode der Module bestehen Abh"angigkeiten, um starke Optimierungen durch den Compiler zu verhindern (vgl. \cite{mcc05}). Quellcode und Ergebnisse f"ur STREAM auf verschiedenen Systemen finden sich unter \url{http://www.cs.virginia.edu/stream}.   
 
 \subsubsection{STREAM auf dem Raspberry Pi}\label{STREAM-RPi}
 

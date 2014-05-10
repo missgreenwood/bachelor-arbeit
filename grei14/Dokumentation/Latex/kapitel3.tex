@@ -6,15 +6,15 @@ Das folgende Kapitel beschreibt Versuchsaufbau und -durchf"uhrung sowie Ziele de
 
 F"ur das Skalierungsverhalten des Bramble unter der Arbeitslast von Linpack und STREAM werden wie in Kap. \ref{Kap2} beschrieben zwei Ma\ss zahlen betrachtet: Performance und Energieverbrauch.
 
-Die augew"ahlten Benchmarks werden auf n--1 RPi-Knoten des Bramble mit n=19 RPi-Nodes ausgef"uhrt (vgl. Kap. \ref{Versuchsaufbau}). Alle Messungen werden zweimal durchgef"uhrt: Mit Stromanschluss der nicht beteiligten RPi-Nodes und ohne. F"ur beide Benchmarks werden zwei Ergebnisparameter betrachtet: Ausf"uhrungsrate in GFLOPs und Ausf"uhrungszeit in s f"ur HPLinpack, Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungszeit in s f"ur STREAM. Die Ergebnisse der Messreihen werden anschlie\ss end gegen"ubergestellt (vgl. Kap. \ref{Ergebnisse}). 
+Die augew"ahlten Benchmarks werden auf n -- 1 RPi-Knoten des Bramble mit n=19 RPi-Nodes ausgef"uhrt (vgl. Kap. \ref{Versuchsaufbau}). Alle Messungen werden zweimal durchgef"uhrt: Mit Stromanschluss der nicht beteiligten RPi-Nodes und ohne. F"ur beide Benchmarks werden zwei Ergebnisparameter betrachtet: Ausf"uhrungsrate in GFLOPs und Ausf"uhrungszeit in s f"ur HPLinpack, Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungszeit in s f"ur STREAM. Die Ergebnisse der Messreihen werden anschlie\ss end gegen"ubergestellt (vgl. Kap. \ref{Ergebnisse}). 
 
 \section{Aufbau und Art der Messung}\label{Aufbau}
 
 Hier stellen sich zwei grunds"atzliche Fragen: Welcher Art ist die Messung und welche Voraussetzungen m"ussen hierf"ur erf"ullt sein? 
 
-Die Performance wird pro Benchmark durch zwei Ergebnisparameter ermittelt. Zwei Messreihen werden durchgef"uhrt: Bramble mit n--1 RPi-Knoten aktiv/19 RPi-Knoten angeschaltet, Bramble mit n--1 RPi-Knoten aktiv/n RPi-Knoten angeschaltet. 
+Die Performance wird pro Benchmark durch zwei Ergebnisparameter ermittelt. Zwei Messreihen werden durchgef"uhrt: Bramble mit n RPi-Knoten aktiv/20 RPi-Knoten angeschaltet, Bramble mit n RPi-Knoten aktiv/n RPi-Knoten angeschaltet. 
 % TODO: evtl. bessere Einleitung/Herleitung 
-F"ur den Versuchsaufbau sind folgende Aspekte von Bedeutung: M"ogliche Modifikationen der RPi-Knoten, Zeitsynchronisation der RPi-Knoten, Skalierung der Messung auf n--1 RPi-Knoten, automatisierte Durchf"uhrung der Messung auf 19--n RPi-Knoten sowie Einlesen der Messwerte in eine geeignete Datenstruktur. 
+F"ur den Versuchsaufbau sind folgende Aspekte von Bedeutung: M"ogliche Modifikationen der RPi-Knoten, Zeitsynchronisation der RPi-Knoten, Skalierung der Messung auf n -- 1 RPi-Knoten, automatisierte Durchf"uhrung der Messung auf n -- 1 RPi-Knoten sowie Einlesen der Messwerte in eine geeignete Datenstruktur. 
 
 \subsection{Versuchsaufbau Ri-Einzelrechner}\label{RPi-Versuchsaufbau}
 
@@ -38,7 +38,7 @@ Auf dem Bramble-Server war kein Swap-Speicher allokiert worden (vgl. \cite{kli13
 Das Komponentendiagramm \ref{fig:Komponentendiagramm} zeigt den Versuchsaufbau pro Messreihe auf dem Bramble mit Stromversorgung, Netzanschluss und Strommessger"at als phyischen Komponenten und der MySQL-Datenbank als logischer Komponente. Eine Messreihe wird als \textit{ExperimentSuite} bezeichnet. 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=\textwidth]{komponentendiagramm2.pdf}\\ 
+  \centerline{\includegraphics[scale=0.5]{komponentendiagramm2.pdf}} 
   \caption{Komponentendiagramm des Versuchsaufbaus.}
   \label{fig:Komponentendiagramm}		
 \end{figure}
@@ -46,13 +46,13 @@ Das Komponentendiagramm \ref{fig:Komponentendiagramm} zeigt den Versuchsaufbau p
 
 Zu Beginn der Untersuchung zeigte sich, dass bei einige Mini-USB-Kabel zur Stromversorgung der RPis einen Wackelkontakt hatten oder ganz defekt waren. Um die in Kap. \ref{Vorgehensweise} genannte Zuverl"assigkeit des Versuchsaufbaus sicherzustellen, wurden sie durch funktionsf"ahige Kabel ersetzt. 
 
-\subsubsection{Zeitsynchronisation der RPi-Nodes} 
+\subsubsection{Zeitsynchronisation der RPi-Knoten} 
 
 Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{schmi13}), sondern synchronisiert sich beim Booten gegen einen NTP-Server im Internet. F"ur die parallele Ausf"uhrung eines Programms auf mehreren Rechnerkernen ist die Zeitsynchronisation der RPi-Knoten und des Servers essentiell. Auf dem Bramble-Server gibt es daher einen OpenNTP-Server, gegen den sich die RPi-Knoten synchronisieren (vgl. \cite{kli13}). 
 
-\subsubsection{Skalierung der Messung auf 19--n RPi-Nodes} 
+\subsubsection{Skalierung der Messung auf n -- 1 RPi-Knoten} 
 
-Das Aktivit"atsdiagramm \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht f"ur die Durchf"uhr\-ung einer ExperimentSuite, d.h. der Ausf"uhrung eines Benchmarks auf einer gew"ahlten Anzahl aktiver und angeschalteter RPi-Knoten erforderlich sind. Es wird mit n=19 RPi-Nodes begonnen und einmal "uber alle Nodes von 20--1 (ohne den Ausf"uhrungsknoten \texttt{pi03}) iteriert. Danach wird die zweite Messung durchgef"uhrt, wobei nach jedem Iterationsschritt der nicht mehr ben"otigte RPi-Node abgeschaltet wird. Jede Iteration der Benchmark-Ausf"uhrung l"auft prinzipell gleich ab, w"ahrend am Anfang und am Ende spezielle Vorkehrungen zu treffen sind. 
+Das Aktivit"atsdiagramm \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht f"ur die Durchf"uhr\-ung einer ExperimentSuite, d.h. der Ausf"uhrung eines Benchmarks auf einer gew"ahlten Anzahl aktiver und angeschalteter RPi-Knoten erforderlich sind. Es wird mit n=19 RPi-Knoten begonnen und einmal "uber alle Knoten von 19 -- 1 (ohne den Ausf"uhrungsknoten \texttt{pi03}) iteriert. Danach wird die zweite Messung durchgef"uhrt, wobei nach jedem Iterationsschritt der nicht mehr ben"otigte RPi-Knoten abgeschaltet wird. Jede Iteration der Benchmark-Ausf"uhrung l"auft prinzipell gleich ab, w"ahrend am Anfang und am Ende spezielle Vorkehrungen zu treffen sind. 
 \begin{figure}[htb]
   \centerline{\includegraphics[scale=0.5]{aktivitaetsdiagramm1.pdf}} 
   \caption{Aktivit"atsdiagramm einer ExperimentSuite.}
@@ -79,7 +79,7 @@ Das Aktivit"atsdiagramm \ref{fig:Dbconfig1} visualisiert Schritt 1. Hier werden 
 \end{figure}
 Die dynamischen Schritte 2 -- 4, die pro ExperimentSuite ausgef"uhrt werden (Name, Beschreibung und Konfiguration des Versuchsaufbaus sowie Verkn"upfung von ExperimentSuite und Benchmark-Konfiguration) m"ussen pro Benchmark-Ausf"uhrung einmal erfolgen. Daher sind sie in die Ausf"uhrungsskripte f"ur die Benchmarks integriert, die im Folgenden dargestellt werden. Sie werden in Diagramm \ref{fig:Dbconfig2} veranschaulicht. 
 
-\subsubsection{Automatisierte Durchf"uhrung der Messung auf 19--n RPi-Nodes} 
+\subsubsection{Automatisierte Durchf"uhrung der Messung auf n -- 1 RPi-Knoten} 
 
 Die automatisierte Durchf"uhrung der Messung erfolgt durch Shellskripte. Sie werden im geteilten Verzeichnis abgelegt und k"onnen von \texttt{pi03} oder einem anderen Ausf"uhrungsknoten aus gestartet werden. Folgende Schritte werden durch die Skripte realisiert: 
 
@@ -122,7 +122,7 @@ Die Ausgabe des Benchmark-Programms wird in die vorbereitete Logdatei geschriebe
 		\textbf{\item Iteration "uber n RPi-Knoten:} 
 		\begin{enumerate}\bfseries
 			\item Einrichten der Datenbank.\\
-\normalfont{Die Datenbank wird wie in Schritt b i beschrieben vorbereitet. Der wesentliche Unterschied zu Schritt b i ist der Wert f"ur die Anzahl angeschalteter RPi-Knoten. Hier wird nicht konstant 20 eingetragen, sondern n, nicht mehr aktive RPi-Knoten heruntergefahren werden.} 
+\normalfont{Die Datenbank wird wie in Schritt b i beschrieben vorbereitet. Der wesentliche Unterschied zu Schritt ist der Wert f"ur die Anzahl angeschalteter RPi-Knoten. Es wird nicht mehr konstant 20 eingetragen, sondern n, da nicht mehr aktive RPi-Knoten heruntergefahren werden.} 
 			\textbf{\item Verteilte Ausf"uhrung des Benchmarks auf n RPi-Knoten.}\\
 Analog zu Schritt b ii.
 			\textbf{\item Herunterfahren von RPi-Knoten n.}\\
@@ -164,9 +164,9 @@ Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran a
 
 HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
 
-Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Werte f"ur die Eingabeparameter entstammen der Datei HPL.dat, welche im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmarks liegen muss. Darin werden u.a. die Problemgr"o\ss en \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N} und die hierf"ur zu verwendenden Blockgr"o\ss en \texttt{NB} beziffert.
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Werte f"ur die Eingabeparameter entstammen der Datei HPL.dat, welche im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmarks liegen muss. Darin werden u.a. die Gr"o\ss enordnung des zu l"osenden Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N} und die Blockgr"o\ss e \texttt{NB} beziffert, die dem Prozess-Netz zur Bearbeitung "ubergeben werden (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}).
 
-Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer geliefert. Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
+Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer genereriert. Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl1.pdf}\\ 
@@ -179,8 +179,6 @@ Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrung
   \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1.}
   \label{fig:hpl2}		
 \end{figure}
-
-\newpage
 \noindent
 Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 denen von Messreihe 2 gegen"uber, in der nicht mehr aktive RPi-Knoten nach der Ausf"uhrung des Benchmarks heruntergefahren werden. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
 \begin{figure}[htb]
@@ -193,10 +191,10 @@ Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messr
   \includegraphics[scale=.8]{hpl6.pdf}\\ 
   \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
 \end{figure}
-\newpage 
 \subsection{STREAM: Performance}\label{Ergebnisse-Stream}
 
-Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM mit zwei Ausgabeparametern: Ausf"uhrungsrate in MB/s und Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
+In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter erl"autert, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s und die durchschnittliche, minimale und maximale Ausf"uhrungsdauer in Sekunden
+ausgegeben. Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur von Messreihe 1 f"ur STREAM mit den Ausgabeparametern Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad (), skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream1.pdf}\\ 
@@ -209,7 +207,6 @@ Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von 
   \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1.}
   \label{fig:stream2}		
 \end{figure}
-\newpage
 \noindent
 Analog dazu werden in den Diagrammen \ref{fig:stream5} und\ref{fig:stream6} die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"ubergestellt. Auch hier sind die Ergebnisse von Messreihe 1 rot, die von Messreihe 2 blau markiert. 
 \begin{figure}[htb]
@@ -222,7 +219,6 @@ Analog dazu werden in den Diagrammen \ref{fig:stream5} und\ref{fig:stream6} die 
   \includegraphics[scale=.8]{stream6.pdf}\\ 
   \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
-\newpage
 \subsection{Stromverbrauch}\label{Ergebnisse-Energiegenie}
 
 Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur die Messreihen 1 und 2. Diagramm \ref{fig:strom1} zeigt den Energieverbrauch in Watt, wenn alle 20 RPi-Knoten angeschaltet sind. Diagramm \ref{fig:strom2} zeigt den Energieverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden. 
