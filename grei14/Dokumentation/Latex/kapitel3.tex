@@ -166,17 +166,19 @@ HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefe
 
 Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Werte f"ur die Eingabeparameter entstammen der Datei HPL.dat, welche im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmarks liegen muss. Darin werden u.a. die Gr"o\ss enordnung des zu l"osenden Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N} und die Blockgr"o\ss e \texttt{NB} beziffert, die dem Prozess-Netz zur Bearbeitung "ubergeben werden (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}).
 
-Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer genereriert. Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
+Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs (\texttt{Gflops}) und Ausf"uhrungsdauer (\texttt{Time}) in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
+
+Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl1.pdf}\\ 
-  \caption{Ausf"uhrungsrate von HPLinpack, Messreihe 1.}
+  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1.}
   \label{fig:hpl1}		
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{hpl2.pdf}\\ 
-  \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1.}
+  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1.}
   \label{fig:hpl2}		
 \end{figure}
 \noindent
@@ -184,27 +186,28 @@ Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messr
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{hpl5.pdf}\\ 
-  \caption{Ausf"uhrungsrate von HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
+  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{hpl6.pdf}\\ 
-  \caption{Ausf"uhrungsdauer von HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
+  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
 \end{figure}
 \subsection{STREAM: Performance}\label{Ergebnisse-Stream}
 
-In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter erl"autert, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s und die durchschnittliche, minimale und maximale Ausf"uhrungsdauer in Sekunden
-ausgegeben. Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur von Messreihe 1 f"ur STREAM mit den Ausgabeparametern Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad (), skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
+In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter angegeben, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 
+
+Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur von Messreihe 1 f"ur STREAM mit den Ausgabeparametern Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad (), skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream1.pdf}\\ 
-  \caption{Ausf"uhrungsrate von STREAM, Messreihe 1.}
+  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1.}
   \label{fig:stream1}		
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream2.pdf}\\ 
-  \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1.}
+  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1.}
   \label{fig:stream2}		
 \end{figure}
 \noindent
@@ -212,16 +215,17 @@ Analog dazu werden in den Diagrammen \ref{fig:stream5} und\ref{fig:stream6} die 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{stream5.pdf}\\ 
-  \caption{Ausf"uhrungsrate von STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
+  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
 \end{figure}
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{stream6.pdf}\\ 
-  \caption{Ausf"uhrungsdauer von STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
+  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
 \subsection{Stromverbrauch}\label{Ergebnisse-Energiegenie}
 
 Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur die Messreihen 1 und 2. Diagramm \ref{fig:strom1} zeigt den Energieverbrauch in Watt, wenn alle 20 RPi-Knoten angeschaltet sind. Diagramm \ref{fig:strom2} zeigt den Energieverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden. 
+%TODO: 
 %\begin{figure}[htb]
 %  \centering
 %  \includegraphics[scale=.8]{strom1.pdf}\\ 

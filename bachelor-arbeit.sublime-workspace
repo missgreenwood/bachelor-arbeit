@@ -39,6 +39,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "todo140313.txt",
+			"settings":
+			{
+				"buffer_size": 1035,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sources/STREAM_140319.txt",
+			"settings":
+			{
+				"buffer_size": 17360,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sources/hpl-2.1_140320.txt",
+			"settings":
+			{
+				"buffer_size": 6611755,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -81,12 +105,16 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit"
+		"/Users/judith/Documents/Bachelor-Arbeit",
+		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources"
 	],
 	"file_history":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_140320.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
@@ -214,8 +242,93 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "todo140313.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								558,
+								558
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sources/STREAM_140319.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "sources/hpl-2.1_140320.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6611755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 658.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
