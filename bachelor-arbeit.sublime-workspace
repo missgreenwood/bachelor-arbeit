@@ -43,39 +43,31 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1035,
+				"buffer_size": 950,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/STREAM.sh",
+			"file": "src/parseEnergyValues.sh",
 			"settings":
 			{
-				"buffer_size": 12272,
+				"buffer_size": 1324,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/hpl-2.1.sh",
+			"file": "src/streamplot.sh",
 			"settings":
 			{
-				"buffer_size": 11816,
+				"buffer_size": 3631,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "sources/STREAM_140319.txt",
+			"file": "src/hplplot.sh",
 			"settings":
 			{
-				"buffer_size": 17360,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sources/hpl-2.1_140320.txt",
-			"settings":
-			{
-				"buffer_size": 6611755,
+				"buffer_size": 3152,
 				"line_ending": "Unix"
 			}
 		}
@@ -122,6 +114,7 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
+		"/Users/judith/Documents/Bachelor-Arbeit/archive",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
@@ -130,14 +123,16 @@
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_140320.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/messergebnisse.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/machinefile",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigHpl.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigStream.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_db140331.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_db140404.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1final.sh",
@@ -259,7 +254,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -268,80 +263,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1035,
+						"buffer_size": 950,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								558,
-								558
+								562,
+								562
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/STREAM.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12272,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/hpl-2.1.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11816,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -351,12 +286,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "sources/STREAM_140319.txt",
+					"buffer": 1,
+					"file": "src/parseEnergyValues.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17360,
+						"buffer_size": 1324,
 						"regions":
 						{
 						},
@@ -369,7 +304,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -379,12 +314,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "sources/hpl-2.1_140320.txt",
+					"buffer": 2,
+					"file": "src/streamplot.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6611755,
+						"buffer_size": 3631,
 						"regions":
 						{
 						},
@@ -397,13 +332,41 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 658.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/hplplot.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

@@ -62,29 +62,30 @@ Schlussfolgernd l"asst sich festhalten, dass der Bramble bei der Ausf"uhrung von
 
 \section{Grenzen des Versuchsaufbaus}\label{Grenzen}
 
-W"ahrend der Versuchsdurchf"uhrung zeigte sich, dass die jetzige Architektur des Bramble in einigen Punkten an ihre Grenzen st"o\ss t. Bevor die Benchmarks bzw. die ExperimentSuites ausgef"uhrt werden konnten, mussten einige Fehlerf"alle untersucht und behoben werden. Im Einzelnen waren dies: 
+W"ahrend der Versuchsdurchf"uhrung zeigte sich, dass die jetzige Architektur des Bramble in einigen Punkten an ihre Grenzen st"o\ss t. Bevor die Benchmarks bzw. die ExperimentSuites ausgef"uhrt werden konnten, mussten einige Fehlerf"alle untersucht und behoben werden: 
 \begin{enumerate}\bfseries
 	\item Defekte Hardware.\\
 \normalfont
-Einige Mini-USB-Kabel waren bereits zu Beginn defekt oder hatten einen Wackelkontakt. Sie wurden durch funktionsf"ahige Kabel ersetzt. 
+Einige Mini-USB-Kabel waren bereits zu Beginn defekt. Sie mussten durch funktionsf"ahige Kabel ersetzt werden. 
 	\textbf{\item RPi-Knoten nicht erreichbar (\texttt{ping}).}\\
-H"aufig reagierte ein einzelner RPi-Knoten nicht auf ein \texttt{ping} von einem anderen Knoten oder vom Server (Fehlermeldung \texttt{Destination Host Unreachable}), obwohl die Status-LEDs f"ur das Netzwerk aktiv war. Als einzige L"osung erwies sich Ziehen und Wiedereinstecken des Mini-USB-Kabels; war das nicht erfolgreich, musste das Vorgehen mit dem Netzwerkkabel wiederholt werden (das Netzwerkkabel allein reicht nicht aus). Danach war der Host i.d.R. wieder mit \texttt{ping} erreichbar. 
+H"aufig reagierte ein einzelner RPi-Knoten nicht auf ein \texttt{ping} von einem anderen RPi-Knoten oder von \texttt{careme} aus (Fehlermeldung: \texttt{Destination Host Unreachable}), obwohl die Status-LED Netzwerkaktivit"at anzeigte. Als einzige L"osung erwies sich Ziehen und wieder Einstecken des Mini-USB-Kabels; war das nicht erfolgreich, musste der Vorgang mit dem Netzwerkkabel wiederholt werden (das Netzwerkkabel alleine reicht nicht aus). Nach einigen Minuten war der Zielknoten i.d.R. wieder mit \texttt{ping} erreichbar. 
 	\textbf{\item RPi-Knoten nicht erreichbar (\texttt{ssh}).}\\ 
-Hier traten drei Fehlerf"alle auf: Am h"aufigsten war die Fehlermeldung \texttt{No route to host} beim Versuch, von \texttt{careme} oder einem anderen RPi-Knoten aus eine SSH-Verbindung zum betreffenden Host herzustellen. Zur L"osung des Problems musste das Netzwerkkabel gezogen und erneut eingesteckt werden. Nach einigen Minuten war der Host i.d.R. wieder "uber \texttt{ssh} erreichbar. 
+Hier traten drei Fehlerf"alle auf: Am h"aufigsten war die Fehlermeldung \texttt{No route to host} beim Versuch, von \texttt{careme} oder einem anderen RPi-Knoten aus eine SSH-Verbindung aufzubauen. Auch hier musste das Netzwerkkabel gezogen und wieder eingesteckt werden. Nach einigen Minuten war der Zielknoten i.d.R. wieder "uber \texttt{ssh} erreichbar. 
 
 Ein weiterer Fehlerfall war ein "uberraschender Passwortprompt f"ur \texttt{root} beim Versuch, eine SSH-Verbindung von einem RPi-Knoten aus zu einem anderen aufzubauen. Dieses Problem lie\ss\ sich durch Eintragen des RSA Public Key von \texttt{root} in die Datei \texttt{\textasciitilde/.ssh/authorized\_keys} auf dem Zielknoten l"osen. 
 
-Seltener trat die Fehlermeldung \texttt{WARNING: REMOTE HOST IDENTIFICATION HAS CHAN\-GED!} auf. Dies konnte durch Korrektur des RSA Public Key des anfragenden Knotens in der Datei \texttt{\textasciitilde/.ssh/known\_hosts} auf dem Zielknoten gel"ost werden. 
-	\textbf{\item Geteiltes Verzeichnis nicht eingeh"angt.}\\
-Beim Neustart eines RPi-Knotens oder des gesamten Clusters wurde h"aufig das geteilte Verzeichnis nicht eingeh"angt, was zu Fehlermeldungen wie \texttt{-bash: /srv/libraries/ etc/.sharedprofile: No such file or directory} f"uhrte und sich durch Einh"angen des Verzeichnisses mit \texttt{mount /srv} beheben lie\ss .
-	\textbf{\item Bash-Befehle werden nicht erkannt.}\\
-Aus unklaren Gr"unden wurden manchmal von einzelnen RPi-Knoten h"aufig verwendete Bash-Befehle nicht mehr erkannt, was sich an Fehlermeldungen wie \texttt{mpiexec: command not found} zeigte. Als L"osung erwies sich ein Logout und erneuter Login auf dem betreffenden RPi-Knoten. 
+Seltener trat die Fehlermeldung \texttt{WARNING: REMOTE HOST IDENTIFICATION HAS CHAN\-GED!} auf. In diesem Fall musste der RSA Public Key des anfragenden RPi-Knotens in der Datei \texttt{\textasciitilde/.ssh/known\_hosts} auf dem Zielknoten korrigiert werden. 
+	\textbf{\item Geteiltes Verzeichnis nicht eingeh"angt.}\\ 
+Beim Neustart eines RPi-Knotens wurde h"aufig das geteilte Verzeichnis nicht eingeh"angt (Fehlermeldung z.B. \texttt{-bash: /srv/libraries/etc/.sharedprofile: No such file or directory}). Dann musste das Verzeichnis mit \texttt{mount /srv} auf dem betreffenden RPi-Knoten eingeh"angt werden. 
+	\textbf{\item Bash-Befehle werden nicht erkannt.} 
+Gelegentlich wurden auf einzelnen RPi-Knoten h"aufig verwendete Bash-Befehle nicht mehr erkannt (Fehlermeldung z.B. \texttt{mpiexec: command not found}). Als L"osung erwies sich ein Logout und erneuter Login auf dem betreffenden RPi-Knoten. 
 \end{enumerate}
 \noindent 
-%Die Durchf"uhrung erforderte i.d.R. die Anwesenheit einer Aufsichtsperson, um bei St"orungen die LEDs zu kontrollieren, Kabel zu "uberpr"ufen etc.. Der aktuelle Status Bramble kann kaum als stabil bezeichnet werden und es ist nicht auszuschlie\ss en, dass Fehlerf"alle stellenweise Einfluss auf die Messergebnisse nehmen. 
-%
-%Erschwerend kommt hinzu, dass sich die RPi-Nodes des Bramble beim Herunterfahren anders verhalten als die eines RPi-Einzelrechners. Dieser schickt beim Aufruf von \texttt{shutdown} eine Broadcast-Message, dass das System jetzt heruntergefahren wird. Der Rechner kann sicher vom Stromnetz getrennt werden, wenn nur noch die rote Status-LED f"ur die Stromversorgung leuchtet.  
-%
-%Beim Bramble hingegen sind alle Status-LEDs weiterhin aktiv, auch wenn der RPi-Node nicht mehr auf ein \texttt{ping} reagiert, d.h. keine IP-Verbindung vom Server oder einem anderen RPi-Node aus aufgebaut werden kann. Der Broadcast einer Shutdown-Nachricht wurde nur nur gelegentlich festgestellt. Somit erscheint es schwierig, den Zeitpunkt festzustellen, an dem ein RPi-Node tats"achlich vom Netz gegangen ist. Der aktuelle Versuchsaufbau d"urfte hierdurch jedoch nicht beeintr"achtigt werden: Auch wenn die Status-LEDs weiterhin aktiv sind, ist der Rechner nicht mehr durch \texttt{ping} zu erreichen und somit nicht mehr im Netzwerk aktiv. 
+Soweit m"oglich wurde ein Ausschluss dieser Fehler in die Vorbereitung einer ExperimentSuite integriert: "Uberpr"ufung der Netzverbindung aller RPi-Knoten mit \texttt{ping} vom Berechnungsknoten \texttt{pi03} aus, Einh"angen des geteilten Verzeichnisses und damit die gleichzeitige "Uberpr"ufung der SSH-Verbindung zu allen RPi-Knoten (vgl. \ref{fig:Aktivitaetsdiagramm}). 
 
+Bei den spontan auftretenden Fehlerf"allen war kein Ausschluss im Vorfeld m"oglich. Die Durchf"uhrung einer ExperimentSuite erforderte daher immer die Anwesenheit einer Aufsichtsperson, um z.B. Kabel und Status-LEDs der RPi-Knoten zu "uberpr"ufen. H"aufig wurde die Durchf"uhrung einer ExperimentSuite hierdurch gest"ort, sodass von neuem mit den Vorbereitungen und der Durchf"uhrung begonnen werden musste. Auch das Trennen nicht mehr aktiver RPi-Knoten vom Stromnetz musste manuell durch eine Aufsichtsperson erfolgen, da ein RPi-Knoten nur durch Ziehen und wieder Einstecken des Mini-USB-Kabels zum Hochfahren veranlasst werden kann. 
+
+Auch die physische Architektur des Bramble erwies sich in Teilen als Hindernis. Der Aufbau ist so beengt, dass die Anschl"usse der RPi-Knoten \texttt{pi11} -- \texttt{pi20} zu erreichen. Zudem waren manche Mini-USB-Kabel so kurz abgemessen worden, dass sie kaum bis zum entsprechenden Knoten reichten. Ein h"aufiges Trennen und wieder Einstecken von Mini-USB- und Netzwerkkabel, wie z.B. in den ExperimentSuites zum Messen des Stromverbrauchs einmal pro RPi-Knoten und Benchmark vorgesehen, wird dadurch erschwert. 
+
+Die vorliegenden Messergebnisse wurden hierdurch nicht beeinflusst, da bei St"orungen die ExperimentSuite abgebrochen und der Versuch von Neuem begonnen wurde. Dennoch k"onnten Verbesserungen f"ur zuk"unftige, "ahnlich gestaltete Versuchsaufbauten vorgenommen werden (vgl. \ref{Kap5}).
 \endinput 
