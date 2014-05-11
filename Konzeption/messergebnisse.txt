@@ -1,0 +1,42 @@
+### Messergebnisse - wichtige Parameter 
+
+
+## Maschinengenaugigkeit/Relative machine precision
+
+
+- Maß für den maximalen relativen Rundungsfehler beim Rechnen mit Gleitkommazahlen 
+- z.B. bei Ausführung von HPLinpack: eps = 1.110223e-16 = 0.187687987327927970295268027828857019791160962331756804220914... (entspricht IEEE f. doppelte Genauigkeit)
+
+- i.A. eine Worst-Case-Abschätzung für den auftretenden Fehler, der i.d.R. kleiner ist
+
+- Bedeutung: 
+Das Ergebnis einer Rechnung ist wesentlich von der Maschinengenauigkeit abhängig. Zunächst können die Eingangsdaten nicht beliebig genau dargestellt werden. Daraus resultiert ein Fehler im Ergebnis. Dieser Fehler wird über die Kondition des Problems beschrieben. Multipliziert man die Kondition mit der Maschinengenauigkeit, erhält man eine Abschätzung dieses Fehlers. Die zweite Fehlerquelle entsteht aus der Ungenauigkeit des verwendeten Algorithmus. Diese Fehlerverstärkung wird als Stabilität bezeichnet. Auch hierfür lässt sich manchmal die entsprechende Stabilitätskonstante angeben. Ein schlecht konditioniertes Problem oder ein mäßig stabiler Algorithmus erfordern also eine hohe Maschinengenauigkeit oder eine geeignete Problemumformulierung beziehungsweise die Verwendung eines stabileren Algorithmus.
+
+- Maschinengenauigkeit in der Praxis: 
+Heutige Computer arbeiten meist nach IEEE 754. Die Maschinengenauigkeit für die dabei verwendeten Datentypen ist eps =2^(-24) (ungefähr 6*10^8) für einfache Genauigkeit (single precision) und eps=2^(-53) (ungefähr 1,1*10^(-16) für doppelte Genauigkeit (double precision).
+
+# Quellen 
+
+- http://de.wikipedia.org/wiki/Maschinengenauigkeit
+
+
+## Laufzeit/Wall time
+
+
+- The real running time of a program, as opposed to the number of ticks required to execute it (on a timesharing system these always differ, as no one program gets all the ticks, and on multiprocessor systems with good thread support one may get more processor time than real time).
+
+# Quellen 
+
+- http://www.catb.org/jargon/html/W/wall-time.html
+
+
+## Clock precision/Clock granularity ??
+
+
+## Messfehler
+
+- Def.: "Die Abweichung eines aus Messungen gewonnenen Wertes vom wahren Wert der Messgröße"
+
+# Quellen 
+
+- http://de.wikipedia.org/wiki/Messabweichung

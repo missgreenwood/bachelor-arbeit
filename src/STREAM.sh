@@ -6,7 +6,7 @@
 touch results/STREAM_`date +%y%m%d`.txt results/STREAM_shutdown`date +%y%m%d`.txt
 
 # loop over n RPis 
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 pi04 pi03 pi02 
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 pi04 
 do
     a=${host/pi/}
     m=$(echo $a|sed 's/^0*//')
@@ -58,7 +58,7 @@ done
 
 
 # loop over n RPis 
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 pi04 pi03 pi02   
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 pi04   
 do
     a=${host/pi/}
     m=$(echo $a|sed 's/^0*//')

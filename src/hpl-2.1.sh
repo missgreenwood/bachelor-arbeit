@@ -1,15 +1,17 @@
 #!/bin/bash 
 
-# Run Hplinpack on n downto 4 RPi-Nodes, run again and shutdown RPi-Node i
+# Run Hplinpack on n downto 4 RPi-Nodes, run again and shutdown afterwards 
 
 # create output files                                                                 
 touch results/hpl-2.1_`date +%y%m%d`.txt results/hpl-2.1_shutdown`date +%y%m%d`.txt
 
 # loop over n RPis downto 4                                                           
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05
 do
-    n=${host/pi/}                                         
-    n=$(echo $n|sed 's/^0*//')
+# n := number of active RPis
+    a=${host/pi/}                                         
+    m=$(echo $a|sed 's/^0*//')
+    n=$((m - 1))
     echo "Number of active RPis: $n"
     echo "Number of powered RPis: 20"
     starttime=`date +%s`
@@ -24,50 +26,49 @@ do
 mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) VALUES ('Cluster Blackbox','experiment no1',$starttime)"
 ENDSSH
 
-# get experiment suite id 
-ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
-touch /tmp/myid.txt                                                                                                                                                         
-mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                             
+# get experiment suite id
+    ssh rpi-user@careme<<ENDSSH 
+touch /tmp/myid.txt                                                                                                                                                 
+mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt
 ENDSSH
 
 # read in experiment suite id from tmp file on careme 
-myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
-# echo $myid
+    myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
 
-# remove tmp file from careme                                                                                                                                               
-ssh rpi-user@careme "rm /tmp/myid.txt"
+# remove tmp file from careme                                                                                                                                              
+    ssh rpi-user@careme "rm /tmp/myid.txt"
 
-ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
-# insert number of active RPis                                                                                                                                              
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfActiveRPis
-','${n}',$myid)"                                                                                                                                                            
-                                                                                                                                                                            
-# insert number of powered RPis                                                                                                                                             
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfPoweredRPi
-s','14',$myid)"                                                                                                                                                             
-                                                                                                                                                                            
-# map load generator configuration to experiment suite                                                                                                                      
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) VALUES (6,$myid)"              
+    ssh rpi-user@careme<<ENDSSH
+# insert number of active RPis                                                                                                                                             
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                          
+
+# insert number of powered RPis                                                                                                                                           
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfPoweredRPis','20',$myid)"                                                                                                                                                           
+
+# map load generator configuration to experiment suite                                                                                                                    
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) VALUES (6,$myid)"            
 ENDSSH
 
-echo "Database setup complete"
+    echo "Database setup complete"
 
 # log number of active RPis/powered RPis to results/hpl-2.1_`date +%y%m%d`.txt
-echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-2.1_`date +%y%m%d`.txt
+    echo "Active RPis: $n/Powered RPis: 20" >> results/hpl-2.1_`date +%y%m%d`.txt
 
 # start benchmark on n RPis, log to results/hpl-2.1_`date +%y%m%d`.txt                        
     mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile -wdir /srv/benchmarks/bin/hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl >> results/hpl-2.1_`date +%y%m%d`.txt
-
     echo "HPlinpack finished on $n RPis active, 20 RPis powered" 
 done 
 
 # loop over n RPis downto 4                                                           
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08
+for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05
 do
-    n=${host/pi/}                                         
-    n=$(echo $n|sed 's/^0*//')
+    a=${host/pi/}                                         
+# m := number of powered RPis 
+    m=$(echo $a|sed 's/^0*//')
+# n := number of active RPis
+    n=$((m-1))
     echo "Number of active RPis: $n"
-    echo "Number of powered RPis: $n"
+    echo "Number of powered RPis: $m"
     starttime=`date +%s`
     echo "Start time: $starttime"
 
@@ -75,48 +76,50 @@ do
 # One experiment suite for every program run needed 
 
 # initialize experiment suite
-    ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
-# initialize experiment suite                                                                                                                                               
-mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) VALUES ('Cluster Blackbox','experiment no2',$starttime)"                                                                                                                                                                          
+    ssh rpi-user@careme<<ENDSSH                                                                                                                                           
+# initialize experiment suite                                                                                                                                             
+mysql -u rpi-user -prpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuite (granularityLevel,objective,executionStartedAt) VALUES ('Cluster Blackbox','experiment no2',$starttime)"
 ENDSSH
-                                                                                                                                                       
 
 # get experiment suite id 
-ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
-touch /tmp/myid.txt                                                                                                                                                         
-mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                             
+    ssh rpi-user@careme<<ENDSSH                                                                                                                                           
+touch /tmp/myid.txt                                                                                                                                                        
+mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT id FROM ExperimentSuite WHERE executionStartedAt=$starttime" > /tmp/myid.txt                                            
 ENDSSH
 
 # read in experiment suite id from tmp file on careme 
-myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
-# echo $myid
+    myid=$(ssh rpi-user@careme "cat /tmp/myid.txt")
 
-# remove tmp file from careme                                                                                                                                               
-ssh rpi-user@careme "rm /tmp/myid.txt"
+# remove tmp file from careme                                                                                                                                             
+    ssh rpi-user@careme "rm /tmp/myid.txt"
 
-ssh rpi-user@careme<<ENDSSH                                                                                                                                                 
-# insert number of active RPis                                                                                                                                              
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                            
-                                                                                                                                                                            
-# insert number of powered RPis                                                                                                                                             
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfPoweredRPis','14',$myid)"                                                                                                                                                             
-                                                                                                                                                                            
-# map load generator configuration to experiment suite                                                                                                                      
-mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) VALUES (6,$myid)"              
+    ssh rpi-user@careme<<ENDSSH
+# insert number of active RPis                                                                                                                                            
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfActiveRPis','${n}',$myid)"                                                                                                                                                          
+
+# insert number of powered RPis                                                                                                                                           
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO ExperimentSuiteConfiguration (\\\`key\\\`,\\\`value\\\`,experimentSuiteId) VALUES ('NumberOfPoweredRPis','${m}',$myid)"                                                                                                                                                         
+
+# map load generator configuration to experiment suite                                                                                                                    
+ mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO N2M_loadGConf2expSuite (loadGeneratorConfigurationId,experimentSuiteId) VALUES (6,$myid)"           
 ENDSSH
 
-echo "Database setup complete"
+    echo "Database setup complete"
 
 # log number of active RPis/powered RPis to results/hpl-2.1_`date +%y%m%d`.txt
-echo "Active RPis: "$n"/Powered RPis: 20" >> results/hpl-2.1_shutdown`date +%y%m%d`.txt
+    echo "Active RPis: $n/Powered RPis: $m" >> results/hpl-2.1_shutdown`date +%y%m%d`.txt
 
 # start benchmark on n RPis, log to results/hpl-2.1_shutdown`date +%y%m%d`.txt                        
     mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile -wdir /srv/benchmarks/bin/hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl >> results/hpl-2.1_shutdown`date +%y%m%d`.txt
-    echo "HPlinpack finished on $n RPis active, $n RPis powered"
+    echo "HPlinpack finished on $n RPis active, $m RPis powered"
     ssh $host 'shutdown -hP 0'
+# re-attach terminal to read new stream from STDIN
+    term="/dev/$(ps -p$$ -o tty="")"
+    exec < $term
+    read -p "Please disconnect $host from mini usb. When finished press [Enter]"
 done 
 
-# create input file for database                                                                                                                                            
+# create input file for database                                                                                                                                          
 touch results/hpl-2.1_db`date +%y%m%d`.txt
 
 # find all lines in first output file beginning with 'WR' (result lines) and print together with 3 following lines (timestamp lines)                                       
@@ -125,31 +128,31 @@ grep '^WR' results/hpl-2.1_`date +%y%m%d`.txt -A 3 > results/hpl-2.1_db`date +%y
 # find all lines in second output file beginning with 'WR' (result lines) and print together with 3 following lines (timestamp lines)                                      
 grep '^WR' results/hpl-2.1_shutdown`date +%y%m%d`.txt -A 3 >> results/hpl-2.1_db`date +%y%m%d`.txt
 
-# remove all empty lines                                                                                                                                                    
+# remove all empty lines                                                                                                                                                  
 sed -i '/^$/d' results/hpl-2.1_db`date +%y%m%d`.txt
 
-# remove all lines containing "start" (only "end" needed)                                                                                                                   
+# remove all lines containing "start" (only "end" needed)                                                                                                                 
 sed -i '/start/d' results/hpl-2.1_db`date +%y%m%d`.txt
 
-# remove all lines containing only '--' (result from grep -A)                                                                                                               
+# remove all lines containing only '--' (result from grep -A)                                                                                                             
 sed -i '/--/d' results/hpl-2.1_db`date +%y%m%d`.txt
 
-# transform database input file to lines containing space seperated values                                                                                                  
+# transform database input file to lines containing space seperated values                                                                                                
 sed -i 's/ \{2,\}/ /g' results/hpl-2.1_db`date +%y%m%d`.txt
 sed -i 'N;s/\n/ /' results/hpl-2.1_db`date +%y%m%d`.txt
                                                                                                                                               
 ssh rpi-user@careme<<'ENDSSH'                                                                                                                 
-cat /srv/nfs-share/experimentsuite/results/hpl-2.1_db`date +%y%m%d`.txt | cut -d' ' -f6,7,12,13,14,15 | while read line                                                     
-do                                                                                                                                                                          
-    arr=($line)                                                                                                                                                             
-    time=${arr[0]}                                                                                                                                                          
-    echo "Time: $time"                                                                                                                                                      
-    gflops=${arr[1]}                                                                                                                                                        
-    echo "Gflops: $gflops"                                                                                                                                                  
-    timestamp=${arr[@]:2}                                                                                                                                                   
-    unixtime=$(date -d "${timestamp}" "+%s")                                                                                                                                
-    echo $unixtime                                                                                                                                                          
-    mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) VALUES ('Time',$time,$unixtime)"                
+cat /srv/nfs-share/experimentsuite/results/hpl-2.1_db`date +%y%m%d`.txt | cut -d' ' -f6,7,12,13,14,15 | while read line                                                   
+do                                                                                                                                                                        
+    arr=($line)                                                                                                                                                           
+    time=${arr[0]}                                                                                                                                                        
+    echo "Time: $time"                                                                                                                                                    
+    gflops=${arr[1]}                                                                                                                                                       
+    echo "Gflops: $gflops"                                                                                                                                                 
+    timestamp=${arr[@]:2}                                                                                                                                                 
+    unixtime=$(date -d "${timestamp}" "+%s")                                                                                                                              
+    echo "Timestamp: $unixtime"
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) VALUES ('Time',$time,$unixtime)"              
     mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt) VALUES ('Gflops',$gflops,$unixtime)"
 done
 ENDSSH
