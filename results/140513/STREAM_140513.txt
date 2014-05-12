@@ -14,14 +14,14 @@
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            3646.7   0.167327     0.166726     0.168265
-Scale:           3418.2   0.178825     0.177872     0.180939
-Add:             4772.1   0.192010     0.191110     0.192915
-Triad:           4644.9   0.197321     0.196346     0.198901
+Copy:            3645.3   0.167525     0.166789     0.169004
+Scale:           3417.2   0.178484     0.177922     0.179420
+Add:             4763.4   0.192708     0.191459     0.193918
+Triad:           4631.5   0.197814     0.196912     0.199263
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822222
+Unixtime: 1399890591
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -38,14 +38,14 @@ Unixtime: 1399822222
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            3452.3   0.167761     0.166843     0.169448
-Scale:           3229.1   0.179063     0.178377     0.180156
-Add:             4503.4   0.192503     0.191854     0.193290
-Triad:           4379.8   0.198446     0.197271     0.200671
+Copy:            4842.9   0.121149     0.118937     0.123980
+Scale:           3666.7   0.158019     0.157089     0.161074
+Add:             4976.2   0.174511     0.173627     0.176200
+Triad:           4835.9   0.179670     0.178664     0.181745
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822254
+Unixtime: 1399890625
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -62,14 +62,14 @@ Unixtime: 1399822254
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            4588.9   0.119456     0.118548     0.120762
-Scale:           3503.2   0.157087     0.155287     0.159388
-Add:             4730.2   0.174848     0.172510     0.179399
-Triad:           4573.0   0.179751     0.178440     0.182094
+Copy:            4596.5   0.119905     0.118351     0.123988
+Scale:           3492.2   0.158117     0.155775     0.164022
+Add:             4702.7   0.175709     0.173518     0.178410
+Triad:           4564.2   0.180076     0.178782     0.181656
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822282
+Unixtime: 1399890653
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -86,14 +86,14 @@ Unixtime: 1399822282
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            4329.4   0.119476     0.118260     0.120412
-Scale:           3290.6   0.156510     0.155596     0.157350
-Add:             4443.0   0.174462     0.172857     0.178139
-Triad:           4316.4   0.179402     0.177926     0.180800
+Copy:            4321.6   0.119357     0.118476     0.121105
+Scale:           3290.4   0.156336     0.155604     0.157466
+Add:             4418.1   0.175211     0.173831     0.178607
+Triad:           4309.1   0.179719     0.178228     0.182635
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822310
+Unixtime: 1399890681
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -110,14 +110,14 @@ Unixtime: 1399822310
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            4079.6   0.118492     0.117660     0.119451
-Scale:           3089.7   0.156275     0.155357     0.157531
-Add:             4188.6   0.173401     0.171895     0.174647
-Triad:           4043.4   0.179264     0.178069     0.180799
+Copy:            4068.7   0.119378     0.117974     0.122084
+Scale:           3100.5   0.155832     0.154816     0.157402
+Add:             4173.1   0.173414     0.172535     0.174671
+Triad:           4030.6   0.180030     0.178633     0.183589
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822337
+Unixtime: 1399890707
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -134,14 +134,14 @@ Unixtime: 1399822337
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            3790.9   0.118888     0.118177     0.120009
-Scale:           2885.0   0.156312     0.155284     0.158944
-Add:             3903.2   0.174056     0.172167     0.176569
-Triad:           3776.4   0.179643     0.177949     0.183036
+Copy:            3782.6   0.119502     0.118437     0.122159
+Scale:           2884.9   0.156260     0.155292     0.157408
+Add:             3898.0   0.173213     0.172395     0.173884
+Triad:           3780.3   0.179536     0.177764     0.181717
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822363
+Unixtime: 1399890736
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -158,14 +158,14 @@ Unixtime: 1399822363
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            3534.3   0.118614     0.117702     0.119819
-Scale:           2673.2   0.157117     0.155617     0.158667
-Add:             3619.3   0.174555     0.172409     0.177514
-Triad:           3506.2   0.179781     0.177972     0.184841
+Copy:            3541.3   0.118852     0.117472     0.119523
+Scale:           2682.8   0.156166     0.155060     0.160031
+Add:             3608.9   0.174118     0.172905     0.175847
+Triad:           3504.6   0.178980     0.178051     0.181598
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822389
+Unixtime: 1399890761
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -182,14 +182,14 @@ Unixtime: 1399822389
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            3248.7   0.119735     0.118201     0.121831
-Scale:           2476.7   0.156239     0.155046     0.157316
-Add:             3325.9   0.174401     0.173186     0.176126
-Triad:           3236.8   0.179919     0.177951     0.181206
+Copy:            3245.5   0.120067     0.118316     0.122523
+Scale:           2470.3   0.157841     0.155444     0.161175
+Add:             3333.4   0.175410     0.172797     0.180774
+Triad:           3245.2   0.180854     0.177491     0.185080
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822413
+Unixtime: 1399890786
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -206,14 +206,14 @@ Unixtime: 1399822413
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            2991.5   0.118915     0.117666     0.120434
-Scale:           2268.5   0.156867     0.155167     0.160365
-Add:             3058.3   0.173445     0.172647     0.174663
-Triad:           2968.9   0.179885     0.177843     0.184199
+Copy:            2984.2   0.118918     0.117954     0.120206
+Scale:           2275.6   0.156936     0.154683     0.159516
+Add:             3066.7   0.173276     0.172172     0.175344
+Triad:           2960.4   0.178975     0.178353     0.179736
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822439
+Unixtime: 1399890809
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -230,14 +230,14 @@ Unixtime: 1399822439
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            2729.2   0.118756     0.117250     0.120045
-Scale:           2067.2   0.156642     0.154796     0.160586
-Add:             2791.8   0.172957     0.171933     0.174450
-Triad:           2699.5   0.179662     0.177813     0.184582
+Copy:            2730.4   0.118709     0.117199     0.119993
+Scale:           2066.3   0.156377     0.154865     0.158164
+Add:             2786.1   0.173253     0.172286     0.175534
+Triad:           2703.2   0.178753     0.177569     0.179944
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822462
+Unixtime: 1399890833
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -254,14 +254,14 @@ Unixtime: 1399822462
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            2457.2   0.118644     0.117206     0.120962
-Scale:           1862.3   0.155412     0.154646     0.155892
-Add:             2508.6   0.173796     0.172205     0.177260
-Triad:           2420.0   0.179003     0.178510     0.179834
+Copy:            2448.1   0.119093     0.117643     0.122210
+Scale:           1864.0   0.155681     0.154503     0.157584
+Add:             2513.3   0.173943     0.171888     0.177380
+Triad:           2429.2   0.179372     0.177838     0.182783
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822485
+Unixtime: 1399890855
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -278,14 +278,14 @@ Unixtime: 1399822485
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            2182.0   0.119978     0.117322     0.124444
-Scale:           1660.1   0.157018     0.154212     0.159712
-Add:             2233.8   0.173618     0.171905     0.176010
-Triad:           2162.8   0.179438     0.177544     0.183607
+Copy:            2175.9   0.118442     0.117652     0.119893
+Scale:           1657.2   0.155855     0.154475     0.158994
+Add:             2240.8   0.172733     0.171366     0.174318
+Triad:           2162.1   0.179004     0.177604     0.182863
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822506
+Unixtime: 1399890878
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -302,14 +302,14 @@ Unixtime: 1399822506
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            1916.7   0.117585     0.116866     0.118452
-Scale:           1453.6   0.154942     0.154104     0.156584
-Add:             1960.7   0.172261     0.171371     0.173815
-Triad:           1898.2   0.177579     0.177012     0.178540
+Copy:            1908.2   0.117955     0.117386     0.119876
+Scale:           1453.3   0.154923     0.154131     0.156740
+Add:             1963.0   0.171976     0.171165     0.173357
+Triad:           1899.0   0.178142     0.176932     0.179886
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822528
+Unixtime: 1399890900
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -326,14 +326,14 @@ Unixtime: 1399822528
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            1637.0   0.118132     0.117291     0.119494
-Scale:           1246.0   0.155180     0.154095     0.155926
-Add:             1676.2   0.172893     0.171819     0.177168
-Triad:           1624.9   0.178286     0.177246     0.179785
+Copy:            1636.7   0.117926     0.117312     0.119650
+Scale:           1242.0   0.155862     0.154586     0.159945
+Add:             1682.6   0.172584     0.171165     0.174239
+Triad:           1621.4   0.178478     0.177629     0.180009
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822548
+Unixtime: 1399890920
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -350,14 +350,14 @@ Unixtime: 1399822548
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            1367.5   0.118459     0.117006     0.123072
-Scale:           1040.0   0.154915     0.153840     0.155929
-Add:             1395.9   0.172482     0.171937     0.172989
-Triad:           1357.9   0.177972     0.176742     0.179124
+Copy:            1369.5   0.117901     0.116833     0.119524
+Scale:           1040.6   0.155135     0.153756     0.156725
+Add:             1403.3   0.172459     0.171020     0.174176
+Triad:           1355.7   0.178052     0.177033     0.179524
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822570
+Unixtime: 1399890941
 ----------------------------------------------
  Double precision appears to have 16 digits of accuracy
  Assuming 8 bytes per DOUBLE PRECISION word
@@ -374,11 +374,11 @@ Unixtime: 1399822570
  Your clock granularity/precision appears to be      1 microseconds
  ----------------------------------------------------
 Function     Rate (MB/s)  Avg time   Min time  Max time
-Copy:            1095.3   0.117323     0.116860     0.118625
-Scale:            832.8   0.155109     0.153695     0.157462
-Add:             1118.3   0.172341     0.171682     0.173410
-Triad:           1084.3   0.177677     0.177068     0.178802
+Copy:            1094.7   0.117524     0.116932     0.119166
+Scale:            831.6   0.154960     0.153918     0.156540
+Add:             1119.8   0.171989     0.171452     0.173462
+Triad:           1085.1   0.177714     0.176940     0.179458
  -----------------------------------------------
  Solution Validates!
  -----------------------------------------------
-Unixtime: 1399822590
+Unixtime: 1399890961

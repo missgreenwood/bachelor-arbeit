@@ -11,16 +11,19 @@
 # create result files and temporary files
 touch ../sources/streamplot1.txt ../sources/streamplot2.txt ../sources/tmp1.txt ../sources/tmp2.txt
 
-# set number of usable rpis
-rpis=19
-echo "Usable RPis: $rpis" 
+# set number of runs 
+runs=16
+echo "Number of runs: $runs" 
 
-linecount=$(cat ../sources/STREAM_db`date +%y%m%d`.txt | wc -l)
+
+# linecount=$(cat ../sources/STREAM_db`date +%y%m%d`.txt | wc -l)
+linecount=$(cat ../sources/STREAM_db140512.txt | wc -l)
 echo "Linecount: $linecount"
 
 # split after linecount/2 lines  
 half=$((linecount / 2))
-split -l $half ../sources/STREAM_db`date +%y%m%d`.txt
+# split -l $half ../sources/STREAM_db`date +%y%m%d`.txt
+split -l $half ../sources/STREAM_db140512.txt
 
 # write to plot files sources/streamplot1.txt sources/streamplot2.txt
 cat xaa > ../sources/streamplot1.txt
@@ -30,10 +33,10 @@ cat xab > ../sources/streamplot2.txt
 cat ../sources/streamplot1.txt | cut -d' ' -f2,3,7,8,12,13,17,18 > ../sources/tmp1.txt  
 cat ../sources/streamplot2.txt | cut -d' ' -f2,3,7,8,12,13,17,18 > ../sources/tmp2.txt
 
-splitter=$((half / rpis))
+splitter=$((half / runs))
 echo "Number of lines per RPi per File: $splitter"
 
-# split tmp file 1 into rpis subfiles
+# split tmp file 1 into runs subfiles
 split -l $splitter ../sources/tmp1.txt plot1
 
 # split tmp file 2 into rpis subfiles
@@ -75,5 +78,5 @@ sed -e 's/$/ 6/' plot2an >> ../sources/streamplot2.txt
 sed -e 's/$/ 5/' plot2ao >> ../sources/streamplot2.txt
 sed -e 's/$/ 4/' plot2ap >> ../sources/streamplot2.txt
 
-# remove split files and tmp files 
+# # remove split files and tmp files 
 rm ../sources/tmp1.txt ../sources/tmp2.txt plot* xaa xab

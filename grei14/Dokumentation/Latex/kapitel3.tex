@@ -151,6 +151,18 @@ Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{sta
 
 %TODO: 
 \section{Strommessung}
+% Name, Beschreibung
+Die Messung des Stromverbrauchs erfolgt mit dem Strommessger"at Energenie EGM-PWM-LAN (vgl. \url{http://www.elv.de/energenie-egm-pwm-lan-energiekosten-messgeraet-mit-lan-schnittstelle.html}), im Folgenden als \textit{Energenie} bezeichnet. Es wird zwischen Steckdose und den Bramble gesteckt und "uber ein LAN-Kabel mit dem Netzwerk verbunden. 
+
+% Aktivierung
+F"ur den vorliegenden Versuchsaufbau war dem Energenie eine statische IP-Adresse zugewiesen und ein DNS-Eintrag erstellt worden. Damit ist es m"oglich, das Ger"at im lokalen Netzwerk zu erreichen und auf die ermittelten Messwerte zuzugreifen. 
+
+% Datenspeicherung 
+Dazu bietet das Energenie mehrere M"oglichkeiten, darunter eine Webbrowser-Oberfl"ache und ein Windows-Programm. Damit die Software das Ger"at erkennt, muss es sich im selben Subnetz befinden wie der Rechner, von dem aus zugegriffen wird.  
+
+% Datenzugriff 
+F"ur den Versuchsaufbau erwies sich die Webbrowser-Oberfl"ache als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. 
+% Setup für ExperimentSuite 
 
 \section{Ergebnisse}\label{Ergebnisse}
 
@@ -164,9 +176,9 @@ Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran a
 
 HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
 
-Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Werte f"ur die Eingabeparameter entstammen der Datei HPL.dat, welche im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmarks liegen muss. Darin werden u.a. die Gr"o\ss enordnung des zu l"osenden Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N} und die Blockgr"o\ss e \texttt{NB} beziffert, die dem Prozess-Netz zur Bearbeitung "ubergeben werden (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}).
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Ein Teil der Eingabeparameter ist invariabel (\texttt{eps} bzw. Maschinengenauigkeit und \texttt{T/V} bzw. Ausf"uhrungszeit). Die anderen Eingabeparameter sind in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Dazu z"ahlen die Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N}, die Blockgr"o\ss e\texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$aufgeteilt.} und die Gr"o\ss e des Prozessorennetzes (\texttt{P} und \texttt{Q})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren "ubergeben der Gr"o\ss e $P\times Q$ "ubergeben. \texttt{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \texttt{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). 
 
-Die wichtigsten Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs (\texttt{Gflops}) und Ausf"uhrungsdauer (\texttt{Time}) in Sekunden. F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
+Die Ausgabeparameter sind invariabel. Die wichtigsten davon sind \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uhrungsdauer in Sekunden). F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
 
 Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
 \begin{figure}[htb]
@@ -197,7 +209,7 @@ Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messr
 
 In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter angegeben, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 
 
-Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur von Messreihe 1 f"ur STREAM mit den Ausgabeparametern Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur die vier Module Copy, Scale, Add und Triad (), skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
+Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream1.pdf}\\ 
@@ -211,7 +223,7 @@ Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse f"ur von
   \label{fig:stream2}		
 \end{figure}
 \noindent
-Analog dazu werden in den Diagrammen \ref{fig:stream5} und\ref{fig:stream6} die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"ubergestellt. Auch hier sind die Ergebnisse von Messreihe 1 rot, die von Messreihe 2 blau markiert. 
+Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber. Auch hier sind die Ergebnisse von Messreihe 1 rot, die von Messreihe 2 blau markiert. 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{stream5.pdf}\\ 
