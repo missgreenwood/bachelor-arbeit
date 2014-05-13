@@ -149,20 +149,48 @@ Falls die Zeitstempel in der Datenbank-Eingabedatei noch nicht dem Format des Un
 \noindent
 Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{startBenchmarks.sh} zum Erstellen des Machinefile, Einh"angen des geteilten Verzeichnisses und Aufruf der Skripte \texttt{STREAM.sh} und \texttt{hpl-2.1.\-sh} (Schritte 1--3). Schritt 4 wird f"ur den jeweiligen Benchmark durch die Shellskripte \texttt{STREAM.sh} und \texttt{hpl-2.1.sh} ausgef"uhrt, die von \texttt{startBenchmarks.sh} aufgerufen werden. 
 
-%TODO: 
 \section{Strommessung}
 % Name, Beschreibung
-Die Messung des Stromverbrauchs erfolgt mit dem Strommessger"at Energenie EGM-PWM-LAN (vgl. \url{http://www.elv.de/energenie-egm-pwm-lan-energiekosten-messgeraet-mit-lan-schnittstelle.html}), im Folgenden als \textit{Energenie} bezeichnet. Es wird zwischen Steckdose und den Bramble gesteckt und "uber ein LAN-Kabel mit dem Netzwerk verbunden. 
+Die Messung des Stromverbrauchs erfolgt mit dem Strommessger"at Energenie EGM-PWM-LAN (vgl. \url{http://energenie.com/item.aspx?id=6736&lang=de}), im Folgenden als \textit{Energenie} bezeichnet. Es wird zwischen die Steckdose und den Bramble gesteckt und "uber ein LAN-Kabel wird es mit dem Netzwerk verbunden. 
 
 % Aktivierung
-F"ur den vorliegenden Versuchsaufbau war dem Energenie eine statische IP-Adresse zugewiesen und ein DNS-Eintrag erstellt worden. Damit ist es m"oglich, das Ger"at im lokalen Netzwerk zu erreichen und auf die ermittelten Messwerte zuzugreifen. 
+F"ur den hier verwendeten Versuchsaufbau war dem Energenie eine statische IP-Adresse zugewiesen und ein DNS-Eintrag f"ur es erstellt worden. Damit ist es m"oglich, im lokalen Netzwerk auf das Ger"at und die von ihm ermittelten Messwerte zuzugreifen. Dazu bietet das Energenie mehrere M"oglichkeiten, darunter eine Webbrowser-Oberfl"ache und ein Windows-Programm. Damit die Software das Ger"at erkennt, muss es sich im selben Subnetz befinden wie der Rechner, von dem aus der Zugriff erfolgt.  
 
 % Datenspeicherung 
-Dazu bietet das Energenie mehrere M"oglichkeiten, darunter eine Webbrowser-Oberfl"ache und ein Windows-Programm. Damit die Software das Ger"at erkennt, muss es sich im selben Subnetz befinden wie der Rechner, von dem aus zugegriffen wird.  
+Das Energenie misst Spannung in Volt, elektrischen Strom in Ampère, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit betr"agt dabei $+/- 2\% bzw. +/- 1 W$ innerhalb des Messbereichs von 50 W -- 2500 W. % TODO Messfehler ermitteln 
 
 % Datenzugriff 
-F"ur den Versuchsaufbau erwies sich die Webbrowser-Oberfl"ache als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. 
+F"ur den Versuchsaufbau erwies sich die Webbrowser-Oberfl"ache als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung in Volt, elektrischen Strom in Ampère, Leistung in Watt und Arbeit in Kilowattstunden angezeigt, doch es k"onnen keine Messwerte "uber eine Zeitspanne abgerufen werden. Das Windows-Programm bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als als Kurve.  
+
+Bei Verwendung der Software \textit{PowerManager} werden die Messwerte in der SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerDatabase} auf der zugreifenden Windows-Maschine abgelegt. Die Messwerte k"onnen auch als xls-Datei exportiert werden. Dabei Drei werden pro Messung drei Werte angegeben: Beginn der Aufzeichnung, Ende der Aufzeichnung und Leistung in Watt. In der Datenbank werden f"ur jede Messung zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. Die f"ur die ExperimentSuite wichtigen Messwerte sind die Eintr"age f"ur \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert), die in der Tabelle \texttt{LogValues}. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem xls-Export fiel wegen der h"oheren Granularit"at der Zeitstempel. 
+
 % Setup für ExperimentSuite 
+Das Aktivit"atsdiagramm \ref{fig:energenie} visualisiert die Schritte, die pro ExperimentSuite notwendig sind, um Messwerte f"ur den Stromverbrauch zu generieren, auszulesen und den Messwerten der Benchmark-Programme gegen"uberzustellen: 
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=0.8]{energenie.pdf}\\ 
+%  \caption{Aktivit"atsdiagramm zur Durchf"uhrung einer Strommessung f"ur eine ExperimentSuite.}
+%  \label{fig:energenie}		
+%\end{figure}
+
+\begin{enumerate}\bfseries
+% Login auf VM 
+	\item Login auf einer Windows-Maschine.
+% PowerManager starten 
+	\item Starten der PowerManager-Software. 
+% Energenie auswählen 
+	\item Auswahl des Energenie.
+% Datenbank leeren 
+	\item Zur"ucksetzen der SQLite-Datenbank.
+% Grafische Aufzeichnung starten (optional)
+	\item Start der grafischen Aufzeichnung. 
+% SQLite-DB herunterladen 
+	\item Herunterladen der SQLite-Datenbank. 
+% Messwerte parsen für MySQL-DB rpiWerte
+	\item Parsen der Messwerte f"ur die Bramble-Datenbank. 
+% Messwerte von Strommessung und Benchmarks matchen 
+	 \item Verkn"upfung der Messwerte von Energenie und Benchmark-Programm. 
+\end{enumerate}
 
 \section{Ergebnisse}\label{Ergebnisse}
 
@@ -234,7 +262,7 @@ Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von 
   \includegraphics[scale=.8]{stream6.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
-\subsection{Stromverbrauch}\label{Ergebnisse-Energiegenie}
+\subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
 Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur die Messreihen 1 und 2. Diagramm \ref{fig:strom1} zeigt den Energieverbrauch in Watt, wenn alle 20 RPi-Knoten angeschaltet sind. Diagramm \ref{fig:strom2} zeigt den Energieverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden. 
 %TODO: 

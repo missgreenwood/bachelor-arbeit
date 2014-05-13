@@ -43,7 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 912,
+				"buffer_size": 739,
 				"line_ending": "Unix"
 			}
 		},
@@ -60,14 +60,6 @@
 			"settings":
 			{
 				"buffer_size": 1324,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/streamplot.sh",
-			"settings":
-			{
-				"buffer_size": 3301,
 				"line_ending": "Unix"
 			}
 		}
@@ -114,17 +106,22 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
-		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
 	],
 	"file_history":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_db140511.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/sources/streamplot2.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_shutdown140511.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_140511.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/streamplot2.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/streamplot1.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/tmp1.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/tmp2.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_db140511.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot2.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
@@ -133,7 +130,6 @@
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/machinefile",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigHpl.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigStream.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_db140331.txt",
@@ -192,7 +188,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -211,6 +207,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"energie",
 			"shapes",
 			"buhl",
 			"immer noch",
@@ -257,7 +254,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -266,15 +263,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 912,
+						"buffer_size": 739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								201,
-								201
+								402,
+								402
 							]
 						],
 						"settings":
@@ -285,7 +282,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -301,8 +298,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								2146,
+								2146
 							]
 						],
 						"settings":
@@ -310,10 +307,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 35.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -341,35 +338,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/streamplot.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3301,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3208,
-								3208
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -431,7 +400,7 @@
 		[
 			[
 				"",
-				"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/prinzessin-leah.sublime-project"
+				"/Applications/XAMPP/xamppfiles/htdocs/kunden/frauhampel/website/wp-content/themes/prinzessin-leah/prinzessin-leah.sublime-workspace"
 			],
 			[
 				"prin",
