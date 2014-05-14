@@ -16,11 +16,13 @@ rpis=16
 echo "Usable RPis: $rpis" 
 
 linecount=$(cat ../sources/hpl-2.1_db`date +%y%m%d`.txt | wc -l)
+# linecount=$(cat ../sources/hpl-2.1_db140513.txt | wc -l)
 echo "Linecount: $linecount"
 
 # split after linecount/2 lines  
 half=$((linecount / 2))
 split -l $half ../sources/hpl-2.1_db`date +%y%m%d`.txt
+# split -l $half ../sources/hpl-2.1_db140513.txt
 
 # write to plot files sources/hplplot1.txt sources/hplplot2.txt
 cat xaa > ../sources/hplplot1.txt
