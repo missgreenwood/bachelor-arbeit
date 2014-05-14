@@ -156,15 +156,15 @@ Die Messung des Stromverbrauchs erfolgt mit dem Strommessger"at \textit{Energeni
 % Aktivierung
 F"ur den Versuchsaufbau war dem Energenie eine statische IP-Adresse zugewiesen und ein DNS-Eintrag erstellt worden. Damit ist es m"oglich, im lokalen Netzwerk auf das Ger"at und die ermittelten Messwerte zuzugreifen. F"ur den Zugriff gibt es mehrere M"oglichkeiten, darunter eine Webbrowser- und eine Windows-Anwendung. Damit die Software das Ger"at erkennt, muss es sich im selben Subnetz befinden wie der zugreifende Rechner. 
 
-Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werden. Dazu mussten nach der Installation des Programms PowerManager IP-Adresse und ein Name f"ur das Energenie eingetragen werden. In der Webbrowser-Anwendung wurde das Standardpasswort ge"andert und die NTP-Zeitsynchronisation aktiviert. 
+Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werden. Dazu wurden nach der Installation des Programms \textit{PowerManager} IP-Adresse und ein Name f"ur das Energenie eingetragen. In der Webbrowser-Anwendung wurde das Standardpasswort ge"andert und die NTP-Zeitsynchronisation aktiviert. 
 
 % Messgrößen 
-Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W -- 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$. % TODO Messfehler ermitteln 
+Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W - 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$ (vgl. \cite{scrguide03}). % TODO Messfehler ermitteln 
 
 % Datenzugriff 
-F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve.  
+F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
 
-Bei der Verwendung von \textit{PowerManager} werden die ermittelten Messwerte in der SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerDatabase} auf der zugreifenden Windows-Maschine abgelegt. Sie k"onnen auch als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. In der Datenbank werden f"ur jede Messung zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} entscheidend. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem xls-Export fiel wegen der h"oheren Granularit"at der Zeitstempel in der Datenbank. 
+Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve. Die ermittelten Messwerte bei Ausf"uhrung des Programms in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerDatabase} auf der zugreifenden Windows-Maschine abgelegt. Sie k"onnen auch als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. In der Datenbank werden f"ur jede Messung zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} entscheidend. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem xls-Export fiel wegen der h"oheren Granularit"at der Zeitstempel. 
 
 % Setup für ExperimentSuite 
 Das Aktivit"atsdiagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite f"ur die Strommessung notwendig sind: 
@@ -176,37 +176,38 @@ Das Aktivit"atsdiagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzers
 \end{figure}
 \begin{enumerate}\bfseries
 % Login auf VM 
-	\item Login auf Windows-Maschine.
+	\item Login auf Windows-Maschine.\\
 \normalfont
-Das Programm PowerManager wird nur f"ur ein Windows-Betriebssystem (Windows XP oder h"oher) angeboten. Daher war eine virtuelle Windows-Maschine (Windows 7) im lokalen Netzwerk zur Ausf"uhrung der PowerManager-Software zur Verf"ugung gestellt worden. 
+Das Programm PowerManager wird nur f"ur ein Windows-Betriebssystem (Windows XP oder h"oher) angeboten. F"ur die Ausf"uhrung war eine virtuelle Windows-Maschine (Windows 7) im lokalen Netzwerk zur Verf"ugung gestellt worden. 
 % PowerManager starten 
-	\item Starten der PowerManager-Software. 
-% Energenie auswählen 
-	\textbf{\item Auswahl des Energenie.}
-Die Startoberfl"ache des Programms hat ein Men"u mit den eingetragenen Ger"aten, aus denen der Name ausgew"ahlt werden muss, der bei der erstmaligen Aktivierung eingetragen wurde. 
+	\textbf{\item Start der PowerManager-Software.}
 % Datenbank leeren 
-	\textbf{\item Zur"ucksetzen der SQLite-Datenbank.}
-Um m"oglichst wenige Messwerte zu erhalten, die nicht zur aktuellen ExperimentSuite geh"oren, ist es sinnvoll, die Datenbank jeweils vor dem Start einer ExperimentSuite zur"uckzusetzen. Die Aufzeichnung der Messwerte erfolgt st"andig und muss nicht gesondert angesto\ss en werden, solange das Ger"at an den Bramble angeschlossen ist und die Anwendung aktiv ist. 
+	\textbf{\item Zur"ucksetzen der SQLite-Datenbank.}\\
+Um m"oglichst wenige Messwerte zu erhalten, die nicht zur aktuellen ExperimentSuite geh"oren, ist es sinnvoll, die Datenbank jeweils vor dem Start einer ExperimentSuite zur"uckzusetzen. Die Aufzeichnung der Messwerte erfolgt st"andig und muss nicht gesondert angesto\ss en werden, solange das Energenie an den Bramble angeschlossen und die Anwendung aktiv ist. 
 % Grafische Aufzeichnung starten (optional)
-	\textbf{\item Start der grafischen Aufzeichnung.} 
+	\textbf{\item Start der grafischen Aufzeichnung.}\\ 
 Optional ist es m"oglich, die aktuellen Messwerte f"ur die Leistung auf einer grafischen Oberfl"ache anzeigen zu lassen. Es hat sich zur "Uberwachung der Messung als sinnvoll erwiesen.
 % SQLite-DB herunterladen 
-	\textbf{\item Herunterladen der SQLite-Datenbank.} 
+	\textbf{\item Herunterladen der SQLite-Datenbank.}\\ 
 Zur weiteren Verarbeitung der Messwerte muss die SQLite-Datenbank von der Windows-Maschine heruntergeladen werden.
-	\textbf{\item Export der relevanten Tabelle.}
+% Export der Messwerte
+	\textbf{\item Export der Messwerte.}\\
+Zur weiteren Verarbeitung der Messwerte wird die Tabelle \texttt{LogValues} exportiert.
 % Messwerte parsen für MySQL-DB rpiWerte
-	\textbf{\item Parsen der Messwerte f"ur die Bramble-Datenbank.}
-Zum Einlesen der Messwerte des Energenie in die MySQL-Datenbank auf dem Bramble m"ussen die Messwerte in das entsprechende Format gebracht werden. Hierf"ur wurde ein Shellskript \texttt{parseEnergyValues.sh} erstellt. Es Sie enth"alt pro Messung eine Zeile mit  
-	\textbf{\item Einlesen der Messwerte in die Bramble-Datenbank.}
-% TODO: Messwerte von Strommessung und Benchmarks matchen 
-	\textbf{\item Verkn"upfung der Messwerte von Energenie und Benchmark-Programm.} 
+	\textbf{\item Parsen der Messwerte f"ur die Bramble-Datenbank.}\\
+Zum Einlesen der Messwerte in die MySQL-Datenbank auf dem Bramble m"ussen sie in ein passendes Format gebracht werden. Hierf"ur wurde ein Shellskript \texttt{parseEnergyValues.sh} erstellt. Es erstellt eine Eingabedatei, die jeweils eine Zeile pro Messung mit Unix-Zeitstempel und Leistung enth"alt.
+	\textbf{\item Einlesen der Messwerte in die Bramble-Datenbank.}\\
+F"ur jede Messung muss ein Eintrag in der Tabelle \texttt{MeasurementValue} mit Werten f"ur Parameter, Messwert, Zeitstempel und der ID des Strommessger"ats erstellt werden. Da die MySQL-Datenbank auf dem Bramble liegt, wurde hierf"ur ein Shellskript \texttt{writeEnergyValues.sh} im Verzeichnis \texttt{/home/rpi-user/experimentsuite} auf dem Bramble erstellt. 
+% Messwerte von Strommessung und Benchmarks matchen 
+	\textbf{\item Verkn"upfung der Messwerte von Energenie und Benchmark-Programm.}\\ 
+Im letzten Schritt m"ussen die Messwerte von Energenie und Benchmark-Programm f"ur die jeweilige ExperiementSuite verkn"upft werden. Hierzu wurde ein Shellskript \texttt{matchEnergyValues.sh} im selben Verzeichnis auf dem Bramble erstellt. 
 \end{enumerate}
 
 \section{Ergebnisse}\label{Ergebnisse}
 
-Der folgende Abschnitt pr"asentiert die Untersuchungsergebnisse f"ur HPLinpack und STREAM auf dem Bramble. Jeder Benchmark wurde zweimal ausgef"uhrt. Bei Messreihe 1 waren alle RPi-Knoten angeschaltet, bei Messreihe 2 nur die, auf denen die Benchmark-Programme tats"achlich ausgef"uhrt wurden. \texttt{pi03} als Berechnungsknoten blieb immer angeschaltet und wurde in der Untersuchung nicht ber"ucksichtigt (vgl. Kap. \ref{Versuchsaufbau}).
+Der folgende Abschnitt pr"asentiert die Untersuchungsergebnisse f"ur HPLinpack und STREAM auf dem Bramble. Jeder Benchmark wurde zweimal ausgef"uhrt. Bei Messreihe 1 waren alle RPi-Knoten angeschaltet, bei Messreihe 2 wurden nicht mehr aktive Knoten heruntergefahren. \texttt{pi03} als Berechnungsknoten blieb immer angeschaltet (vgl. Kap. \ref{Versuchsaufbau}).
 
-Da keine Implementierung von Whetstone f"ur eine verteilte Berechnung auf Raspbian existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPLinpack in der verwendeten Implementierung ben"otigt mindestens vier CPUs oder parallele Prozesse. Hier wurde jeder CPU, d.h. einem RPi-Knoten, genau ein Prozess zugewiesen, sodass zur Ausf"uhrung von HPLinpack mindestens vier angeschaltete und aktive RPi-Knoten ben"otigt werden. 
+Da keine Implementierung von Whetstone f"ur eine verteilte Berechnung auf Raspbian existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPLinpack in der verwendeten Implementierung ben"otigt mindestens vier CPUs oder parallele Prozesse. Hier wurde jeder CPU, d.h. jedem RPi-Knoten, genau ein Prozess zugewiesen, sodass zur Ausf"uhrung von HPLinpack mindestens vier angeschaltete und aktive RPi-Knoten ben"otigt werden. 
 
 Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran angepasst, d.h. auch STREAM wurde auf mindestens vier RPi-Knoten parallel ausgef"uhrt. 
 
@@ -261,7 +262,7 @@ Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Mess
   \label{fig:stream2}		
 \end{figure}
 \noindent
-Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber. Auch hier sind die Ergebnisse von Messreihe 1 rot, die von Messreihe 2 blau markiert. 
+Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die Ergebnisse von Messreihe 2 sind blau markiert. 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{stream5.pdf}\\ 
@@ -272,19 +273,31 @@ Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von 
   \includegraphics[scale=.8]{stream6.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
+
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
-Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur die Messreihen 1 und 2. Diagramm \ref{fig:strom1} zeigt den Energieverbrauch in Watt, wenn alle 20 RPi-Knoten angeschaltet sind. Diagramm \ref{fig:strom2} zeigt den Energieverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden. 
-%TODO: 
+Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur HPLinpack. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 1 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom2} zeigt den Stromverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden (Messreihe 2). 
 %\begin{figure}[htb]
 %  \centering
 %  \includegraphics[scale=.8]{strom1.pdf}\\ 
-%  \caption{Energieverbrauch in W f"ur HPLinpack mit n RPi-Knoten aktiv/20 RPi-Knoten angeschaltet.}\label{fig:strom1}
+%  \caption{Stromverbrauch in W f"ur HPLinpack, Messreihe 1.}\label{fig:strom1}
 %\end{figure}
 %\begin{figure}[htb]
 %  \centering
 %  \includegraphics[scale=.8]{strom2.pdf}\\ 
-%  \caption{Energieverbrauch in W f"ur STREAM mit n RPi-Knoten aktiv/n RPi-Knoten angeschaltet.}\label{fig:strom2}
+%  \caption{Stromverbrauch in W f"ur HPLinpack, Messreihe 2.}\label{fig:strom2}
+%\end{figure}
+\noindent
+Die Diagramme \ref{fig:strom3} und \ref{fig:strom4} zeigen analog die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom4} zeigt den Stromverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden (Messreihe 2).
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{strom3.pdf}\\ 
+%  \caption{Stromverbrauch in W f"ur STREAM, Messreihe 1.}\label{fig:strom3}
+%\end{figure}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{strom4.pdf}\\ 
+%  \caption{Stromverbrauch in W f"ur STREAM, Messreihe 2.}\label{fig:strom4}
 %\end{figure}
 \endinput 
 
