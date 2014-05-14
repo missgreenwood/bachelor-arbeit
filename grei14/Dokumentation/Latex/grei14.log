@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  13 MAY 2014 18:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 MAY 2014 13:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,106 +583,110 @@ Underfull \hbox (badness 3930) in paragraph at lines 174--174
 es-sung f[]ur ei-ne
  []
 
+
+Overfull \hbox (23.01723pt too wide) in paragraph at lines 179--183
+\OT1/cmr/m/n/10.95 le Windows-Maschine (Win-dows 7) im lo-ka-len Netz-werk zur 
+Ausf[]uhrung der PowerManager-
+ []
+
 [22pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.194 	\item P
-              arsen der Messwerte f"ur die Bramble-Datenbank. <./Bilder/energen
-ie.pdf>]
-Overfull \hbox (5.19305pt too wide) in paragraph at lines 201--202
+l.191 ...\item Start der grafischen Aufzeichnung.}
+                                                   <./Bilder/energenie.pdf>]
+Overfull \hbox (5.19305pt too wide) in paragraph at lines 206--207
 \OT1/cmr/m/n/10.95 Der fol-gen-de Ab-schnitt pr[]asen-tiert die Un-ter-su-chung
 s-er-geb-nis-se f[]ur HP-Lin-pack und STREAM
  []
 
-<./Bilder/hpl1.pdf, id=912, 361.35pt x 252.945pt>
+[23] <./Bilder/hpl1.pdf, id=928, 361.35pt x 252.945pt>
 File: ./Bilder/hpl1.pdf Graphic file (type pdf)
  <use ./Bilder/hpl1.pdf>
-Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 218.
+Package pdftex.def Info: ./Bilder/hpl1.pdf used on input line 223.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl2.pdf, id=913, 361.35pt x 252.945pt>
+<./Bilder/hpl2.pdf, id=929, 361.35pt x 252.945pt>
 File: ./Bilder/hpl2.pdf Graphic file (type pdf)
  <use ./Bilder/hpl2.pdf>
-Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 224.
+Package pdftex.def Info: ./Bilder/hpl2.pdf used on input line 229.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl5.pdf, id=916, 361.35pt x 252.945pt>
+<./Bilder/hpl5.pdf, id=932, 361.35pt x 252.945pt>
 File: ./Bilder/hpl5.pdf Graphic file (type pdf)
  <use ./Bilder/hpl5.pdf>
-Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 232.
+Package pdftex.def Info: ./Bilder/hpl5.pdf used on input line 237.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/hpl6.pdf, id=917, 361.35pt x 252.945pt>
+<./Bilder/hpl6.pdf, id=933, 361.35pt x 252.945pt>
 File: ./Bilder/hpl6.pdf Graphic file (type pdf)
  <use ./Bilder/hpl6.pdf>
-Package pdftex.def Info: ./Bilder/hpl6.pdf used on input line 237.
+Package pdftex.def Info: ./Bilder/hpl6.pdf used on input line 242.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-[23] <./Bilder/stream1.pdf, id=940, 361.35pt x 252.945pt>
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.248 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.248 
+       <./Bilder/hpl1.pdf> <./Bilder/hpl2.pdf>]
+<./Bilder/stream1.pdf, id=969, 361.35pt x 252.945pt>
 File: ./Bilder/stream1.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream1.pdf>
-Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 247.
+Package pdftex.def Info: ./Bilder/stream1.pdf used on input line 252.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream2.pdf, id=941, 361.35pt x 252.945pt>
+<./Bilder/stream2.pdf, id=970, 361.35pt x 252.945pt>
 File: ./Bilder/stream2.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream2.pdf>
-Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 253.
+Package pdftex.def Info: ./Bilder/stream2.pdf used on input line 258.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream5.pdf, id=944, 361.35pt x 252.945pt>
+<./Bilder/stream5.pdf, id=973, 361.35pt x 252.945pt>
 File: ./Bilder/stream5.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream5.pdf>
-Package pdftex.def Info: ./Bilder/stream5.pdf used on input line 261.
+Package pdftex.def Info: ./Bilder/stream5.pdf used on input line 266.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
-<./Bilder/stream6.pdf, id=945, 361.35pt x 252.945pt>
+<./Bilder/stream6.pdf, id=974, 361.35pt x 252.945pt>
 File: ./Bilder/stream6.pdf Graphic file (type pdf)
 
 <use ./Bilder/stream6.pdf>
-Package pdftex.def Info: ./Bilder/stream6.pdf used on input line 266.
+Package pdftex.def Info: ./Bilder/stream6.pdf used on input line 271.
 (pdftex.def)             Requested size: 289.0804pt x 202.35626pt.
 
 
-LaTeX Warning: Reference `fig:strom1' on page 24 undefined on input line 271.
+LaTeX Warning: Reference `fig:strom1' on page 25 undefined on input line 276.
 
 
-LaTeX Warning: Reference `fig:strom2' on page 24 undefined on input line 271.
+LaTeX Warning: Reference `fig:strom2' on page 25 undefined on input line 276.
 
 
-LaTeX Warning: Reference `fig:strom1' on page 24 undefined on input line 271.
+LaTeX Warning: Reference `fig:strom1' on page 25 undefined on input line 276.
 
 
-LaTeX Warning: Reference `fig:strom2' on page 24 undefined on input line 271.
+LaTeX Warning: Reference `fig:strom2' on page 25 undefined on input line 276.
 
-) (./kapitel4.tex [24pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.3.6}) has been already used, duplicate ignored
+) (./kapitel4.tex [25pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.3.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Interpretation}\label{Kap4} <./Bilder/hpl1.pdf>] [25pdfTeX warning
- (ext4): destination with the same identifier (name{figure.3.7}) has been alrea
+            {Interpretation}\label{Kap4} <./Bilder/hpl5.pdf>] [26pdfTeX warning
+ (ext4): destination with the same identifier (name{figure.3.9}) has been alrea
 dy used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kap4}pdfTeX warning (ext4): destination with
- the same identifier (name{figure.3.8}) has been already used, duplicate ignore
-d
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Interpretation}\label{Kap4} <./Bilder/hpl2.pdf> <./Bilder/hpl5.pdf
->] [26pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -821,9 +825,9 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7116 strings out of 493488
- 108391 string characters out of 3141326
- 225218 words of memory out of 3000000
+ 7117 strings out of 493488
+ 108398 string characters out of 3141326
+ 224218 words of memory out of 3000000
  10070 multiletter control sequences out of 15000+200000
  12929 words of font info for 45 fonts, out of 3000000 for 9000
  999 hyphenation exceptions out of 8191
@@ -876,10 +880,10 @@ e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2012/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on grei14.pdf (48 pages, 1480026 bytes).
+Output written on grei14.pdf (48 pages, 1482212 bytes).
 PDF statistics:
- 1299 PDF objects out of 1440 (max. 8388607)
- 1019 compressed objects within 11 object streams
- 180 named destinations out of 1000 (max. 500000)
+ 1302 PDF objects out of 1440 (max. 8388607)
+ 1022 compressed objects within 11 object streams
+ 181 named destinations out of 1000 (max. 500000)
  380 words of extra memory for PDF output out of 10000 (max. 10000000)
 
