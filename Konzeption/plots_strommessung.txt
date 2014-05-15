@@ -1,0 +1,32 @@
+## Struktur 
+
+
+1. Alle RPis powered HPL: Plotfile STROM1
+	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+		
+2. Nur aktive RPis powered HPL: Plotfile STROM2
+	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+
+3. Alle RPis powered STREAM: Plotfile STROM3
+	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+
+4. Nur aktive RPis powered HPLinpack: PLOTFILE STROM4
+	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W 
+
+
+## Inputfiles erstellen 
+
+
+## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM1' - 'STROM4')
+
+# STROM1
+
+# STROM2
+
+# STROM3 
+
+# STROM4 

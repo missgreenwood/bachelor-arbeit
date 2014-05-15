@@ -43,15 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 771,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/hplplot.sh",
-			"settings":
-			{
-				"buffer_size": 3152,
+				"buffer_size": 770,
 				"line_ending": "Unix"
 			}
 		},
@@ -106,9 +98,6 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
@@ -116,9 +105,10 @@
 	"file_history":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_shutdown140511.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_140511.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/streamplot2.txt",
@@ -126,7 +116,6 @@
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/tmp1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/tmp2.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_db140511.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot2.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
@@ -257,7 +246,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -266,15 +255,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 771,
+						"buffer_size": 770,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								229,
-								229
+								215,
+								215
 							]
 						],
 						"settings":
@@ -285,39 +274,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/hplplot.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								671,
-								671
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/parseEnergyValues.sh",
 					"semi_transient": false,
 					"settings":
@@ -341,7 +302,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
