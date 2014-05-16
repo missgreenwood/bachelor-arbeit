@@ -1,4 +1,8 @@
-## Struktur 
+# Struktur 
+
+
+
+I. Händisch erstellt: Alle Messwerte zwischen Beginn und Ende einer ExperimentSuite
 
 
 1. Alle RPis powered HPL: Plotfile STROM1
@@ -20,13 +24,98 @@
 
 ## Inputfiles erstellen 
 
+1. results/energyvaluesa.txt
+
+2. results/energyvaluesb.txt
+
+3. results/energyvaluesc.txt
+
+4. results/energyvaluesd.txt
+
+## in Verzeichnis Gnuplot verschieben 
+
 
 ## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM1' - 'STROM4')
 
 # STROM1
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+set xlabel "t"
+unset xtics
+set title "Stromverbrauch HPLinpack Messreihe 1"
+set output 'strom1.eps'
+unset border
+plot 'energyvaluesa.txt' using 1:2 title "Stromverbrauch" with lines
 
 # STROM2
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+set xlabel "t"
+unset xtics
+set title "Stromverbrauch HPLinpack Messreihe 2"
+set output 'strom2.eps'
+unset border
+plot 'energyvaluesb.txt' using 1:2 title "Stromverbrauch" with lines 
 
 # STROM3 
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+set xlabel "t"
+unset xtics
+set title "Stromverbrauch STREAM Messreihe 1"
+set output 'strom3.eps'
+unset border
+plot 'energyvaluesc.txt' using 1:2 title "Stromverbrauch" with lines
 
 # STROM4 
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+set xlabel "t"
+unset xtics
+set title "Stromverbrauch STREAM Messreihe 2"
+set output 'strom4.eps'
+unset border
+plot 'energyvaluesd.txt' using 1:2 title "Stromverbrauch" with lines
+
+
+II. Mit Skript erstellt: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + ExperimentSuiteID
+
+
+5. Alle RPis powered HPL: Plotfile STROM5
+	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+		
+6. Nur aktive RPis powered HPL: Plotfile STROM6
+	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+
+7. Alle RPis powered STREAM: Plotfile STROM7
+	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W
+
+8. Nur aktive RPis powered HPLinpack: PLOTFILE STROM8
+	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+		y: Stromverbrauch in W 
+
+
+## Inputfiles erstellen 
+
+5. results/energyvalues_`date +%y%m%d`e.txt
+
+6. results/energyvalues_`date +%y%m%d`f.txt
+
+7. results/energyvalues_`date +%y%m%d`g.txt
+
+8. results/energyvalues_`date +%y%m%d`h.txt
+
+
+## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM5' - 'STROM8')
+
+# STROM5
+
+# STROM6
+
+# STROM7 
+
+# STROM8 
+

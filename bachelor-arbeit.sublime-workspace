@@ -43,15 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 770,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/parseEnergyValues.sh",
-			"settings":
-			{
-				"buffer_size": 1324,
+				"buffer_size": 1048,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,11 +96,15 @@
 	],
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/matchEnergyValues.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_shutdown140511.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_140511.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/streamplot2.txt",
@@ -199,6 +195,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"measuredfor",
+			"executionEndedAt",
+			"executionendedat",
+			"measuredfor",
 			"energie",
 			"shapes",
 			"buhl",
@@ -255,15 +255,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 770,
+						"buffer_size": 1048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								597,
+								597
 							]
 						],
 						"settings":
@@ -275,34 +275,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/parseEnergyValues.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1256,
-								1287
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
