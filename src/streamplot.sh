@@ -16,14 +16,14 @@ runs=16
 echo "Number of runs: $runs" 
 
 
-# linecount=$(cat ../sources/STREAM_db`date +%y%m%d`.txt | wc -l)
-linecount=$(cat ../sources/STREAM_db140512.txt | wc -l)
+linecount=$(cat ../sources/STREAM_db`date +%y%m%d`.txt | wc -l)
+# linecount=$(cat ../sources/STREAM_db140513.txt | wc -l)
 echo "Linecount: $linecount"
 
 # split after linecount/2 lines  
 half=$((linecount / 2))
-# split -l $half ../sources/STREAM_db`date +%y%m%d`.txt
-split -l $half ../sources/STREAM_db140512.txt
+split -l $half ../sources/STREAM_db`date +%y%m%d`.txt
+# split -l $half ../sources/STREAM_db140513.txt
 
 # write to plot files sources/streamplot1.txt sources/streamplot2.txt
 cat xaa > ../sources/streamplot1.txt

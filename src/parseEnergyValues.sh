@@ -7,7 +7,7 @@
 
 # create destination file as ../sources/energyvalues_`date +%y%m%d`.txt
 touch ../sources/energyvalues_`date +%y%m%d`.txt
-touch ../sources/energyvalues_140512.txt 
+# touch ../sources/energyvalues_140513.txt 
 
 # read in source file line by line and write to destination file  
 # remaining columns: 1 (timestamp), 4 (power in watt)
@@ -24,8 +24,8 @@ do
 	power=${arr[1]}                                                                                                                                                        
 	echo $power
 # write columns to destination file with delimiter " "
-	# echo "$unixtime $power" >> ../sources/energyvalues_`date +%y%m%d`.txt
-	echo "$unixtime $power" >> ../sources/energyvalues_140512.txt                                                                                                                                                   
+	echo "$unixtime $power" >> ../sources/energyvalues_`date +%y%m%d`.txt
+	# echo "$unixtime $power" >> ../sources/energyvalues_140513.txt                                                                                                                                                   
 done 
 
 # upload destination file to pcheger12 
