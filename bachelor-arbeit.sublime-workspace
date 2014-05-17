@@ -43,7 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1611,
+				"buffer_size": 1109,
 				"line_ending": "Unix"
 			}
 		}
@@ -256,15 +256,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1611,
+						"buffer_size": 1109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1529,
-								1529
+								578,
+								578
 							]
 						],
 						"settings":

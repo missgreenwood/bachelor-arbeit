@@ -12,7 +12,7 @@ Die augew"ahlten Benchmarks werden auf n -- 1 RPi-Knoten des Bramble mit n=19 RP
 
 Hier stellen sich zwei grunds"atzliche Fragen: Welcher Art ist die Messung und welche Voraussetzungen m"ussen hierf"ur erf"ullt sein? 
 
-Die Performance wird pro Benchmark durch zwei Ergebnisparameter ermittelt. Zwei Messreihen werden durchgef"uhrt: Bramble mit n RPi-Knoten aktiv/20 RPi-Knoten angeschaltet, Bramble mit n RPi-Knoten aktiv/n RPi-Knoten angeschaltet. 
+Die Performance wird pro Benchmark durch zwei Ergebnisparameter ermittelt. Zwei Mess\-reihen werden durchgef"uhrt: Bramble mit n RPi-Knoten aktiv/20 RPi-Knoten angeschaltet, Bramble mit n RPi-Knoten aktiv/n RPi-Knoten angeschaltet. 
 % TODO: evtl. bessere Einleitung/Herleitung 
 F"ur den Versuchsaufbau sind folgende Aspekte von Bedeutung: M"ogliche Modifikationen der RPi-Knoten, Zeitsynchronisation der RPi-Knoten, Skalierung der Messung auf n -- 1 RPi-Knoten, automatisierte Durchf"uhrung der Messung auf n -- 1 RPi-Knoten sowie Einlesen der Messwerte in eine geeignete Datenstruktur. 
 
@@ -20,15 +20,15 @@ F"ur den Versuchsaufbau sind folgende Aspekte von Bedeutung: M"ogliche Modifikat
 
 Viele Nutzer stellen sich nach Inbetriebnahme eines RPi-Einzelrechners die Frage nach Swap-Speicher und "Ubertakten (vgl. \cite{pow12}). Beides liegt nahe, da das Modell B des RPi nur "uber 512 MB Arbeitsspeicher verf"ugt. Die CPU-Leistung ist mit 700 MHz ebenfalls eher niedrig. 
 
-Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den hier verwendeten RPis wurde davon Abstand genommen, da es wenig zielf"uhrend erscheint, die Komponente zu manipulieren, deren Performance man durch Benchmarking evaluieren m"ochte\footnote{F"ur eine zuk"unftige Untersuchung w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann (vgl. Kap. \ref{Kap5}).} Allerdings gibt es bereits Ergebnisse f"ur Linpack 100 und Whetstone bei auf einem RPi-Einzelrechner bei "Ubertakten der CPU auf 1 MHz (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).
+Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den hier verwendeten RPis wurde davon Abstand genommen, da es wenig zielf"uhrend erscheint, die Komponente zu manipulieren, deren Performance man durch Benchmarking evaluieren m"ochte\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann (vgl. Kap. \ref{Kap5}).} Allerdings gibt es bereits Ergebnisse f"ur Linpack 100 und Whetstone bei auf einem RPi-Einzelrechner bei "Ubertakten der CPU auf 1 MHz (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).
 
 Zur Allokierung von Swap-Speicher auf dem RPi gibt es grunds"atzlich drei M"oglichkeiten: Swap-Datei, Swap-Partition oder zRAM. 
 
-Das Betriebssystem Raspbian verwendet standardm"a\ss ig eine Swap-Datei \texttt{/var/swap} auf der SD-Karte (vgl. \url{http://raspberrypi.stackexchange.com/questions/70/how-to-set} \url{-up-swap-space}). Hierbei zeigen sich Probleme: Erstens k"onnen st"andige Schreibzugriffe auf Dauer die SD-Karte besch"adigen. Zweitens sind Schreibzugriffe darauf sehr langsam, was die Performance des Systems bei hoher Arbeitsspeicherlast beeintr"achtigen kann (vgl. \cite{pow12}). 
+Das Betriebssystem Raspbian verwendet standardm"a\ss ig eine Swap-Datei \texttt{/var/swap} auf der SD-Karte (vgl. \url{http://raspberrypi.stackexchange.com/questions/70/how-to-set} \url{-up-swap-space}). Hierbei zeigen sich Probleme: Erstens k"onnen st"andige Schreibzugriffe auf Dauer die SD-Karte besch"adigen. Zweitens sind Schreibzugriffe auf die SD-Karte langsam, was die Performance des Systems bei hoher Arbeitsspeicherlast beeintr"achtigen kann (vgl. \cite{pow12}). 
 
 Das gilt auch f"ur die Allokierung einer auf Unix-Systemen "ublicherweise genutzten Swap-Partition, weswegen diese M"oglichkeit in der Praxis keine Rolle spielt. 
 
-Eine weitere M"oglichkeit des Swapping ist die Verwendung von zRAM. Hierbei wird ein Teil des Arbeitsspeichers komprimiert und als Swap Space genutzt. Hierbei werden keine Zugriffe auf die SD-Karte notwendig (vgl. \cite{pow12}). 
+Eine weitere M"oglichkeit ist die Verwendung von zRAM. Hierbei wird ein Teil des Arbeitsspeichers komprimiert und als Swap Space genutzt. Hierbei werden keine Zugriffe auf die SD-Karte notwendig (vgl. \cite{pow12}). 
 
 % Die Swap-Datei kann mit dem Befehl \texttt{sudo update-rc.d dphys-swapfile remove} deaktiviert werden. 
 Auf dem Bramble-Server war kein Swap-Speicher allokiert worden (vgl. \cite{kli13}). Trotz der beschriebenen Schwierigkeiten wird auf den RPi-Knoten ein gro\ss er Teil des Speichers auf den SD-Karten als Swap-Speicher genutzt, um die Nutzung von Programmen mit mehr Speicherbedarf zu erm"oglichen und das Netzwerk durch das Cachen h"aufig verwendeter Dateien zu entlasten (vgl. \cite{kli13}).  
@@ -44,11 +44,11 @@ Das Komponentendiagramm \ref{fig:Komponentendiagramm} zeigt den Versuchsaufbau p
 \end{figure}
 \subsubsection{Modifikation der RPi-Knoten}
 
-Zu Beginn der Untersuchung zeigte sich, dass bei einige Mini-USB-Kabel zur Stromversorgung der RPis einen Wackelkontakt hatten oder ganz defekt waren. Um die in Kap. \ref{Vorgehensweise} genannte Zuverl"assigkeit des Versuchsaufbaus sicherzustellen, wurden sie durch funktionsf"ahige Kabel ersetzt. 
+Zu Beginn der Untersuchung zeigte sich, dass einige Mini-USB-Kabel zur Stromversorgung der RPis einen Wackelkontakt hatten oder defekt waren. Um die Zuverl"assigkeit des Verssuchsaufbaus sicherzustellen, wurden sie durch funktionsf"ahige Kabel ersetzt. 
 
 \subsubsection{Zeitsynchronisation der RPi-Knoten} 
 
-Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{schmi13}), sondern synchronisiert sich beim Booten gegen einen NTP-Server im Internet. F"ur die parallele Ausf"uhrung eines Programms auf mehreren Rechnerkernen ist die Zeitsynchronisation der RPi-Knoten und des Servers essentiell. Auf dem Bramble-Server gibt es daher einen OpenNTP-Server, gegen den sich die RPi-Knoten synchronisieren (vgl. \cite{kli13}). 
+Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{schmi13}), sondern synchronisiert sich beim Booten gegen einen NTP-Server im Internet. F"ur die parallele Ausf"uhrung eines Programms auf mehreren Rechnerkernen ist die Zeitsynchronisation der RPi-Knoten und des Servers essentiell. Auf dem Bramble wird die Zeitsynchronisation durch einen OpenNTP-Server sichergestellt, gegen den sich die RPi-Knoten synchronisieren (vgl. \cite{kli13}). 
 
 \subsubsection{Skalierung der Messung auf n -- 1 RPi-Knoten} 
 
@@ -61,9 +61,7 @@ Das Aktivit"atsdiagramm \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus
 
 \subsubsection{Konfiguration der Datenbank}
 
-Die Konfigurationen der Benchmarks und der ExperimentSuites sowie die Messergebnisse der Benchmarks werden in einer MySQL-Datenbank auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die Bramble-ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. W"ahrend der praktischen Arbeit wurde das Schema geringf"ugig an die tats"achlichen Erfordernisse angepasst. Z.B. wurde f"ur jedes ausgef"uhrte Teilmodul eines Benchmarks ein Messpaarameter definiert, der Unix-Timestamp seines Ausf"uhrungsendes ermittelt und zusammen mit dem jeweiligen Messwert in die Datenbank eingelesen.
-
-Die Vorbereitung der Datenbank f"ur den Versuchaufbau erfolgt in vier Schritten:  
+Die Konfigurationen der Benchmarks und der ExperimentSuites sowie die Messergebnisse der Benchmarks werden in einer MySQL-Datenbank auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die Bramble-ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. W"ahrend der praktischen Arbeit wurde das Schema an einigen Stellen an die tats"achlichen Erfordernisse angepasst: F"ur jedes ausgef"uhrte Teilmodul eines Benchmarks wurde ein Messpaarameter definiert, der Unix-Timestamp seines Ausf"uhrungsendes ermittelt und zusammen mit dem jeweiligen Messwert in die Datenbank eingelesen. F"ur jede ExperimentSuite werden Anfangs- und Endzeitpunkt als Unix-Zeitstempel ermittelt und in die Datenbank eingelesen. Die Vorbereitung der Datenbank erfolgt in vier Schritten:  
 \begin{enumerate}\bfseries
 	\item Name und Beschreibung des Benchmarks. 
 	\item Beschreibung des Versuchsaufbaus. 
@@ -116,6 +114,8 @@ mpiexec -n 4 -machinefile /srv/libraries/etc/mpich-3.0.4-shared
 /machinefile -wdir /srv/benchmarks/bin
 /hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl
 \end{verbatim}
+			\textbf{\item Ermittlung des Ausf"uhrungsendes.}\\
+Nach der Ausf"uhrung des Benchmark-Programms wird der Endzeitpunkt der ExperimentSuite als Unix-Zeitstempel ermittelt. In der Tabelle \texttt{Experiment\-Suite} wird der entsprechende Eintrag um diesen Wert erg"anzt.
 			\textbf{\item Schreiben der Ergebnisdaten.}\\
 Die Ausgabe des Benchmark-Programms wird in die vorbereitete Logdatei geschrieben. Falls das Programm in seiner Ausgabe keinen Zeitstempel vorsieht (z.B. STREAM), wird dieser ermittelt und der Ausgabe als zus"atzliche Zeile hinzugef"ugt. Das ist wichtig, damit sp"ater f"ur jeden Messwert ein Zeitstempel in die Datenbank eingegeben werden kann (vgl. Schritte d und e). Auch zum Abgleich der Messergebnisse der Benchmarks mit denen des Strommessger"ats ist ein Zeitstempel n"otig. % TODO: Verweis
 		\end{enumerate}
@@ -125,10 +125,12 @@ Die Ausgabe des Benchmark-Programms wird in die vorbereitete Logdatei geschriebe
 \normalfont{Die Datenbank wird wie in Schritt b i beschrieben vorbereitet. Der wesentliche Unterschied zu Schritt ist der Wert f"ur die Anzahl angeschalteter RPi-Knoten. Es wird nicht mehr konstant 20 eingetragen, sondern n, da nicht mehr aktive RPi-Knoten heruntergefahren werden.} 
 			\textbf{\item Verteilte Ausf"uhrung des Benchmarks auf n RPi-Knoten.}\\
 Analog zu Schritt b ii.
+			\textbf{\item Ermittlung des Ausf"uhrungsendes.}\\
+Analog zu Schritt b iii.
 			\textbf{\item Herunterfahren von RPi-Knoten n.}\\
 Beim zweiten Lauf eines Benchmark-Programms auf n RPi-Knoten wird der nun nicht mehr ben"otigte bzw. aktive Knoten heruntergefahren. Das gilt nicht f"ur den Ausf"uhrungsknoten \texttt{pi03}, der bis zum Schluss des Experiments zur Ausf"uhrung der Skripte und Eingabe der Messergebnisse in die Datenbank verwendet wird. 
 			\textbf{\item Schreiben der Ergebnisdaten.}\\ 
-Analog zu Schritt b iii.
+Analog zu Schritt b iv.
 		\end{enumerate}
 		\textbf{\item Parsen der Logdateien f"ur die Datenbank-Eingabe.}\\
 Die Ausgabe der Benchmarks ist h"ochst unterschiedlich und entspricht nat"urlich nicht dem Eingabeformat f"ur die Datenbank \texttt{rpiWerte}. Daher wird pro ausgef"uhrtem Benchmark eine Eingabedatei f"ur die Datenbank erstellt, die pro ExperimentSuite eine Zeile mit den Messergebnissen und Zeitstempel enth"alt, getrennt durch Leerzeichen. So enth"alt z.B. eine Zeile einer Datenbank-Eingabedatei f"ur STREAM: 
@@ -143,11 +145,11 @@ WR00L2L2 29 1 2 2 0.09 1.965e-04 HPL_pdgesv() end time Wed Mar
 26 15:39:05 2014
 \end{verbatim} 
 		\textbf{\item Schreiben der Messergebnisse in die Datenbank.}\\
-Falls die Zeitstempel in der Datenbank-Eingabedatei noch nicht dem Format des Unix-Zeitstempels UTC entsprechen (vergangene Sekunden seit dem 1. Januar 1970, vgl. \url{http://unixhelp.ed.ac.uk/CGI/man-cgi?date}) wie z.B. bei HPLinpack (vgl. Schritt d), werden sie in dieses Format konvertiert. F"ur jeden Messwert muss ein Eintrag in der Tabelle \texttt{MeasurementValue} mit Werten f"ur Parameter, Messwert und Zeitstempel erstellt werden. 		
+Falls die Zeitstempel in der Datenbank-Eingabedatei noch nicht dem Format des Unix-Zeitstempels UTC entsprechen (vergangene Sekunden seit dem 1. Januar 1970, vgl. \url{http://unixhelp.ed.ac.uk/CGI/man-cgi?date}) wie z.B. bei HPLinpack (vgl. Schritt d), werden sie in dieses Format konvertiert. F"ur jeden Messwert muss ein Eintrag in der Tabelle \texttt{MeasurementValue} mit Werten f"ur Parameter, Messwert, Zeitstempel und ID der ExperimentSuite erstellt werden. 		
 	\end{enumerate}
 \end{enumerate}
 \noindent
-Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{startBenchmarks.sh} zum Erstellen des Machinefile, Einh"angen des geteilten Verzeichnisses und Aufruf der Skripte \texttt{STREAM.sh} und \texttt{hpl-2.1.\-sh} (Schritte 1--3). Schritt 4 wird f"ur den jeweiligen Benchmark durch die Shellskripte \texttt{STREAM.sh} und \texttt{hpl-2.1.sh} ausgef"uhrt, die von \texttt{startBenchmarks.sh} aufgerufen werden. 
+Zur Durchf"uhrung dieser Schritte wurden drei Shellskripte erstellt: \texttt{startBenchmarks.sh} zum Erstellen des Machinefile, Einh"angen des geteilten Verzeichnisses und Aufruf der Skripte \texttt{STREAM.sh} und \texttt{hpl-2.1.\-sh} (Schritte 1--3). Schritt 4 wird f"ur den jeweiligen Benchmark durch die Shellskripte \texttt{STREAM.sh} und \texttt{hpl-2.1.sh} ausgef"uhrt.
 
 \section{Strommessung}
 % Name, Beschreibung
