@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `ExperimentSuite` (
   `granularityLevel` varchar(255) NOT NULL,
   `objective` varchar(255) NOT NULL,
   `executionStartedAt` int(11),  
---  `executionEndedAt` date,
+  `executionEndedAt` int(11),
   PRIMARY KEY (`id`),
   KEY `granularityLevel` (`granularityLevel`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
