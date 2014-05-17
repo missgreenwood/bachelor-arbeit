@@ -43,15 +43,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1100,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Konzeption/plots_strommessung.txt",
-			"settings":
-			{
-				"buffer_size": 3460,
+				"buffer_size": 1611,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,12 +96,12 @@
 	],
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/matchEnergyValues.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
@@ -203,6 +195,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"execution",
 			"measuredfor",
 			"executionEndedAt",
 			"executionendedat",
@@ -263,15 +256,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1100,
+						"buffer_size": 1611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								1529,
+								1529
 							]
 						],
 						"settings":
@@ -283,35 +276,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Konzeption/plots_strommessung.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3460,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2198,
-								2505
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 30.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]

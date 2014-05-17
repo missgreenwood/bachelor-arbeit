@@ -1,8 +1,6 @@
-# Struktur 
+# Struktur
 
-
-
-I. Händisch erstellt: Alle Messwerte zwischen Beginn und Ende einer ExperimentSuite
+I. Ziel: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + ExperimentSuiteID
 
 
 1. Alle RPis powered HPL: Plotfile STROM1
@@ -21,134 +19,25 @@ I. Händisch erstellt: Alle Messwerte zwischen Beginn und Ende einer ExperimentS
 	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
 		y: Stromverbrauch in W 
 
-5. 
-
-6. 
-
-7. 
-
-8. 
-
 
 ## Inputfiles erstellen 
 
-1. results/energyvaluesa.txt
+9. sources/energyvalues1.txt
 
-2. results/energyvaluesb.txt
+10. sources/energyvalues2.txt
 
-3. results/energyvaluesc.txt
+11. sources/energyvalues3.txt
 
-4. results/energyvaluesd.txt
-
-5. results/energyvaluesa.txt
-
-6. results/energyvaluesb.txt
-
-7. results/energyvaluesc.txt
-
-8. results/energyvaluesd.txt
+12. sources/energyvalues4.txt
 
 
-## in Verzeichnis Gnuplot verschieben 
-
-
-## Gnuplot-Skripte für 1-8 (Plotfiles 'STROM1' - 'STROM8')
+## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM1' - 'STROM4')
 
 # STROM1
-set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "W"
-set xlabel "t"
-unset xtics
-set title "Stromverbrauch HPLinpack Messreihe 1"
-set output 'strom1.eps'
-unset border
-plot 'energyvaluesa.txt' using 1:2 title "Stromverbrauch" with lines
 
 # STROM2
-set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "W"
-set xlabel "t"
-unset xtics
-set title "Stromverbrauch HPLinpack Messreihe 2"
-set output 'strom2.eps'
-unset border
-plot 'energyvaluesb.txt' using 1:2 title "Stromverbrauch" with lines 
 
 # STROM3 
-set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "W"
-set xlabel "t"
-unset xtics
-set title "Stromverbrauch STREAM Messreihe 1"
-set output 'strom3.eps'
-unset border
-plot 'energyvaluesc.txt' using 1:2 title "Stromverbrauch" with lines
 
 # STROM4 
-set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "W"
-set xlabel "t"
-unset xtics
-set title "Stromverbrauch STREAM Messreihe 2"
-set output 'strom4.eps'
-unset border
-plot 'energyvaluesd.txt' using 1:2 title "Stromverbrauch" with lines
-
-#STROM5
-
-set terminal postscript eps noenhanced defaultplex leveldefault color colortext
-set ylabel "W"
-set xlabel "Anzahl angeschalteter RPi-Knoten"
-unset xtics
-set title "Stromverbrauch HPLinpack Messreihe 1"
-set output 'strom5.eps'
-unset border
-plot 'energyvaluese.txt' using 1:3 title "Stromverbrauch" with lines
-
-#STROM6
-
-#STROM7
-
-#STROM8
-
-II. Mit Skript erstellt: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + ExperimentSuiteID
-
-
-9. Alle RPis powered HPL: Plotfile STROM9
-	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
-		y: Stromverbrauch in W
-		
-10. Nur aktive RPis powered HPL: Plotfile STROM10
-	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
-		y: Stromverbrauch in W
-
-11. Alle RPis powered STREAM: Plotfile STROM11
-	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
-		y: Stromverbrauch in W
-
-12. Nur aktive RPis powered HPLinpack: PLOTFILE STROM12
-	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
-		y: Stromverbrauch in W 
-
-
-## Inputfiles erstellen 
-
-9. results/energyvaluesi.txt
-
-10. results/energyvaluesj.txt
-
-11. results/energyvaluesk.txt
-
-12. results/energyvaluesl.txt
-
-
-## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM9' - 'STROM12')
-
-# STROM9
-
-# STROM10
-
-# STROM11 
-
-# STROM12 
 
