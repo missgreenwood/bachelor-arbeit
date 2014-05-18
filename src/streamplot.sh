@@ -78,5 +78,5 @@ sed -e 's/$/ 6/' plot2an >> ../sources/streamplot2.txt
 sed -e 's/$/ 5/' plot2ao >> ../sources/streamplot2.txt
 sed -e 's/$/ 4/' plot2ap >> ../sources/streamplot2.txt
 
-# # remove split files and tmp files 
+# remove split files and tmp files 
 rm ../sources/tmp1.txt ../sources/tmp2.txt plot* xaa xab
