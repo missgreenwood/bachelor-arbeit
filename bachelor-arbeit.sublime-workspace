@@ -40,10 +40,10 @@
 	"buffers":
 	[
 		{
-			"file": "todo140313.txt",
+			"file": "src/matchEnergyValues.sh",
 			"settings":
 			{
-				"buffer_size": 1109,
+				"buffer_size": 806,
 				"line_ending": "Unix"
 			}
 		}
@@ -90,19 +90,35 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
-		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption",
+		"/Users/judith/Documents/Bachelor-Arbeit/results",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/HPL",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/STREAM",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140518",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140518/STREAM",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
 	],
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/energyvalues_140518.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/todo140313.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/tmp2.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/tmp3.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/STREAM/stream140517.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/tmp1.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/LogValues.csv",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/stream140517.csv",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/matchEnergyValues.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/140512/STREAM_shutdown140511.txt",
@@ -117,8 +133,6 @@
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_140320.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/messergebnisse.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/machinefile",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigHpl.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/loadGeneratorConfigStream.sh",
@@ -195,6 +209,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"delete",
 			"execution",
 			"measuredfor",
 			"executionEndedAt",
@@ -252,24 +267,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "todo140313.txt",
+					"file": "src/matchEnergyValues.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1109,
+						"buffer_size": 806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								578,
-								578
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

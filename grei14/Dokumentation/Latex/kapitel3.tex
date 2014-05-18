@@ -166,7 +166,7 @@ Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung
 % Datenzugriff 
 F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
 
-Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve. Die ermittelten Messwerte bei Ausf"uhrung des Programms in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerDatabase} auf der zugreifenden Windows-Maschine abgelegt. Sie k"onnen auch als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. In der Datenbank werden f"ur jede Messung zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} entscheidend. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem xls-Export fiel wegen der h"oheren Granularit"at der Zeitstempel. 
+Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve. Die ermittelten Messwerte bei Ausf"uhrung des Programms k"onnen auf der zugreifenden Windows-Maschine als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. 
 
 % Setup für ExperimentSuite 
 Das Aktivit"atsdiagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite f"ur die Strommessung notwendig sind: 
@@ -183,26 +183,22 @@ Das Aktivit"atsdiagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzers
 Das Programm PowerManager wird nur f"ur ein Windows-Betriebssystem (Windows XP oder h"oher) angeboten. F"ur die Ausf"uhrung war eine virtuelle Windows-Maschine (Windows 7) im lokalen Netzwerk zur Verf"ugung gestellt worden. 
 % PowerManager starten 
 	\textbf{\item Start der PowerManager-Software.}
-% Datenbank leeren 
-	\textbf{\item Zur"ucksetzen der SQLite-Datenbank.}\\
-Um m"oglichst wenige Messwerte zu erhalten, die nicht zur aktuellen ExperimentSuite geh"oren, ist es sinnvoll, die Datenbank jeweils vor dem Start einer ExperimentSuite zur"uckzusetzen. Die Aufzeichnung der Messwerte erfolgt st"andig und muss nicht gesondert angesto\ss en werden, solange das Energenie an den Bramble angeschlossen und die Anwendung aktiv ist. 
-% Grafische Aufzeichnung starten (optional)
+% Grafische Aufzeichnung starten
 	\textbf{\item Start der grafischen Aufzeichnung.}\\ 
-Optional ist es m"oglich, die aktuellen Messwerte f"ur die Leistung auf einer grafischen Oberfl"ache anzeigen zu lassen. Es hat sich zur "Uberwachung der Messung als sinnvoll erwiesen.
-% SQLite-DB herunterladen 
-	\textbf{\item Herunterladen der SQLite-Datenbank.}\\ 
-Zur weiteren Verarbeitung der Messwerte muss die SQLite-Datenbank von der Windows-Maschine heruntergeladen werden.
+Um den xls-Export nutzen zu k"onnen, muss die grafische Aufzeichnung gestartet werden. Die aktuell gemessenen Werte f"ur die Leistung in Watt werden als Kurve angezeigt, was sich zur "Uberwachung der Messung als hilfreich erwiesen hat. 
 % Export der Messwerte
-	\textbf{\item Export der Messwerte.}\\
-Zur weiteren Verarbeitung der Messwerte wird die Tabelle \texttt{LogValues} exportiert.
+	\textbf{\item Export der Messwerte.}
+% Zur weiteren Verarbeitung werden die w"ahrend der Zeitdauer der Programmausf"uhrung ermittelten Werte exportiert.
+	\textbf{\item Herunterladen der Datei.}\\ 
+% Zur weiteren Verarbeitung wird die Datei von der Windows-Maschine heruntergeladen.
 % Messwerte parsen für MySQL-DB rpiWerte
 	\textbf{\item Parsen der Messwerte f"ur die Bramble-Datenbank.}\\
-Zum Einlesen der Messwerte in die MySQL-Datenbank auf dem Bramble m"ussen sie in ein passendes Format gebracht werden. Hierf"ur wurde ein Shellskript \texttt{parseEnergyValues.sh} erstellt. Es erstellt eine Eingabedatei, die jeweils eine Zeile pro Messung mit Unix-Zeitstempel und Leistung enth"alt.
+Zum Einlesen der Messwerte in die MySQL-Datenbank auf dem Bramble m"ussen sie in ein passendes Format gebracht werden. Hierf"ur wurde ein Shellskript \texttt{parseEnergyVa\-lues.sh} erstellt. Es erstellt eine Eingabedatei, die jeweils eine Zeile pro Messung mit Unix-Zeitstempel und Leistung enth"alt.
 	\textbf{\item Einlesen der Messwerte in die Bramble-Datenbank.}\\
 F"ur jede Messung muss ein Eintrag in der Tabelle \texttt{MeasurementValue} mit Werten f"ur Parameter, Messwert, Zeitstempel und der ID des Strommessger"ats erstellt werden. Da die MySQL-Datenbank auf dem Bramble liegt, wurde hierf"ur ein Shellskript \texttt{writeEnergyValues.sh} im Verzeichnis \texttt{/home/rpi-user/experimentsuite} auf dem Bramble erstellt. 
 % Messwerte von Strommessung und Benchmarks matchen 
 	\textbf{\item Verkn"upfung der Messwerte von Energenie und Benchmark-Programm.}\\ 
-Im letzten Schritt m"ussen die Messwerte von Energenie und Benchmark-Programm f"ur die jeweilige ExperiementSuite verkn"upft werden. Hierzu wurde ein Shellskript \texttt{matchEnergyValues.sh} im selben Verzeichnis auf dem Bramble erstellt. 
+Im letzten Schritt m"ussen die Messwerte des Energenie mit den IDs der ExperimentSuites in der jeweiligen Messreihe verkn"upft werden. Hierzu wurde ein Shellskript \texttt{matchEnergyValues.sh} im selben Verzeichnis auf dem Bramble erstellt. 
 \end{enumerate}
 
 \section{Ergebnisse}\label{Ergebnisse}
@@ -217,7 +213,7 @@ Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran a
 
 HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
 
-Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Ein Teil der Eingabeparameter ist invariabel (\texttt{eps} bzw. Maschinengenauigkeit und \texttt{T/V} bzw. Ausf"uhrungszeit). Die anderen Eingabeparameter sind in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Dazu z"ahlen die Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N}, die Blockgr"o\ss e\texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$ aufgeteilt.} und die Gr"o\ss e des Prozessorennetzes (\texttt{P} und \texttt{Q})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren "ubergeben der Gr"o\ss e $P\times Q$ "ubergeben. \texttt{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \texttt{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). 
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Ein Teil der Eingabeparameter ist invariabel (\texttt{eps} bzw. Maschinengenauigkeit und \texttt{T/V} bzw. Ausf"uhrungszeit). Die anderen Eingabeparameter sind in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Dazu z"ahlen die Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N}, die Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$ aufgeteilt.} und die Gr"o\ss e des Prozessorennetzes (\texttt{P} und \texttt{Q})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e $P\times Q$ "ubergeben. \textit{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). 
 
 Die Ausgabeparameter sind invariabel. Die wichtigsten davon sind \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uhrungsdauer in Sekunden). F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
 
@@ -251,30 +247,30 @@ Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messr
 In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter angegeben, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 
 
 Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=0.8]{stream1.pdf}\\ 
-%  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1.}
-%  \label{fig:stream1}		
-%\end{figure}
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=0.8]{stream2.pdf}\\ 
-%  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1.}
-%  \label{fig:stream2}		
-%\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{stream1.pdf}\\ 
+  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1.}
+  \label{fig:stream1}		
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{stream2.pdf}\\ 
+  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1.}
+  \label{fig:stream2}		
+\end{figure}
 \noindent
 Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die Ergebnisse von Messreihe 2 sind blau markiert. 
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{stream5.pdf}\\ 
-%  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
-%\end{figure}
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{stream6.pdf}\\ 
-%  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
-%\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{stream5.pdf}\\ 
+  \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{stream6.pdf}\\ 
+  \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
+\end{figure}
 
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
