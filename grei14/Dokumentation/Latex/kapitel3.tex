@@ -133,13 +133,13 @@ Beim zweiten Lauf eines Benchmark-Programms auf n RPi-Knoten wird der nun nicht 
 Analog zu Schritt b iv.
 		\end{enumerate}
 		\textbf{\item Parsen der Logdateien f"ur die Datenbank-Eingabe.}\\
-Die Ausgabe der Benchmarks ist h"ochst unterschiedlich und entspricht nat"urlich nicht dem Eingabeformat f"ur die Datenbank \texttt{rpiWerte}. Daher wird pro ausgef"uhrtem Benchmark eine Eingabedatei f"ur die Datenbank erstellt, die pro ExperimentSuite eine Zeile mit den Messergebnissen und Zeitstempel enth"alt, getrennt durch Leerzeichen. So enth"alt z.B. eine Zeile einer Datenbank-Eingabedatei f"ur STREAM: 
+Die Ausgabe der Benchmarks ist h"ochst unterschiedlich und entspricht nat"urlich nicht dem Eingabeformat f"ur die Datenbank \texttt{rpiWerte}. Daher wird pro ausgef"uhrtem Benchmark eine Eingabedatei f"ur die Datenbank erstellt, die -- je nach Ausgabe des Benchmarks -- eine oder mehrere Zeilen mit den Messergebnissen und dem Zeitstempel enth"alt. Eine Beispielzeile der Eingabedatei f"ur STREAM enth"alt: 
 \begin{verbatim}
 Copy: 3649.3 0.167595 0.166607 0.168846 Scale: 3428.0 0.178749 
 0.177361 0.180439 Add: 4749.8 0.192614 0.192010 0.193745 Triad: 
 4630.1 0.197780 0.196974 0.199436 Unixtime: 1396608095
 \end{verbatim} 
-Eine Beispielzeile einer Datenbank-Eingabedatei f"ur HPLinpack: 
+Eine Beispielzeile der Eingabedatei f"ur HPLinpack enth"alt: 
 \begin{verbatim}
 WR00L2L2 29 1 2 2 0.09 1.965e-04 HPL_pdgesv() end time Wed Mar 
 26 15:39:05 2014
@@ -166,7 +166,7 @@ Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung
 % Datenzugriff 
 F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als weniger geeignet, da sie haupts"achlich Konfigurationsfunktionen bietet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
 
-Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve. Die ermittelten Messwerte bei Ausf"uhrung des Programms k"onnen auf der zugreifenden Windows-Maschine als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. 
+Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. die Visualisierung der Leistung "uber eine Zeitspanne als Kurve. Die ermittelten Messwerte bei Ausf"uhrung des Programms in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerDatabase} auf der zugreifenden Windows-Maschine abgelegt. Sie k"onnen auch als xls-Datei exportiert werden. Dabei werden pro Messung drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. In der Datenbank werden f"ur jede Messung zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} entscheidend. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem xls-Export fiel wegen der h"oheren Granularit"at der Zeitstempel. 
 
 % Setup für ExperimentSuite 
 Das Aktivit"atsdiagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite f"ur die Strommessung notwendig sind: 
@@ -185,15 +185,17 @@ Das Programm PowerManager wird nur f"ur ein Windows-Betriebssystem (Windows XP o
 	\textbf{\item Start der PowerManager-Software.}
 % Grafische Aufzeichnung starten
 	\textbf{\item Start der grafischen Aufzeichnung.}\\ 
-Um den xls-Export nutzen zu k"onnen, muss die grafische Aufzeichnung gestartet werden. Die aktuell gemessenen Werte f"ur die Leistung in Watt werden als Kurve angezeigt, was sich zur "Uberwachung der Messung als hilfreich erwiesen hat. 
+Optional ist es m"oglich, die aktuellen Messwerte f"ur die Leistung auf einer grafischen Oberfl"ache anzeigen zu lassen. Es hat sich zur "Uberwachung der Messung als sinnvoll erwiesen.
+% SQLite-DB herunterladen 
+\textbf{\item Herunterladen der SQLite-Datenbank.}\\ 
+Zur weiteren Verarbeitung der Messwerte muss die SQLite-Datenbank von der Windows-Maschine heruntergeladen werden.
 % Export der Messwerte
-	\textbf{\item Export der Messwerte.}
-% Zur weiteren Verarbeitung werden die w"ahrend der Zeitdauer der Programmausf"uhrung ermittelten Werte exportiert.
-	\textbf{\item Herunterladen der Datei.}\\ 
-% Zur weiteren Verarbeitung wird die Datei von der Windows-Maschine heruntergeladen.
+	\textbf{\item Export der Messwerte.}\\
+Zur weiteren Verarbeitung der Messwerte wird die Tabelle \texttt{LogValues} exportiert.	
 % Messwerte parsen für MySQL-DB rpiWerte
 	\textbf{\item Parsen der Messwerte f"ur die Bramble-Datenbank.}\\
 Zum Einlesen der Messwerte in die MySQL-Datenbank auf dem Bramble m"ussen sie in ein passendes Format gebracht werden. Hierf"ur wurde ein Shellskript \texttt{parseEnergyVa\-lues.sh} erstellt. Es erstellt eine Eingabedatei, die jeweils eine Zeile pro Messung mit Unix-Zeitstempel und Leistung enth"alt.
+% Messwerte in Bramble-DB einlesen 
 	\textbf{\item Einlesen der Messwerte in die Bramble-Datenbank.}\\
 F"ur jede Messung muss ein Eintrag in der Tabelle \texttt{MeasurementValue} mit Werten f"ur Parameter, Messwert, Zeitstempel und der ID des Strommessger"ats erstellt werden. Da die MySQL-Datenbank auf dem Bramble liegt, wurde hierf"ur ein Shellskript \texttt{writeEnergyValues.sh} im Verzeichnis \texttt{/home/rpi-user/experimentsuite} auf dem Bramble erstellt. 
 % Messwerte von Strommessung und Benchmarks matchen 

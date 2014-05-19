@@ -145,53 +145,60 @@ ENDSSH
     read -p "Please disconnect $host from mini usb. When finished press [Enter]"
 done 
 
-# create database input file                                                                                                                                               touch results/hpl-2.1_db`date +%y%m%d`.txt
+# create database input file                                                                                                                                               
+touch results/hpl-2.1_db`date +%y%m%d`.txt
 
-# find all lines in first output file containing 'Experiment', 'WR' or 'end' and print to database input file                                                             
-grep -E 'Experiment|WR|end' results/hpl-2.1_`date +%y%m%d`.txt > results/hpl-2.1_db`date +%y%m%d`.txt                                                                     
+# find all lines in first output file containing 'Experiment', 'WR' or 'end' and print to database input file                                                              
+# result lines + experiment suite id line = 27664 lines                                                                                                                   
+grep -E 'Experiment|WR|end' results/hpl-2.1_`date +%y%m%d`.txt > results/hpl-2.1_db`date +%y%m%d`.txt
 
 # find all lines in second output file containing 'Experiment', 'WR' or 'end' and print to database input file                                                             
-grep -E 'Experiment|WR|end' results/hpl-2.1_shutdown`date +%y%m%d`.txt >> results/hpl-2.1_db`date +%y%m%d`.txt                                                            
+# result lines + experiment suite id line = 27664 lines                                                                                                                   
+grep -E 'Experiment|WR|end' results/hpl-2.1_shutdown`date +%y%m%d`.txt >> results/hpl-2.1_db`date +%y%m%d`.txt
 
 # split into separate files before 'Experiment'                                                                                                                            
-awk '/Experiment/{n++}{print >"out" n ".txt" }' results/hpl-2.1_db`date +%y%m%d`.txt                                                                                      
+# one split file per experiment suite = 32 files with 1279 lines each                                                                                                     
+awk '/Experiment/{n++}{print >"out" n ".txt" }' results/hpl-2.1_db`date +%y%m%d`.txt
 
-for file in out{1..32}.txt                                                                                                                                                
+for file in out{1..32}.txt
 do
 
 # get experiment suite id                                                                                                                                                  
-    expsuiteid=$(cat $file | cut -f 4 -d " ")
-
-# write experiment suite id to beginning of every line
+    expsuiteid=$(cat $file | cut -f4 -d " ")
+    # echo "Experiment Suite id = $expsuiteid"                                                                                                                              
+# write experiment suite id to beginning of every line                                                                                                                     
     sed -i -e "s/^/$expsuiteid /" "$file"
+
+# remove first line (experiment suite id line, no longer needed)                                                                                                           
+    sed -i '1d' $file
 
 # transform split files to lines containing space seperated values                                                                                                         
     sed -i 's/ \{2,\}/ /g' $file
     sed -i 'N;s/\n/ /' $file
 
-# transform split files to lines containing space seperated values                                                                                                          
-    sed -i 's/ \{2,\}/ /g' $file
-    sed -i 'N;s/\n/ /' $file
-
-    ssh rpi-user@careme<<'ENDSSH'
-    cat /srv/nfs-share/experimentsuite/$file | cut -d' ' -f1,7,8,13,14,15,16,17 | while read line
-    do
-        arr=($line)
-        time=${arr[1]}
-	echo "Time: $time"
-        gflops=${arr[2]}
-        echo "Gflops: $gflops"
-	timestamp=${arr[@]:3}
-	# echo "Timestamp: $timestamp"                                                                                                                                     
-        unixtime=$(date -d "${timestamp}" "+%s")
-        echo "Unix timestamp: $unixtime"
-        expsuiteid=${arr[0]}
-        echo "Experiment suite id: $expsuiteid"
-        mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt,measuredFor) VALUES ('Time',$time,$unixtime,expsuiteid)"
-        mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt,measuredFor) VALUES ('Gflops',$gflops,$unixtime,$expsuiteid)"
-    done
-ENDSSH
 done
+
+ssh rpi-user@careme<<'ENDSSH'
+for file in out{1..32}.txt                                  
+do
+cat /srv/nfs-share/experimentsuite/$file | cut -d' ' -f1,7,8,13,14,15,16,17 | while read line
+do
+arr=($line)
+expsuiteid=${arr[0]}
+echo "Experiment suite id: $expsuiteid"
+time=${arr[1]}
+echo "Time: $time"
+gflops=${arr[2]}
+echo "Gflops: $gflops"
+timestamp=${arr[@]:3:7}
+echo "Timestamp: $timestamp"
+unixtime=$(date -d "${timestamp}" "+%s")
+echo "Unix timestamp: $unixtime"
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt,measuredFor) VALUES ('Time',$time,$unixtime,$expsuiteid)"
+mysql --user=rpi-user --password=rpiWerte rpiWerte -Bse "INSERT INTO MeasurementValue (parameter,\`value\`,measuredAt,measuredFor) VALUES ('Gflops',$gflops,$unixtime,$expsuiteid)"
+done
+done 
+ENDSSH
 
 # remove temporary files
 rm out*
