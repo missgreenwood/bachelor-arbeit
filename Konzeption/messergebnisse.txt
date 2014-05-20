@@ -40,3 +40,11 @@ Heutige Computer arbeiten meist nach IEEE 754. Die Maschinengenauigkeit für die
 # Quellen 
 
 - http://de.wikipedia.org/wiki/Messabweichung
+
+
+## Zeitstempel
+
+- Bramble: CEST (Central European Summer Time) -> 2 h später als UTC
+- RPi-Knoten: UTC (Universal Time, Coordinated) 
+- SQLite-DB: UTC 
+- Sonstige Zeitstempel Energenie: CEST 

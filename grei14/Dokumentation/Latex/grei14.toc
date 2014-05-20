@@ -41,5 +41,11 @@
 \contentsline {subsection}{\numberline {3.4.1}HPLinpack: Performance}{23}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}STREAM: Performance}{24}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Stromverbrauch}{25}{subsection.3.4.3}
-\contentsline {chapter}{Abbildungsverzeichnis}{29}{chapter*.15}
-\contentsline {chapter}{Literaturverzeichnis}{31}{chapter*.16}
+\contentsline {chapter}{\numberline {4}Interpretation}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}HPLinpack: Performance}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}STREAM: Performance}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Stromverbrauch}{30}{section.4.3}
+\contentsline {section}{\numberline {4.4}Grenzen des Versuchsaufbaus}{30}{section.4.4}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{33}{chapter.5}
+\contentsline {chapter}{Abbildungsverzeichnis}{35}{chapter*.15}
+\contentsline {chapter}{Literaturverzeichnis}{37}{chapter*.16}

@@ -41,6 +41,7 @@ ERGEBNISSE:
 
 3. DB-Dump (SQLite)
 - wird grds. im Vz C:\Program Data\PowerManagerDatabase abgelegt 
+- höchstmögliche Granularität: Messung alle 2 s
 
 ERGEBNISSE:
 - besser als xls-Export, da mehr Timestamps 

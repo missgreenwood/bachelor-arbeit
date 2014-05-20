@@ -43,15 +43,31 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1110,
+				"buffer_size": 1619,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Konzeption/plots_strommessung.txt",
+			"file": "results/MitStrommessung/140517/HPL/hpl-2.1_140517.txt",
 			"settings":
 			{
-				"buffer_size": 912,
+				"buffer_size": 8137935,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "results/MitStrommessung/140517/STREAM/STREAM_140517.txt",
+			"settings":
+			{
+				"buffer_size": 17735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Konzeption/auswertung_strommessgeraet.txt",
+			"settings":
+			{
+				"buffer_size": 3088,
 				"line_ending": "Unix"
 			}
 		}
@@ -99,17 +115,28 @@
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption",
-		"/Users/judith/Documents/Bachelor-Arbeit/sources",
-		"/Users/judith/Documents/Bachelor-Arbeit/src"
+		"/Users/judith/Documents/Bachelor-Arbeit/Papers-bearbeitet",
+		"/Users/judith/Documents/Bachelor-Arbeit/results",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/HPL",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/STREAM",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/OhneStrommessung/140513",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/OhneStrommessung/140513/HPL",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/OhneStrommessung/140513/STREAM",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources"
 	],
 	"file_history":
 	[
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/messergebnisse.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/writeResultsStream.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/writeResultsHpl.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/matchEnergyValues.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/sources/measurements_updated.sql",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib/grei14.bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/auswertung_strommessgeraet.txt",
@@ -124,7 +151,6 @@
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/streamplot1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/STREAM_140319.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/hpl-2.1_140320.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/messergebnisse.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hpl-2.1.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/machinefile",
@@ -203,6 +229,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sqlite",
+			"executionEndedAt",
 			"measuredfor",
 			"executionEndedAt",
 			"executionendedat",
@@ -263,15 +291,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1110,
+						"buffer_size": 1619,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								273,
-								273
+								415,
+								415
 							]
 						],
 						"settings":
@@ -287,31 +315,86 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Konzeption/plots_strommessung.txt",
+					"file": "results/MitStrommessung/140517/HPL/hpl-2.1_140517.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 912,
+						"buffer_size": 8137935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								912,
-								912
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 30.0,
+						"translation.y": 3639.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "results/MitStrommessung/140517/STREAM/STREAM_140517.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								761,
+								761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Konzeption/auswertung_strommessgeraet.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1873,
+								1873
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 35.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

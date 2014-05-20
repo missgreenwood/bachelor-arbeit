@@ -28,5 +28,11 @@
 \BOOKMARK [2][-]{subsection.3.4.1}{HPLinpack: Performance}{section.3.4}% 28
 \BOOKMARK [2][-]{subsection.3.4.2}{STREAM: Performance}{section.3.4}% 29
 \BOOKMARK [2][-]{subsection.3.4.3}{Stromverbrauch}{section.3.4}% 30
-\BOOKMARK [0][-]{chapter*.15}{Abbildungsverzeichnis}{}% 31
-\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 32
+\BOOKMARK [0][-]{chapter.4}{Interpretation}{}% 31
+\BOOKMARK [1][-]{section.4.1}{HPLinpack: Performance}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{STREAM: Performance}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Stromverbrauch}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Grenzen des Versuchsaufbaus}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 36
+\BOOKMARK [0][-]{chapter*.15}{Abbildungsverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 38
