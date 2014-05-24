@@ -35,8 +35,8 @@ do
 # get start and end timestamps of selected experiment suites from table ExperimentSuite: keys executionStartedAt and executionEndedAt
 # get power measurement values between selected start and end timestamps from table MeasurementValue: keys measuredAt and `parameter` = 'Power'
 	mysql -u rpi-user -prpiWerte rpiWerte -Bse "SET @v1 := (SELECT executionStartedAt FROM ExperimentSuite WHERE id = $c);SET @v2 := (SELECT executionEndedAt FROM ExperimentSuite WHERE id = $c);SELECT \`value\` FROM MeasurementValue WHERE parameter = 'Power' AND measuredAt >= @v1 AND measuredAt <= @v2;" >> tmp.txt
-# get number of powered RPis	 
-	mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT \`value\` FROM ExperimentSuiteConfiguration WHERE experimentSuiteId = $c AND \`key\` = 'NumberOfPoweredRPis'" >> tmp.txt
+# get number of active RPis	 
+	mysql -u rpi-user -prpiWerte rpiWerte -Bse "SELECT \`value\` FROM ExperimentSuiteConfiguration WHERE experimentSuiteId = $c AND \`key\` = 'NumberOfActiveRPis'" >> tmp.txt
 # write delimiter to end of input 
 	echo '---' >> tmp.txt
 done
@@ -45,32 +45,41 @@ done
 awk '/---/{n++}{print >"out" n ".txt" }' tmp.txt
 
 # special treatment for out.txt (first split file)
-# get content of last line (number of powered RPis)
-powered_rpis=$(tail -1 out.txt)
+# get content of last line (number of active RPis)
+active_rpis=$(tail -1 out.txt)
 
 # remove last line from file
 sed -i '$ d' out.txt
 
-# append number of powered rpis to every line in file and write to result file results/energymatch`date +%y%m%d`.txt
+# append number of active rpis to first line in tmp file 
+read -r firstline < out.txt
+echo "$firstline $active_rpis" >> results/energymatch`date +%y%m%d`.txt
+
+# remove first line
+sed -i '1d' out.txt
+
+# write all other lines to result file
 cat out.txt | while read line
 do 
-	echo "$line;$powered_rpis" >> results/energymatch`date +%y%m%d`.txt  
+	echo $line >> results/energymatch`date +%y%m%d`.txt
 done  
 
 # same procedure for other split files 
 for i in out{1..15}.txt
 do 
-	# get content of last line (number of powered RPis)
-	powered_rpis=$(tail -1 $i)
-	# echo $powered_rpis
+	# get content of last line (number of active RPis)
+	active_rpis=$(tail -1 $i)
 	# remove last line from file 
 	sed -i '$ d' $i
 	# remove first line from file 
 	sed -i '1d' $i 
-	# append number of powered rpis to every line in file and write to result file results/energymatch`date +%y%m%d`.txt
+	# append number of active rpis to first line in tmp file and write to result file results/energymatch`date +%y%m%d`.txt
+	read -r firstline < $i
+	echo "$firstline $active_rpis" >> results/energymatch`date +%y%m%d`.txt
+	# write all other lines to result file 
 	cat $i | while read line 
 	do 
-		echo "$line;$powered_rpis" >> results/energymatch`date +%y%m%d`.txt 
+		echo $line >> results/energymatch`date +%y%m%d`.txt
 	done
 done 
 	

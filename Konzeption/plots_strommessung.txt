@@ -8,7 +8,7 @@ I. Ziel: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + Experi
 		y: Stromverbrauch in W
 		
 2. Nur aktive RPis powered HPL: Plotfile STROM2
-	a.  x: RPis powered (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
+	a.  x: RPis active (19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4)
 		y: Stromverbrauch in W
 
 3. Alle RPis powered STREAM: Plotfile STROM3
@@ -22,13 +22,13 @@ I. Ziel: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + Experi
 
 ## Inputfiles erstellen 
 
-9. sources/energyvalues1.txt
+9. Gnuplot/energymatch1.txt
 
-10. sources/energyvalues2.txt
+10. Gnuplot/energymatch2.txt
 
-11. sources/energyvalues3.txt
+11. Gnuplot/energymatch3.txt
 
-12. sources/energyvalues4.txt
+12. Gnuplot/energymatch4.txt
 
 
 ## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM1' - 'STROM4')
@@ -38,6 +38,23 @@ I. Ziel: Match Messwerte Benchmark-Programm/Energenie über Zeitstempel + Experi
 # STROM2
 
 # STROM3 
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+# set xlabel "Anzahl aktiver RPi-Knoten"
+# set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+unset xtics
+set title "STREAM mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
+set output 'strom3.eps'
+set style data lines
+plot 'energymatch3.txt' using 0:1 title 'Stromverbrauch'
 
 # STROM4 
-
+set terminal postscript eps noenhanced defaultplex leveldefault color colortext
+set ylabel "W"
+# set xlabel "Anzahl aktiver RPi-Knoten"
+# set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+unset xtics
+set title "STREAM mit n RPi-Knoten aktiv, n+1 RPi-Knoten angeschaltet"
+set output 'strom4.eps'
+set style data lines
+plot 'energymatch4.txt' using 0:1 title 'Stromverbrauch'
