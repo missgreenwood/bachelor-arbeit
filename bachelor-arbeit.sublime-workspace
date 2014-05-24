@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"i",
+				"i"
+			],
+			[
 				"FILE_RE",
 				"FILE_REFINED_RESULT"
 			],
@@ -43,15 +47,23 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1619,
+				"buffer_size": 1556,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/parseEnergyValues.sh",
+			"file": "src/matchEnergyValues.sh",
 			"settings":
 			{
-				"buffer_size": 1480,
+				"buffer_size": 1559,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "results/MitStrommessung/140520/STREAM/energyvalues_140520.txt",
+			"settings":
+			{
+				"buffer_size": 23682,
 				"line_ending": "Unix"
 			}
 		}
@@ -102,9 +114,11 @@
 		"/Users/judith/Documents/Bachelor-Arbeit/Papers-bearbeitet",
 		"/Users/judith/Documents/Bachelor-Arbeit/results",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung",
-		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/HPL",
 		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140517/STREAM",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140520",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140520/HPL",
+		"/Users/judith/Documents/Bachelor-Arbeit/results/MitStrommessung/140520/STREAM",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
 	],
@@ -267,7 +281,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -276,15 +290,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1619,
+						"buffer_size": 1556,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								415,
-								415
+								203,
+								203
 							]
 						],
 						"settings":
@@ -295,24 +309,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/parseEnergyValues.sh",
-					"semi_transient": true,
+					"file": "src/matchEnergyValues.sh",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1480,
+						"buffer_size": 1559,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1358,
-								1480
+								1268,
+								1268
 							]
 						],
 						"settings":
@@ -323,7 +337,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "results/MitStrommessung/140520/STREAM/energyvalues_140520.txt",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 23682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23661,
+								23671
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 15665.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

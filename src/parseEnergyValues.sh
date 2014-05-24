@@ -21,10 +21,13 @@ do
 # convert column 1 to unix timestamp 
 	unixtime=$(date -j -f '%Y-%m-%d %H:%M:%S' $timestamp +%s)
 	echo $unixtime
-	power=${arr[1]}                                                                                                                                                        
+	power=${arr[1]} 
+	unixtime2=$(($unixtime + 7200))
+	echo $unixtime2                                                                                                                                                       
 	echo $power
 # write columns to destination file with delimiter " "
-	echo "$unixtime $power" >> ../sources/energyvalues_`date +%y%m%d`.txt
+	# echo "$unixtime $power" >> ../sources/energyvalues_`date +%y%m%d`.txt
+	echo "$unixtime2 $power" >> ../sources/energyvalues_`date +%y%m%d`.txt
 	# echo "$unixtime $power" >> ../sources/energyvalues_140513.txt                                                                                                                                                   
 done 
 
