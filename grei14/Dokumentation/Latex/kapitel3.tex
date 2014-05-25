@@ -220,35 +220,37 @@ Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparamete
 Die Ausgabeparameter sind invariabel. Die wichtigsten davon sind \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uhrungsdauer in Sekunden). F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
 
 Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{hpl1.pdf}\\ 
-  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1.}
-  \label{fig:hpl1}		
-\end{figure}
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{hpl2.pdf}\\ 
-  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1.}
-  \label{fig:hpl2}		
-\end{figure}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=0.8]{hpl1.pdf}\\ 
+%  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1.}
+%  \label{fig:hpl1}		
+%\end{figure}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=0.8]{hpl2.pdf}\\ 
+%  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1.}
+%  \label{fig:hpl2}		
+%\end{figure}
 \noindent
 Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 denen von Messreihe 2 gegen"uber, in der nicht mehr aktive RPi-Knoten nach der Ausf"uhrung des Benchmarks heruntergefahren werden. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=.8]{hpl5.pdf}\\ 
-  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
-\end{figure}
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=.8]{hpl6.pdf}\\ 
-  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
-\end{figure}
-\subsection{STREAM: Performance}\label{Ergebnisse-Stream}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{hpl5.pdf}\\ 
+%  \caption{Ausf"uhrungsrate f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
+%\end{figure}
+%\begin{figure}[htb]
+%  \centering
+%  \includegraphics[scale=.8]{hpl6.pdf}\\ 
+%  \caption{Ausf"uhrungsdauer f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
+%\end{figure}
+%\subsection{STREAM: Performance}\label{Ergebnisse-Stream}
+
+\subsection{STREAM: Performance}\label{Ergebnisse-STREAM}
 
 In der Ausgabe von STREAM werden zun"achst ebenfalls die verwendeten Parameter angegeben, darunter Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul. F"ur die vier Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 
 
-Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
+Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur Copy, Scale, Add und Triad, skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.  
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{stream1.pdf}\\ 
@@ -276,29 +278,29 @@ Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von 
 
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
-Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur HPLinpack. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 1 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom2} zeigt den Stromverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden (Messreihe 2). 
+Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur HPLinpack. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 1 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom2} stellt den Stromverbrauch von Messreihe 1 Messreihe 2 f"ur HPL gegen"uber. 
 %\begin{figure}[htb]
 %  \centering
-%  \includegraphics[scale=.8]{strom1.pdf}\\ 
-%  \caption{Stromverbrauch in W f"ur HPLinpack, Messreihe 1.}\label{fig:strom1}
+%  \includegraphics[scale=.8]{strom1a.pdf}\\ 
+%  \caption{Stromverbrauch f"ur HPLinpack, Messreihe 1.}\label{fig:strom1}
 %\end{figure}
 %\begin{figure}[htb]
 %  \centering
-%  \includegraphics[scale=.8]{strom2.pdf}\\ 
-%  \caption{Stromverbrauch in W f"ur HPLinpack, Messreihe 2.}\label{fig:strom2}
+%  \includegraphics[scale=.8]{strom5.pdf}\\ 
+%  \caption{Stromverbrauch f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:strom2}
 %\end{figure}
 \noindent
-Die Diagramme \ref{fig:strom3} und \ref{fig:strom4} zeigen analog die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom4} zeigt den Stromverbrauch, wenn nicht mehr aktive RPi-Knoten heruntergefahren werden (Messreihe 2).
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{strom3.pdf}\\ 
-%  \caption{Stromverbrauch in W f"ur STREAM, Messreihe 1.}\label{fig:strom3}
-%\end{figure}
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{strom4.pdf}\\ 
-%  \caption{Stromverbrauch in W f"ur STREAM, Messreihe 2.}\label{fig:strom4}
-%\end{figure}
+Die Diagramme \ref{fig:strom3} und \ref{fig:strom4} zeigen analog die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom4} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{strom3a.pdf}\\ 
+  \caption{Stromverbrauch f"ur STREAM, Messreihe 1.}\label{fig:strom3}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{strom5.pdf}\\ 
+  \caption{Stromverbrauch f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:strom4}
+\end{figure}
 \endinput 
 
 

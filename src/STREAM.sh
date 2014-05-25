@@ -115,15 +115,16 @@ ENDSSH
 # start benchmark on n RPis, log to results/STREAM_`date +%y%m%d`.txt                                                                                                      
     mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile -wdir /srv/benchmarks/bin/STREAM /srv/benchmarks/bin/STREAM/stream >> results/STREAM_shutdown`date +%y%m%d`.txt
 
+# get end time as unix timestamp                                                                                                                                            
+    endtime=`date +%s`
+    echo "End time: $endtime"
+
     if [ $host == pi03 ]; then 
 	ssh root@pi01 'shutdown -hP 0'
     else 
 	ssh root@$host 'shutdown -hP 0'
     fi 
     
-# get end time as unix timestamp                                                                                                                                            
-    endtime=`date +%s`
-    echo "End time: $endtime"
 
 # Write finishing time of experiment suite to database                                                                                                                       
     ssh rpi-user@careme<<ENDSSH

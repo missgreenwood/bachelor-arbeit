@@ -124,7 +124,7 @@ set terminal postscript eps
 set ylabel "MB/s"
 set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM Testreihe 1 vs. Testreihe 2"
+set title "STREAM, Messreihe 1 vs. Messreihe 2"
 set output 'stream5.eps'
 set style data lines
 plot 'streamplot1.txt' using 9:1 title "Copy" linecolor rgb "red", '' using 9:3 title "Scale" linecolor rgb "red", '' using 9:5 title "Add" linecolor rgb "red", '' using 9:7 title "Triad" linecolor rgb "red", 'streamplot2.txt' using 9:1 title "Copy" linecolor rgb "blue", '' using 9:3 title "Scale" linecolor rgb "blue", '' using 9:5 title "Add" linecolor rgb "blue", '' using 9:7 title "Triad" linecolor rgb "blue"
@@ -135,7 +135,7 @@ set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
 set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
-set title "STREAM Testreihe 1 vs. Testreihe 2"
+set title "STREAM, Messreihe 1 vs. Messreihe 2"
 set output 'stream6.eps'
 set style data lines
 plot 'streamplot1.txt' using 9:2 title "Copy" linecolor rgb "red", '' using 9:4 title "Scale" linecolor rgb "red", '' using 9:6 title "Add" linecolor rgb "red", '' using 9:8 title "Triad" linecolor rgb "red", 'streamplot2.txt' using 9:2 title "Copy" linecolor rgb "blue", '' using 9:4 title "Scale" linecolor rgb "blue", '' using 9:6 title "Add" linecolor rgb "blue", '' using 9:8 title "Triad" linecolor rgb "blue"
@@ -168,7 +168,7 @@ set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "GFLOPs"
 set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack Testreihe 1 vs. Testreihe 2"
+set title "HPLinpack, Messreihe 1 vs. Messreihe 2"
 set output 'hpl5.eps'
 unset border
 plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title " " with points linecolor rgb "blue"
@@ -179,7 +179,7 @@ set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
 set xlabel "Anzahl aktiver RPi-Knoten"
 set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
-set title "HPLinpack Testreihe 1 vs. Testreihe 2"
+set title "HPLinpack, Messreihe 1 vs. Messreihe 2"
 set output 'hpl6.eps'
 unset border
 plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title " " with points linecolor rgb "blue"

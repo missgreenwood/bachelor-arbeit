@@ -6,53 +6,100 @@ Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Ergebnis
 
 % TODO: Interpretation HPL Messreihe 1 (Skalierungsverhalten!)
 
-Der Versuchsaufbau und die Steuerung der verteilten Ausf"uhrung der Benchmark-Programme durch MPICH lassen vermuten, dass sich kein signifikanter Unterschied in der Performance zeigt, je nachdem, ob nicht mehr an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden oder nicht. Wie in Kap. \ref{Bramble-Versuchsaufbau} dargestellt, ist im Machinefile genau festgelegt, welchen CPUs bzw. RPi-Knoten mit mpiexec eine die Ausf"uhrung des Benchmark-Programms zugewiesen wird und in welcher Reihenfolge sie f"ur die Ausf"uhrung herangezogen werden.
-
-Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden in den Grafiken nahezu identisch dargestellt. Tabelle \ref{fig:hpl-vgl} stellt die minimalen, maximalen und durchschnittlichen Werte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer beider Messreihen gegen"uber: 
-%TODO: Werte ermitteln und eintragen
-%\begin{figure}
-%  \centering
-%  \begin{tabular}{|l|c|c|}
-%    \hline 
-%     & \textbf{20 RPis angeschaltet} & \textbf{n+1 RPis angeschaltet}\\ 
-%    \hline 
-%    \textbf{Ausf"uhrungsrate/Min.} & GFLOPs & GFLOPs\\
-%    \hline 
-%    \textbf{Ausf"uhrungsrate/Max.} & GFLOPs & GFLOPs\\
-%    \hline 
-%    \textbf{Ausf"uhrungsrate/$\varnothing$} & GFLOPs & GFLOPs\\
-%    \hline 
-%    \textbf{Ausf"uhrungsdauer/Min.} &  s & s\\
-%    \hline 
-%    \textbf{Ausf"uhrungsdauer/Max.} &  s & s\\
-%	\hline 
-%    \textbf{Ausf"uhrungsdauer/$\varnothing$} & s & s\\
-%    \hline
-%  \end{tabular}
-%  \caption{Performance f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl-vgl}
-%\end{figure}
-\noindent
-
-% TODO: genaue Werte!
-Dabei "uberschreiten die Differenzen in keinem Fall die Gr"o\ss enordnung von %z
-, liegen also innerhalb des Messfehlers (vgl. Kap. \ref{Ergebnisse-HPL}). Somit l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf die Performance von HPLinpack auf dem Bramble hat. Das Skalierungsverhalten bez"uglich der Performance ist somit f"ur beide Messreihen gleich. 
+%Der Versuchsaufbau und die Steuerung der verteilten Ausf"uhrung der Benchmark-Programme durch MPICH lassen vermuten, dass sich kein signifikanter Unterschied in der Performance zeigt, je nachdem, ob nicht mehr an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden oder nicht. Wie in Kap. \ref{Bramble-Versuchsaufbau} dargestellt, ist im Machinefile genau festgelegt, welchen CPUs bzw. RPi-Knoten mit mpiexec eine die Ausf"uhrung des Benchmark-Programms zugewiesen wird und in welcher Reihenfolge sie f"ur die Ausf"uhrung herangezogen werden.
+%
+%Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden in den Grafiken nahezu identisch dargestellt. Tabelle \ref{fig:hpl-vgl} stellt die minimalen, maximalen und durchschnittlichen Werte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer beider Messreihen gegen"uber: 
+%%TODO: Werte ermitteln und eintragen
+%%\begin{figure}
+%%  \centering
+%%  \begin{tabular}{|l|c|c|}
+%%    \hline 
+%%     & \textbf{20 RPis angeschaltet} & \textbf{n+1 RPis angeschaltet}\\ 
+%%    \hline 
+%%    \textbf{Ausf"uhrungsrate/Min.} & GFLOPs & GFLOPs\\
+%%    \hline 
+%%    \textbf{Ausf"uhrungsrate/Max.} & GFLOPs & GFLOPs\\
+%%    \hline 
+%%    \textbf{Ausf"uhrungsrate/$\varnothing$} & GFLOPs & GFLOPs\\
+%%    \hline 
+%%    \textbf{Ausf"uhrungsdauer/Min.} &  s & s\\
+%%    \hline 
+%%    \textbf{Ausf"uhrungsdauer/Max.} &  s & s\\
+%%	\hline 
+%%    \textbf{Ausf"uhrungsdauer/$\varnothing$} & s & s\\
+%%    \hline
+%%  \end{tabular}
+%%  \caption{Performance f"ur HPLinpack, Messreihe 1 und Messreihe 2.}\label{fig:hpl-vgl}
+%%\end{figure}
+%\noindent
+%
+%% TODO: genaue Werte!
+%Dabei "uberschreiten die Differenzen in keinem Fall die Gr"o\ss enordnung von %z
+%, liegen also innerhalb des Messfehlers (vgl. Kap. \ref{Ergebnisse-HPL}). Somit l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf die Performance von HPLinpack auf dem Bramble hat. Das Skalierungsverhalten bez"uglich der Performance ist somit f"ur beide Messreihen gleich. 
 
 \section{STREAM: Performance}\label{Interpretation-Stream}
 
-Die Konzeption von STREAM l"asst erwarten, dass sich das Hinzunehmen von Ressourcen, d.h. von RPi-Knoten, einen linearen Anstieg der Ausf"uhrungsrate zu Folge hat. Der Autor des Benchmarks schreibt hierzu: 
+Die Konzeption des STREAM-Benchmarks l"asst erwarten, dass das Hinzunehmen von Ressourcen, d.h. von RPi-Knoten, einen linearen Anstieg der Ausf"uhrungsrate zu Folge hat. Der Autor des Benchmarks schreibt hierzu: 
 \begin{quote}
 \onehalfspacing
 [\dots] unless something is very wrong, the performance of a cluster will be the performance of a node times the number of nodes (vgl. \url{http://www.cs.virginia.edu/stream/ref.html}).
 \end{quote}
-F"ur die Ausf"uhrungsdauer werden hingegen ann"ahernd gleiche Werte erwartet, wenn sich das System erwartungsgem"a\ss\ verh"alt.
+F"ur die Ausf"uhrungsdauer auf jeder einzelnen CPU sollte hingegen ann"ahernd konstant bleiben, auch wenn Ressourcen hinzugenommen werden.
 
- % TODO: genaue Werte! 
-Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen, dass sich der Bramble bei der skalierten Ausf"uhrung von STREAM auf 19 -- 1 RPi-Knoten diesen Erwartungen gem"a\ss\ verh"alt: Der Anstieg der  Ausf"uhrungsrate bei Hinzunahme von RPi-Knoten ist nahezu linear. Geringe Abweichungen zeigen sich bei der Ausf"uhrungszeit. Da die Ausf"uhrungsdauer auf zwei Stellen nach dem Komma genau gemessen wird und keine Abweichung eine Nachkommastelle "uberschreitet, liegen auch diese Abweichungen innerhalb des Messfehlers und k"onnen vernachl"assigt werden. Das Skalierungsverhalten des Bramble bei der Ausf"uhrung von STREAM kann somit als erwartungsgem"a\ss\ bezeichnet werden. 
+Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen genau dieses Verhalten f"ur die parallele Ausf"uhrung von STREAM auf $n\leq 17$ RPi-Knoten: Der Anstieg der  Ausf"uhrungsrate bei Hinzunahme von RPi-Knoten ist nahezu linear. Geringe Abweichungen zeigen sich bei der Ausf"uhrungsdauer. Diese wird in Mikrosekunden gemessen. % TODO Erklärung
 
-Es wird somit erwartet, dass auch das Herunterfahren nicht mehr aktiver RPi-Knoten keinen signifikanten Effekt auf die Performance des Bramble bei der Ausf"uhrung von STREAM haben wird. Die Diagramme \ref{fig:stream5} und \ref{fig:stream6} verdeutlichen dies: Die Ausf"uhrungsraten von STREAM in Messreihe 1 und Messreihe 2 sind nahezu identisch. Bei der durchschnittlichen Ausf"uhrungsdauer von Messreihe 1 gegen"uber Messreihe 2 zeigen sich, wie schon innerhalb von Messreihe 1, leichte Unterschiede. Auch hier liegt die Abweichung von Messreihe 2 gegen"uber Messreihe 1 bei maximal %z 
-Sekunden. Sie ist also kleiner als der Messfehler und kann somit vernachl"assigt werden. 
+Das Skalierungsverhalten des Bramble bei der parallelen Ausf"uhrung von STREAM auf $n\leq 17$ RPi-Knoten kann somit als erwartungsgem"a\ss\ bezeichnet werden. 
 
-Schlussfolgernd l"asst sich festhalten, dass der Bramble bei der Ausf"uhrung von STREAM auch dann ein erwartungsgem"a\ss es Skalierungsverhalten zeigt, wenn nicht aktive RPi-Knoten nach der Ausf"uhrung heruntergefahren werden.  
+Somit steht zu erwarten, dass auch das Herunterfahren nicht mehr aktiver RPi-Knoten keinen signifikanten Effekt auf Performance und Ausf"uhrungsdauer der anderen RPi-Knoten bei der Ausf"uhrung von STREAM hat. Die Diagramme \ref{fig:stream5} und \ref{fig:stream6} best"atigen das f"ur $n\leq 17$ RPi-Knoten: Die Ausf"uhrungsrate ist in Messreihe 2 nahezu identisch mit der Ausf"uhrungsrate in Messreihe 1. Bei der durchschnittlichen Ausf"uhrungsdauer von Messreihe 1 gegen"uber Messreihe 2 zeigen sich, wie schon innerhalb von Messreihe 1, leichte Unterschiede. Hier liegt die Abweichung von Messreihe 2 gegen"uber Messreihe 1 bei maximal %z 
+Sekunden. 
+
+Das Skalierungsverhalten des Bramble kann somit auch in Messreihe 2 mit $n\leq 17$ RPi-Knoten als erwartungsgem"a\ss\ gelten.  
+
+F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer ein abweichendes Skalierungsverhalten. Tabelle \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber:  
+\begin{figure}
+  \centering
+  \begin{tabular}{|l|c|c|c|}
+    \hline 
+    \textbf{Aktive RPi-Knoten:} & \textbf{17} & \textbf{18} & \textbf{19}\\ 
+    \hline 
+    Copy/MB/s (erwartet) &  &  & \\
+    \hline 
+    Copy/MB/s (erzielt) & 1634.9 & 1359.6 & 1100.9\\
+    \hline 
+    Copy/s (erwartet) &  & &\\
+    \hline 
+    Copy/s (erzielt) & 0.118056 & 0.118206 & 0.117266\\
+    \hline 
+    Scale/MB/s (erwartet) &  & &\\
+    \hline 
+    Scale/MB/s (erzielt) & 1240.2 & 1036.2 & 834.5\\
+    \hline 
+	Scale/s (erwartet) &  &  & \\
+    \hline 
+    Scale/s (erzielt) & 0.155384 & 0.155121 & 0.154211\\
+    \hline 
+    Add/MB/s (erwartet) &  & &\\
+    \hline 
+    Add/MB/s (erzielt) & 1672.5 & 1396.0 & 1121.3\\
+    \hline 
+    Add/s (erwartet) &  & &\\
+    \hline 
+    Add/s (erzielt) & 0.173239 & 0.172679 & 0.172031\\
+    \hline 
+    Triad/MB/s (erwartet) &  & &\\
+    \hline 
+    Triad/MB/s (erzielt) & 1620.9 & 1350.4 & 1088.3\\
+    \hline 
+    Triad/s (erwartet) &  & &\\
+    \hline 
+    Triad/s (erzielt) & 0.178330 & 0.178433 & 0.177186\\
+    \hline 
+  \end{tabular}
+  \caption{Erwartete und erzielte Messwerte f"ur STREAM auf $n\geq 17$ RPi-Knoten.}\label{fig:stream-abweichung}
+\end{figure}
+\noindent
+
+  
 
 \section{Stromverbrauch}
 
