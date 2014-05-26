@@ -111,8 +111,8 @@ mpiexec -n -machinefile -wdir file
 gestartet. Dabei spezifiziert \texttt{-n} die gew"unschte Anzahl an parallelen Programmaufrufen, \texttt{-machinefile} den Pfad zum Machinefile, \texttt{-wdir} das Verzeichnis, in das zur Ausf"uhrung des Programms gewechselt werden soll, und \texttt{file} die auszuf"uhrende Datei (vgl. \url{http://www.mpich.org/static/docs/latest/www1/mpiexec.html}). Ein Beispielaufruf zur parallelen Ausf"uhrung von HPLinpack auf vier RPi-Nodes mit der hier verwendeten Verzeichnisstruktur w"are also  
 \begin{verbatim}
 mpiexec -n 4 -machinefile /srv/libraries/etc/mpich-3.0.4-shared
-/machinefile -wdir /srv/benchmarks/bin
-/hpl-2.1 /srv/benchmarks/bin/hpl-2.1/xhpl
+/machinefile -wdir /srv/benchmarks/bin/hpl-2.1 
+/srv/benchmarks/bin/hpl-2.1/xhpl
 \end{verbatim}
 			\textbf{\item Ermittlung des Ausf"uhrungsendes.}\\
 Nach der Ausf"uhrung des Benchmark-Programms wird der Endzeitpunkt der ExperimentSuite als Unix-Zeitstempel ermittelt. In der Tabelle \texttt{Experiment\-Suite} wird der entsprechende Eintrag um diesen Wert erg"anzt.
