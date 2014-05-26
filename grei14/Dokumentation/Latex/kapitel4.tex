@@ -55,7 +55,7 @@ Sekunden.
 
 Das Skalierungsverhalten des Bramble kann somit auch in Messreihe 2 mit $n\leq 17$ RPi-Knoten als erwartungsgem"a\ss\ gelten.  
 
-F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer ein abweichendes Skalierungsverhalten. Tabelle \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber:  
+F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer ein abweichendes Skalierungsverhalten. Tabelle \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber. Die erwarteten Messwerte werden als lineare (Performance) bzw. konstante (Ausf"uhrungsdauer) Fortsetzung der Messreihe mit $n\leq 17$ RPi-Knoten angegeben: 
 \begin{figure}
   \centering
   \begin{tabular}{|l|c|c|c|}
@@ -66,15 +66,15 @@ F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer e
     \hline 
     Copy/MB/s (erzielt) & 1634.9 & 1359.6 & 1100.9\\
     \hline 
-    Copy/s (erwartet) &  & &\\
+    Copy/s (erwartet) & 0.125944 & 0.125944 & 0.125944\\
     \hline 
     Copy/s (erzielt) & 0.118056 & 0.118206 & 0.117266\\
     \hline 
-    Scale/MB/s (erwartet) &  & &\\
+    Scale/MB/s (erwartet) & 1731.1 & 1097.2 & 1165.7\\
     \hline 
     Scale/MB/s (erzielt) & 1240.2 & 1036.2 & 834.5\\
     \hline 
-	Scale/s (erwartet) &  &  & \\
+	Scale/s (erwartet) & 0.155121 & 0.155121 & 0.155121\\
     \hline 
     Scale/s (erzielt) & 0.155384 & 0.155121 & 0.154211\\
     \hline 
@@ -82,7 +82,7 @@ F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer e
     \hline 
     Add/MB/s (erzielt) & 1672.5 & 1396.0 & 1121.3\\
     \hline 
-    Add/s (erwartet) &  & &\\
+    Add/s (erwartet) & 0.154211 & &\\
     \hline 
     Add/s (erzielt) & 0.173239 & 0.172679 & 0.172031\\
     \hline 
@@ -90,7 +90,7 @@ F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer e
     \hline 
     Triad/MB/s (erzielt) & 1620.9 & 1350.4 & 1088.3\\
     \hline 
-    Triad/s (erwartet) &  & &\\
+    Triad/s (erwartet) & 0.182070 & &\\
     \hline 
     Triad/s (erzielt) & 0.178330 & 0.178433 & 0.177186\\
     \hline 

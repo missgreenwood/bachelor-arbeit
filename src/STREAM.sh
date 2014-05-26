@@ -1,12 +1,12 @@
 #!/bin/bash                                                                           
-
+set +x
 # Run STREAM on 19 RPi-Nodes, run again and shutdown RPi-Node n
 
 # create output files                                                                 
 touch results/STREAM_`date +%y%m%d`.txt results/STREAM_shutdown`date +%y%m%d`.txt
 
 # loop over n RPis 
-for host in pi20 pi19 pi18 pi17 pi16 pi15 pi14 pi13 pi12 pi11 pi10 pi09 pi08 pi07 pi06 pi05 
+for host in pi{20..05}
 do
     a=${host/pi/}
     m=$(echo $a|sed 's/^0*//')
@@ -120,9 +120,9 @@ ENDSSH
     echo "End time: $endtime"
 
     if [ $host == pi03 ]; then 
-	ssh root@pi01 'shutdown -hP 0'
+ssh root@pi01 'shutdown -hP 0'
     else 
-	ssh root@$host 'shutdown -hP 0'
+ssh root@$host 'shutdown -hP 0'
     fi 
     
 
