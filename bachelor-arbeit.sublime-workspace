@@ -47,7 +47,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 1496,
+				"buffer_size": 1483,
 				"line_ending": "Unix"
 			}
 		}
@@ -105,8 +105,8 @@
 	],
 	"file_history":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesb.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/energymatch3.txt",
@@ -281,7 +281,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1496,
+						"buffer_size": 1483,
 						"regions":
 						{
 						},

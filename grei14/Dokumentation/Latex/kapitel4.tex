@@ -55,44 +55,46 @@ Sekunden.
 
 Das Skalierungsverhalten des Bramble kann somit auch in Messreihe 2 mit $n\leq 17$ RPi-Knoten als erwartungsgem"a\ss\ gelten.  
 
-F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer ein abweichendes Skalierungsverhalten. Tabelle \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber. Die erwarteten Messwerte werden als lineare (Performance) bzw. konstante (Ausf"uhrungsdauer) Fortsetzung der Messreihe mit $n\leq 17$ RPi-Knoten angegeben: 
+F"ur $n > 18$ RPi-Knoten zeigt sich bei Ausf"uhrungsrate und Ausf"uhrungsdauer ein abweichendes Skalierungsverhalten. Tabelle \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber. Abweichungen von mehr als 1 MB/s (Performance) und 0.01 s (Ausf"uhrungsdauer) gegen"uber den erwarteten Messwerten sind darin rot markiert. Die erwarteten Messwerte werden werden wie folgt angenommen: 
+\[\text{Erwartete Performance} = \frac{\text{Performance f"ur }n=17}{17}\ast n\] 
+\[\text{Erwartete Ausf"uhrungsdauer = Mittelwert der Ausf"uhrungsdauer f"ur }n\leq 17\]
 \begin{figure}
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline 
     \textbf{Aktive RPi-Knoten:} & \textbf{17} & \textbf{18} & \textbf{19}\\ 
     \hline 
-    Copy/MB/s (erwartet) &  &  & \\
+    \textbf{Copy in MB/s (erwartet):} & 4556.4 & 4824.4 & 5092.5\\
     \hline 
-    Copy/MB/s (erzielt) & 1634.9 & 1359.6 & 1100.9\\
+    \textbf{Copy in MB/s (erzielt):} & 4556.4 & \textcolor{red}{3451.6} & \textcolor{red}{3642.9}\\
     \hline 
-    Copy/s (erwartet) & 0.125944 & 0.125944 & 0.125944\\
+    \textbf{Copy in s (erwartet):} & 0.118791 & 0.118791 & 0.118791\\
     \hline 
-    Copy/s (erzielt) & 0.118056 & 0.118206 & 0.117266\\
+    \textbf{Copy in s (erzielt):} & 0.119821 & \textcolor{red}{0.168030} & \textcolor{red}{0.167579}\\
     \hline 
-    Scale/MB/s (erwartet) & 1731.1 & 1097.2 & 1165.7\\
+    \textbf{Scale in MB/s (erwartet):} & 3497.7 & 3703.5 & 3909.1\\
     \hline 
-    Scale/MB/s (erzielt) & 1240.2 & 1036.2 & 834.5\\
+    \textbf{Scale in MB/s (erzielt):} & 3497.7 & \textcolor{red}{3236.2} & \textcolor{red}{3421.8}\\
     \hline 
-	Scale/s (erwartet) & 0.155121 & 0.155121 & 0.155121\\
+	\textbf{Scale in s (erwartet):} & 0.156077 & 0.156077 & 0.156077\\
     \hline 
-    Scale/s (erzielt) & 0.155384 & 0.155121 & 0.154211\\
+    \textbf{Scale in s (erzielt):} & 0.158162 & \textcolor{red}{0.179140} & \textcolor{red}{0.178560}\\
     \hline 
-    Add/MB/s (erwartet) &  & &\\
+    \textbf{Add in MB/s (erwartet):} & 1672.5 & 4978.6 & 5255.2\\
     \hline 
-    Add/MB/s (erzielt) & 1672.5 & 1396.0 & 1121.3\\
+    \textbf{Add in MB/s (erzielt):} & 1672.5 & \textcolor{red}{4501.4} & \textcolor{red}{4765.8}\\
     \hline 
-    Add/s (erwartet) & 0.154211 & &\\
+    \textbf{Add in s (erwartet):} & 0.173474 & 0.173474 & 0.173474\\
     \hline 
-    Add/s (erzielt) & 0.173239 & 0.172679 & 0.172031\\
+    \textbf{Add in s (erzielt):} & 0.174494 & \textcolor{red}{0.192586} & \textcolor{red}{0.192147}\\
     \hline 
-    Triad/MB/s (erwartet) &  & &\\
+    \textbf{Triad in MB/s (erwartet):} & 4557.4 & 4852.5 & 4093.6\\
     \hline 
-    Triad/MB/s (erzielt) & 1620.9 & 1350.4 & 1088.3\\
+    \textbf{Triad in MB/s (erzielt):} & 4557.4 & \textcolor{red}{4377.4} & \textcolor{red}{4632.1}\\
     \hline 
-    Triad/s (erwartet) & 0.182070 & &\\
+    \textbf{Triad in s (erwartet):} & 0.179196 & 0.179196 & 0.179196\\
     \hline 
-    Triad/s (erzielt) & 0.178330 & 0.178433 & 0.177186\\
+    \textbf{Triad in s (erzielt):} & 0.179882 & \textcolor{red}{0.198159} & \textcolor{red}{0.197686}\\
     \hline 
   \end{tabular}
   \caption{Erwartete und erzielte Messwerte f"ur STREAM auf $n\geq 17$ RPi-Knoten.}\label{fig:stream-abweichung}

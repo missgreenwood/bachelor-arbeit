@@ -3,20 +3,20 @@
 Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis 
 
 
-1. Alle RPis powered HPL: Plotfiles STROM1a und STROM1b
-	a.  x: Zeit
+1. Alle RPis powered HPL: Plotfile STROM1
+	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 		
-2. Nur aktive RPis powered HPL: Plotfiles STROM2a und STROM2b
-	a.  x: Zeit
+2. Nur aktive RPis powered HPL: Plotfile STROM2
+	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
-3. Alle RPis powered STREAM: Plotfiles STROM3a und STROM3b
-	a.  x: Zeit
+3. Alle RPis powered STREAM: Plotfile STROM3
+	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
-4. Nur aktive RPis powered HPLinpack: Plotfiles STROM4a und STROM4b
-	a.  x: Zeit
+4. Nur aktive RPis powered HPLinpack: Plotfile STROM4
+	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
 5. Messreihe 1 und Messreihe 2 HPLinpack: Plotfile STROM5
@@ -43,70 +43,73 @@ Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 # set yrange [70:120]
-unset xtics
-set xlabel "t"
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 1"
-set output 'strom1a.eps'
+set output 'strom1.eps'
 set style data lines
-plot 'energymatch1.txt' using 0:1 title 'Stromverbrauch'
+plot 'energymatch1.txt' using 2:1 title 'Stromverbrauch'
 
 # STROM2a
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 # set yrange [70:120]
-unset xtics
-set xlabel "t"
-set title "Stromverbrauch HPL, Messreihe 1"
-set output 'strom2a.eps'
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
+set title "Stromverbrauch HPL, Messreihe 2"
+set output 'strom2.eps'
 set style data lines
-plot 'energymatch2.txt' using 0:1 title 'Stromverbrauch'
+plot 'energymatch2.txt' using 2:1 title 'Stromverbrauch'
 
 # STROM3a 
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 set yrange [70:120]
-unset xtics
-set xlabel "t"
+# unset xtics
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch STREAM, Messreihe 1"
-set output 'strom3a.eps'
+set output 'strom3.eps'
 set style data lines
-plot 'energymatch3.txt' using 0:1 title 'Stromverbrauch'
+plot 'energymatch3.txt' using 2:1 title 'Stromverbrauch'
 
 # STROM4a
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 set yrange [70:120]
-unset xtics
-set xlabel "t"
+# unset xtics
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch STREAM, Messreihe 2"
-set output 'strom4a.eps'
+set output 'strom4.eps'
 set style data lines
-plot 'energymatch4.txt' using 0:1 title 'Stromverbrauch'
+plot 'energymatch4.txt' using 2:1 title 'Stromverbrauch'
 
 # STROM5
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 set yrange [70:120]
-unset xtics
-set xlabel "t"
+# unset xtics
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch STREAM, Messreihe 1 vs. Messreihe 2"
 set output 'strom5.eps'
 set style data lines
-plot 'energymatch3.txt' using 0:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch4.txt' using 0:1 title " " linecolor rgb "blue"
+plot 'energymatch3.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch4.txt' using 2:1 title " " linecolor rgb "blue"
 
 # STROM6
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 # set yrange [70:120]
-unset xtics
-set xlabel "t"
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 1 vs. Messreihe 2"
 set output 'strom6.eps'
 set style data lines
-plot 'energymatch1.txt' using 0:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch2.txt' using 0:1 title " " linecolor rgb "blue"
+plot 'energymatch1.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch2.txt' using 2:1 title " " linecolor rgb "blue"
 
