@@ -207,7 +207,7 @@ Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Be
  
 \subsection{Betriebssystem und Dateisystem}\label{Bramble-Architektur} 
 
-Auf den RPi-Knoten ist das oben genannte Betriebssytem Raspbian installiert (vgl. \ref{RPi-OS}), auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie den M"oglichkeiten des gemeinsamen Speicherzugriffs. 
+Auf den RPi-Knoten ist das oben genannte Betriebssytem Raspbian installiert (vgl. Kap. \ref{RPi-OS}), auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie den M"oglichkeiten des gemeinsamen Speicherzugriffs. 
 
 Die Datei-Synchronisation des Servers und der RPi-Knoten erfolgt "uber ein Netz-Dateisys\-tem (hier: \texttt{nfs}). Dessen Verwaltung erfolgt auf dem Server "uber ein Union-Dateisystem (hier: \texttt{aufs}), das mehrere Schichten des Dateisystems anlegt: Die unteren Schichten haben nur Leseberechtigungen, die oberste Lese-Schreib-Berechtigungen. Werden Daten in einem geteilten Verzeichnis ver"andert, so bleiben die unteren Schichten unver"andert. Die "Anderungen werden nur auf der obersten Schicht geschrieben. F"ur gemeinsam genutzte Daten des Servers und der Clients steht auf dem Server das Verzeichnis \texttt{/srv/nfs-share} bzw. auf den Clients \texttt{/srv} zur Verf"ugung. Eine genaue Darstellung findet sich bei \cite{kli13}.
 
