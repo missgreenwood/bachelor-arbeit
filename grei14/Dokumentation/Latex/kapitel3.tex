@@ -215,9 +215,34 @@ Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran a
 
 HPLinpack in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
 
-Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Ein Teil der Eingabeparameter ist invariabel (\texttt{eps} bzw. Maschinengenauigkeit und \texttt{T/V} bzw. Ausf"uhrungszeit). Die anderen Eingabeparameter sind in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Dazu z"ahlen die Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, die Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N}, die Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$ aufgeteilt.} und die Gr"o\ss e des Prozessorennetzes (\texttt{P} und \texttt{Q})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e $P\times Q$ "ubergeben. \textit{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). 
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Ausgabeparameter sind invariabel: \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uh\-rungsdauer in Sekunden). \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben.
 
-Die Ausgabeparameter sind invariabel. Die wichtigsten davon sind \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uhrungsdauer in Sekunden). F"ur jede Ausf"uhrung von HPLinpack werden 864 Tests durchgef"uhrt, d.h. 864 Messwerte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer erzeugt. \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben. 
+Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigkeit). Die anderen werden in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Dazu z"ahlen Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, Anzahl an verwendeten Problemgr"o\ss en \texttt{\#N}, Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$ aufgeteilt.} und Gr"o\ss e des Prozessorennetzes (\texttt{P} und \texttt{Q})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e $P\times Q$ "ubergeben. \textit{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). 
+
+Um ein m"oglichst gutes Resultat f"ur die Performance zu erzielen, muss die optimale Kombination von Eingabeparametern in \texttt{HPL.dat} spezifiziert werden. Folgende Werte wurden beim vorliegenden Versuchsaufbau gesetzt: 
+\begin{enumerate} 
+	\item \texttt{\#N}: Es soll nur eine Problemgr"o\ss e verwendet werden, daher wurde \texttt{\#N} auf 1 gesetzt. 
+	\item \texttt{N}: Die Problemgr"o\ss e sollte so gew"ahlt werden, dass der Hauptspeicher zu ca. 80\% mit der Matrix gef"ullt wird, sollte aber mindestens einige 100 betragen (es empfiehlt sich ein Vielfaches von 96). Bei einer parallelen Ausf"uhrung ist die Gesamtmenge an Hauptspeicher entscheidend. Sie verh"alt sich proportional zu \texttt{N}$^2$. 
+	
+Wie in Kap. \ref{RPi-Hardware} beschrieben, verf"ugt der RPi "uber 512 MB SDRAM. Wie bei \cite{kli13} dargestellt, werden davon ca. 50 MB durch das Betriebssystem belegt, sodass noch ca. 450 MB pro RPi-Knoten zur Verf"ugung stehen. 
+
+Um die Proportionalit"atskonstante f"ur \texttt{N} herauszufinden, wurde daher mit verschiedenen Vielfachen von 96 experimentiert und die Belegung des Hauptspeichers jeweils mit \texttt{htop} "uberpr"uft. Folgende Werte f"ur \texttt{N} erwiesen sich als sinnvoll: %zzz 
+f"ur $n=4$ RPi-Knoten, %zzz
+f"ur $n=8$ RPi-Knoten und %zzz
+f"ur $n=16$ RPi-Knoten.
+	\item \texttt{\#NB}: Es soll nur eine Blockgr"o\ss e verwendet werden, daher wurde \texttt{\#NB} auf 1 gesetzt. 
+	\item \texttt{NB}: Die Blockgr"osse ist von der Cache-Gr"o\ss e abh"angig, der m"oglichst gut mit dem Block gef"ullt werden soll. Es empfiehlt sich eine Quadratzahl zu nehmen, ferner ein Vielfaches von 2. 
+
+Der Level 2-Cache von 128 KB des RPi ist f"ur die GPU reserviert (vgl. \url{http://sandsoftwaresound.net/raspberry-pi/memory-hierarchy/}). Ferner gibt es einen Level 1-Datencache von 16 KB. Um ein "Uberlaufen des L1-Caches zu vermeiden, wurde \texttt{NB} auf 8 gesetzt. 
+	\item \texttt{\#(P x Q)}: Es soll nur ein Prozessnetz verwendet werden, daher wurde \texttt{\#(P x Q)} auf 1 gesetzt.
+	\item \texttt{Ps} und \texttt{Qs}: Diese sollten gleich sein, m"oglichst quadratisch und ein Vielfaches von 2. Folgende Werte wurden daher gew"ahlt: 4 f"ur $n=4$ RPi-Knoten, 8 f"ur $n=8$ RPi-Knoten, 16 f"ur $n=16$ RPi-Knoten.
+	\item \texttt{\# PFACTS}: Es soll nur eine Panel-Faktorisierungs-Strategie verwendet werden, daher wurde \texttt{\# PFACTS} auf 1 gesetzt. 
+	\item \texttt{PFACTs}: Die Panel-Faktorisierungs-Strategie wurde auf 2 (\texttt{Right}) gesetzt.
+	\item \texttt{NBMIN}: Die maximale Spaltenanzahl im aktuellen Panel, bei der der Unterteilungsvorgang abgebrochen werden soll, muss $\geq 1$ sein. Sie wurde auf 4 gesetzt.  
+	\item \texttt{\# RFACTS}: Es soll nur eine Teilpanel-Faktorisierungs-Strategie verwendet werden, daher wurde \texttt{\# RFACTS} auf 1 gesetzt. 
+	\item \texttt{RFACTs}: Die Teilpanel-Faktorisierungs-Strategie wurde auf 1 (\texttt{Crout}) gesetzt.
+\end{enumerate}
+Offensichtlich m"ussen f"ur unterschiedliche Anzahlen von Prozessoren unterschiedliche Eingabedateien verwendet werden. Daher wurde f"ur jede Ausf"uhrung von HPL ein eigenes Arbeitsverzeichnis erstellt und die ausf"uhrbare Datei zusammen mit der passenden Eingabedatei dort abgelegt. 
 
 Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1, jeweils skaliert auf 16--4 RPi-Knoten. Dabei sind jeweils n RPi-Knoten aktiv und alle 20 RPi-Knoten angeschaltet.
 %\begin{figure}[htb]
