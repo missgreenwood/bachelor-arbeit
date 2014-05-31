@@ -1,6 +1,6 @@
 \chapter{Interpretation}\label{Kap4}
 
-Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Ergebnisse: Performance f"ur HPLinpack und STREAM f"ur Messreihe 1 gegen"uber Messreihe 2 sowie Stromverbrauch in Messreihe 1 gegen"uber Messreihe 2. Dabei ist das Skalierungsverhalten des Bramble bez"uglich Performance und Stromverbrauch ausschlaggebend. Abschlie\ss end werden Grenzen des Versuchsaufbaus diskutiert.   
+Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Ergebnisse: Performance und Stromverbrauch f"ur HPLinpack und STREAM in Messreihe 1 und Messreihe 2. Im Fokus steht dabei das Skalierungsverhalten des Bramble. Abschlie\ss end werden Grenzen des Versuchsaufbaus diskutiert.   
 
 \section{HPLinpack: Performance}\label{Interpretation-Linpack}
 
@@ -46,7 +46,7 @@ Die Konzeption des STREAM-Benchmarks l"asst erwarten, dass das Hinzunehmen von R
 \end{quote}
 Die Ausf"uhrungsdauer auf jeder einzelnen CPU sollte somit ann"ahernd konstant bleiben, auch wenn Ressourcen hinzugenommen werden.
 
-Diagramme \ref{fig:stream1} und \ref{fig:stream2} best"atigen dieses Verhalten f"ur die parallele Ausf"uhrung von STREAM auf $n\leq 17$ RPi-Knoten: Der Anstieg der  Ausf"uhrungsrate bei Hinzunahme von RPi-Knoten ist nahezu linear. Geringe Abweichungen zeigen sich bei der Ausf"uhrungsdauer: Sie wird in Mikrosekunden gemessen. Die obere und untere maximale Abweichung hiervon betr"agt 0.001455 bzw. -0.001525 s f"ur Copy, . % TODO Grenze bestimmen
+Diagramme \ref{fig:stream1} und \ref{fig:stream2} best"atigen dieses Verhalten f"ur die parallele Ausf"uhrung von STREAM auf $n\leq 17$ RPi-Knoten: Der Anstieg der  Ausf"uhrungsrate bei Hinzunahme von RPi-Knoten ist nahezu linear. Geringe Abweichungen zeigen sich bei der Ausf"uhrungsdauer: Sie wird in Mikrosekunden gemessen. Die obere und untere maximale Abweichung hiervon betr"agt 0.001455 bzw. -0.001525 s f"ur Copy, 0.002114 bzw. -0.001866 s f"ur Scale, 0.002463 bzw. -0.001443 s f"ur Add und 0.003793 bzw. -0.00210 s f"ur Triad. % TODO Grenze bestimmen
 
 Das Skalierungsverhalten des Bramble bei der parallelen Ausf"uhrung von STREAM auf $n\leq 17$ RPi-Knoten kann somit als erwartungsgem"a\ss\ bezeichnet werden. 
 
@@ -105,7 +105,7 @@ Es stellt sich die Frage, warum das Skalierungsverhalten des Bramble f"ur $n\leq
 \normalfont
 Wie zu Beginn des Kapitels dargestellt, ist auf einem Rechencluster mit einem linearen Anstieg der Performance und ann"ahernd konstanter Ausf"uhrungsdauer bei der Hinzunahme von Ressourcen zu rechnen. Dass hier ein gew"unschter bzw. erwartungsgem"a\ss er Effekt vorliegt, ist nach der Konzeption des Benchmarks auszuschlie\ss en. 
 	\textbf{\item Architektur des Bramble.}\\
-Hier sind zwei Ursachen denkbar: Systemzeit und Netzwerk. 
+Zwei Ursachen sind denkbar: Systemzeit und Netzwerk. 
 
 Wie in Kap. \ref{Bramble-Versuchsaufbau} dargestellt, verf"ugt der RPi "uber keine eingebaute Systemuhr. Die Zeitsynchronisation muss daher anders erfolgen, in diesem Fall durch die Synchronisation gegen einen NTP-Server auf \texttt{careme} beim Bootvorgang. Wenn ungleich Rechenlast auf die RPi-Knoten verteilt wird, so w"are es denkbar, dass die Systemzeit dieser Knoten driftet und zu abweichenden Messergebnissen in der Ausf"uhrungsdauer von STREAM f"uhrt. Der Effekt kann in diesem Fall ausgeschlossen werden, da die Last bei $n\leq 17$ Knoten nicht weniger ungleich verteilt ist als bei $n \geq 18$ Knoten, sodass der beschriebene Effekt schon fr"uher eintreten m"usste. 
 
@@ -114,14 +114,56 @@ Wie in Kap. \ref{Bramble-Spezi} dargestellt, kommunizieren Bramble-Server und RP
 Bez"uglich der Bandbreiten zeigte sich durch Nachrechnen, dass bei den Modulen Copy und Scale eine Steigerung um ca. 30-40 MB, bei Add und Triad um ca. 50 MB pro zus"atzlichem RPi-Knoten erfolgt. Hierbei handelt es sich nat"urlich nicht um den Durchsatz des Netzwerks, sondern um den Durchsatz von Hauptspeicherzugriffen jedes einzelnen RPi-Knotens. Diese Steigerung tritt auch bei $n>17$
 RPi-Knoten v"ollig regul"ar ein, d.h. der Durchsatz von Hauptspeicherzugriffen verh"alt sich erwartungsgem"a\ss\ f"ur alle \textit{n}. Da zudem durch das Kopieren der STREAM-Binaries in eine lokale Partition kein verbessertes Skalierungsverhalten erreicht werden konnte, scheidet ein "Uberschreiten des maximalen Netzwerk-Datendurchsatzes als Ursache aus. 
 \textbf{\item Ausf"uhrung des Benchmarks.}\\
-Hier sind zwei Ursachen denkbar: Netz-Dateisystem und MPI-Implementierung.
+Zwei Ursachen sind denkbar: Netz-Dateisystem und MPI-Implementierung.
 
-Die parallele Ausf"uhrung von STREAM wird durch MPICH angesto\ss en, das auf den im Machinefile spezifizierten CPUs die dort bestimmte Anzahl an Programmaufrufen ausf"uhrt (vgl. Kap. \ref{Versuchsaufbau} und \ref{Bramble-Versuchsaufbau}). Binaries und verwendete Bibliotheken der Benchmarks liegen im geteilten Verzeichnis \texttt{/srv} und es schien denkbar, dass mehr als 17 parallele Zugriffe das Netz-Dateisystem "uberlasten. Deswegen wurde probeweise auf den SD-Karten aller RPi-Knoten eine neue Partition erstellt und der Inhalt des geteilten Verzeichnisses darauf kopiert. In der Datei \texttt{/etc/fstab} aller RPi-Knoten wurde der Mountpoint tempor"ar entsprechend ver"andert. Messwerte f"ur den STREAM-Benchmark f"uhrten jedoch zu Performance-Einbr"uchen schon ab $n=13$ RPi-Knoten, sodass diese Ursache ausgeschlossen werden konnte.  
+Wie in Kap. \ref{Versuchsaufbau} und \ref{Bramble-Versuchsaufbau} beschrieben, wird die parallele Ausf"uhrung von STREAM durch MPICH angesto\ss en, das den im Machinefile spezifizierten CPUs eine bestimmte Anzahl an parallelen Programmaufrufen zuweist. Binaries und verwendete Bibliotheken der Benchmarks liegen im geteilten Verzeichnis \texttt{/srv}. Es erschien denkbar, dass mehr als 17 parallele Zugriffe darauf das Netz-Dateisystem "uberlasten. Deswegen wurde probeweise auf den SD-Karten aller RPi-Knoten eine neue Partition erstellt und der Inhalt des geteilten Verzeichnisses hinein kopiert. In der Datei \texttt{/etc/fstab} aller RPi-Knoten wurde der Mountpoint f"ur \texttt{/srv} tempor"ar entsprechend ge"andert. Das Resultat waren Performance-Einbr"uche bei STREAM schon ab $n=13$ RPi-Knoten, womit das Netz-Dateisystem als Ursache ausscheidet.  
 
-Ein weiterer Erkl"arungsansatz war die Funktionsweise von MPICH bzw. eine m"ogliche "Uberlastung des Netzwerks durch den MPI-Overhead ab einem Schwellenwert von $n=18$ parallelen Programmaufrufen. 
+Ein weiterer Erkl"arungsansatz war die Funktionsweise von MPICH bzw. eine m"ogliche "Uberlastung des Netzwerks durch den Kommunikations-Overhead ab einem Schwellenwert von $n=18$ parallelen Programmaufrufen. 
 
-MPI hat verschiedene M"oglichkeiten der Interprozesskommunikation, unter anderem Broadcast- und Unicast-Nachrichten. Bei der parallelen Ausf"uhrung von Anwendungen kommen h"aufig die Funktionen \texttt{MPI\_Bcast} und \texttt{MPI\_Gather} zur Anwendung, bei denen ein Root-Prozess entweder eine Nachricht an alle beteiligten CPUs bzw. Prozesse schickt oder die Daten aller beteiligten CPUs bzw. Prozesse einsammelt (vgl. \ref{pie12}). Es erschien denkbar, dass eine Broadcast-Nachricht an mehr als 17 Prozessoren das Netzwerk "uberlastet, sodass es zu den beobachteten Performance-Einbr"uchen kommt.  
-% TODO: streamtest.f kompilieren + Resultat
+MPI hat verschiedene M"oglichkeiten der Interprozesskommunikation, u.a. Broadcast- und Unicast-Nachrichten. Bei der parallelen Ausf"uhrung von Anwendungen kommen h"aufig die Funktionen \texttt{MPI\_Bcast} und \texttt{MPI\_Gather} zur Anwendung, bei denen ein Root-Prozess entweder eine Nachricht an alle beteiligten CPUs bzw. Prozesse schickt oder die Daten aller beteiligten CPUs bzw. Prozesse einsammelt (vgl. \ref{pie12}). Es erschien denkbar, dass eine Broadcast-Nachricht an mehr als 17 Prozessoren das Netzwerk "uberlastet und zu den beobachteten Performance-Einbr"uchen f"uhrt. Daher wurde eine Testversion von STREAM kompiliert und ausgef"uhrt, bei der jeder Test 100 Mal statt zehn Mal durchgef"uhrt wird. Es wurde erwartet, dass bei einer l"angeren Ausf"uhrungsdauer des Programms der Kommunikations-Overhead von MPICH abnimmt, sodass erwartungsgem"a\ss e Resultate f"ur die Performance erzielt werden. Das war nicht der Fall. F"ur $n=18$ RPi-Knoten wurden folgende Ergebnisse erzielt: 
+\begin{figure}
+  \centering
+  \begin{tabular}{|l|c|}
+    \hline 
+    \textbf{Aktive RPi-Knoten:} & \textbf{18}\\ 
+    \hline 
+    \textbf{Copy in MB/s (erwartet):} & 4824.4\\
+    \hline 
+    \textbf{Copy in MB/s (erzielt):} & \textcolor{red}{3398.3}\\
+    \hline 
+    \textbf{Copy in s (erwartet):} & 0.118791\\
+    \hline 
+    \textbf{Copy in s (erzielt):} & \textcolor{red}{0.170848}\\
+    \hline 
+    \textbf{Scale in MB/s (erwartet):} & 3703.5\\
+    \hline 
+    \textbf{Scale in MB/s (erzielt):} & \textcolor{red}{3189.5}\\
+    \hline 
+	\textbf{Scale in s (erwartet):} & 0.156077\\
+    \hline 
+    \textbf{Scale in s (erzielt):} & \textcolor{red}{0.181711}\\
+    \hline 
+    \textbf{Add in MB/s (erwartet):} & 4978.6\\
+    \hline 
+    \textbf{Add in MB/s (erzielt):}& \textcolor{red}{4373.3}\\
+    \hline 
+    \textbf{Add in s (erwartet):} & 0.173474\\
+    \hline 
+    \textbf{Add in s (erzielt):} & \textcolor{red}{0.199341}\\
+    \hline 
+    \textbf{Triad in MB/s (erwartet):} & 4852.5\\
+    \hline 
+    \textbf{Triad in MB/s (erzielt):} & \textcolor{red}{4149.8}\\
+    \hline 
+    \textbf{Triad in s (erwartet):} & 0.179196\\
+    \hline 
+    \textbf{Triad in s (erzielt):} & \textcolor{red}{0.209507}\\
+    \hline 
+  \end{tabular}
+  \caption{Erwartete und erzielte Messwerte f"ur STREAM auf $n=18$ RPi-Knoten, ntimes=100.}\label{fig:stream-ntimes100}
+\end{figure}
+\noindent
+Nachdem die Resultate noch schlechter ausfallen als bei STREAM auf $n=18$ RPi-Knoten mit ntimes=10 (vgl. Tabelle \ref{fig:stream-abweichung}), kann auch ein Kommunikations-Overhead von MPICH als Ursache ausgeschlossen werden. Die Ursache konnte somit nicht zweifelsfrei gekl"art werden. 
 \end{enumerate}
 
 \section{Stromverbrauch}
@@ -132,7 +174,7 @@ W"ahrend der Versuchsdurchf"uhrung zeigte sich, dass die jetzige Architektur des
 \begin{enumerate}\bfseries
 	\item Defekte Hardware.\\
 \normalfont
-Einige Mini-USB-Kabel waren bereits zu Beginn defekt. Sie mussten durch funktionsf"ahige Kabel ersetzt werden. Ebenso wurden w"ahrend der Versuchsdurchf"uhrung zwei SD-Karten unbrauchbar. Um die entsprechenden RPi-Knoten wieder lauff"ahig zu machen, musste ein Speicherabbild einer anderen SD-Karte erstellt und auf zwei neue SD-Karten geschrieben werden. In der Datei \texttt{/etc/hostname} musste der richtige DNS-Name der RPi-Knoten wieder eingetragen werden. 
+Einige Mini-USB-Kabel waren bereits zu Beginn defekt. Sie mussten durch funktionsf"ahige Kabel ersetzt werden. Ebenso wurden w"ahrend der Versuchsdurchf"uhrung zwei SD-Karten unbrauchbar. Um die entsprechenden RPi-Knoten wieder lauff"ahig zu machen, musste ein Speicherabbild einer anderen SD-Karte erstellt und auf zwei neue SD-Karten geschrieben werden. 
 	\textbf{\item RPi-Knoten nicht erreichbar (\texttt{ping}).}\\
 H"aufig reagierte ein einzelner RPi-Knoten nicht auf ein \texttt{ping} von einem anderen RPi-Knoten oder von \texttt{careme} aus (Fehlermeldung: \texttt{Destination Host Unreachable}), obwohl die Status-LED Netzwerkaktivit"at anzeigte. Als einzige L"osung erwies sich Ziehen und wieder Einstecken des Mini-USB-Kabels; war das nicht erfolgreich, musste der Vorgang mit dem Netzwerkkabel wiederholt werden (das Netzwerkkabel alleine reicht nicht aus). Nach einigen Minuten war der Zielknoten i.d.R. wieder mit \texttt{ping} erreichbar. 
 	\textbf{\item RPi-Knoten nicht erreichbar (\texttt{ssh}).}\\ 
