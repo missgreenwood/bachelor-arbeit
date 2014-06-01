@@ -9,7 +9,7 @@
 # create output file                                                                 
 touch results/hpl-2.1_`date +%y%m%d`.txt 
 
-# Set number of active RPis = 8, starttime = `date +%s`
+# Set number of active RPis = 16, starttime = `date +%s`
 n=16
 echo "Number of active RPis: $n"
 echo "Number of powered RPis: 20"
@@ -54,7 +54,7 @@ echo "Active RPis: $n/Powered RPis: 20" >> results/hpl-2.1_`date +%y%m%d`.txt
 # log experiment suite id to results/hpl-2.1_`date +%y%m%d`.txt
 echo "Experiment suite id: $myid" >> results/hpl-2.1_`date +%y%m%d`.txt
 
-# start benchmark on 8 RPis, log to results/hpl-2.1_`date +%y%m%d`.txt
+# start benchmark on 16 RPis, log to results/hpl-2.1_`date +%y%m%d`.txt
 # mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile_latest -wdir /srv/benchmarks/bin/hpl-2.1/messung3 /srv/benchmarks/bin/hpl-2.1/messung3/xhpl >> results/hpl-2.1_`date +%y%m%d`.txt
 
 # get end time as unix timestamp
@@ -176,14 +176,14 @@ ENDSSH
 
 echo "Database setup complete"
 
-# log number of active RPis/powered RPis to results/hplMessung1`date +%y%m%d`.txt
-echo "Active RPis: $n/Powered RPis: 20" >> results/hplMessung1`date +%y%m%d`.txt
+# log number of active RPis/powered RPis to results/hpl-2.1_`date +%y%m%d`.txt
+echo "Active RPis: $n/Powered RPis: 20" >> results/hpl-2.1_`date +%y%m%d`.txt
 
-# log experiment suite id to results/hplMessung1`date +%y%m%d`.txt
-echo "Experiment suite id: $myid" >> results/hplMessung1`date +%y%m%d`.txt
+# log experiment suite id to results/hpl-2.1_`date +%y%m%d`.txt
+echo "Experiment suite id: $myid" >> results/hpl-2.1_`date +%y%m%d`.txt
 
-# start benchmark on 8 RPis, log to results/hplMessung1`date +%y%m%d`.txt                        
-# mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile_latest -wdir /srv/benchmarks/bin/hpl-2.1/messung1 /srv/benchmarks/bin/hpl-2.1/messung1/xhpl >> results/hplMessung1`date +%y%m%d`.txt
+# start benchmark on 8 RPis, log to results/hpl-2.1_`date +%y%m%d`.txt 
+# mpiexec -n $n -machinefile /srv/libraries/etc/mpich-3.0.4-shared/machinefile_latest -wdir /srv/benchmarks/bin/hpl-2.1/messung1 /srv/benchmarks/bin/hpl-2.1/messung1/xhpl >> results/hpl-2.1_`date +%y%m%d`.txt
 
 # get end time as unix timestamp
 endtime=`date +%s`
