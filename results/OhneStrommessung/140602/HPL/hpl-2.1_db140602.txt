@@ -1,0 +1,4 @@
+WR00C2L8 335 5760 1 4 4 413.29 3.084e-01 HPL_pdgesv() end time Mon Jun 2 13:02:18 2014
+WR00C2L8 336 4032 1 4 2 278.84 1.568e-01 HPL_pdgesv() end time Mon Jun 2 13:07:19 2014
+WR00C2L8 337 2880 8 2 2 121.78 1.309e-01 HPL_pdgesv() end time Mon Jun 2 13:09:40 2014
+
