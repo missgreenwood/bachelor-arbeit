@@ -4,38 +4,35 @@ Das folgende Kapitel dient der Bewertung und Einordnung der ermittelten Ergebnis
 
 \section{HPL: Performance}\label{Interpretation-Linpack}
 
-% TODO: Interpretation HPL Messreihe 1 (Skalierungsverhalten!)
+% TODO: Interpretation HPL Messreihe 1
 
-%Der Versuchsaufbau und die Steuerung der verteilten Ausf"uhrung der Benchmark-Programme durch MPICH lassen vermuten, dass sich kein signifikanter Unterschied in der Performance zeigt, je nachdem, ob nicht mehr an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden oder nicht. Wie in Kap. \ref{Bramble-Versuchsaufbau} dargestellt, ist im Machinefile genau festgelegt, welchen CPUs bzw. RPi-Knoten mit mpiexec eine die Ausf"uhrung des Benchmark-Programms zugewiesen wird und in welcher Reihenfolge sie f"ur die Ausf"uhrung herangezogen werden.
-%
-%Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden in den Grafiken nahezu identisch dargestellt. Tabelle \ref{fig:hpl-vgl} stellt die minimalen, maximalen und durchschnittlichen Werte f"ur Ausf"uhrungsrate und Ausf"uhrungsdauer beider Messreihen gegen"uber: 
-%%TODO: Werte ermitteln und eintragen
-%%\begin{figure}
-%%  \centering
-%%  \begin{tabular}{|l|c|c|}
-%%    \hline 
-%%     & \textbf{20 RPis angeschaltet} & \textbf{n+1 RPis angeschaltet}\\ 
-%%    \hline 
-%%    \textbf{Ausf"uhrungsrate/Min.} & GFLOPs & GFLOPs\\
-%%    \hline 
-%%    \textbf{Ausf"uhrungsrate/Max.} & GFLOPs & GFLOPs\\
-%%    \hline 
-%%    \textbf{Ausf"uhrungsrate/$\varnothing$} & GFLOPs & GFLOPs\\
-%%    \hline 
-%%    \textbf{Ausf"uhrungsdauer/Min.} &  s & s\\
-%%    \hline 
-%%    \textbf{Ausf"uhrungsdauer/Max.} &  s & s\\
-%%	\hline 
-%%    \textbf{Ausf"uhrungsdauer/$\varnothing$} & s & s\\
-%%    \hline
-%%  \end{tabular}
-%%  \caption{Performance f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:hpl-vgl}
-%%\end{figure}
+Der Versuchsaufbau und die Funktionsweise des Benchmarks lassen vermuten, dass sich kein signifikanter Unterschied in der Performance zeigt, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden. 
+
+Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden in den Grafiken nahezu identisch dargestellt. Tabelle \ref{fig:hpl-vgl} stellt Performance und Ausf"uhrungsdauer beider Messreihen gegen"uber: 
+%\begin{figure}
+%  \centering
+%  \begin{tabular}{|c|c|c|c|}
+%    \hline 
+%     \textbf{Angeschaltete RPis:} & \textbf{Aktive RPis:} & \textbf{Performance in GFLOPs:} &\textbf{Ausf"uhrungsdauer in s:}\\ 
+%    \hline 
+%    20 & 16 & &\\
+%    \hline 
+%    17 & 16 & &\\
+%    \hline 
+%    20 & 8 & &\\
+%    \hline 
+%    9 & 8 & &\\
+%    \hline 
+%    20 & 4 & &\\
+%	\hline 
+%    5 & 4 & &\\
+%    \hline
+%  \end{tabular}
+%  \caption{Erzielte Messwerte f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:hpl-vgl}
+%\end{figure}
 %\noindent
-%
-%% TODO: genaue Werte!
 %Dabei "uberschreiten die Differenzen in keinem Fall die Gr"o\ss enordnung von %z
-%, liegen also innerhalb des Messfehlers (vgl. Kap. \ref{Ergebnisse-HPL}). Somit l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf die Performance von HPL auf dem Bramble hat. Das Skalierungsverhalten bez"uglich der Performance ist somit f"ur beide Messreihen gleich. 
+%, liegen also innerhalb des Messfehlers (vgl. Kap. \ref{Ergebnisse-HPL}). Somit l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf Performance und Ausf"uhrungsdauer von HPL auf dem Bramble hat. Das Skalierungsverhalten kann somit f"ur beide Messreihen als gleich bezeichnet werden. 
 
 \section{STREAM: Performance}\label{Interpretation-Stream}
 
@@ -61,7 +58,7 @@ F"ur $n > 17$ RPi-Knoten zeigt der Bramble ein abweichendes Skalierungsverhalten
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline 
-    \textbf{Aktive RPi-Knoten:} & \textbf{17} & \textbf{18} & \textbf{19}\\ 
+    \textbf{Aktive RPis:} & \textbf{17} & \textbf{18} & \textbf{19}\\ 
     \hline 
     \textbf{Copy in MB/s (erwartet):} & 4556.4 & 4824.4 & 5092.5\\
     \hline 
