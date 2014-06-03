@@ -15,7 +15,7 @@ Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis
 	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
-4. Nur aktive RPis powered HPLinpack: Plotfile STROM4
+4. Nur aktive RPis powered HPL: Plotfile STROM4
 	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
@@ -36,33 +36,33 @@ Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis
 
 
 
-## Gnuplot-Skripte für 1-4 (Plotfiles 'STROM1' - 'STROM4')
+## Gnuplot-Skripte für 1-6 (Plotfiles 'STROM1' - 'STROM4')
 
-# STROM1a
+# STROM1
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 # set yrange [70:120]
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 1"
 set output 'strom1.eps'
 set style data lines
 plot 'energymatch1.txt' using 2:1 title 'Stromverbrauch'
 
-# STROM2a
+# STROM2
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 # set yrange [70:120]
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 2"
 set output 'strom2.eps'
 set style data lines
 plot 'energymatch2.txt' using 2:1 title 'Stromverbrauch'
 
-# STROM3a 
+# STROM3
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
@@ -75,7 +75,7 @@ set output 'strom3.eps'
 set style data lines
 plot 'energymatch3.txt' using 2:1 title 'Stromverbrauch'
 
-# STROM4a
+# STROM4
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
@@ -94,7 +94,7 @@ set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 set yrange [70:120]
 # unset xtics
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch STREAM, Messreihe 1 vs. Messreihe 2"
 set output 'strom5.eps'

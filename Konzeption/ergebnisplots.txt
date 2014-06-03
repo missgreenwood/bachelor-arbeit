@@ -145,10 +145,11 @@ plot 'streamplot1.txt' using 9:2 title "Copy" linecolor rgb "red", '' using 9:4 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "GFLOPs"
 set xlabel "Anzahl aktiver RPi-Knoten"
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+set xtics (16,8,4)
 set title "HPLinpack mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'hpl1.eps'
-unset border
+set style data lines
+# unset border
 plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" 
 
 # HPL2
@@ -156,10 +157,11 @@ plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate"
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
 set xlabel "Anzahl aktiver RPi-Knoten"
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+set xtics (16,8,4)
 set title "HPLinpack mit n RPi-Knoten aktiv, 20 RPi-Knoten angeschaltet"
 set output 'hpl2.eps'
-unset border 
+set style data lines
+# unset border
 plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer"
 
 # HPL5
@@ -167,20 +169,23 @@ plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer"
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "GFLOPs"
 set xlabel "Anzahl aktiver RPi-Knoten"
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+set xtics (16,8,4)
 set title "HPLinpack, Messreihe 1 vs. Messreihe 2"
 set output 'hpl5.eps'
-unset border
-plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title " " with points linecolor rgb "blue"
+set style data lines
+# unset border
+# plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" with points linecolor rgb "red", 'hplplot2.txt' using 3:2 title " " with points linecolor rgb "blue"
+plot 'hplplot1.txt' using 3:2 title "Ausfuehrungsrate" linecolor rgb "red", 'hplplot2.txt' using 3:2 title " " linecolor rgb "blue"
 
 # HPL6
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "s"
 set xlabel "Anzahl aktiver RPi-Knoten"
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4)
+set xtics (16,8,4)
 set title "HPLinpack, Messreihe 1 vs. Messreihe 2"
 set output 'hpl6.eps'
-unset border
-plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title " " with points linecolor rgb "blue"
-
+set style data lines
+# unset border
+# plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer" with points linecolor rgb "red", 'hplplot2.txt' using 3:1 title " " with points linecolor rgb "blue"
+plot 'hplplot1.txt' using 3:1 title "Ausfuehrungsdauer" linecolor rgb "red", 'hplplot2.txt' using 3:1 title " " linecolor rgb "blue"
