@@ -1,0 +1,10 @@
+WR00C2L8 5760 1 4 4 412.97 3,09E+002 HPL_pdgesv() end time Tue Jun 3 13:31:17 2014
+WR00C2L8 4032 1 4 2 278.98 1,57E+002 HPL_pdgesv() end time Tue Jun 3 13:36:22 2014
+WR00C2L8 2880 8 2 2 122.75 1,30E+002 HPL_pdgesv() end time Tue Jun 3 13:38:46 2014
+WR00C2L8 5760 1 4 4 412.98 3,09E+002 HPL_pdgesv() end time Tue Jun 3 13:49:23 2014
+WR00C2L8 4032 1 4 2 279.00 1,57E+002 HPL_pdgesv() end time Tue Jun 3 13:56:58 2014
+WR00C2L8 2880 8 2 2 122.42 1,30E+002 HPL_pdgesv() end time Tue Jun 3 14:01:00 2014
+              
+"Differenz F1,F4"     0.01 0.00        
+"Differenz F2,F5"     0.02 0.00        
+"Differenz F3,F6"     0.33 0.00        
