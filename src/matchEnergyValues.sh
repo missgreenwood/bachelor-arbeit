@@ -64,6 +64,8 @@ do
 	echo $line >> results/energymatch`date +%y%m%d`.txt
 done  
 
+
+
 # same procedure for other split files 
 for i in out{1..15}.txt
 do 
