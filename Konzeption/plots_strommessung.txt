@@ -15,13 +15,13 @@ Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis
 	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
-4. Nur aktive RPis powered HPL: Plotfile STROM4
+4. Nur aktive RPis powered STREAM: Plotfile STROM4
 	a.  x: Anzahl active RPis
 		y: Stromverbrauch in W
 
-5. Messreihe 1 und Messreihe 2 HPLinpack: Plotfile STROM5
+5. Messreihe 1 und Messreihe 2 STREAM: Plotfile STROM5
 
-6. Messreihe 1 und Messreihe 2 STREAM: Plotfile STROM6
+6. Messreihe 1 und Messreihe 2 HPL: Plotfile STROM6
 
 
 ## Inputfiles erstellen 
@@ -42,7 +42,7 @@ Ziel: Match Strommessung und Zeitdauer/Anzahl aktiver RPis
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
-# set yrange [70:120]
+set yrange [70:120]
 set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 1"
@@ -54,7 +54,7 @@ plot 'energymatch1.txt' using 2:1 title 'Stromverbrauch'
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
-# set yrange [70:120]
+set yrange [70:120]
 set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 2"
@@ -93,23 +93,24 @@ plot 'energymatch4.txt' using 2:1 title 'Stromverbrauch'
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
 set yrange [70:120]
-# unset xtics
-set xtics (16,8,4)
+set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch STREAM, Messreihe 1 vs. Messreihe 2"
 set output 'strom5.eps'
 set style data lines
-plot 'energymatch3.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch4.txt' using 2:1 title " " linecolor rgb "blue"
+plot 'energymatch3.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch4.txt' using 2:1 title " " linecolor rgb "blue" lt -1
 
 # STROM6
 
 set terminal postscript eps noenhanced defaultplex leveldefault color colortext
 set ylabel "W"
-# set yrange [70:120]
-set xtics (19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1)
+set yrange [70:120]
+# unset xtics
+set xtics (16,8,4)
 set xlabel "Anzahl aktiver RPi-Knoten"
 set title "Stromverbrauch HPL, Messreihe 1 vs. Messreihe 2"
 set output 'strom6.eps'
 set style data lines
-plot 'energymatch1.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch2.txt' using 2:1 title " " linecolor rgb "blue"
+plot 'energymatch1.txt' using 2:1 title "Stromverbrauch" linecolor rgb "red", 'energymatch2.txt' using 2:1 title " " linecolor rgb "blue" lt -1
+
 
