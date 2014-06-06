@@ -41,11 +41,10 @@
 \contentsline {subsection}{\numberline {3.4.1}HPL: Performance}{23}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}STREAM: Performance}{25}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Stromverbrauch}{26}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4}Interpretation}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}HPL: Performance}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}STREAM: Performance}{31}{section.4.2}
-\contentsline {section}{\numberline {4.3}Stromverbrauch}{34}{section.4.3}
-\contentsline {section}{\numberline {4.4}Grenzen des Versuchsaufbaus}{34}{section.4.4}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{37}{chapter.5}
+\contentsline {chapter}{\numberline {4}Interpretation}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}HPL: Performance}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}STREAM: Performance}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Stromverbrauch}{37}{section.4.3}
+\contentsline {section}{\numberline {4.4}Grenzen des Versuchsaufbaus}{37}{section.4.4}
 \contentsline {chapter}{Abbildungsverzeichnis}{39}{chapter*.15}
 \contentsline {chapter}{Literaturverzeichnis}{41}{chapter*.16}

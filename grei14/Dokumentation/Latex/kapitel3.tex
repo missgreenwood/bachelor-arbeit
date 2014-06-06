@@ -217,7 +217,7 @@ Zur besseren Vergleichbarkeit wurde die verteilte Ausf"uhrung von STREAM daran a
 
 HPL in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
 
-Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Ausgabeparameter sind invariabel: \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uh\-rungsdauer in Sekunden). \texttt{Gflops} wird auf 8, \texttt{Time} auf 2 Nachkommastellen genau angegeben.
+Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die Ausgabeparameter sind invariabel: \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uh\-rungsdauer in Sekunden). \texttt{Gflops} wird auf 3, \texttt{Time} auf 2 Nachkommastellen genau angegeben.
 
 Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigkeit). Die anderen werden in der Datei \texttt{HPL.dat} angegeben, die im selben Verzeichnis wie die ausf"uhrbare Datei des Benchmark-Programms liegen muss. Entscheidend sind hierbei Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt mittels L/U-Faktorisierung. Dazu wird zun"achst eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. Diese wird zur weiteren Bearbeitung in Bl"ocke der Gr"o\ss e $NB\times NB$ aufgeteilt.}, Gr"o\ss e des Prozessnetzes (\texttt{Ps} und \texttt{Qs})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e $P\times Q$ "ubergeben. \textit{P} bezeichnet darin die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.}, Panel-Faktorisierungsstrategie \texttt{PFACTs}\footnote{Zur Unterteilung der Matrix in Submatrizen werden drei M"oglichkeiten angeboten: Links-schauende, rechts-schauende und Crout-Faktorisierung (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}).} und Teilpanel-Faktorisierungsstrategie \texttt{RFACTs}\footnote{Als Teilpanel-Faktorisierungsstrategien werden dieselben M"oglichkeiten angeboten wie f"ur \texttt{PFACTs}.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html} und \ref{pie12}). Um m"og\-lichst gute Resultate f"ur die Performance zu erzielen, muss eine sinnvolle Kombination dieser Parameter gefunden und in \texttt{HPL.dat} spezifiziert werden. Folgende Werte erwiesen sich als sinnvoll: 
 \begin{enumerate} 
@@ -311,19 +311,19 @@ Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von 
 
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
-Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur HPL. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch bei der Ausf"uhrung auf 16 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom2} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 f"ur HPL gegen"uber. 
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{strom1a.pdf}\\ 
-%  \caption{Stromverbrauch f"ur HPL, Messreihe 1.}\label{fig:strom1}
-%\end{figure}
-%\begin{figure}[htb]
-%  \centering
-%  \includegraphics[scale=.8]{strom5.pdf}\\ 
-%  \caption{Stromverbrauch f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:strom2}
-%\end{figure}
+Die Diagramme \ref{fig:strom1} und \ref{fig:strom2} zeigen die Ergebnisse der Strommessung f"ur HPL. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch bei der Ausf"uhrung auf 16 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom6} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 f"ur HPL gegen"uber. 
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{strom1.pdf}\\ 
+  \caption{Stromverbrauch f"ur HPL, Messreihe 1.}\label{fig:strom1}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{strom6.pdf}\\ 
+  \caption{Stromverbrauch f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:strom6}
+\end{figure}
 \noindent
-Die Diagramme \ref{fig:strom3} und \ref{fig:strom4} zeigen analog die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom4} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber.
+Die Diagramme \ref{fig:strom3} und \ref{fig:strom5} zeigen analog die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch bei der Ausf"uhrung auf 19 -- 4 RPi-Knoten, wobei alle 20 RPi-Knoten angeschaltet sind (Messreihe 1). Diagramm \ref{fig:strom4} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 f"ur STREAM gegen"uber.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{strom3.pdf}\\ 
@@ -332,7 +332,7 @@ Die Diagramme \ref{fig:strom3} und \ref{fig:strom4} zeigen analog die Ergebnisse
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{strom5.pdf}\\ 
-  \caption{Stromverbrauch f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:strom4}
+  \caption{Stromverbrauch f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:strom5}
 \end{figure}
 \endinput 
 
