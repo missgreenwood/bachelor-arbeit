@@ -1,6 +1,12 @@
-WR00C2L8 5760 8 4 4 258.55 4.930e-01 HPL_pdgesv() end time Wed Jun 4 12:42:46 2014
-WR00C2L8 4032 8 4 2 170.89 2.559e-01 HPL_pdgesv() end time Wed Jun 4 12:46:01 2014
-WR00C2L8 2880 8 2 2 121.98 1.307e-01 HPL_pdgesv() end time Wed Jun 4 12:48:22 2014
-WR00C2L8 5760 8 4 4 259.18 4.918e-01 HPL_pdgesv() end time Wed Jun 4 12:54:59 2014
-WR00C2L8 4032 8 4 2 171.03 2.556e-01 HPL_pdgesv() end time Wed Jun 4 13:02:22 2014
-WR00C2L8 2880 8 2 2 122.45 1.302e-01 HPL_pdgesv() end time Wed Jun 4 13:12:40 2014
+WR00C2L8 5760 8 4 4 258,55 4,93E-001 HPL_pdgesv() end time Wed Jun 4 12:42:46 2014
+WR00C2L8 4032 8 4 2 170,89 2,56E-001 HPL_pdgesv() end time Wed Jun 4 12:46:01 2014
+WR00C2L8 2880 8 2 2 121,98 1,31E-001 HPL_pdgesv() end time Wed Jun 4 12:48:22 2014
+WR00C2L8 5760 8 4 4 259,18 4,92E-001 HPL_pdgesv() end time Wed Jun 4 12:54:59 2014
+WR00C2L8 4032 8 4 2 171,03 2,56E-001 HPL_pdgesv() end time Wed Jun 4 13:02:22 2014
+WR00C2L8 2880 8 2 2 122,45 1,30E-001 HPL_pdgesv() end time Wed Jun 4 13:12:40 2014
+              
+     0,63 0,001        
+     0,14 0        
+     0,47 0,001        
+              
+"Mittlere Abweichung Ausführungsdauer/Performance:"     0,41 0,001        
