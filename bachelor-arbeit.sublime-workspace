@@ -59,7 +59,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 438,
+				"buffer_size": 448,
 				"line_ending": "Unix"
 			}
 		}
@@ -106,6 +106,10 @@
 	"expanded_folders":
 	[
 		"/Users/judith/Documents/Bachelor-Arbeit",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex",
+		"/Users/judith/Documents/Bachelor-Arbeit/grei14/Dokumentation/Latex/Bib",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption",
 		"/Users/judith/Documents/Bachelor-Arbeit/src"
 	],
@@ -234,6 +238,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"kli",
 			"'c++'",
 			"c++",
 			"pie",
@@ -306,15 +311,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 438,
+						"buffer_size": 448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								158,
-								158
+								252,
+								252
 							]
 						],
 						"settings":
