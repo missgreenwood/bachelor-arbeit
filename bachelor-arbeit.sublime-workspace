@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"summand",
+				"summand"
+			],
+			[
+				"line",
+				"linecount"
+			],
+			[
 				"ener",
 				"energymatch2"
 			],
@@ -26,10 +34,6 @@
 			[
 				"detination",
 				"destination_file"
-			],
-			[
-				"line",
-				"line"
 			],
 			[
 				"Feh",
@@ -55,23 +59,7 @@
 			"file": "todo140313.txt",
 			"settings":
 			{
-				"buffer_size": 508,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/hplPowerMeasurementsForGnuplot.sh",
-			"settings":
-			{
-				"buffer_size": 808,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/hplplot.sh",
-			"settings":
-			{
-				"buffer_size": 3324,
+				"buffer_size": 438,
 				"line_ending": "Unix"
 			}
 		}
@@ -123,24 +111,25 @@
 	],
 	"file_history":
 	[
-		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesHpl.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValues.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplPowerMeasurementsForGnuplot.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesStream.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/plots_strommessung.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/parseEnergyValues.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplPowerMeasurementsForGnuplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesHpl.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValues.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesStream.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplMessreihe1.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/hplMessreihe2.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/energymatch1.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplplot.sh",
+		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/matchEnergyValuesb.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/Konzeption/ergebnisplots.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/image-pi05/cmdline.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/image-pi16/cmdline.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/image-pi01/cmdline.txt",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/cmdline.txt",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplMessreihe1.sh",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/hplMessreihe2.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/hplMessung1.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/sources/HPL.dat",
-		"/Users/judith/Documents/Bachelor-Arbeit/src/STREAM.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/streamTest.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/src/wrapStream.sh",
 		"/Users/judith/Documents/Bachelor-Arbeit/Gnuplot/energymatch3.txt",
@@ -232,6 +221,7 @@
 		"height": 95.0,
 		"where_history":
 		[
+			"/Users/judith/Documents/Bachelor-Arbeit/src",
 			"/Users/judith/Documents/Bachelor-Arbeit",
 			"/Users/judith/Documents/Dropbox/JudithSascha/LeaHampel/htmltemplate/iteration01",
 			"/Users/judith/Documents/404Fehlerreduktion/FinalVersion/src",
@@ -244,6 +234,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'c++'",
+			"c++",
 			"pie",
 			"johannes",
 			"powered",
@@ -314,15 +306,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 508,
+						"buffer_size": 438,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								158,
+								158
 							]
 						],
 						"settings":
@@ -334,62 +326,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/hplPowerMeasurementsForGnuplot.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 808,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								682,
-								682
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/hplplot.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								733,
-								710
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
