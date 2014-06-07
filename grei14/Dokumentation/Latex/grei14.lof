@@ -21,5 +21,7 @@
 \contentsline {figure}{\numberline {\relax 3.17}{\ignorespaces Stromverbrauch f\active@dq \dq@prtct {u}r STREAM, Messreihe 1 und Messreihe 2.}}{31}{figure.3.17}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Erwartete und erzielte Messwerte f\active@dq \dq@prtct {u}r STREAM auf $n\geq 17$ RPi-Knoten.}}{35}{figure.4.1}
-\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Erwartete und erzielte Messwerte f\active@dq \dq@prtct {u}r STREAM auf $n=18$ RPi-Knoten, ntimes=100.}}{36}{figure.4.2}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Erwartete und erzielte Messwerte f\active@dq \dq@prtct {u}r STREAM auf $n=18$ RPi-Knoten mit \texttt {ntimes=100}.}}{36}{figure.4.2}
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Stromverbrauch des Bramble, Messreihe 1 und Messreihe 2.}}{37}{figure.4.3}
+\addvspace {10\p@ }
 \addvspace {10\p@ }

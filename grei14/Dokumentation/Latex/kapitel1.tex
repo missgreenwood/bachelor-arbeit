@@ -1,22 +1,16 @@
 \chapter{Einleitung}\label{Kap1}
 
 % CONTEXT OF THE PAPER
-
 Seit Beginn seiner Entwicklung im Jahr 2009 boomt der Minicomputer Raspberry Pi (im Folgenden als \textit{RPi} bezeichnet). Er erhielt z.B. den Designpreis INDEX: award 2013\newline(vgl. \url{http://designtoimprovelife.dk/category/s15-award2013}), wurde als Innovation des Jahres bei den T3 Gadget Awards 2012 ausgezeichnet (vgl. \url{http://www.t3.com/news/t3-gadget-awards-2012-award-winners}) und zum Gadget of the Year 2012 des Linux Journal gew"ahlt (vgl. \url{http://www.linuxjournal.com/slideshow/readers-choice-2012}). Im Februar dieses Jahres war das Modell B "uber 2,5 Millionen Mal verkauft worden. 
 
-\section{Hintergrund}\label{Hintergrund}
-
+% \section{Hintergrund und Fragestellung}\label{Hintergrund}
 Die Leistung von Rechnern, seien es Gro\ss rechner, Desktop-Rechner oder Minicomputer, wird h"aufig durch Benchmarks ermittelt. Das erm"oglicht die Vergleichbarkeit der Testergebnisse unterschiedlicher Systeme. Bekannte und erprobte Benchmark-Suites sind z.B. Linpack und Whetstone, mit denen seit den 70er Jahren die Performance von Supercomputern ermittelt wird. F"ur Einzelrechner mit Linux-Systemen gibt es z.B. die Phoronix Test Suite oder UnixBench, um die Performance der einzlnen Komponenten wie CPU, GPU und RAM zu evaluieren. 
 
 % PROBLEM STATEMENT
-\section{Fragestellung}\label{Fragestellung}
-
 Im wissenschaftlichen Umfeld werden immer h"aufiger mehrere RPis zu einem Beowulf-Cluster % TODO: Def.
 verschaltet, um parallele Berechnungen auszuf"uhren. Vor diesem Hintergrund stellt sich die Frage: Wie verh"alt sich ein RPi bei der Ausf"uhrung von HPC-Benchmarks? Noch interessanter ist das Verhalten eines RPi-Clusters: Welche CPU-Performance l"asst sich damit erzielen und wie verh"alt sich der Cluster bei Hinzunahme von Ressourcen, d.h. RPi-Rechenkernen? Im Zentrum dieser Arbeit stehen daher CPU-Performance und Skalierungsverhalten eines RPi-Clusters unter den Testbedingungen ausgew"ahlter HPC-Benchmarks. Dazu wird zun"achst die die Performance eines RPi-Einzelrechners ermittelt. Anschlie\ss end wird die Performance eines RPi-Clusters bei Ausf"uhrung der Benchmarks evaluiert. Im Fokus steht dabei der Energievebrauch, der mit Hilfe eines Strommessger"ats f"ur die unterschiedlichen Versuchsaufbauten ermittelt wird. 
-
 % evtl. TODO: CHALLENGES (welche erwartet/welche eingetreten)
-
-\section{Vorgehensweise}\label{Vorgehensweise}
+% \section{Vorgehensweise und Struktur}\label{Vorgehensweise}
 
 % Auswahl der Benchmarks und Implementierungen 
 Grunds"atzlich stellt sich die Frage, welche Benchmarks sich f"ur das zu untersuchende System (RPi-Einzelrechner bzw. RPi-Cluster) und die zu untersuchende Komponente (CPU) eignen. Sie k"onnen nur herangezogen werden, wenn hierf"ur geeignete Implementierungen existieren. 
@@ -32,8 +26,6 @@ Der Stromverbrauch des RPi-Clusters mit unterschiedlichen Anzahlen aktiver und a
 
 % Evaluierung der Ergebnisse
 Die Messwerte der Benchmarks m"ussen mit denen des Strommessger"ats abgeglichen werden, um Aussagen "uber den Stromverbrauch treffen zu k"onnen. F"ur die Interpretation der ermittelten Versuchsergebnisse ist eine grafische Aufbereitung erforderlich.
-
-\section{Struktur}\label{Struktur}
 
 Um den Bezugsrahmen zu verdeutlichen, werden in Kapitel 2 zun"achst grundlegende Definitionen gekl"art. Insbesondere werden die ausgew"ahlten Benchmarks vorgestellt (vgl. Kap. \ref{Benchmarks}) und die Spezifikationen von RPi (vgl. Kap. \ref{RPi-Spezi}) und RPi-Cluster erl"autert (vgl. Kap. \ref{Bramble-Spezi}). Versuchsaufbau und -ablauf werden mit Blick auf Auswahl und Anpassung der RPi-spezifischen Parameter im folgenden Kapitel dargestellt (vgl. Kap. \ref{Kap3}). Schlie\ss lich  werden die Messergebnisse dargestellt (vgl. Kap. \ref{Ergebnisse}) und interpretiert (vgl. Kap. \ref{Kap4}). Den Abschluss bilden eine Zusammenfassung der Untersuchungsergebnisse und ein Ausblick (vgl. Kap. \ref{Kap5}).
 
