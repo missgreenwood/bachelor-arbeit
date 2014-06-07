@@ -107,6 +107,13 @@
 \newblock 2013. --
 \newblock \url{https://www.duo.uio.no/bitstream/10852/37445/4/Ou-Jun.pdf}
 
+\bibitem[Pie12]{pie12}
+\textsc{Pietrzyk}, Johannes:
+\newblock \emph{Projekt Parallelrechnerevaluation}.
+\newblock 2012. --
+\newblock
+  \url{http://wr.informatik.uni-hamburg.de/_media/research/labs/2012/2012-02-johannes_pietrzyk-auswirkungen_verschiedener_parameter_des_linpack_benchmarks_auf_den_energieverbrauch-report.pdf}
+
 \bibitem[Pow12]{pow12}
 \textsc{Powers}, Shawn:
 \newblock The Open-source Classroom: Your First Bite of Raspberry Pi.

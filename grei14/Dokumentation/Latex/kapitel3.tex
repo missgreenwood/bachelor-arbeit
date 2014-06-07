@@ -20,7 +20,8 @@ Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz ge
 
 Zur Allokierung von Swap-Speicher auf dem RPi gibt es grunds"atzlich drei M"oglichkeiten: Swap-Datei, Swap-Partition oder zRAM. 
 
-Das Betriebssystem Raspbian legt standardm"a\ss ig eine Swap-Datei \texttt{/var/swap} auf der SD-Karte an (vgl. \url{http://raspberrypi.stackexchange.com/questions/70/how-to-set} \url{-up-swap-space}). Hierbei zeigen sich Probleme: Erstens k"onnen h"aufige Schreibzugriffe die SD-Karte besch"adigen. Zweitens sind Schreibzugriffe auf die SD-Karte langsam, was die Performance des Systems bei hoher Arbeitsspeicherlast beeintr"achtigen kann (vgl. \cite{pow12}). 
+\noindent
+Das Betriebssystem Raspbian legt standardm"a\ss ig eine Swap-Datei \texttt{/var/swap} auf der SD-Karte an (vgl. \url{http://raspberrypi.stackexchange.com/questions/70/how-to-set-up-} \url{swap-space}). Hierbei zeigen sich Probleme: Erstens k"onnen h"aufige Schreibzugriffe die SD-Karte besch"adigen. Zweitens sind Schreibzugriffe auf die SD-Karte langsam, was die Performance des Systems bei hoher Arbeitsspeicherlast beeintr"achtigen kann (vgl. \cite{pow12}). 
 
 Das gilt auch f"ur die Allokierung einer Swap-Partition auf der SD-Karte. Diese M"oglichkeit spielt daher in der Praxis keine Rolle. 
 
@@ -79,7 +80,7 @@ Die automatisierte Durchf"uhrung der Messung erfolgt durch Shellskripte. Sie wer
 \begin{enumerate}\bfseries
 	\item Erstellen eines \texttt{Machinefile}, ggf. L"oschen des alten.\\
 \normalfont{Zur parallelen Ausf"uhrung eines Programms auf mehreren CPUs durch MPICH wird \texttt{mpiexec} mit dem Parameter \texttt{-machinefile} aufgerufen. Er verweist auf eine Datei, die die Reihenfolge der zu verwendenden CPUs und die Anzahl der darauf auszuf"uhrenden Prozesse spezifiziert. 
-
+\enlargethispage{0.7cm}
 Es d"urfen nur so nur so viele Prozesse vergeben werden, wie angeschaltete RPi-Knoten zur Verf"ugung stehen. Die CPUs m"ussen in der Reihenfolge angegeben werden, in der die RPi-Knoten heruntergefahren werden. Ein eventuell veraltetes \texttt{Machinefile} wird gel"oscht.}
 	\textbf{\item Einh"angen des geteilten Verzeichnisses auf allen RPis.}\\
 Alle Dateien der ExperimentSuites (Binaries, Bibliotheken etc.) liegen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share}. Daher muss das geteilte Verzeichnis auf jedem verwendeten RPi-Knoten eingeh"angt sein. 
@@ -112,6 +113,7 @@ Nach der Ausf"uhrung wird der Endzeitpunkt als Unix-Zeitstempel ermittelt. Der e
 			\textbf{\item Schreiben der Ergebnisdaten.}\\
 Die Ausgabe wird in die vorbereitete Logdatei geschrieben. Falls das Bench\-mark-Programm keinen Zeitstempel vorsieht (z.B. STREAM), wird dieser ermittelt und als zus"atzliche Zeile hinzugef"ugt. Damit kann sp"ater f"ur jeden Messwert ein Zeitstempel in die Datenbank eingelesen werden (vgl. Schritte d und e). Auch zum Abgleich der Messergebnisse von Benchmarks und Strommessger"at ist ein Zeitstempel erforderlich (vgl. Kap. \ref{Strommessung}). 
 		\end{enumerate}
+\newpage
 		\textbf{\item Iteration "uber \textit{n} RPi-Knoten:} 
 		\begin{enumerate}\bfseries
 			\item Datenbank f"ur ExperimentSuite vorbereiten.\\
@@ -120,6 +122,7 @@ Die Ausgabe wird in die vorbereitete Logdatei geschrieben. Falls das Bench\-mark
 Analog zu Schritt b) ii..
 			\textbf{\item Ermittlung des Ausf"uhrungsendes.}\\
 Analog zu Schritt b) iii..
+\newpage
 			\textbf{\item Herunterfahren nicht mehr aktiver RPi-Knoten.}\\
 In Messreihe 2 werden nicht mehr aktive RPi-Knoten heruntergefahren. Davon ausgenommen ist der Berechnungsknoten \texttt{pi03}. 
 			\textbf{\item Schreiben der Ergebnisdaten.}\\ 
@@ -157,6 +160,7 @@ F"ur den Versuchsaufbau war dem Energenie eine statische IP-Adresse zugewiesen u
 Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werden. Dazu wurden nach der Installation des Programms \textit{PowerManager} IP-Adresse und ein Ger"atename eingetragen. In der Webbrowser-Anwendung wurde das Standardpasswort ge"andert und die NTP-Zeitsynchronisation aktiviert. 
 
 % Messgrößen 
+\noindent
 Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W - 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$ (vgl. \cite{scrguide03}). % TODO Messfehler ermitteln 
 
 % Datenzugriff 
@@ -236,7 +240,7 @@ HPL in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert fol
 
 Zun"achst werden die verwendeten Eingabe- und Ausgabeparameter erl"autert. Die Ausgabeparameter sind invariabel: \texttt{Gflops} (Ausf"uhrungsrate in GFLOPs) und \texttt{Time} (Ausf"uh\-rungsdauer in Sekunden). \texttt{Gflops} wird auf 3, \texttt{Time} auf 2 Nachkommastellen genau angegeben.
 
-Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigkeit). Die anderen werden der Datei \texttt{HPL.dat} entnommen, die im selben Verzeichnis wie die ausf"uhrbare Datei liegen muss. Die entscheidenden Eingabeparameter sind Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt durch L/U-Faktorisierung. Dazu wird eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix \textit{A} erzeugt. \textit{A} wird dazu in in Bl"ocke der Gr"o\ss e \texttt{NB} $\times$ \texttt{NB} aufgeteilt.}, Gr"o\ss e des Prozessnetzes (\texttt{Ps} und \texttt{Qs})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e \texttt{P} $\times$ \texttt{Q} "ubergeben. \textit{P} bezeichnet die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.}, Panel-Faktorisierungsstrategie \texttt{PFACTs}\footnote{Zur Unterteilung der Matrix in Submatrizen k"onnen drei verschiedene Algorithmen verwendet werden: Links-schauende, rechts-schauende und Crout-Faktorisierung (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}).} und Teilpanel-Faktorisierungsstrategie \texttt{RFACTs}\footnote{Als Teilpanel-Faktorisierungsstrategien werden dieselben Algorithmen angeboten wie f"ur \texttt{PFACTs}.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html} und \cite{pie12}). Um m"og\-lichst gute Resultate f"ur die Performance zu erzielen, muss eine sinnvolle Kombination dieser Parameter gefunden werden. Folgende Werte erwiesen sich als sinnvoll: 
+Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigkeit). Die anderen werden der Datei \texttt{HPL.dat} entnommen, die im selben Verzeichnis wie die ausf"uhrbare Datei liegen muss. Die entscheidenden Eingabeparameter sind Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt durch L/U-Faktorisierung. Dazu wird eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix \textit{A} erzeugt. \textit{A} wird dazu in in Bl"ocke der Gr"o\ss e \texttt{NB} $\times$ \texttt{NB} aufgeteilt.}, Gr"o\ss e des Prozessnetzes (\texttt{Ps} und \texttt{Qs})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e \texttt{P} $\times$ \texttt{Q} "ubergeben. \textit{P} bezeichnet die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.}, Panel-Faktorisierungsstrategie \texttt{PFACTs}\footnote{Zur Unterteilung der Matrix in Submatrizen k"onnen drei verschiedene Algorithmen verwendet werden: Links-schauende, rechts-schauende und Crout-Faktorisierung (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}).} und Teilpanel-Faktorisierungsstrategie \texttt{RFACTs}\footnote{Als Teilpanel-Faktorisierungsstrategien werden dieselben Algorithmen angeboten wie f"ur \texttt{PFACTs}.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). Um m"og\-lichst gute Resultate f"ur die Performance zu erzielen, muss eine sinnvolle Kombination dieser Parameter gefunden werden. Folgende Werte erwiesen sich als sinnvoll: 
 \begin{enumerate} 
 	\item \texttt{N}: Die Problemgr"o\ss e sollte so gew"ahlt werden, dass der Hauptspeicher zu ca. 80\% mit der Matrix gef"ullt wird. Sie sollte mindestens einige 100 betragen und ein Vielfaches von 96 sein. Bei einer parallelen Ausf"uhrung ist die Gesamtmenge an Hauptspeicher entscheidend. Sie verh"alt sich proportional zu \texttt{N}$^2$. 
 	
@@ -297,7 +301,7 @@ Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messr
 \end{figure}
 
 \subsection{STREAM: Performance}\label{Ergebnisse-STREAM}
-
+\interfootnotelinepenalty=10000
 STREAM in der verwendeten Implementierung (vgl. Kap. \ref{STREAM}) liefert folgende Ausgabe:
 
 Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die wichtigsten Eingabeparameter sind Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul\footnote{Im Gegensatz zu HPL gibt es keine Eingabedatei, d.h. eine Ver"anderung ist nur direkt im Quellcode m"oglich (vgl. hierzu Kap. \ref{Interpretation-Stream}).}. F"ur die Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 

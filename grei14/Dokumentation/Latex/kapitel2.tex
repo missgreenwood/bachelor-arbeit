@@ -2,7 +2,7 @@
 
 Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem ausgef"uhrt wurden. Dabei steht oft die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponen\-ten im Vordergrund. Zu diesem Zweck werden haupts"achlich Linux-spezifische Benchmarks verwendet wie Sysbench CPU Benchmark (CPU), PyBench (Python-Implementierung), Apache Benchmark (Webserver), Open\-SSL (CPU) oder ioquake3 (GPU). 
 
-Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Ausf"uhrung auf dem RPi erl"autert (vgl. \ref{Aufbau}). 
+Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Ausf"uhrung auf dem RPi erl"autert (vgl. \ref{Versuchsaufbau}). 
 
 \section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
@@ -16,7 +16,7 @@ Das \textit{Computer Lexikon 2012} kennt folgende Definition:
 \onehalfspacing
 Mit einem Benchmark-Programm werden Hardwarekomponenten meist auf Geschwindigkeit getestet, wie z.B. die CPU, das Mainboard, die Festplatte (Schreib-Lese-Geschwindigkeit), die Grafikkarte (Frames/s) usw. Verschiedene Benchmark-Programme liefern oft unterschiedliche Ergebnisse, so dass ein direkter Vergleich zwischen den erreichten Werten kaum aussagekr"aftig ist \cite{pre11}. 
 \end{quote}
-Hieran wird deutlich, dass die Aussagekraft von Benchmarks eng mit der jeweiligen Testumgebung und der Zielsetzung des Benchmarks zusammenh"angt. Zwei Benchmarks, die die CPU-Performance evaluieren, liefern m"oglicherweise unterschiedliche Ergebnisse, weil unterschiedliche Parameter oder sogar Messgr"o\ss en zu Grunde liegen. Das ist insbesondere bei der Auswahl der Implementierungen und Gestaltung der Testumgebung zu ber"ucksichtigen (vgl. Kap. \ref{RPi-Spezi}, \ref{Bramble-Spezi} und \ref{Aufbau}). 
+Hieran wird deutlich, dass die Aussagekraft von Benchmarks eng mit der jeweiligen Testumgebung und der Zielsetzung des Benchmarks zusammenh"angt. Zwei Benchmarks, die die CPU-Performance evaluieren, liefern m"oglicherweise unterschiedliche Ergebnisse, weil unterschiedliche Parameter oder sogar Messgr"o\ss en zu Grunde liegen. Das ist insbesondere bei der Auswahl der Implementierungen und Gestaltung der Testumgebung zu ber"ucksichtigen (vgl. Kap. \ref{RPi-Spezi}, \ref{Bramble-Spezi} und \ref{Versuchsaufbau}). 
 
 In dieser Arbeit soll die Leistung von Hardware-Komponenten eines oder mehrerer parallel arbeitender Rechenkerne mit standardisierten Verfahren ermittelt werden. Rechenberg bezeichnet "`\textit{Analyse}, \textit{Auswahl} und \textit{Konfiguration} von Gesamtsystemen aus Hardware und Software \cite{rec06}"' als eine Hauptaufgabe der Leistungsbewertung: 
 \begin{quote}
@@ -209,6 +209,7 @@ Ein solches System relativ kosteng"unstiger Rechner mit einem BSD- oder Linux-Be
 
 Auf den RPi-Knoten ist das oben genannte Betriebssytem Raspbian installiert (vgl. Kap. \ref{RPi-OS}), auf \texttt{careme} eine Standard-Debian-Version. Ein Charakteristikum eines Beowulf-Clusters ist, dass es kein Shared Memory-Interface und keine Cache-Koh"arenz gibt. Somit stellt sich die Frage nach der Zeit- und Datensynchronisation der RPi-Knoten und des Servers sowie den M"oglichkeiten des gemeinsamen Speicherzugriffs. 
 
+\noindent
 Die Datei-Synchronisation des Servers und der RPi-Knoten erfolgt "uber ein Netz-Dateisys\-tem (hier: \texttt{nfs}). Dessen Verwaltung erfolgt auf dem Server "uber ein Union-Dateisystem (hier: \texttt{aufs}), das mehrere Schichten des Dateisystems anlegt: Die unteren Schichten haben nur Leseberechtigungen, die oberste Lese-Schreib-Berechtigungen. Werden Daten in einem geteilten Verzeichnis ver"andert, so bleiben die unteren Schichten unver"andert. Die "Anderungen werden nur auf der obersten Schicht geschrieben. F"ur gemeinsam genutzte Daten des Servers und der Clients steht auf dem Server das Verzeichnis \texttt{/srv/nfs-share} bzw. auf den Clients \texttt{/srv} zur Verf"ugung. Eine genaue Darstellung findet sich bei \cite{kli13}.
 
 \subsection{Implikationen f"ur den Versuchsaufbau}\label{Versuchsaufbau}
