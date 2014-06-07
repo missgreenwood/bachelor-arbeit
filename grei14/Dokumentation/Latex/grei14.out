@@ -19,11 +19,11 @@
 \BOOKMARK [2][-]{subsection.2.6.2}{Betriebssystem und Dateisystem}{section.2.6}% 19
 \BOOKMARK [2][-]{subsection.2.6.3}{Implikationen f\374r den Versuchsaufbau}{section.2.6}% 20
 \BOOKMARK [0][-]{chapter.3}{Versuchsaufbau und -ablauf}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Zielsetzung}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Aufbau und Art der Messung}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{Versuchsaufbau Bramble}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Strommessung}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.1}{Zielsetzung, Aufbau und Art der Messung}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.1.1}{Versuchsaufbau Ri-Einzelrechner}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.2}{Versuchsaufbau Bramble}{section.3.1}% 24
+\BOOKMARK [1][-]{section.3.2}{Strommessung}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{Fehlerbehebung}{chapter.3}% 26
 \BOOKMARK [1][-]{section.3.4}{Ergebnisse}{chapter.3}% 27
 \BOOKMARK [2][-]{subsection.3.4.1}{HPL: Performance}{section.3.4}% 28
 \BOOKMARK [2][-]{subsection.3.4.2}{STREAM: Performance}{section.3.4}% 29
@@ -32,6 +32,5 @@
 \BOOKMARK [1][-]{section.4.1}{HPL: Performance}{chapter.4}% 32
 \BOOKMARK [1][-]{section.4.2}{STREAM: Performance}{chapter.4}% 33
 \BOOKMARK [1][-]{section.4.3}{Stromverbrauch}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.4}{Grenzen des Versuchsaufbaus}{chapter.4}% 35
-\BOOKMARK [0][-]{chapter*.15}{Abbildungsverzeichnis}{}% 36
-\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.15}{Abbildungsverzeichnis}{}% 35
+\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 36

@@ -27,24 +27,23 @@
 \contentsline {subsubsection}{Netzzugriff}{11}{section*.8}
 \contentsline {subsubsection}{Ausf\active@dq \dq@prtct {u}hrung verteilter Anwendungen}{11}{section*.9}
 \contentsline {chapter}{\numberline {3}Versuchsaufbau und -ablauf}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Zielsetzung}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Aufbau und Art der Messung}{13}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Versuchsaufbau Ri-Einzelrechner}{13}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Versuchsaufbau Bramble}{14}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.1}Zielsetzung, Aufbau und Art der Messung}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Versuchsaufbau Ri-Einzelrechner}{13}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Versuchsaufbau Bramble}{14}{subsection.3.1.2}
 \contentsline {subsubsection}{Modifikation der RPi-Knoten}{14}{section*.10}
 \contentsline {subsubsection}{Zeitsynchronisation der RPi-Knoten}{14}{section*.11}
-\contentsline {subsubsection}{Skalierung der Messung auf n -- 1 RPi-Knoten}{15}{section*.12}
-\contentsline {subsubsection}{Konfiguration der Datenbank}{16}{section*.13}
-\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf n -- 1 RPi-Knoten}{18}{section*.14}
-\contentsline {section}{\numberline {3.3}Strommessung}{21}{section.3.3}
+\contentsline {subsubsection}{Skalierung der Messung auf $n-4$ RPi-Knoten}{14}{section*.12}
+\contentsline {subsubsection}{Konfiguration der Datenbank}{14}{section*.13}
+\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf $n-4$ RPi-Knoten}{17}{section*.14}
+\contentsline {section}{\numberline {3.2}Strommessung}{20}{section.3.2}
+\contentsline {section}{\numberline {3.3}Fehlerbehebung}{22}{section.3.3}
 \contentsline {section}{\numberline {3.4}Ergebnisse}{23}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}HPL: Performance}{23}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}STREAM: Performance}{25}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.1}HPL: Performance}{24}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}STREAM: Performance}{26}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Stromverbrauch}{26}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Interpretation}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}HPL: Performance}{33}{section.4.1}
 \contentsline {section}{\numberline {4.2}STREAM: Performance}{33}{section.4.2}
 \contentsline {section}{\numberline {4.3}Stromverbrauch}{37}{section.4.3}
-\contentsline {section}{\numberline {4.4}Grenzen des Versuchsaufbaus}{37}{section.4.4}
 \contentsline {chapter}{Abbildungsverzeichnis}{39}{chapter*.15}
 \contentsline {chapter}{Literaturverzeichnis}{41}{chapter*.16}
