@@ -2,26 +2,26 @@
 
 Es gibt zahlreiche Benchmarks, die bereits an den RPi angepasst und auf diesem ausgef"uhrt wurden. Dabei steht oft die Performance verschiedener Betriebssysteme (z.B. Fedora vs. Debian) oder einzelner Hardware-Komponen\-ten im Vordergrund. Zu diesem Zweck werden haupts"achlich Linux-spezifische Benchmarks verwendet wie Sysbench CPU Benchmark (CPU), PyBench (Python-Implementierung), Apache Benchmark (Webserver), Open\-SSL (CPU) oder ioquake3 (GPU). 
 
-Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Auf solche Routinen darf sich die Untersuchung nicht st"utzen. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Ausf"uhrung auf dem RPi erl"autert (vgl. \ref{Versuchsaufbau}). 
+Bei n"aherer Betrachtung erscheint es schwierig, sich einen "Uberblick "uber die existierenden Benchmarks zu verschaffen. Vieles, was von den Anwendern als "`Benchmark"' bezeichnet wird, stellt sich als selbst geschriebene Routine heraus, mit der z.B. die Performance der Grafikkarte getestet werden soll. Solche Routinen haben wenig mit Benchmark-Programmen aus dem HPC-Bereich gemein. Im Folgenden wird daher auf grundlegende Begriffe der Untersuchung eingegangen. Anschlie\ss end werden die verwendeten Benchmarks (vgl. \ref{Benchmarks}) und ihre Ausf"uhrung auf dem RPi erl"autert (vgl. \ref{Versuchsaufbau}). 
 
 \section{Definition: \textit{Benchmarking}}\label{Benchmarking}
 
 Unter \textit{Benchmarking} oder "`Ma\ss st"abe vergleichen"' versteht man im Allgemeinen die vergleichende Analyse von Ergebnissen oder Prozessen mit einem festgelegten Bezugswert oder Vergleichsprozess. \textit{Computer-Benchmarks}, die hier von Bedeutung sind, dienen dem Vergleich der Rechenleistung von Computer-Systemen, wozu in der Regel Software verwendet wird:
 \begin{quote}
 \onehalfspacing
-A simple method of measuring performance is by means of a benchmark program. [\dots] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs \cite{cur76}.
+A simple method of measuring performance is by means of a benchmark program. [\dots] The intention is that by running it upon a new type of machine one may learn something of the performance the machine would have if it ran the original programs. \cite{cur76}
 \end{quote}
 Das \textit{Computer Lexikon 2012} kennt folgende Definition: 
 \begin{quote}
 \onehalfspacing
-Mit einem Benchmark-Programm werden Hardwarekomponenten meist auf Geschwindigkeit getestet, wie z.B. die CPU, das Mainboard, die Festplatte (Schreib-Lese-Geschwindigkeit), die Grafikkarte (Frames/s) usw. Verschiedene Benchmark-Programme liefern oft unterschiedliche Ergebnisse, so dass ein direkter Vergleich zwischen den erreichten Werten kaum aussagekr"aftig ist \cite{pre11}. 
+Mit einem Benchmark-Programm werden Hardwarekomponenten meist auf Geschwindigkeit getestet, wie z.B. die CPU, das Mainboard, die Festplatte (Schreib-Lese-Geschwindigkeit), die Grafikkarte (Frames/s) usw. Verschiedene Benchmark-Programme liefern oft unterschiedliche Ergebnisse, so dass ein direkter Vergleich zwischen den erreichten Werten kaum aussagekr"aftig ist. \cite{pre11}
 \end{quote}
 Hieran wird deutlich, dass die Aussagekraft von Benchmarks eng mit der jeweiligen Testumgebung und der Zielsetzung des Benchmarks zusammenh"angt. Zwei Benchmarks, die die CPU-Performance evaluieren, liefern m"oglicherweise unterschiedliche Ergebnisse, weil unterschiedliche Parameter oder sogar Messgr"o\ss en zu Grunde liegen. Das ist insbesondere bei der Auswahl der Implementierungen und Gestaltung der Testumgebung zu ber"ucksichtigen (vgl. Kap. \ref{RPi-Spezi}, \ref{Bramble-Spezi} und \ref{Versuchsaufbau}). 
 
-In dieser Arbeit soll die Leistung von Hardware-Komponenten eines oder mehrerer parallel arbeitender Rechenkerne mit standardisierten Verfahren ermittelt werden. Rechenberg bezeichnet "`\textit{Analyse}, \textit{Auswahl} und \textit{Konfiguration} von Gesamtsystemen aus Hardware und Software \cite{rec06}"' als eine Hauptaufgabe der Leistungsbewertung: 
+In dieser Arbeit soll die Leistung von Hardware-Komponenten eines oder mehrerer parallel arbeitender Rechenkerne mit standardisierten Verfahren ermittelt werden. Rechenberg bezeichnet "`\textit{Analyse}, \textit{Auswahl} und \textit{Konfiguration} von Gesamtsystemen aus Hardware und Software"' \cite{rec06} als eine Hauptaufgabe der Leistungsbewertung: 
 \begin{quote}
 \onehalfspacing
-[F]"ur diese Aufgaben, die die etwa im Zuge einer Rechnerbeschaffung anfallen, wurde in Form von standardisierten Me\ss programmen und -methoden (\textit{benchmarking}) eine solide Basis geschaffen \cite{rec06}. 
+[F]"ur diese Aufgaben, die die etwa im Zuge einer Rechnerbeschaffung anfallen, wurde in Form von standardisierten Me\ss programmen und -methoden (\textit{benchmarking}) eine solide Basis geschaffen. \cite{rec06}
 \end{quote} 
 Daher wird hier hier mit \textit{Benchmarking} das \textbf{\textit{Standardisieren von Arbeit}} bezeichnet.
 
@@ -31,19 +31,19 @@ Daher wird hier hier mit \textit{Benchmarking} das \textbf{\textit{Standardisier
 Die physikalische Gr"o\ss e \textit{Leistung} ist als \textit{Energie pro Zeit} definiert. In der Informatik wird der Begriff meist abweichend als Rechenleistung verwendet, d.h. das Zeitverhalten von Programmen und Ger"aten oder die Leistungsf"ahigkeit eines Computersystems. Eine Abgrenzung erscheint jedoch schwierig: 
 \begin{quote}
 \onehalfspacing
-The performance of a computer is a complicated issue, a function of many interrelated quantities. These quantities include the application, the algorithm, the size of a problem, the high-level language, the implementation, the human level of effort used to optimize the program, the compiler's ability to optimize, the age of the compiler, the operating system, the architecture of the computer and the hardware characteristics \cite{don03}.
+The performance of a computer is a complicated issue, a function of many interrelated quantities. These quantities include the application, the algorithm, the size of a problem, the high-level language, the implementation, the human level of effort used to optimize the program, the compiler's ability to optimize, the age of the compiler, the operating system, the architecture of the computer and the hardware characteristics. \cite{don03}
 \end{quote}
 Das \textit{Informatik-Handbuch} liefert folgende Aspekte:
 \begin{quote} 
 \onehalfspacing
-Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [\dots] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen \cite{rec06}.
+Quantitative Leistungsanalysen (\textit{performance analyses}) ermitteln Leistungskenngr"o\ss en von Rechenanlagen. [\dots] Leistungsbewertung kann sich auf Teilschaltungen, Komponenten (wie Prozessor, Speichersystem oder periphere Ger"ate), gesamte Rechnerverb"unde beziehen. \cite{rec06}
 \end{quote}
 In dieser Arbeit soll die Performance eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen ermittelt werden. Curnow erl"autert in Bezug auf Whetstone: 
 \begin{quote}
 \onehalfspacing
-We are not claiming [to reflect] the overall performance of a given system. On the contrary, we believe that no single number ever can. It does, however, reflect the performance of a dedicated machine for solving a dense system of linear equations \cite{cur76}.
+We are not claiming [to reflect] the overall performance of a given system. On the contrary, we believe that no single number ever can. It does, however, reflect the performance of a dedicated machine for solving a dense system of linear equations. \cite{cur76}
 \end{quote}
-Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in diesem abgegrenzten Sinn bezeichnet, d.h. die Datenverarbeitungsgeschwindigkeit eines spezifischen Systems, nicht dessen Leistung im physikalischen Sinn. Dabei werden die \textbf{\textit{Ausf"uhrungsrate}} und die \textbf{\textit{Ausf"uhrungszeit}} als ma\ss gebliche Zahlen betrachtet. 
+Mit \textit{Performance} wird hier daher die \textbf{\textit{Rechenleistung}} in diesem abgegrenzten Sinn bezeichnet, d.h. die Datenverarbeitungsgeschwindigkeit eines spezifischen Systems, nicht dessen Leistung im physikalischen Sinn. Dabei werden die \textbf{\textit{Ausf"uhrungsrate}} und die \textbf{\textit{Ausf"uhrungszeit}} als ma\ss gebliche Zahlen betrachtet. 
 
 % Energieverbrauch = Exergieverbrauch/Entropieerzeugung in Watt
 \section{Definition: \textit{Energieverbrauch}}\label{Energieverbrauch}
@@ -51,16 +51,16 @@ Mit \textit{Performance} wird daher hier die \textbf{\textit{Rechenleistung}} in
 Obwohl der Begriff \textit{Energieverbrauch} (engl. \textit{energy consumption} oder \textit{power consumption}) weit verbreitet ist (vgl. z.B. \cite{fich13} und \cite{buh08}), stimmt er nicht mit der physikalischen Definition "uberein: Nach dem Energieerhaltungssatz bleibt die Gesamtenergie in einem geschlossenen System konstant. Dennoch wird der Begriff auch in der Informatik h"aufig verwendet, um die Leistungsf"ahigkeit eines Rechners oder Rechensystems in Abh"angigkeit von der Energieaufnahme zu charakterisieren:
 \begin{quote}
 \onehalfspacing
-Vom physikalischen Standpunkt aus betrachtet, ist der Ausdruck "`Energieverbrauch"' falsch. Energie kann nicht verbraucht oder erzeugt, sondern nur umgewandelt werden. Trotzdem hat sich dieser Bergriff eingeb"urgert [\dots]. Bei elektronischen Systemen wird elektrische Energie verwendet, um Rechenleistung in einer bestimmten Zeitspanne zu generieren, physikalisch gesehen wird die elektrische Energie jedoch zu nahezu hundert Prozent in W"armeenergie umgewandelt \cite{lan13}. 
+Vom physikalischen Standpunkt aus betrachtet, ist der Ausdruck "`Energieverbrauch"' falsch. Energie kann nicht verbraucht oder erzeugt, sondern nur umgewandelt werden. Trotzdem hat sich dieser Bergriff eingeb"urgert [\dots]. Bei elektronischen Systemen wird elektrische Energie verwendet, um Rechenleistung in einer bestimmten Zeitspanne zu generieren, physikalisch gesehen wird die elektrische Energie jedoch zu nahezu hundert Prozent in W"armeenergie umgewandelt. \cite{lan13}
 \end{quote}
 In dieser Arbeit liegt ein Schwerpunkt der Leistungsbewertung auf der Energieaufnahme eines RPi-Clusters bei der Ausf"uhrung von Benchmark-Programmen. Mit \textit{Energieverbrauch} ist hier der Exergieverbrauch bzw. die Entropieerzeugung in Watt im physikalischen Sinn gemeint.     
 
 \section{Benchmarks}\label{Benchmarks}
 
-Aus der F"ulle an existierenden Benchmarks eine Auswahl zu treffen erweist sich als trickreich. M"ogliche Kriterien f"ur die Auswahl nennt Weicker: 
+Aus der F"ulle an existierenden Benchmarks eine Auswahl zu treffen, ist ein komplexer Vorgang. M"ogliche Kriterien f"ur die Auswahl nennt Weicker: 
 \begin{quote}
 \onehalfspacing
-The [\dots] best benchmark (1) is written in a high-level language, making it portable across different machines, (2) is representative for some kind of programming style (for example, systems programming, numerical programming, or commercial programming), (3) can be measured easily, and (4) has wide distribution \cite{wei90}. 
+The [\dots] best benchmark (1) is written in a high-level language, making it portable across different machines, (2) is representative for some kind of programming style (for example, systems programming, numerical programming, or commercial programming), (3) can be measured easily, and (4) has wide distribution. \cite{wei90}
 \end{quote}
 Der Benchmark muss zudem "uberhaupt auf das gew"ahlte System anwendbar sein, d.h. das System muss dessen Spezifikationen erf"ullen bzw. es muss eine geeignete Implementierung vorliegen. Aus diesem Grund musste z.B. SHOC ausscheiden. SHOC ist nicht lauff"ahig auf dem RPi, da Open CL nicht unterst"utzt wird. 
 
@@ -71,17 +71,17 @@ F"ur die Untersuchung wurden drei etablierte HPC-Benchmarks vorgegeben, die sowo
 Grunds"atzlich muss zwischen der Linpack-Bibliothek und dem Linpack-Benchmark unterschieden werden. Erstere ist eine numerische Programmbibliothek zum L"osen von linearen Gleichungssystemen und galt darin lange Zeit als Standard. Der Linpack-Benchmark basiert auf zwei ihrer Routinen: 
 \begin{quote}
 \onehalfspacing
-Linpack was designed out of a real, purposeful program that is now used as a benchmark \cite{wei90}. 
+Linpack was designed out of a real, purposeful program that is now used as a benchmark. \cite{wei90}
 \end{quote}
 Er wurde haupts"achlich von Jack Dongarra entwickelt und wird seit den 1970er Jahren zur Klassifizierung von Rechnern verwendet: 
 \begin{quote}
 \onehalfspacing
-Over the years additional performance data was added [\dots] and today the collection includes over 1300 different computer systems \cite{don03}.
+Over the years additional performance data was added [\dots] and today the collection includes over 1300 different computer systems. \cite{don03}
 \end{quote}
 Seit 1993 werden die leistungsf"ahigsten Supercomputer der Welt durch die Top500-Rankings ermittelt. Hierzu dient die Variante HPLinpack, auch $N\times N$ Linpack oder High Parallel Computing genannt:  
 \begin{quote}
 \onehalfspacing
-Over recent years, the LINPACK Benchmark has evolved from a simple listing for one matrix problem to an expanded benchmark describing the performance at three levels of problem size on several hundred computers. The benchmark today is used by scientists worldwide to evaluate computer performance, particularly for innovative advanced-architecture machines \cite{don03}. 
+Over recent years, the LINPACK Benchmark has evolved from a simple listing for one matrix problem to an expanded benchmark describing the performance at three levels of problem size on several hundred computers. The benchmark today is used by scientists worldwide to evaluate computer performance, particularly for innovative advanced-architecture machines. \cite{don03} 
 \end{quote}
 Dort findet sich auch eine vertiefte Darstellung des Linpack-Benchmarks. 
 % LU Factorization: 
@@ -97,14 +97,14 @@ Beim Vergleich der Ergebnisse von Linpack ist die Matrixgr"o\ss e von Bedeutung,
 
 \subsubsection{Linpack auf dem Raspberry Pi}\label{Linpack-RPi}
 
-Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht. Somit liegen bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind im Umlauf. Der hier verwendete Quellcode findet sich unter \url{http://www.netlib.org/benchmark/hpl}. 
+Bereits kurz nach Verkaufsstart des RPi wurden Implementierungen von Linpack f"ur den RPi bereit gestellt und Ergebnisse von Testl"aufen im Internet ver"offentlicht. Somit liegen bereits Vergleichswerte f"ur einen RPi-Einzelrechner vor. Auch Implementierungen von Linpack f"ur verteilte Systeme unabh"angig von den Top500-Rankings sind verf"ugbar. Der hier verwendete Quellcode findet sich unter \url{http://www.netlib.org/benchmark/hpl}. 
 
 \subsection{Whetstone}\label{Whetstone}
 
 Auch Whetstone ist als Benchmark im HPC-Bereich und zur Klassifizierung von Einzelrechnern seit vielen Jahren etabliert:
 \begin{quote}
 \onehalfspacing
-[T]he most common 'stone age' benchmarks (CPU/memory/compiler benchmarks only) [are] in particular the Whetstone, Dhrystone, and Linpack benchmarks. These are the benchmarks whose results are most often cited in manufacturers' publications and in the trade press \cite{wei90}.
+[T]he most common 'stone age' benchmarks (CPU/memory/compiler benchmarks only) [are] in particular the Whetstone, Dhrystone, and Linpack benchmarks. These are the benchmarks whose results are most often cited in manufacturers' publications and in the trade press. \cite{wei90}
 \end{quote}
 Er wurde 1976 von Roy Longbottom und anderen entwickelt und gilt als erstes Programm, das jemals explizit f"ur das Benchmarking industrieller Standards designt wurde (vgl. \cite{wei90}). Wie Linpack misst er die CPU-Leistung. 
 
@@ -115,7 +115,7 @@ Die Funktionsweise von Whetstone "ahnelt Linpack. Allerdings werden nicht nur Fl
 Die einzelnen Teile werden als Module bezeichnet und sind jeweils in eine For-Schleife eingebettet, die viele Male  hintereinander ausgef"uhrt wird. Ein Rahmenprogramm steuert Aufruf der Module und Ausgabe der Ergebnisse. Auch die Ausgabe ist Teil des Benchmarks, allerdings bemerkt Curnow hierzu: 
 \begin{quote}
 \onehalfspacing
-This output is only required to ensure that the calculations are logically necessary; it is not intended to represent the output from a typical program \cite{cur76}. 
+This output is only required to ensure that the calculations are logically necessary; it is not intended to represent the output from a typical program. \cite{cur76}
 \end{quote}
 Die Ergebnisse wurden zun"achst in \textit{Whetstone Instructions per Second} gemessen, heutige Implementierungen liefern Ergebnisse in MFLOPs. Eine detaillierte Darstellung der Entwicklung und Implementierung von Whetstone findet sich bei \cite{cur76}, ebenso der urspr"ungliche Quellcode in ALGOL 60. 
 % Least-squares: 
@@ -126,7 +126,7 @@ Die Ergebnisse wurden zun"achst in \textit{Whetstone Instructions per Second} ge
 Whetstone erschien wie f"ur den RPi gemacht, da er sich als Standard f"ur Mini-Computer etabliert hat: Der Benchmark war in den 70er Jahren f"ur Maschinen mit deutlich geringerer Rechenleistung als heute entwickelt worden. Bereits damals gingen die Entwickler von notwendigen Anpassungen f"ur neue Speicherhierarchien aus: 
 \begin{quote}
 \onehalfspacing
-When more is known about the characteristics of programs running on these multi-level store machines it may be possible to produce a typical program for particular types of machine. [\dots] Despite these limitations the program described should be of some value, particularly in relation to smaller machines \cite{cur76}. 
+When more is known about the characteristics of programs running on these multi-level store machines it may be possible to produce a typical program for particular types of machine. [\dots] Despite these limitations the program described should be of some value, particularly in relation to smaller machines. \cite{cur76}
 \end{quote}
 Er wurde vom Entwickler selbst f"ur den RPi angepasst und und auf diesem getestet (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}). Auch hier liegen also Vergleichswerte f"ur einen RPi-Einzelrechner vor. 
 
@@ -221,7 +221,7 @@ Welche Zugriffsm"oglichkeiten auf die Komponenten des Bramble gibt es, und wie k
 Der Zugriff auf den Bramble erfolgt aus dem internen Netz "uber IP und SSH. Auf die einzelnen RPi-Knoten wird von \texttt{careme} aus ebenfalls "uber IP und SSH zugegriffen (private Adressen \texttt{10.0.0.2} bis \texttt{10.0.0.21}). 
 
 
-Es gibt auf jedem RPi-Knoten den Raspbian-Standard-User \texttt{pi}, der nicht ver"andert wurde. Aus Sicherheitsgr"unden wurden f"ur \texttt{careme} keine root-Rechte erteilt, nur f"ur die einzelnen RPi-Knoten. Stattdessen wurde der Benutzer \texttt{rpi-user} eingerichtet. Das bedeutet, dass alle "Anderungen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} von einem der RPi-Nodes aus vorgenommen werden m"ussen, da \texttt{rpi-user} hierauf keine Schreibberechtigungen hat. Somit wurde vorab RPi-Node \texttt{pi03} als Berechnungsknoten definiert, von dem aus alle Skripte ausgef"uhrt, Programme installiert werden etc.. Die Datenbank zur Speicherung von Konfigurationen und Messwerten war hingegen auf dem Server angelegt worden. Dadurch wird h"aufiges Navigieren zwischen dem Server und dem Berechnungsknoten mit unterschiedlichen Benutzern notwendig.
+Es gibt auf jedem RPi-Knoten den Raspbian-Standard-User \texttt{pi}, der nicht ver"andert wurde. Aus Sicherheitsgr"unden wurden f"ur \texttt{careme} keine root-Rechte erteilt, nur f"ur die einzelnen RPi-Knoten. Stattdessen wurde der Benutzer \texttt{rpi-user} eingerichtet. Das bedeutet, dass alle "Anderungen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share} von einem der RPi-Nodes aus vorgenommen werden m"ussen, da \texttt{rpi-user} hierauf keine Schreibberechtigungen hat. Somit wurde vorab RPi-Node \texttt{pi03} als Berechnungsknoten definiert, von dem aus z.B. Skripte ausgef"uhrt und Programme installiert werden. Die Datenbank zur Speicherung von Konfigurationen und Messwerten war hingegen auf dem Server angelegt worden. Dadurch wird h"aufiges Navigieren zwischen dem Server und dem Berechnungsknoten mit unterschiedlichen Benutzern notwendig.
 
 Die Skripte zur Ausf"uhrung der Benchmarks sehen h"aufig das Herunterfahren einzelner RPi-Knoten vor, um den Energieverbrauch beim Abschalten nicht aktiver RPi-Knoten zu ermitteln. Alle Anwendungen wurden daher auf maximal n=19 RPi-Nodes ausgef"uhrt und von \texttt{pi03} aus gesteuert. 
 

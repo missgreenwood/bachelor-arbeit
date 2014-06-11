@@ -8,26 +8,18 @@ Die Leistung von Rechnern, seien es Gro\ss rechner, Desktop-Rechner oder Minicom
 
 % PROBLEM STATEMENT
 Im wissenschaftlichen Umfeld werden immer h"aufiger mehrere RPis zu einem Beowulf-Cluster % TODO: Def.
-verschaltet, um parallele Berechnungen auszuf"uhren. Vor diesem Hintergrund stellt sich die Frage: Wie verh"alt sich ein RPi bei der Ausf"uhrung von HPC-Benchmarks? Noch interessanter ist das Verhalten eines RPi-Clusters: Welche CPU-Performance l"asst sich damit erzielen und wie verh"alt sich der Cluster bei Hinzunahme von Ressourcen, d.h. RPi-Rechenkernen? Im Zentrum dieser Arbeit stehen daher CPU-Performance und Skalierungsverhalten eines RPi-Clusters unter den Testbedingungen ausgew"ahlter HPC-Benchmarks. Dazu wird zun"achst die die Performance eines RPi-Einzelrechners ermittelt. Anschlie\ss end wird die Performance eines RPi-Clusters bei Ausf"uhrung der Benchmarks evaluiert. Im Fokus steht dabei der Energievebrauch, der mit Hilfe eines Strommessger"ats f"ur die unterschiedlichen Versuchsaufbauten ermittelt wird. 
+verschaltet, um parallele Berechnungen auszuf"uhren. Vor diesem Hintergrund stellt sich die Frage: Wie verh"alt sich ein RPi bei der Ausf"uhrung von HPC-Benchmarks? Noch interessanter ist das Verhalten eines RPi-Clusters: Welche CPU-Performance und welcher Durchsatz von Hauptspeicherzugriffen lassen sich damit erzielen? Wie verh"alt sich der Cluster bei Hinzunahme von Ressourcen, d.h. RPi-Rechenkernen? Im Zentrum dieser Arbeit stehen daher Performance und Skalierungsverhalten eines RPi-Clusters unter den Testbedingungen ausgew"ahlter HPC-Benchmarks. Zus"atzlich wird der Energieverbrauch des RPi-Clusters betrachtet. 
 % evtl. TODO: CHALLENGES (welche erwartet/welche eingetreten)
 % \section{Vorgehensweise und Struktur}\label{Vorgehensweise}
-
 % Auswahl der Benchmarks und Implementierungen 
-Grunds"atzlich stellt sich die Frage, welche Benchmarks sich f"ur das zu untersuchende System (RPi-Einzelrechner bzw. RPi-Cluster) und die zu untersuchende Komponente (CPU) eignen. Sie k"onnen nur herangezogen werden, wenn hierf"ur geeignete Implementierungen existieren. 
-
 % Versuchsaufbau
-F"ur den physischen Versuchsaufbau muss sicher gestellt sein, dass alle erforderlichen Komponenten (RPi-Cluster, RPi-Einzelrechner und Strommessger"at) zuverl"assig arbeiten. Dies muss regelm"a\ss ig "uberpr"uft werden, z.B. durch Kontrolle des Netzwerkstatus der Komponenten.  
-
 % Automatisierung durch Skripte
-Die Ausf"uhrung der Benchmarks mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes erfolgt sinnvollerweise automatisiert durch entsprechende Shellskripte. Die Resultate m"ussen in geeigneter Form in eine Datenbank geloggt werden, was ebenfalls durch Shellskripte realisiert wird. 
-
 % Strommessgerät 
-Der Stromverbrauch des RPi-Clusters mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes wird durch ein Strommessger"at ermittelt, das an die Stromversorgung des RPi-Clusters angeschlossen wird. Seine Messwerte m"ussen ebenfalls in geeigneter Form in eine Datenbank geloggt werden.  
-
 % Evaluierung der Ergebnisse
-\noindent
-Die Messwerte der Benchmarks m"ussen mit denen des Strommessger"ats abgeglichen werden, um Aussagen "uber den Stromverbrauch treffen zu k"onnen. F"ur die Interpretation der ermittelten Versuchsergebnisse ist eine grafische Aufbereitung erforderlich.
 
+Grunds"atzlich stellt sich die Frage, welche Benchmarks sich f"ur das zu untersuchende System (RPi-Einzelrechner bzw. RPi-Cluster) und die zu untersuchende Komponente (CPU) eignen. Sie k"onnen nur herangezogen werden, wenn hierf"ur geeignete Implementierungen existieren. F"ur den physischen Versuchsaufbau muss sicher gestellt sein, dass alle erforderlichen Komponenten (RPi-Cluster, RPi-Einzelrechner und Strommessger"at) zuverl"assig arbeiten. Dies muss regelm"a\ss ig "uberpr"uft werden, z.B. durch Kontrolle des Netzwerkstatus der Komponenten. Die Ausf"uhrung der Benchmarks mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes erfolgt sinnvollerweise automatisiert durch entsprechende Shellskripte. Die Resultate m"ussen in geeigneter Form in eine Datenbank geloggt werden, was ebenfalls durch Shellskripte realisiert wird. Der Stromverbrauch des RPi-Clusters mit unterschiedlichen Anzahlen aktiver und angeschalteter RPi-Nodes wird durch ein Strommessger"at ermittelt, das an die Stromversorgung des RPi-Clusters angeschlossen wird. Seine Messwerte m"ussen ebenfalls in geeigneter Form in eine Datenbank geloggt werden. Die Messwerte der Benchmarks m"ussen mit denen des Strommessger"ats abgeglichen werden, um Aussagen "uber den Stromverbrauch treffen zu k"onnen. F"ur die Interpretation der ermittelten Versuchsergebnisse ist eine grafische Aufbereitung erforderlich.
+\newpage
+\noindent
 Um den Bezugsrahmen zu verdeutlichen, werden in Kapitel 2 zun"achst grundlegende Definitionen gekl"art. Insbesondere werden die ausgew"ahlten Benchmarks vorgestellt (vgl. Kap. \ref{Benchmarks}) und die Spezifikationen von RPi (vgl. Kap. \ref{RPi-Spezi}) und RPi-Cluster erl"autert (vgl. Kap. \ref{Bramble-Spezi}). Versuchsaufbau und -ablauf werden mit Blick auf Auswahl und Anpassung der RPi-spezifischen Parameter im folgenden Kapitel dargestellt (vgl. Kap. \ref{Kap3}). Schlie\ss lich  werden die Messergebnisse dargestellt (vgl. Kap. \ref{Ergebnisse}) und interpretiert (vgl. Kap. \ref{Kap4}). Den Abschluss bilden eine Zusammenfassung der Untersuchungsergebnisse und ein Ausblick (vgl. Kap. \ref{Kap5}).
 
 % TODO: Textbelege Grundlagenwerke, die sonst nirgends zitiert werden (ZITATE AUS LITERATURVERZEICHNIS (IM TEXT): z. B. \cite{han99})

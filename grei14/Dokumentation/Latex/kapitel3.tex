@@ -16,7 +16,7 @@ F"ur den Versuchsaufbau sind demnach folgende Aspekte von Bedeutung: Modifikatio
 
 Viele Nutzer stellen sich nach Inbetriebnahme eines RPi-Einzelrechners die Frage nach Swap-Speicher und "Ubertakten (vgl. \cite{pow12}). Beides liegt nahe, da das Modell B nur "uber 512 MB Arbeitsspeicher verf"ugt. Die CPU-Taktfrequenz betr"agt 700 MHz. 
 
-Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann (vgl. Kap. \ref{Kap5}).}. F"ur Linpack 100 und Whetstone wurden allerdings bereits Ergebnisse mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).
+Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann. F"ur Linpack 100 und Whetstone wurden allerdings bereits Ergebnisse mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).
 
 Zur Allokierung von Swap-Speicher auf dem RPi gibt es grunds"atzlich drei M"oglichkeiten: Swap-Datei, Swap-Partition oder zRAM. 
 
@@ -32,7 +32,7 @@ Auf dem \texttt{careme} war kein Swap-Speicher allokiert worden (vgl. \cite{kli1
 
 \subsection{Versuchsaufbau Bramble}\label{Bramble-Versuchsaufbau}
 
-Diagramm \ref{fig:Komponentendiagramm} zeigt den Versuchsaufbau pro Messreihe: Stromversorgung, Netzanschluss und Strommessger"at als physische Komponenten und MySQL-Datenbank als logische Komponente. 
+Abbildung \ref{fig:Komponentendiagramm} zeigt den Versuchsaufbau pro Messreihe: Stromversorgung, Netzanschluss und Strommessger"at als physische Komponenten und MySQL-Datenbank als logische Komponente. 
 \begin{figure}[htb]
   \centering
   \centerline{\includegraphics[scale=0.5]{komponentendiagramm2.pdf}} 
@@ -49,7 +49,7 @@ Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{sch
 
 \subsubsection{Skalierung der Messung auf $n-4$ RPi-Knoten} 
 
-Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl aktiver und angeschalteter RPi-Knoten wird als \textit{ExperimentSuite} bezeichnet werden. Diagramm \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht zu ihrer Durchf"uhrung erforderlich sind. Messreihe 1 beginnt mit der h"ochsten Anzahl aktiver RPi-Knoten begonnen und iteriert einmal "uber alle Knoten. In Messreihe 2 werden nach jedem Iterationsschritt nicht mehr aktive RPi-Knoten abgeschaltet. Jede Ausf"uhrung eines Benchmark-Programms l"auft prinzipell gleich ab, w"ahrend zu Beginn und an Ende spezielle Vorkehrungen zu treffen sind.  
+Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl aktiver und angeschalteter RPi-Knoten wird als \textit{ExperimentSuite} bezeichnet werden. Abbildung \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht zu ihrer Durchf"uhrung erforderlich sind. Messreihe 1 beginnt mit der h"ochsten Anzahl aktiver RPi-Knoten begonnen und iteriert einmal "uber alle Knoten. In Messreihe 2 werden nach jedem Iterationsschritt nicht mehr aktive RPi-Knoten abgeschaltet. Jede Ausf"uhrung eines Benchmark-Programms l"auft prinzipell gleich ab, w"ahrend zu Beginn und an Ende spezielle Vorkehrungen zu treffen sind.  
 \begin{figure}[htb]
   \centerline{\includegraphics[scale=0.5]{aktivitaetsdiagramm1.pdf}} 
   \caption{Aktivit"atsdiagramm einer ExperimentSuite.}
@@ -59,20 +59,20 @@ Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl aktiver un
 \subsubsection{Konfiguration der Datenbank}
 
 Messergebnisse, Konfigurationen von Benchmarks und ExperimentSuites werden in der MySQL-Datenbank \texttt{rpiWerte} auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. Es wurde w"ahrend der praktischen Arbeit an die tats"achlichen Erfordernisse angepasst: F"ur jedes Modul eines Benchmarks wird ein Messparameter definiert, der Unix-Zeitstempel seines Ausf"uhrungsendes ermittelt und mit dem jeweiligen Messwert in die Datenbank eingelesen. F"ur jede ExperimentSuite werden Anfangs- und Endzeitpunkt als Unix-Zeitstempel ermittelt und in die Datenbank eingelesen. Die Konfiguration erfolgt in vier Schritten:  
-\begin{enumerate}\bfseries
+\begin{enumerate}%\befseries
 	\item Name und Beschreibung des Benchmarks. 
 	\item Beschreibung des Versuchsaufbaus. 
 	\item Konfiguration des Versuchsaufbaus. 
 	\item Verkn"upfung von Benchmark-Konfiguration und Versuchsaufbau.
 \end{enumerate} 
-Diagramm \ref{fig:Dbconfig1} visualisiert Schritt 1. Die statischen Konfigurationen f"ur STREAM und HPL werden festgelegt. Dazu wurden zwei Shellskripte \texttt{loadGeneratorCon\-figHpl.sh} und \texttt{loadGe\-nerator\-ConfigStream.sh} erstellt. Sie werden zu Beginn des Versuchsaufbaus einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: In der Tabelle \texttt{LoadGenerator} wird ein Eintrag mit Name und Beschreibung des Benchmarks erstellt. In der Tabelle \texttt{ENUM\_LoadGeneratorConfigura\-tionKey} wird ein Eintrag mit dem Konfigurationsschl"ussel des Benchmarks erstellt. In der Tabelle \texttt{LoadGeneratorConfiguration} wird ebenfalls ein Eintrag mit dem Konfigurationsschl"ussel erstellt.
+Abbildung \ref{fig:Dbconfig1} visualisiert Schritt 1. Die statischen Konfigurationen f"ur STREAM und HPL werden festgelegt. Dazu wurden zwei Shellskripte \texttt{loadGeneratorCon\-figHpl.sh} und \texttt{loadGe\-nerator\-ConfigStream.sh} erstellt. Sie werden zu Beginn des Versuchsaufbaus einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: In der Tabelle \texttt{LoadGenerator} wird ein Eintrag mit Name und Beschreibung des Benchmarks erstellt. In der Tabelle \texttt{ENUM\_LoadGeneratorConfigura\-tionKey} wird ein Eintrag mit dem Konfigurationsschl"ussel des Benchmarks erstellt. In der Tabelle \texttt{LoadGeneratorConfiguration} wird ebenfalls ein Eintrag mit dem Konfigurationsschl"ussel erstellt.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{dbconfig1.pdf}
 \caption{Aktivit"atsdiagramm zur Konfiguration der Datenbank f"ur einen Benchmark.}
 \label{fig:Dbconfig1}
 \end{figure}
-Die dynamischen Schritte $2-4$ werden einmal pro ExperimentSuite ausgef"uhrt: Name, Beschreibung und Konfiguration des Versuchsaufbaus, Verkn"upfung von ExperimentSuite und Benchmark-Konfiguration. Sie werden in Diagramm \ref{fig:Dbconfig2} veranschaulicht und sind in die Ausf"uhrungsskripte der Benchmarks integriert. 
+Die dynamischen Schritte $2-4$ werden einmal pro ExperimentSuite ausgef"uhrt: Name, Beschreibung und Konfiguration des Versuchsaufbaus, Verkn"upfung von ExperimentSuite und Benchmark-Konfiguration. Sie werden in Abbildung \ref{fig:Dbconfig2} veranschaulicht und sind in die Ausf"uhrungsskripte der Benchmarks integriert. 
 
 \subsubsection{Automatisierte Durchf"uhrung der Messung auf $n-4$ RPi-Knoten} 
 
@@ -93,7 +93,7 @@ Alle Shellskripte zur Konfiguration und Ausf"uhrung der ExperimentSuites liegen 
 		\textbf{\item Iteration "uber \textit{n} RPi-Knoten:}
 		\begin{enumerate}\bfseries
 			\item Datenbank f"ur ExperimentSuite vorbereiten.\\ 
-\normalfont{Diagramm \ref{fig:Dbconfig2} visualisiert Schritt b) i. F"ur jede Ausf"uhrung eines Benchmark-Programms wird ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Granularit"at, Ziel und Startzeitpunkt erstellt. In der Tabelle \texttt{Experiment\-Suite\-Configuration} werden zwei Eintr"age mit Anzahl aktiver und angeschalteter RPi-Knoten erstellt. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_\-loadConf3expSuite} verkn"upft. Darin wird ein Eintrag mit ID des Benchmarks und ID der ExperimentSuite erstellt.}
+\normalfont{Abbildung \ref{fig:Dbconfig2} visualisiert Schritt b) i. F"ur jede Ausf"uhrung eines Benchmark-Programms wird ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Granularit"at, Ziel und Startzeitpunkt erstellt. In der Tabelle \texttt{Experiment\-Suite\-Configuration} werden zwei Eintr"age mit Anzahl aktiver und angeschalteter RPi-Knoten erstellt. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_\-loadConf3expSuite} verkn"upft. Darin wird ein Eintrag mit ID des Benchmarks und ID der ExperimentSuite erstellt.}
 \begin{figure}[htb]
 \centerline{\includegraphics[scale=0.5]{dbconfig2.pdf}}
 \caption{Aktivit"atsdiagramm zur Konfiguration der Datenbank f"ur eine ExperimentSuite.}
@@ -161,7 +161,7 @@ Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werde
 
 % Messgrößen 
 \noindent
-Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W - 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$ (vgl. \cite{scrguide03}). % TODO Messfehler ermitteln 
+Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W - 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$ (vgl. \url{http://energenie.com/Repository/6736/EGM-PWM-} \url{LAN_manual---fe4469f6-23eb-40be-8c86-e83faf6a2c5b.pdf}). % TODO Messfehler ermitteln 
 
 % Datenzugriff 
 F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als ungeeignet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
@@ -169,8 +169,8 @@ F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als ungeeignet. Zwa
 Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. Export der Messwerte "uber eine Zeitspanne als \texttt{xls}-Datei. Pro Messung werden drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. Au\ss erdem werden die Messwerte in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerData\-base} auf der zugreifenden Windows-Maschine abgelegt. Pro Messung werden zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} von Bedeutung. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem \texttt{xls}-Export fiel wegen der feineren Granularit"at der Zeitstempel. 
 
 % Setup für ExperimentSuite 
-Das Diagramm \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite zur Strommessung notwendig sind: 
-\begin{figure}[htb]
+Abbildung \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite zur Strommessung notwendig sind: 
+\begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{energenie.pdf}\\ 
   \caption{Aktivit"atsdiagramm der Strommessung f"ur eine ExperimentSuite.}
@@ -246,10 +246,9 @@ Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigk
 	
 Wie in Kap. \ref{RPi-Hardware} beschrieben, verf"ugt der RPi "uber 512 MB SDRAM. Wie bei \cite{kli13} dargestellt, werden davon ca. 50 MB durch das Betriebssystem belegt, sodass noch ca. 450 MB pro RPi-Knoten zur Verf"ugung stehen. 
 
-Um die Proportionalit"atskonstante f"ur die Wahl von \texttt{N} zu ermitteln, wurde mit verschiedenen Vielfachen von 96 experimentiert und die Belegung des Hauptspeichers mit \texttt{top} kontrolliert. F"ur $n=4$ RPi-Knoten wurde die beste Performance mit \texttt{N}$=2880$ erzielt. Daraus wurde die Proportionalit"atskonstante als \[k=8294400/1800=4608\] berechnet. 
+Um die Proportionalit"atskonstante f"ur die Wahl von \texttt{N} zu ermitteln, wurde mit verschiedenen Vielfachen von 96 experimentiert und die Belegung des Hauptspeichers mit \texttt{top} kontrolliert. F"ur $n=4$ RPi-Knoten wurde die beste Performance mit \texttt{N}$=2880$ erzielt. Daraus wurde die Proportionalit"atskonstante als \[k=8294400/1800=4608\] berechnet. Damit ergeben sich folgende Werte f"ur \texttt{N}:
 
-Daraus ergeben sich folgende Werte f"ur \texttt{N}:
-
+\noindent
 $n=4$ RPi-Knoten:\\
 Verf"ugbarer Hauptspeicher $=450$ MB$\ast 4=1800$ MB\\
 \texttt{N} $=30\ast 96=2880$ (empirisch ermittelt)
@@ -274,89 +273,90 @@ $n=16$ RPi-Knoten: \texttt{Ps} $=4$, \texttt{Qs} $=4$
 \end{enumerate}
 Offensichtlich m"ussen f"ur unterschiedliche Anzahlen von Prozessoren unterschiedliche Eingabedateien verwendet werden. Daher wurde f"ur jede HPL-ExperimentSuite ein eigenes Arbeitsverzeichnis erstellt und die ausf"uhrbare Datei zusammen mit der entsprechenden Eingabedatei dort abgelegt. 
 
-Die Diagramme \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1. Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden, jeweils skaliert auf $16-4$ RPi-Knoten.
-\begin{figure}[htb]
+Abbildungen \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1. Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden, jeweils skaliert auf $16-4$ RPi-Knoten.
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=0.8]{hpl1.pdf}\\ 
+  \includegraphics[scale=0.95]{hpl1.pdf}\\ 
   \caption{Ausf"uhrungsrate f"ur HPL, Messreihe 1.}
   \label{fig:hpl1}		
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=0.8]{hpl2.pdf}\\ 
+  \includegraphics[scale=0.95]{hpl2.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur HPL, Messreihe 1.}
   \label{fig:hpl2}		
 \end{figure}
+%\newpage
 \noindent
-Die Diagramme \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
+Abbildungen \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=.8]{hpl5.pdf}\\ 
+  \includegraphics[scale=0.95]{hpl5.pdf}\\ 
   \caption{Ausf"uhrungsrate f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:hpl5}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=.8]{hpl6.pdf}\\ 
+  \includegraphics[scale=0.95]{hpl6.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:hpl6}
 \end{figure}
-
+%\newpage
 \subsection{STREAM: Performance}\label{Ergebnisse-STREAM}
 \interfootnotelinepenalty=10000
 STREAM in der verwendeten Implementierung (vgl. Kap. \ref{STREAM}) liefert folgende Ausgabe:
 
 Zun"achst erfolgt eine Erl"auterung der verwendeten Eingabe- und Ausgabeparameter. Die wichtigsten Eingabeparameter sind Anzahl an Prozessoren, Vektorl"ange, Speicherbedarf und Anzahl an Iterationen f"ur jedes Modul\footnote{Im Gegensatz zu HPL gibt es keine Eingabedatei, d.h. eine Ver"anderung ist nur direkt im Quellcode m"oglich (vgl. hierzu Kap. \ref{Interpretation-Stream}).}. F"ur die Module Copy, Scale, Add und Triad (vgl. Kap. \ref{Funktion-STREAM}) werden die beste erzielte Ausf"uhrungsrate in MB/s (\texttt{Rate}) und die durchschnittliche (\texttt{Avg time}), minimale (\texttt{Min time}) und maximale Ausf"uhrungsdauer (\texttt{Max time}) in Sekunden ausgegeben. Die Ausf"uhrungsrate wird auf eine, die Ausf"uhrungsdauer auf 6 Nachkommastellen genau angegeben. 
 
-Die Diagramme \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur alle Module, jeweils skaliert auf $19-4$ RPi-Knoten. 
+Abbildungen \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Messreihe 1 f"ur STREAM. Ausgabeparameter sind Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in Sekunden f"ur alle Module, jeweils skaliert auf $19-4$ RPi-Knoten. 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{stream1.pdf}\\ 
+  \includegraphics[scale=0.95]{stream1.pdf}\\ 
   \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1.}
   \label{fig:stream1}		
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=0.8]{stream2.pdf}\\ 
+  \includegraphics[scale=0.95]{stream2.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1.}
   \label{fig:stream2}		
 \end{figure}
-
+\newpage
 \noindent
-Die Diagramme \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau markiert. 
+Abbildungen \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau markiert. 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=.8]{stream5.pdf}\\ 
+  \includegraphics[scale=0.95]{stream5.pdf}\\ 
   \caption{Ausf"uhrungsrate f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream5}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=.8]{stream6.pdf}\\ 
+  \includegraphics[scale=0.95]{stream6.pdf}\\ 
   \caption{Ausf"uhrungsdauer f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:stream6}
 \end{figure}
-
+\newpage
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
-Die Diagramme \ref{fig:strom1} und \ref{fig:strom6} zeigen die Ergebnisse der Strommessung f"ur HPL. Diagramm \ref{fig:strom1} zeigt den Stromverbrauch in Messreihe 1. Diagramm \ref{fig:strom6} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 gegen"uber. 
+Abbildungen \ref{fig:strom1} und \ref{fig:strom6} zeigen die Ergebnisse der Strommessung f"ur HPL. Abbildung \ref{fig:strom1} zeigt den Stromverbrauch in Messreihe 1. Abbildung \ref{fig:strom6} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 gegen"uber. 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=.8]{strom1.pdf}\\ 
+  \includegraphics[scale=0.95]{strom1.pdf}\\ 
   \caption{Stromverbrauch f"ur HPL, Messreihe 1.}\label{fig:strom1}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=.8]{strom6.pdf}\\ 
+  \includegraphics[scale=0.95]{strom6.pdf}\\ 
   \caption{Stromverbrauch f"ur HPL, Messreihe 1 und Messreihe 2.}\label{fig:strom6}
 \end{figure}
-
+\newpage
 \noindent
-Die Diagramme \ref{fig:strom3} und \ref{fig:strom5} zeigen die Ergebnisse der Strommessung f"ur STREAM. Diagramm \ref{fig:strom3} zeigt den Stromverbrauch in Messreihe 1. Diagramm \ref{fig:strom5} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 gegen"uber.
+Abbildungen \ref{fig:strom3} und \ref{fig:strom5} zeigen die Ergebnisse der Strommessung f"ur STREAM. Abbildung \ref{fig:strom3} zeigt den Stromverbrauch in Messreihe 1. Abbildung \ref{fig:strom5} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 gegen"uber.
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=.8]{strom3.pdf}\\ 
+  \includegraphics[scale=0.95]{strom3.pdf}\\ 
   \caption{Stromverbrauch f"ur STREAM, Messreihe 1.}\label{fig:strom3}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=.8]{strom5.pdf}\\ 
+  \includegraphics[scale=0.95]{strom5.pdf}\\ 
   \caption{Stromverbrauch f"ur STREAM, Messreihe 1 und Messreihe 2.}\label{fig:strom5}
 \end{figure}
 \endinput 
