@@ -30,7 +30,7 @@
 \contentsline {subsubsection}{Zeitsynchronisation der RPi-Knoten}{14}{section*.11}
 \contentsline {subsubsection}{Skalierung der Messung auf $n-4$ RPi-Knoten}{14}{section*.12}
 \contentsline {subsubsection}{Konfiguration der Datenbank}{14}{section*.13}
-\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf $n-4$ RPi-Knoten}{17}{section*.14}
+\contentsline {subsubsection}{Automatisierte Durchf\active@dq \dq@prtct {u}hrung der Messung auf $n-4$ RPi-Knoten}{16}{section*.14}
 \contentsline {section}{\numberline {3.2}Strommessung}{20}{section.3.2}
 \contentsline {section}{\numberline {3.3}Fehlerbehebung}{22}{section.3.3}
 \contentsline {section}{\numberline {3.4}Ergebnisse}{23}{section.3.4}

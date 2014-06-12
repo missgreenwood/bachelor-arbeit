@@ -16,7 +16,7 @@ F"ur den Versuchsaufbau sind demnach folgende Aspekte von Bedeutung: Modifikatio
 
 Viele Nutzer stellen sich nach Inbetriebnahme eines RPi-Einzelrechners die Frage nach Swap-Speicher und "Ubertakten (vgl. \cite{pow12}). Beides liegt nahe, da das Modell B nur "uber 512 MB Arbeitsspeicher verf"ugt. Die CPU-Taktfrequenz betr"agt 700 MHz. 
 
-Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann. F"ur Linpack 100 und Whetstone wurden allerdings bereits Ergebnisse mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).
+Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann. F"ur Linpack 100 und Whetstone wurden allerdings bereits Ergebnisse mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).}.
 
 Zur Allokierung von Swap-Speicher auf dem RPi gibt es grunds"atzlich drei M"oglichkeiten: Swap-Datei, Swap-Partition oder zRAM. 
 
@@ -58,7 +58,7 @@ Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl aktiver un
 
 \subsubsection{Konfiguration der Datenbank}
 
-Messergebnisse, Konfigurationen von Benchmarks und ExperimentSuites werden in der MySQL-Datenbank \texttt{rpiWerte} auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. Es wurde w"ahrend der praktischen Arbeit an die tats"achlichen Erfordernisse angepasst: F"ur jedes Modul eines Benchmarks wird ein Messparameter definiert, der Unix-Zeitstempel seines Ausf"uhrungsendes ermittelt und mit dem jeweiligen Messwert in die Datenbank eingelesen. F"ur jede ExperimentSuite werden Anfangs- und Endzeitpunkt als Unix-Zeitstempel ermittelt und in die Datenbank eingelesen. Die Konfiguration erfolgt in vier Schritten:  
+Messergebnisse, Konfigurationen von Benchmarks und ExperimentSuites werden in der My\-SQL-Datenbank \texttt{rpiWerte} auf \texttt{careme} abgelegt. Daf"ur war ein Datenbankschema vorgegeben worden, das die ExperimentSuites in einen gr"o\ss eren Versuchsaufbau integriert. Es wurde w"ahrend der praktischen Arbeit an die tats"achlichen Erfordernisse angepasst: F"ur jedes Modul eines Benchmarks wird ein Messparameter definiert, der Unix-Zeitstempel seines Ausf"uhrungsendes ermittelt und mit dem jeweiligen Messwert in die Datenbank eingelesen. F"ur jede ExperimentSuite werden Anfangs- und Endzeitpunkt als Unix-Zeitstempel ermittelt und in die Datenbank eingelesen. Die Konfiguration erfolgt in vier Schritten:  
 \begin{enumerate}%\befseries
 	\item Name und Beschreibung des Benchmarks. 
 	\item Beschreibung des Versuchsaufbaus. 
@@ -161,7 +161,7 @@ Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werde
 
 % Messgrößen 
 \noindent
-Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von $50 W - 2500 W$ betr"agt $\pm 2\%$ bzw. $\pm 1 W$ (vgl. \url{http://energenie.com/Repository/6736/EGM-PWM-} \url{LAN_manual---fe4469f6-23eb-40be-8c86-e83faf6a2c5b.pdf}). % TODO Messfehler ermitteln 
+Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von 50 W -- 2500 W betr"agt $\pm$ 2$\%$ bzw. $\pm$ 1 W (vgl. \url{http://energenie.com/Repository/6736/EGM-PWM-} \url{LAN_manual---fe4469f6-23eb-40be-8c86-e83faf6a2c5b.pdf}). % TODO Messfehler ermitteln 
 
 % Datenzugriff 
 F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als ungeeignet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
