@@ -9,7 +9,7 @@ My bragging rights are that I developed and ran benchmarks, including Whetstones
 \end{quote}
 In der vorliegenden Arbeit wurde das Skalierungsverhalten eines Raspberry Pi-Beowulf-Clusters mit 20 RPi-Knoten unter Verwendung ausgew"ahlter HPC-Benchmarks untersucht. Als Parameter wurden Performance (Ausf"uhrungsrate und Ausf"uhrungsdauer) und Stromverbrauch betrachtet. 
 
-Der RPi-Cluster mit der beschriebenen Architektur war zur Verf"ugung gestellt worden. Als Arbeitslast-Generatoren waren HPL und STREAM vorgegeben worden. Zur Integration der durchgef"uhrten ExperimentSuites in einen gr"o\ss eren Versuchsaufbau war ein Datenbankschema vorgegeben worden. Es wurde an Hand der praktischen Arbeit aktualisiert. Ebenso wurden Fehlerf"alle bez"uglich Hardware und Systemkonfiguration laufend untersucht und weitestgehend eliminiert. 
+Der RPi-Cluster mit der beschriebenen Architektur war von der Lehr-und Forschungseinheit f"ur Kommunikationssysteme und Systemprogrammierung zur Verf"ugung gestellt worden. Als Arbeitslast-Generatoren waren HPL und STREAM vorgegeben worden. Zur Integration der durchgef"uhrten ExperimentSuites in einen gr"o\ss eren Versuchsaufbau war ein Datenbankschema vorgegeben worden. Es wurde w"ahrend der praktischen Arbeit aktualisiert. Ebenso wurden Fehlerf"alle bez"uglich Hardware und Systemkonfiguration laufend untersucht und weitestgehend eliminiert. 
 
 Die durchgef"uhrten Messreihen ergaben ein koh"arentes und erwartungsgem"a\ss es Bild be\-z"ug\-lich des Stromverbrauchs. Das Skalierungsverhalten des Clusters ist wie erwartet: Der Stromverbrauch f"allt linear ab, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren und abgeschaltet werden. Ebenso ist das Skalierungsverhalten regul"ar bez"uglich der CPU-Performance bei der Ausf"uhrung von HPL. Ausf"uhrungsrate und Ausf"uhrungsdauer von HPL wachsen linear mit der Hinzunahme von Ressourcen. 
 
@@ -17,8 +17,8 @@ Das Skalierungsverhalten bez"uglich der Performance bei der Ausf"uhrung von STRE
 
 F"ur $n>17$ RPi-Knoten ist das Skalierungsverhalten des Clusters irregul"ar bez"uglich der Performance bei der Ausf"uhrung von STREAM. Die Bandbreiten der Hauptspeicherzugriffe wachsen linear, doch die Ausf"uhrungsdauer nimmt deutlich zu. 
 
-%\noindent
-Wie Longbottom im obigen Zitat schreibt, k"onnen auf dem RPi f"ur die CPU-Performance "ahnliche Ergebnisse erzielt werden wie auf fr"uhreren Supercomputern. "Ahnliches gilt f"ur den Durchsatz an Hauptspeicherzugriffen (vgl. \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}). Die vorliegenden Untersuchung erbringt den Nachweis, dass sich die verwendeten HPC-Benchmarks auch auf einem RPi-Cluster mit sinnvollen Ergebnissen ausf"uhren lassen. 
+\noindent
+Wie Longbottom im obigen Zitat schreibt, k"onnen auf dem RPi f"ur die CPU-Performance "ahnliche Ergebnisse erzielt werden wie auf fr"uheren Supercomputern. "Ahnliches gilt f"ur den Durchsatz an Hauptspeicherzugriffen (vgl. \url{http://www.cs.virginia.edu/stream/stream_mail/2012/0002.html}). Die vorliegenden Untersuchung erbringt den Nachweis, dass sich die verwendeten HPC-Benchmarks auch auf einem RPi-Cluster mit sinnvollen Ergebnissen ausf"uhren lassen. 
 
 Schwierigkeiten zeigten sich bei der vorhandenen Cluster-Infrastruktur, sowohl Hardware als auch IP/SSH-Kommunikation betreffend. M"ogliche zuk"unftige Arbeiten umfassen daher zwei Felder: Optimierung der Cluster-Architektur und Erweiterungen des Versuchsaufbaus.
 

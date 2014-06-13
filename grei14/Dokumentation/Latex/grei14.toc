@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {2}Grundlagen und Begriffsbildung}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Definition: \textit {Benchmarking}}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Definition: \textit {Performance}}{4}{section.2.2}
-\contentsline {section}{\numberline {2.3}Definition: \textit {Energieverbrauch}}{5}{section.2.3}
+\contentsline {section}{\numberline {2.3}Definition: \textit {Stromverbrauch}}{5}{section.2.3}
 \contentsline {section}{\numberline {2.4}Benchmarks}{5}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Linpack}{5}{subsection.2.4.1}
 \contentsline {subsubsection}{Funktionsweise}{6}{section*.2}
@@ -39,8 +39,8 @@
 \contentsline {subsection}{\numberline {3.4.3}Stromverbrauch}{30}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Interpretation}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}HPL: Performance}{33}{section.4.1}
-\contentsline {section}{\numberline {4.2}STREAM: Performance}{33}{section.4.2}
-\contentsline {section}{\numberline {4.3}Stromverbrauch}{37}{section.4.3}
+\contentsline {section}{\numberline {4.2}STREAM: Performance}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Stromverbrauch}{38}{section.4.3}
 \contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{39}{chapter.5}
 \contentsline {chapter}{Abbildungsverzeichnis}{41}{chapter*.15}
 \contentsline {chapter}{Literaturverzeichnis}{43}{chapter*.16}

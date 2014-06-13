@@ -1,14 +1,14 @@
 \chapter{Versuchsaufbau und -ablauf}\label{Kap3}
 
-Das folgende Kapitel beschreibt Ziele der Messung, Versuchsaufbau und -durchf"uhrung. Anschlie\ss end werden die erzielten Messergebnisse dargestellt. 
+Das folgende Kapitel beschreibt Ziele der Messung, Versuchsaufbau und -durchf"uhrung. Anschlie\ss end werden die erzielten Messergebnisse vorgestellt. 
 
 \section{Zielsetzung, Aufbau und Art der Messung}\label{Ziel}
 
-Es stellen sich zwei Fragen: Welcher Art ist die Messung und welche Voraussetzungen m"ussen hierf"ur erf"ullt sein? 
+Es stellen sich zwei Fragen: Welcher Art ist die Messung? Welche Voraussetzungen m"ussen hierf"ur erf"ullt sein? 
 
-Ziel der Untersuchung sind Erkenntnisse "uber das Skalierungsverhalten des Bramble unter der Arbeitslast von HPL und STREAM. Dazu werden wie in Kap. \ref{Kap2} beschrieben zwei Ma\ss zahlen betrachtet: Performance und Energieverbrauch.
+Ziel der Untersuchung sind Erkenntnisse "uber das Skalierungsverhalten des Bramble unter der Arbeitslast von HPL und STREAM. Dazu werden wie in Kap. \ref{Kap2} beschrieben zwei Ma\ss zahlen betrachtet: Performance und Stromverbrauch.
 
-Die Benchmarks werden auf $n-4$ RPi-Knoten des Bramble ausgef"uhrt. Maximal 19 RPi-Knoten werden daf"ur herangezogen (vgl. Kap. \ref{Versuchsaufbau}). Alle Messungen werden zweimal durchgef"uhrt: Mit Stromanschluss der nicht beteiligten RPi-Knoten (Messreihe 1) und ohne (Messreihe 2). F"ur beide Benchmarks werden zwei Ergebnisparameter betrachtet: Ausf"uhrungsrate in GFLOPs und Ausf"uhrungszeit in s f"ur HPL, Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungszeit in s f"ur STREAM. Anschlie\ss end werden die Ergebnisse der Messreihen gegen"ubergestellt (vgl. Kap. \ref{Ergebnisse}). 
+Die Benchmarks werden auf $n-4$ RPi-Knoten des Bramble ausgef"uhrt. Maximal 19 RPi-Knoten werden daf"ur herangezogen (vgl. Kap. \ref{Versuchsaufbau}). Alle Messungen werden zweimal durchgef"uhrt: Mit Stromanschluss der nicht beteiligten RPi-Knoten (Messreihe 1) und ohne (Messreihe 2). F"ur beide Benchmarks werden zwei Ergebnisparameter betrachtet: Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in s f"ur HPL, Ausf"uhrungsrate in MB/s und durchschnittliche Ausf"uhrungsdauer in s f"ur STREAM. Anschlie\ss end werden die Ergebnisse der Messreihen einander gegen"ubergestellt (vgl. Kap. \ref{Ergebnisse}). 
 
 F"ur den Versuchsaufbau sind demnach folgende Aspekte von Bedeutung: Modifikation und Zeitsynchronisation der RPi-Knoten, Skalierung der Messung auf $n-4$ RPi-Knoten, automatisierte Durchf"uhrung der Messung, Einlesen der Messwerte in eine geeignete Datenstruktur und Strommessung.  
 
@@ -16,7 +16,7 @@ F"ur den Versuchsaufbau sind demnach folgende Aspekte von Bedeutung: Modifikatio
 
 Viele Nutzer stellen sich nach Inbetriebnahme eines RPi-Einzelrechners die Frage nach Swap-Speicher und "Ubertakten (vgl. \cite{pow12}). Beides liegt nahe, da das Modell B nur "uber 512 MB Arbeitsspeicher verf"ugt. Die CPU-Taktfrequenz betr"agt 700 MHz. 
 
-Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann. F"ur Linpack 100 und Whetstone wurden allerdings bereits Ergebnisse mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).}.
+Im Praxisbetrieb wurde gezeigt, dass ein "Ubertakten der CPU auf bis zu 1 GHz gefahrlos m"oglich ist (vgl. z.B. \url{http://www.raspberrypi.org/introducing-turbo-mode-up-to-50-} \url{more-performance-for-free/}). Bei den verwendeten RPi-Knoten wurde davon Abstand genommen. Es erschien wenig zielf"uhrend, die Komponente zu manipulieren, deren Performance evaluiert werden soll\footnote{F"ur zuk"unftige Untersuchungen w"are es interessant zu ermitteln, ob man den relativ hohen Stromverbrauch des Bramble bei Niedriglast (vgl. \cite{kli13}) durch Untertakten der einzelnen CPUs senken kann. F"ur Linpack 100 und Whetstone wurden bereits Ergebnisse eines RPi-Einzelrechners mit auf 1 MHz "ubertakteter CPU ver"offentlicht (vgl. \url{http://www.roylongbottom.org.uk/Raspberry\%20Pi\%20Benchmarks.htm}).}.
 
 Zur Allokierung von Swap-Speicher auf dem RPi gibt es grunds"atzlich drei M"oglichkeiten: Swap-Datei, Swap-Partition oder zRAM. 
 
@@ -28,7 +28,7 @@ Das gilt auch f"ur die Allokierung einer Swap-Partition auf der SD-Karte. Diese 
 Bei der Verwendung von zRAM wird ein Teil des Arbeitsspeichers komprimiert und als Swap-Speicher genutzt. Hierbei werden keine Zugriffe auf die SD-Karte notwendig (vgl. \cite{pow12}). 
 
 % Die Swap-Datei kann mit dem Befehl \texttt{sudo update-rc.d dphys-swapfile remove} deaktiviert werden. 
-Auf dem \texttt{careme} war kein Swap-Speicher allokiert worden (vgl. \cite{kli13}). Entgegen der Beschreibung bei war nur auf einem RPi-Knoten eine Swap-Datei vorhanden. Um gleiche Testbedingungen auf allen RPi-Knoten zu schaffen, wurde sie deaktiviert. 
+Auf dem \texttt{careme} war kein Swap-Speicher allokiert worden (vgl. \cite{kli13}). Entgegen der Beschreibung war nur auf einem RPi-Knoten eine Swap-Datei vorhanden. Um gleiche Testbedingungen auf allen RPi-Knoten zu schaffen, wurde sie deaktiviert. 
 
 \subsection{Versuchsaufbau Bramble}\label{Bramble-Versuchsaufbau}
 
@@ -49,7 +49,7 @@ Der RPi-Einzelrechner besitzt aus Kostengr"unden keine Systemuhr (vgl. \cite{sch
 
 \subsubsection{Skalierung der Messung auf $n-4$ RPi-Knoten} 
 
-Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl aktiver und angeschalteter RPi-Knoten wird als \textit{ExperimentSuite} bezeichnet werden. Abbildung \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht zu ihrer Durchf"uhrung erforderlich sind. Messreihe 1 beginnt mit der h"ochsten Anzahl aktiver RPi-Knoten begonnen und iteriert einmal "uber alle Knoten. In Messreihe 2 werden nach jedem Iterationsschritt nicht mehr aktive RPi-Knoten abgeschaltet. Jede Ausf"uhrung eines Benchmark-Programms l"auft prinzipell gleich ab, w"ahrend zu Beginn und an Ende spezielle Vorkehrungen zu treffen sind.  
+Die Ausf"uhrung eines Benchmark-Programms mit einer bestimmten Anzahl angeschalteter und aktiver RPi-Knoten wird als \textit{ExperimentSuite} bezeichnet werden. Abbildung \ref{fig:Aktivitaetsdiagramm} zeigt, welche Schritte aus Benutzersicht zu ihrer Durchf"uhrung erforderlich sind. Messreihe 1 beginnt mit der h"ochsten Anzahl aktiver RPi-Knoten und iteriert einmal "uber alle Knoten. In Messreihe 2 werden nach jedem Iterationsschritt nicht mehr aktive RPi-Knoten abgeschaltet. Jede Ausf"uhrung eines Benchmark-Programms l"auft prinzipell gleich ab, w"ahrend zu Beginn und am Ende spezielle Vorkehrungen zu treffen sind.  
 \begin{figure}[htb]
   \centerline{\includegraphics[scale=0.5]{aktivitaetsdiagramm1.pdf}} 
   \caption{Aktivit"atsdiagramm einer ExperimentSuite.}
@@ -65,7 +65,10 @@ Messergebnisse, Konfigurationen von Benchmarks und ExperimentSuites werden in de
 	\item Konfiguration des Versuchsaufbaus. 
 	\item Verkn"upfung von Benchmark-Konfiguration und Versuchsaufbau.
 \end{enumerate} 
-Abbildung \ref{fig:Dbconfig1} visualisiert Schritt 1. Die statischen Konfigurationen f"ur STREAM und HPL werden festgelegt. Dazu wurden zwei Shellskripte \texttt{loadGeneratorCon\-figHpl.sh} und \texttt{loadGe\-nerator\-ConfigStream.sh} erstellt. Sie werden zu Beginn des Versuchsaufbaus einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: In der Tabelle \texttt{LoadGenerator} wird ein Eintrag mit Name und Beschreibung des Benchmarks erstellt. In der Tabelle \texttt{ENUM\_LoadGeneratorConfigura\-tionKey} wird ein Eintrag mit dem Konfigurationsschl"ussel des Benchmarks erstellt. In der Tabelle \texttt{LoadGeneratorConfiguration} wird ebenfalls ein Eintrag mit dem Konfigurationsschl"ussel erstellt.
+Abbildung \ref{fig:Dbconfig1} visualisiert Schritt 1. Die statischen Konfigurationen f"ur STREAM und HPL werden festgelegt. Dazu wurden zwei Shellskripte \texttt{loadGeneratorCon\-figHpl.sh} und \texttt{loadGe\-nerator\-ConfigStream.sh} erstellt. Sie werden zu Beginn des Versuchsaufbaus einmal ausgef"uhrt. Pro Benchmark muss in drei Tabellen jeweils ein Eintrag erstellt werden: 
+
+\noindent
+In der Tabelle \texttt{LoadGenerator} wird ein Eintrag mit Name und Beschreibung des Benchmarks erstellt. In der Tabelle \texttt{ENUM\_LoadGeneratorConfigura\-tionKey} wird ein Eintrag mit dem Konfigurationsschl"ussel des Benchmarks erstellt. In der Tabelle \texttt{LoadGeneratorConfi\-gu\-ra\-tion} wird ebenfalls ein Eintrag mit dem Konfigurationsschl"ussel erstellt.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{dbconfig1.pdf}
@@ -81,10 +84,11 @@ Die automatisierte Durchf"uhrung der Messung erfolgt durch Shellskripte. Sie wer
 	\item Erstellen eines \texttt{Machinefile}, ggf. L"oschen des alten.\\
 \normalfont{Zur parallelen Ausf"uhrung eines Programms auf mehreren CPUs durch MPICH wird \texttt{mpiexec} mit dem Parameter \texttt{-machinefile} aufgerufen. Er verweist auf eine Datei, die die Reihenfolge der zu verwendenden CPUs und die Anzahl der darauf auszuf"uhrenden Prozesse spezifiziert. 
 \enlargethispage{0.7cm}
-Es d"urfen nur so nur so viele Prozesse vergeben werden, wie angeschaltete RPi-Knoten zur Verf"ugung stehen. Die CPUs m"ussen in der Reihenfolge angegeben werden, in der die RPi-Knoten heruntergefahren werden. Ein eventuell veraltetes \texttt{Machinefile} wird gel"oscht.}
+Es d"urfen nur so viele Prozesse vergeben werden, wie angeschaltete RPi-Knoten zur Verf"ugung stehen. Die CPUs m"ussen in der Reihenfolge angegeben werden, in der die RPi-Knoten heruntergefahren werden. Ein eventuell veraltetes \texttt{Machinefile} wird gel"oscht.}
 	\textbf{\item Einh"angen des geteilten Verzeichnisses auf allen RPis.}\\
 Alle Dateien der ExperimentSuites (Binaries, Bibliotheken etc.) liegen im geteilten Verzeichnis \texttt{/srv} bzw. \texttt{/srv/nfs-share}. Daher muss das geteilte Verzeichnis auf jedem verwendeten RPi-Knoten eingeh"angt sein. 
 	\textbf{\item Navigation ins Arbeitsverzeichnis.}\\
+\enlargethispage{0.7cm}
 Alle Shellskripte zur Konfiguration und Ausf"uhrung der ExperimentSuites liegen in einem Verzeichnis \texttt{/srv/experimentsuite}. Die Ergebnisdateien werden ebenfalls dort abgelegt. 
 	\textbf{\item Iteration "uber \textit{n} ausgew"ahlte Benchmarks:}
 	\begin{enumerate}\bfseries		
@@ -93,7 +97,7 @@ Alle Shellskripte zur Konfiguration und Ausf"uhrung der ExperimentSuites liegen 
 		\textbf{\item Iteration "uber \textit{n} RPi-Knoten:}
 		\begin{enumerate}\bfseries
 			\item Datenbank f"ur ExperimentSuite vorbereiten.\\ 
-\normalfont{Abbildung \ref{fig:Dbconfig2} visualisiert Schritt b) i. F"ur jede Ausf"uhrung eines Benchmark-Programms wird ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Granularit"at, Ziel und Startzeitpunkt erstellt. In der Tabelle \texttt{Experiment\-Suite\-Configuration} werden zwei Eintr"age mit Anzahl aktiver und angeschalteter RPi-Knoten erstellt. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_\-loadConf3expSuite} verkn"upft. Darin wird ein Eintrag mit ID des Benchmarks und ID der ExperimentSuite erstellt.}
+\normalfont{Abbildung \ref{fig:Dbconfig2} visualisiert Schritt b) i. F"ur jede Ausf"uhrung eines Benchmark-Programms wird ein Eintrag in der Tabelle \texttt{ExperimentSuite} mit Granularit"at, Ziel und Startzeitpunkt erstellt. In der Tabelle \texttt{Experiment\-Suite\-Configuration} werden zwei Eintr"age mit der Anzahl aktiver und angeschalteter RPi-Knoten erstellt. Beide Tabellen werden "uber die Tabelle \texttt{N2M\_\-loadConf3expSuite} verkn"upft. Darin wird ein Eintrag mit ID des Benchmarks und ID der ExperimentSuite erstellt.}
 \begin{figure}[htb]
 \centerline{\includegraphics[scale=0.5]{dbconfig2.pdf}}
 \caption{Aktivit"atsdiagramm zur Konfiguration der Datenbank f"ur eine ExperimentSuite.}
@@ -113,24 +117,23 @@ Nach der Ausf"uhrung wird der Endzeitpunkt als Unix-Zeitstempel ermittelt. Der e
 			\textbf{\item Schreiben der Ergebnisdaten.}\\
 Die Ausgabe wird in die vorbereitete Logdatei geschrieben. Falls das Bench\-mark-Programm keinen Zeitstempel vorsieht (z.B. STREAM), wird dieser ermittelt und als zus"atzliche Zeile hinzugef"ugt. Damit kann sp"ater f"ur jeden Messwert ein Zeitstempel in die Datenbank eingelesen werden (vgl. Schritte d und e). Auch zum Abgleich der Messergebnisse von Benchmarks und Strommessger"at ist ein Zeitstempel erforderlich (vgl. Kap. \ref{Strommessung}). 
 		\end{enumerate}
-\newpage
 		\textbf{\item Iteration "uber \textit{n} RPi-Knoten:} 
 		\begin{enumerate}\bfseries
 			\item Datenbank f"ur ExperimentSuite vorbereiten.\\
 \normalfont{Die Datenbank wird wie in Schritt b) i. beschrieben vorbereitet. Der Unterschied zu Messreihe 1 besteht in der Anzahl angeschalteter RPi-Knoten ($n+1$ statt 20).} 
 			\textbf{\item Parallele Ausf"uhrung des auf n RPi-Knoten.}\\
-Analog zu Schritt b) ii..
+Analog zu Schritt b) ii.
 			\textbf{\item Ermittlung des Ausf"uhrungsendes.}\\
-Analog zu Schritt b) iii..
-\newpage
+Analog zu Schritt b) iii.
+% \newpage
 			\textbf{\item Herunterfahren nicht mehr aktiver RPi-Knoten.}\\
 In Messreihe 2 werden nicht mehr aktive RPi-Knoten heruntergefahren. Davon ausgenommen ist der Berechnungsknoten \texttt{pi03}. 
 			\textbf{\item Schreiben der Ergebnisdaten.}\\ 
-Analog zu Schritt b) iv..
+Analog zu Schritt b) iv.
 		\end{enumerate}
 		\textbf{\item Parsen der Logdateien f"ur die Datenbank-Eingabe.}\\
 Die Ausgabe der Benchmark-Programme entspricht nicht dem Eingabeformat f"ur die Datenbank. Daher wird pro Benchmark eine Datenbank-Eingabedatei erstellt. Sie enth"alt pro ExperimentSuite eine Zeile mit Messwerten und Zeitstempel.
-
+\newpage
 \noindent
 Eine Beispielzeile f"ur STREAM: 
 \begin{verbatim}
@@ -161,12 +164,12 @@ Die Software musste einmalig f"ur die Benutzung des Energenie eingerichtet werde
 
 % Messgrößen 
 \noindent
-Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von 50 W -- 2500 W betr"agt $\pm$ 2$\%$ bzw. $\pm$ 1 W (vgl. \url{http://energenie.com/Repository/6736/EGM-PWM-} \url{LAN_manual---fe4469f6-23eb-40be-8c86-e83faf6a2c5b.pdf}). % TODO Messfehler ermitteln 
+Das Energenie misst Spannung in Volt, elektrischen Strom in Amp\`{e}re, Leistung in Watt und Arbeit in Kilowattstunden. Die Messgenauigkeit innerhalb des Messbereichs von 50~W -- 2500~W betr"agt $\pm$ 2$\%$ bzw. $\pm$ 1 W (vgl. \url{http://energenie.com/Repository/6736/EGM-PWM-} \url{LAN_manual---fe4469f6-23eb-40be-8c86-e83faf6a2c5b.pdf}). % TODO Messfehler ermitteln 
 
 % Datenzugriff 
 F"ur den Versuchsaufbau erwies sich die Webbrowser-Anwendung als ungeeignet. Zwar werden auf einer grafischen Oberfl"ache die jeweils aktuellen Werte f"ur Spannung, elektrischen Strom, Leistung und Arbeit angezeigt, doch es k"onnen keine Messwerte f"ur eine Zeitspanne abgerufen werden. 
 
-Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. Export der Messwerte "uber eine Zeitspanne als \texttt{xls}-Datei. Pro Messung werden drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. Au\ss erdem werden die Messwerte in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerData\-base} auf der zugreifenden Windows-Maschine abgelegt. Pro Messung werden zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} von Bedeutung. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank gegen"uber dem \texttt{xls}-Export fiel wegen der feineren Granularit"at der Zeitstempel. 
+Das Programm PowerManager bietet erweiterte Funktionalit"aten, z.B. Export der Messwerte "uber eine Zeitspanne als \texttt{xls}-Datei. Pro Messung werden drei Werte angegeben: Beginn der Messung, Ende der Messung und Leistung in Watt. Au\ss erdem werden die Messwerte in einer SQLite-Datenbank \texttt{database.sqlite} im Verzeichnis \texttt{C:\textbackslash Program Data\textbackslash PowerManagerData\-base} auf der zugreifenden Windows-Maschine abgelegt. Pro Messung werden zus"atzliche Werte abgelegt wie Widerstand in Ohm und Frequenz in Hertz. F"ur die ExperimentSuites sind die Eintr"age \texttt{Stamp} (Zeitstempel als Integer-Wert) und \texttt{P} (Leistung in Watt als Double-Wert) in der Tabelle \texttt{LogValues} von Bedeutung. Die Entscheidung f"ur das Auslesen der SQLite-Datenbank anstelle des \texttt{xls}-Exports fiel wegen der feineren Granularit"at der Zeitstempel. 
 
 % Setup für ExperimentSuite 
 Abbildung \ref{fig:energenie} zeigt, welche Schritte aus Benutzersicht pro ExperimentSuite zur Strommessung notwendig sind: 
@@ -185,8 +188,9 @@ Das Programm PowerManager wird nur f"ur ein Windows-Betriebssystem (Windows XP o
 	\textbf{\item Start der PowerManager-Software.}
 % Grafische Aufzeichnung starten
 	\textbf{\item Start der grafischen Aufzeichnung.}\\ 
-Optional ist es m"oglich, die aktuellen Messwerte f"ur die Leistung auf einer grafischen Oberfl"ache anzeigen zu lassen. Es hat sich zur "Uberwachung der Messung als sinnvoll erwiesen.
+Optional ist es m"oglich, die aktuellen Messwerte f"ur die Leistung auf einer grafischen Oberfl"ache anzeigen zu lassen. Dies hat sich zur "Uberwachung der Messung als sinnvoll erwiesen.
 % SQLite-DB herunterladen 
+\newpage
 \textbf{\item Herunterladen der SQLite-Datenbank.}\\ 
 Zur weiteren Verarbeitung der Messwerte wird die Datenbank von der Windows-Maschine heruntergeladen.
 % Export der Messwerte
@@ -233,7 +237,7 @@ Die Messergebnisse wurden dadurch nicht beeinflusst, da eine Messreihe bei St"or
 \section{Ergebnisse}\label{Ergebnisse}
 
 Der folgende Abschnitt stellt die Untersuchungsergebnisse f"ur HPL und STREAM auf dem Bramble dar. Da keine Implementierung von Whetstone f"ur MPICH existiert, war im Verlauf der Untersuchung vorgegeben worden, Whetstone nicht zu ber"ucksichtigen. HPL in der verwendeten Implementierung ben"otigt mindestens vier CPUs oder parallele Prozesse. Hier wurde jeder CPU, d.h. jedem RPi-Knoten, genau ein Prozess zugewiesen. Zur Ausf"uhrung von HPL werden somit mindestens vier angeschaltete und aktive RPi-Knoten ben"otigt. Zur besseren Lesbarkeit wurde die Ausf"uhrung von STREAM daran angepasst. Auch STREAM wurde auf mindestens vier RPi-Knoten parallel ausgef"uhrt. 
-
+\newpage
 \subsection{HPL: Performance}\label{Ergebnisse-HPL}
 
 HPL in der verwendeten Implementierung (vgl. Kap. \ref{Linpack-RPi}) liefert folgende Ausgabe:
@@ -242,7 +246,7 @@ Zun"achst werden die verwendeten Eingabe- und Ausgabeparameter erl"autert. Die A
 
 Ein Teil der Eingabeparameter ist invariabel wie \texttt{eps} (Maschinengenauigkeit). Die anderen werden der Datei \texttt{HPL.dat} entnommen, die im selben Verzeichnis wie die ausf"uhrbare Datei liegen muss. Die entscheidenden Eingabeparameter sind Problemgr"o\ss e bzw. Ordnung des zu l"osenden linearen Gleichungssystems \texttt{N}, Blockgr"o\ss e \texttt{NB}\footnote{Die L"osung des linearen Gleichungssystems erfolgt durch L/U-Faktorisierung. Dazu wird eine $n\times n+1$-Koeffizientenmatrix der Ausgangsmatrix \textit{A} erzeugt. \textit{A} wird dazu in in Bl"ocke der Gr"o\ss e \texttt{NB} $\times$ \texttt{NB} aufgeteilt.}, Gr"o\ss e des Prozessnetzes (\texttt{Ps} und \texttt{Qs})\footnote{Die Bl"ocke werden zur Bearbeitung einem Netz aus Prozessoren der Gr"o\ss e \texttt{P} $\times$ \texttt{Q} "ubergeben. \textit{P} bezeichnet die Anzahl von Prozessoren in einer Spalte, \textit{Q} die Anzahl von Prozessoren in einer Zeile des Netzes.}, Panel-Faktorisierungsstrategie \texttt{PFACTs}\footnote{Zur Unterteilung der Matrix in Submatrizen k"onnen drei verschiedene Algorithmen verwendet werden: Links-schauende, rechts-schauende und Crout-Faktorisierung (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}).} und Teilpanel-Faktorisierungsstrategie \texttt{RFACTs}\footnote{Als Teilpanel-Faktorisierungsstrategien werden dieselben Algorithmen angeboten wie f"ur \texttt{PFACTs}.} (vgl. \url{http://www.netlib.org/benchmark/hpl/algorithm.html}). Um m"og\-lichst gute Resultate f"ur die Performance zu erzielen, muss eine sinnvolle Kombination dieser Parameter gefunden werden. Folgende Werte erwiesen sich als sinnvoll: 
 \begin{enumerate} 
-	\item \texttt{N}: Die Problemgr"o\ss e sollte so gew"ahlt werden, dass der Hauptspeicher zu ca. 80\% mit der Matrix gef"ullt wird. Sie sollte mindestens einige 100 betragen und ein Vielfaches von 96 sein. Bei einer parallelen Ausf"uhrung ist die Gesamtmenge an Hauptspeicher entscheidend. Sie verh"alt sich proportional zu \texttt{N}$^2$. 
+	\item \texttt{N}: Die Problemgr"o\ss e sollte so gew"ahlt werden, dass der Hauptspeicher zu ca. 80\% mit der Matrix gef"ullt wird. Sie sollte mindestens einige 100 betragen und ein Vielfaches von 96 sein (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}). Bei einer parallelen Ausf"uhrung ist die Gesamtmenge an Hauptspeicher entscheidend. Sie verh"alt sich proportional zu \texttt{N}$^2$. 
 	
 Wie in Kap. \ref{RPi-Hardware} beschrieben, verf"ugt der RPi "uber 512 MB SDRAM. Wie bei \cite{kli13} dargestellt, werden davon ca. 50 MB durch das Betriebssystem belegt, sodass noch ca. 450 MB pro RPi-Knoten zur Verf"ugung stehen. 
 
@@ -250,20 +254,20 @@ Um die Proportionalit"atskonstante f"ur die Wahl von \texttt{N} zu ermitteln, wu
 
 \noindent
 $n=4$ RPi-Knoten:\\
-Verf"ugbarer Hauptspeicher $=450$ MB$\ast 4=1800$ MB\\
-\texttt{N} $=30\ast 96=2880$ (empirisch ermittelt)
+Verf"ugbarer Hauptspeicher $=450$ MB $\cdot 4=1800$ MB\\
+\texttt{N} $=30\cdot 96=2880$ (empirisch ermittelt)
 
 $n=8$ RPi-Knoten:\\
-Verf"ugbarer Hauptspeicher $=450$ MB$\ast 8=3600$ MB\\
-\texttt{N} $=\sqrt{4608\ast 3600}\approx 4073\Rightarrow$ setze \texttt{N} $=42\ast 96=4032$
+Verf"ugbarer Hauptspeicher $=450$ MB $\cdot 8=3600$ MB\\
+\texttt{N} $=\sqrt{4608\cdot 3600}\approx 4073\Rightarrow$ setze \texttt{N} $=42\cdot 96=4032$
 
 $n=16$ RPi-Knoten:\\
-Verf"ugbarer Hauptspeicher $=450$ MB$\ast 16=7200$ MB\\
-\texttt{N} $=\sqrt{4608\ast 7200}=5760\Rightarrow$ setze \texttt{N} $=60\ast 96=5760$	
-	\item \texttt{NB}: Die Blockgr"o\ss e wird in Abh"angigkeit von der Cache-Gr"o\ss e gew"ahlt, der m"oglichst vollst"andig gef"ullt werden soll, aber nicht "uberlaufen darf. Es empfiehlt sich eine Quadratzahl zu w"ahlen, ferner ein Vielfaches von 2. 
+Verf"ugbarer Hauptspeicher $=450$ MB $\cdot 16=7200$ MB\\
+\texttt{N} $=\sqrt{4608\cdot 7200}=5760\Rightarrow$ setze \texttt{N} $=60\cdot 96=5760$	
+	\item \texttt{NB}: Die Blockgr"o\ss e wird in Abh"angigkeit von der Cache-Gr"o\ss e gew"ahlt, der m"oglichst vollst"andig gef"ullt werden soll, aber nicht "uberlaufen darf. Es empfiehlt sich eine Quadratzahl zu w"ahlen, ferner ein Vielfaches von 2 (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}). 
 
 Der Level 2-Cache von 128 KB des RPi ist f"ur die GPU reserviert (vgl. \url{http://sandsoftwaresound.net/raspberry-pi/memory-hierarchy/}). Um ein "Uberlaufen des Level 1-Datencaches von 16 KB zu vermeiden, wurde \texttt{NB} $= 8$ gesetzt. 
-	\item \texttt{Ps} und \texttt{Qs}: Es empfiehlt sich ein m"oglichst quadratisches Prozessnetz zu w"ahlen, ferner ein Vielfaches von 2. Folgende Werte wurden daher gesetzt: 
+	\item \texttt{Ps} und \texttt{Qs}: Es empfiehlt sich ein m"oglichst quadratisches Prozessnetz zu w"ahlen, ferner ein Vielfaches von 2 (vgl. \url{http://www.netlib.org/benchmark/hpl/tuning.html}). Folgende Werte wurden daher gesetzt: 
 	
 $n=4$ RPi-Knoten: \texttt{Ps} $=2$, \texttt{Qs} $=2$\\ 
 $n=8$ RPi-Knoten: \texttt{Ps} $=4$, \texttt{Qs} $=2$\\ 
@@ -271,8 +275,9 @@ $n=16$ RPi-Knoten: \texttt{Ps} $=4$, \texttt{Qs} $=4$
 	\item \texttt{PFACTs}: Die beste Performance wurde mit \texttt{PFACTs} = Left erzielt. 
 	\item \texttt{RFACTs}: Die beste Performance wurde mit \texttt{RFACTs} = Crout erzielt.
 \end{enumerate}
-Offensichtlich m"ussen f"ur unterschiedliche Anzahlen von Prozessoren unterschiedliche Eingabedateien verwendet werden. Daher wurde f"ur jede HPL-ExperimentSuite ein eigenes Arbeitsverzeichnis erstellt und die ausf"uhrbare Datei zusammen mit der entsprechenden Eingabedatei dort abgelegt. 
-
+F"ur unterschiedliche Anzahlen von Prozessoren m"ussen unterschiedliche Eingabedateien verwendet werden. Daher wurde f"ur jede HPL-ExperimentSuite ein eigenes Arbeitsverzeichnis erstellt und die ausf"uhrbare Datei zusammen mit der entsprechenden Eingabedatei dort abgelegt. 
+% \newpage
+\noindent
 Abbildungen \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreihe 1. Ausgabeparameter sind Ausf"uhrungsrate in GFLOPs und Ausf"uhrungsdauer in Sekunden, jeweils skaliert auf $16-4$ RPi-Knoten.
 \begin{figure}[H]
   \centering
@@ -286,9 +291,9 @@ Abbildungen \ref{fig:hpl1} und \ref{fig:hpl2} zeigen die Ergebnisse von Messreih
   \caption{Ausf"uhrungsdauer f"ur HPL, Messreihe 1.}
   \label{fig:hpl2}		
 \end{figure}
-%\newpage
+% \newpage
 \noindent
-Abbildungen \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
+Abbildungen \ref{fig:hpl5} und \ref{fig:hpl6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 einander gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau dargestellt.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.95]{hpl5.pdf}\\ 
@@ -321,7 +326,7 @@ Abbildungen \ref{fig:stream1} und \ref{fig:stream2} zeigen die Ergebnisse von Me
 \end{figure}
 \newpage
 \noindent
-Abbildungen \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau markiert. 
+Abbildungen \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Messreihe 1 und Messreihe 2 einander gegen"uber. Die Ergebnisse von Messreihe 1 sind rot, die von Messreihe 2 blau markiert. 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.95]{stream5.pdf}\\ 
@@ -335,7 +340,7 @@ Abbildungen \ref{fig:stream5} und\ref{fig:stream6} stellen die Ergebnisse von Me
 \newpage
 \subsection{Stromverbrauch}\label{Ergebnisse-Energenie}
 
-Abbildungen \ref{fig:strom1} und \ref{fig:strom6} zeigen die Ergebnisse der Strommessung f"ur HPL. Abbildung \ref{fig:strom1} zeigt den Stromverbrauch in Messreihe 1. Abbildung \ref{fig:strom6} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 gegen"uber. 
+Abbildungen \ref{fig:strom1} und \ref{fig:strom6} zeigen die Ergebnisse der Strommessung f"ur HPL. Abbildung \ref{fig:strom1} zeigt den Stromverbrauch in Messreihe 1. Abbildung \ref{fig:strom6} stellt den Stromverbrauch von Messreihe 1 und Messreihe 2 einander gegen"uber. 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.95]{strom1.pdf}\\ 

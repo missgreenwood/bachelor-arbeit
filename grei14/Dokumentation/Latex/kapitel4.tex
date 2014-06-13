@@ -3,28 +3,28 @@
 Das folgende Kapitel dient der Bewertung und Einordnung der Untersuchungsergebnisse. Im Fokus steht dabei das Skalierungsverhalten des Bramble.    
 
 \section{HPL: Performance}\label{Interpretation-Linpack}
-Wie in Kapitel \ref{Ergebnisse-HPL} dargestellt, besteht ein proportionales Verh"altnis zwischen dem Quadrat der Problemgr"o\ss e und der Gr"o\ss e des Gesamthauptspeichers. Somit ist bei Hinzunahme von Ressourcen in Form von RPi-Knoten ein linearer Anstieg der Ausf"uhrungsrate zu erwarten. Das gilt ebenfalls f"ur die Ausf"uhrungsdauer. Abbildungen \ref{fig:hpl1} und \ref{fig:hpl2} best"atigen die Erwartungen: Der Anstieg der Ausf"uhrungsdauer ist nahezu linear und betr"agt im Mittel 0.031 GFLOPs pro zus"atzlicher Ressource. Die maximale Abweichung hiervon betr"agt 0.008 GFLOPs. Der Anstieg der Ausf"uhrungdauer ist nahezu linear und betr"agt im Mittel 13.28 s. Die maximale Abweichung hiervon betr"agt 8.24 s.
+Wie in Kapitel \ref{Ergebnisse-HPL} dargestellt, besteht ein proportionales Verh"altnis zwischen dem Quadrat der Problemgr"o\ss e und der Gr"o\ss e des Gesamthauptspeichers. Somit ist bei Hinzunahme von Ressourcen in Form von RPi-Knoten ein linearer Anstieg der Ausf"uhrungsrate zu erwarten. Das gilt ebenfalls f"ur die Ausf"uhrungsdauer. Abbildungen \ref{fig:hpl1} und \ref{fig:hpl2} best"atigen die Erwartungen: Der Anstieg der Ausf"uhrungsdauer ist nahezu linear und betr"agt im Mittel 0.031~GFLOPs pro zus"atzlicher Ressource. Die maximale Abweichung hiervon betr"agt 0.008~GFLOPs. Der Anstieg der Ausf"uhrungdauer ist nahezu linear und betr"agt im Mittel 13.28~s. Die maximale Abweichung hiervon betr"agt 8.24~s.
 
 Das Skalierungsverhalten des Bramble bei der Ausf"uhrung von HPL kann somit als erwartungsgem"a\ss\ bezeichnet werden.
 
-Versuchsaufbau und Funktionsweise des Benchmarks lassen erwarten, dass sich kein signifikanter Unterschied in Ausf"uhrungsrate und Ausf"uhrungsdauer zeigt, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden. Abbildungen \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden nahezu identisch dargestellt. Die Ausf"uhrungsdauer in Messreihe 2 ist geringf"ugig h"oher als in Messreihe 1. Die Abweichung betr"agt im Mittel 0.41 s. Die maximale Abweichung betr"agt 0.63 s. Die Ausf"uhrungsrate ist in Messreihe 2 f"ur $n=4$ und $n=16$ RPi-Knoten geringf"ugig niedriger als in Messreihe 1. Die Abweichung betr"agt im Mittel 0.001 GFLOPs (gerundet auf drei Nachkommastellen an Hand der Messgenauigkeit, vgl. Kap. \ref{Ergebnisse-HPL}). Die maximale Abweichung betr"agt 0.001 GFLOPs. 
+Versuchsaufbau und Funktionsweise des Benchmarks lassen erwarten, dass sich kein signifikanter Unterschied in Ausf"uhrungsrate und Ausf"uhrungsdauer zeigt, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden. Abbildungen \ref{fig:hpl5} und \ref{fig:hpl6} best"atigen diese Erwartung: Messreihe 1 und Messreihe 2 werden nahezu identisch dargestellt. Die Ausf"uhrungsdauer in Messreihe 2 ist geringf"ugig h"oher als in Messreihe 1. Die Abweichung betr"agt im Mittel 0.41~s. Die maximale Abweichung betr"agt 0.63~s. Die Ausf"uhrungsrate ist in Messreihe 2 f"ur $n=4$ und $n=16$ RPi-Knoten geringf"ugig niedriger als in Messreihe 1. Die Abweichung betr"agt im Mittel 0.001~GFLOPs (gerundet auf drei Nachkommastellen an Hand der Messgenauigkeit, vgl. Kap. \ref{Ergebnisse-HPL}). Die maximale Abweichung betr"agt 0.001~GFLOPs. 
 
-Es l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf Ausf"uhrungsrate und Ausf"uhrungsdauer von HPL auf dem Bramble hat. Das Skalierungsverhalten in Messreihe 1 und Messreihe 2 kann als gleich bezeichnet werden. 
-%\newpage
+Es l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf Ausf"uhrungsrate und Ausf"uhrungsdauer von HPL auf dem Bramble hat. Das Skalierungsverhalten in Messreihe 1 und Messreihe 2 ist gleichartig. 
+\newpage
 \section{STREAM: Performance}\label{Interpretation-Stream}
 
-Die Funktionsweise des Benchmarks l"asst einen linearen Anstieg der Ausf"uhrungsrate bei der Hinzunahme von Ressourcen erwarten. F"ur die Ausf"uhrungsdauer auf jeder einzelnen CPU ist ein konstantes Verhalten zu erwarten. Abbildungen \ref{fig:stream1} und \ref{fig:stream2} best"atigen die Erwartungen f"ur $n\leq 17$ RPi-Knoten: Der Anstieg der Ausf"uhrungsdauer ist nahezu linear und betr"agt im Mittel 245.9 MB/s (Copy), 205.1 MB/s (Scale), 275.5 MB/s (Add) bzw. 266.9 MB/s (Triad) pro zus"atzlicher Ressource. Die maximale Abweichung hiervon betr"agt 54.2 MB/s (Copy), 19.7 MB/s (Scale), 25.9 MB/s (Add) bzw. 25.6 MB/s (Triad). Die Ausf"uhrungsdauer verh"alt sich nahezu konstant und betr"agt im Mittel 0.118791 s (Copy), 0.156077 (Scale), 0.173474 (Add) bzw. 0.179196 (Triad). Die maximale Abweichung hiervon betr"agt 0.001525 s (Copy), 0.002114 s (Scale), 0.002463 s (Add) bzw. 0.003793 s (Triad). 
+Die Funktionsweise des Benchmarks l"asst einen linearen Anstieg der Ausf"uhrungsrate bei der Hinzunahme von Ressourcen erwarten. F"ur die Ausf"uhrungsdauer auf jeder einzelnen CPU ist ein konstantes Verhalten zu erwarten. Abbildungen \ref{fig:stream1} und \ref{fig:stream2} best"atigen die Erwartungen f"ur $n\leq 17$ RPi-Knoten: Der Anstieg der Ausf"uhrungsdauer ist nahezu linear und betr"agt im Mittel 245.9~MB/s (Copy), 205.1~MB/s (Scale), 275.5~MB/s (Add) bzw. 266.9~MB/s (Triad) pro zus"atzlicher Ressource. Die maximale Abweichung hiervon betr"agt 54.2~MB/s (Copy), 19.7~MB/s (Scale), 25.9~MB/s (Add) bzw. 25.6~MB/s (Triad). Die Ausf"uhrungsdauer verh"alt sich nahezu konstant und betr"agt im Mittel 0.118791~s (Copy), 0.156077~s (Scale), 0.173474~s (Add) bzw. 0.179196~s (Triad). Die maximale Abweichung hiervon betr"agt 0.001525~s (Copy), 0.002114~s (Scale), 0.002463~s (Add) bzw. 0.003793~s (Triad). 
 
 Das Skalierungsverhalten des Bramble bei der Ausf"uhrung von STREAM kann somit f"ur $n\leq 17$ RPi-Knoten als erwartungsgem"a\ss\ bezeichnet werden. 
 
-Versuchsaufbau und Funktionsweise des Benchmarks legen nahe, dass sich kein signifikanter Unterschied in Ausf"uhrungsrate und Ausf"uhrungsdauer zeigt, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden. Abbildungen \ref{fig:stream5} und \ref{fig:stream6} best"atigen diese Erwartung f"ur $n\leq 17$ RPi-Knoten: Ausf"uhrungsraten von Messreihe 1 und Messreihe 2 werden nahezu identisch dargestellt. Die Abweichung von Messreihe 2 gegen"uber Messreihe 1 betr"agt im Mittel 0.1 MB/s (Copy), 0.5 MB/s (Scale), 2.9 MB/s (Add) bzw. 2.95 MB/s (Triad). Die maximale Abweichung gegen"uber Messreihe 1 betr"agt 25.4 MB/s (Scale auf $n=16$ RPi-Knoten). Bei der Ausf"uhrungsdauer betr"agt die Abweichung gegen"uber Messreihe 1 im Mittel 0.000123 s (Copy), 0.000129 s (Scale), 0.000190 s (Add) bzw. 0.000122 s (Triad). Die maximale Abweichung gegen"uber Messreihe 1 betr"agt 0.000823 s (Copy auf $n=15$ RPi-Knoten). 
+Versuchsaufbau und Funktionsweise des Benchmarks legen nahe, dass sich kein signifikanter Unterschied in Ausf"uhrungsrate und Ausf"uhrungsdauer zeigt, wenn nicht an der Programmausf"uhrung beteiligte RPi-Knoten heruntergefahren werden. Abbildungen \ref{fig:stream5} und \ref{fig:stream6} best"atigen diese Erwartung f"ur $n\leq 17$ RPi-Knoten: Ausf"uhrungsraten von Messreihe 1 und Messreihe 2 werden nahezu identisch dargestellt. Die Abweichung von Messreihe 2 gegen"uber Messreihe 1 betr"agt im Mittel 0.1~MB/s (Copy), 0.5~MB/s (Scale), 2.9~MB/s (Add) bzw. 2.95~MB/s (Triad). Die maximale Abweichung gegen"uber Messreihe 1 betr"agt 25.4~MB/s (Scale auf $n=16$ RPi-Knoten). Bei der Ausf"uhrungsdauer betr"agt die Abweichung gegen"uber Messreihe 1 im Mittel 0.000123~s (Copy), 0.000129~s (Scale), 0.000190~s (Add) bzw. 0.000122~s (Triad). Die maximale Abweichung gegen"uber Messreihe 1 betr"agt 0.000823~s (Copy auf $n=15$ RPi-Knoten). 
 
-F"ur $n\leq 17$ RPi-Knoten l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf Ausf"uhrungsrate und Ausf"uhrungsdauer von STREAM auf dem Bramble hat. Das Skalierungsverhalten in Messreihe 1 und Messreihe 2 kann f"ur $n\leq 17$ RPi-Knoten als gleich bezeichnet werden.
+F"ur $n\leq 17$ RPi-Knoten l"asst sich schlussfolgern, dass das Herunterfahren nicht mehr aktiver RPi-Knoten keine signifikanten Auswirkungen auf Ausf"uhrungsrate und Ausf"uhrungsdauer von STREAM auf dem Bramble hat. Das Skalierungsverhalten in Messreihe 1 und Messreihe 2 kann f"ur $n\leq 17$ RPi-Knoten ist gleichartig.
 
-F"ur $n > 17$ RPi-Knoten weicht das Skalierungsverhalten des Bramble von den Erwartungen ab. Abbildung \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber. Abweichungen von mehr als 1 MB/s (Ausf"uhrungsrate) und 0.01 s (Ausf"uhrungsdauer) gegen"uber den erwarteten Werten sind rot markiert. Die erwarteten Werte werden f"ur \textit{n} RPi-Knoten wie folgt bestimmt: 
+F"ur $n > 17$ RPi-Knoten weicht das Skalierungsverhalten des Bramble von den Erwartungen ab. Abbildung \ref{fig:stream-abweichung} stellt erwartete und erzielte Messwerte f"ur Messreihe 1 gegen"uber. Abweichungen von mehr als 1~MB/s (Ausf"uhrungsrate) und 0.01~s (Ausf"uhrungsdauer) gegen"uber den erwarteten Werten sind rot markiert. Die erwarteten Werte werden f"ur \textit{n} RPi-Knoten wie folgt bestimmt: 
 \[\text{Erwartete Performance} = \frac{\text{Performance f"ur }n=17}{17}\ast n\] 
 \[\text{Erwartete Ausf"uhrungsdauer = Durchschnittliche Ausf"uhrungsdauer f"ur }n\leq 17\]
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline 
@@ -65,26 +65,26 @@ F"ur $n > 17$ RPi-Knoten weicht das Skalierungsverhalten des Bramble von den Erw
   \end{tabular}
   \caption{Erwartete und erzielte Messwerte f"ur STREAM auf $n\geq 17$ RPi-Knoten.}\label{fig:stream-abweichung}
 \end{figure}
-\newpage
+% \newpage
 \noindent
 Es stellt sich die Frage, warum f"ur $n>17$ RPi-Knoten eine deutlich schlechtere Performance und verl"angerte Ausf"uhrungsdauer auftreten. Folgende Erkl"arungen sind denkbar: 
 \begin{enumerate}\bfseries
 	\item Funktionsweise des Benchmarks.\\
 \normalfont
-Wie zu Beginn des Kapitels dargestellt, ist bei der Hinzunahme von Ressourcen auf einem Rechencluster mit einem linearen Anstieg der Ausf"uhrungszeit und ann"ahernd konstanter Ausf"uhrungsdauer zu rechnen. McCalpin schreibt hierzu: 
+Wie zu Beginn des Kapitels dargestellt, ist bei der Hinzunahme von Ressourcen auf einem Rechencluster mit einem linearen Anstieg der Ausf"uhrungdauer und ann"ahernd konstanter Ausf"uhrungsdauer zu rechnen. McCalpin schreibt hierzu: 
 \begin{quote}
 \onehalfspacing
 [\dots] unless something is very wrong, the performance of a cluster will be the performance of a node times the number of nodes (vgl. \url{http://www.cs.virginia.edu/stream/ref.html}).
 \end{quote} 
-Ein erw"unschter Effekt ist somit nach der Funktionsweise des Benchmarks auszuschlie\ss en. 
+Nach der Funktionsweise des Benchmarks ist somit auszuschlie\ss en, dass die erh"ohte Ausf"uhrungsdauer f"ur $n>17$ RPi-Knoten einen erw"unschten Effekt darstellt.  
 	\textbf{\item Architektur des Bramble.}\\
 M"ogliche Ursachen sind Systemzeit, Netzwerk und Netz-Dateisystem. 
 
 Wie in Kap. \ref{Bramble-Versuchsaufbau} dargestellt, hat der RPi keine eingebaute Systemuhr. Die Zeitsynchronisation der RPi-Knoten erfolgt einmal beim Bootvorgang gegen"uber dem Open\-NTP-Server auf \texttt{careme} (vgl. \cite{kli13}). Wenn Rechenlast ungleich auf die RPi-Knoten verteilt wird und die beteiligten CPUs sehr ausgelastet sind, w"are es denkbar, dass die Systemzeit dieser Knoten driftet und zu abweichenden Messergebnissen bei der Ausf"uhrungsdauer f"uhrt. Dieser Effekt kann hier ausgeschlossen werden: Die Rechenlast ist bei $n\leq 17$ Knoten nicht weniger ungleich verteilt ist als bei $n>17$ Knoten, sodass der Effekt schon fr"uher eintreten m"usste. Die Rechenlast der parallelen Ausf"uhrung von STREAM ist zudem f"ur alle beteiligten Knoten gleich. 
 
-Wie in Kap. \ref{Bramble-Spezi} dargestellt, sind Server und RPi-Knoten "uber ein Ethernet-Netzwerk verbunden. Wie bei \cite{kli13} erl"autert, kann damit ein maximaler Datendurchsatz von ca. 2 MB/s erreicht werden. Ein Erkl"arungsansatz war das "Uberschreiten dieser Obergrenze bei mehr als 17 parallelen Ausf"uhrungen. 
+Wie in Kap. \ref{Bramble-Spezi} dargestellt, sind Server und RPi-Knoten "uber ein Ethernet-Netzwerk verbunden. Wie bei \cite{kli13} erl"autert, kann damit ein maximaler Datendurchsatz von ca. 2~MB/s erreicht werden. Ein Erkl"arungsansatz war das "Uberschreiten dieser Obergrenze bei mehr als 17 parallelen Ausf"uhrungen. 
 
-Bez"uglich der Bandbreiten zeigte sich durch Nachrechnen eine Steigerung um rund 35 MB  f"ur Copy und Scale pro zus"atzlichem RPi-Knoten. F"ur Add und Triad erfolgt eine Steigerung um rund 50 MB. Hierbei handelt es sich nat"urlich nicht um den Durchsatz des Netzwerks, sondern um den Durchsatz von Hauptspeicherzugriffen jedes einzelnen RPi-Knotens. Diese Steigerung erfolgt auch bei $n>17$
+Bez"uglich der Bandbreiten zeigte sich durch Nachrechnen eine Steigerung um rund 35~MB  f"ur Copy und Scale pro zus"atzlichem RPi-Knoten. F"ur Add und Triad erfolgt eine Steigerung um rund 50 MB. Hierbei handelt es sich nat"urlich nicht um den Durchsatz des Netzwerks, sondern um den Durchsatz von Hauptspeicherzugriffen jedes einzelnen RPi-Knotens. Diese Steigerung erfolgt auch bei $n>17$
 RPi-Knoten. Der Durchsatz von Hauptspeicherzugriffen verh"alt sich somit erwartungsgem"a\ss\ f"ur alle \textit{n}. Ein "Uberschreiten des maximalen Netzwerk-Datendurchsatzes scheidet somit als Ursache aus. 
 
 Binaries und verwendete Bibliotheken der Benchmarks liegen im geteilten Verzeichnis \texttt{/srv}. Es erschien denkbar, dass mehr als 17 parallele Zugriffe darauf das Netz-Dateisystem "uberlasten. Deswegen wurde probeweise auf den SD-Karten aller RPi-Knoten eine neue Partition erstellt und der Inhalt des geteilten Verzeichnisses hinein kopiert. In der Datei \texttt{/etc/fstab} aller RPi-Knoten wurde der Mountpoint f"ur \texttt{/srv} tempor"ar entsprechend ge"andert. Das Resultat waren Performance-Einbr"uche bei STREAM schon ab $n=13$ RPi-Knoten, womit das Netz-Dateisystem als Ursache ausscheidet.
@@ -138,9 +138,9 @@ MPI nutzt zur Interprozesskommunikation u.a. Broadcast- und Unicast-Nachrichten.
 \noindent
 Die Resultate fallen noch schlechter aus als bei STREAM auf $n=18$ RPi-Knoten mit \texttt{ntimes=10} (vgl. Abbildung \ref{fig:stream-abweichung}). Damit scheidet ein Kommunikations-Overhead von MPICH als Erkl"arung aus. Die Ursache konnte somit nicht zweifelsfrei gekl"art werden. 
 \end{enumerate}
-
+\clearpage
 \section{Stromverbrauch}
-Ziel der Strommessung war die Ermittlung des Skalierungsverhaltens des Bramble bez"uglich des Stromverbrauchs. In Messreihe 1 werden laufend Ressourcen in Form von RPi-Knoten hinzugenommen. Auch nicht aktive RPi-Knoten sind angeschaltet, nehmen somit Strom auf. In Messreihe 2 werden nicht aktive RPi-Knoten abgeschaltet, nehmen somit keinen Strom auf. 
+Ziel der Strommessung war die Ermittlung des Skalierungsverhaltens des Bramble bez"uglich des Stromverbrauchs. In Messreihe 1 werden laufend Ressourcen in Form von RPi-Knoten hinzugenommen. Auch nicht aktive RPi-Knoten sind angeschaltet und nehmen somit Strom auf. In Messreihe 2 werden nicht aktive RPi-Knoten abgeschaltet und nehmen somit keinen Strom auf. 
 
 Es ist zu erwarten, dass der Stromverbrauch deutlich sinkt, wenn nicht aktive RPi-Knoten von der Stromversorgung getrennt werden. Zur "Uberpr"ufung dieser Erwartung wurden Stromverbrauch bei der Ausf"uhrung von HPL und STREAM (Messreihe 1 und Messreihe 2), Zuwachs pro aktivem RPi-Knoten (Messreihe 1) und Zuwachs pro angeschaltetem und aktivem RPi-Knoten (Messreihe 2) empirisch ermittelt. 
 
@@ -164,5 +164,5 @@ Die Ergebnisse werden in Abbildung \ref{fig:stromvergleich} als Mittelwerte darg
 \label{fig:stromvergleich}
 \end{figure}
 \noindent
-Die Messergebnisse best"atigen die Erwartung, dass der Stromverbrauch des Bramble pro abgeschaltetem RPi-Knoten deutlich abnimmt: Im Mittel um 8 W pro RPi-Knoten bei der Ausf"uhrung von HPL und um 2 W pro RPi-Knoten bei der Ausf"uhrung von STREAM. Die Stromverbrauch bei der Durchf"uhrung von Messreihe 2 ist damit im Mittel um 23 W (HPL) bzw. 17 W (STREAM) niedriger als in Messreihe 1. Das Skalierungsverhalten des Bramble bez"uglich des Stromverbrauchs kann somit als erwartungsgem"a\ss\ bezeichnet werden. 
+Die Messergebnisse best"atigen die Erwartung, dass der Stromverbrauch des Bramble pro abgeschaltetem RPi-Knoten deutlich abnimmt: Im Mittel um 8~W pro RPi-Knoten bei der Ausf"uhrung von HPL und um 2~W pro RPi-Knoten bei der Ausf"uhrung von STREAM. Die Stromverbrauch bei der Durchf"uhrung von Messreihe 2 ist damit im Mittel um 23~W (HPL) bzw. 17~W (STREAM) niedriger als in Messreihe 1. Das Skalierungsverhalten des Bramble bez"uglich des Stromverbrauchs kann somit als erwartungsgem"a\ss\ bezeichnet werden. 
 \endinput 
