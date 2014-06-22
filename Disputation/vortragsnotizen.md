@@ -32,3 +32,7 @@
 	- Ergänze: Keine MPICH-Implemetierung für Whetstone
 	- nachlesen: HPL-Algorithmus
 	- nachlesen: Länge Vektoren STREAM 
+
+## Folie 11
+
+	- nachlesen: eigene Fehlerbehebung  
