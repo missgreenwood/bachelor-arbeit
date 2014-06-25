@@ -54,11 +54,11 @@
 
 ## Folie 10
 
-	### HPL 
+	### HPL.dat 
 		- Problemgröße N: 
-			Proportionalitätskonstante: k = N^2/Menge HS; 
-			4 RPis: N = 2880; 	
-			8 RPis: N = 4032; 
+			Proportionalitätskonstante: k = N^2/Menge HS
+			4 RPis: N = 2880
+			8 RPis: N = 4032 
 			16 RPis: N = 5760
 
 		- Blockgröße NB: Lösung des linearen Gleichungssystems durch L/U-Faktorisierung. Dazu wird eine n × n + 1-Koeffizientenmatrix der Ausgangsmatrix A erzeugt. A wird dazu Blöcke der Größe NB × NB aufgeteilt. 
@@ -67,26 +67,31 @@
 
 		- PFACTs und RFACTs: Zur Unterteilung der Matrix in Submatrizen/Unterteilung der Submatrizen werden drei Algorithmen angeboten: Links-schauende, rechts-schauende und Crout-Faktorisierung. 
 
-		- HPL Erklärung (Paper mitnehmen!!)
-			Reziproke: Kehrwert
+	### HPL-Algorithmus 
+		- Reziproke: Kehrwert
 
-	### STREAM 
-		- Länge Vektoren: mind. 
-		- hier verwendet : (s. Quellcode)
+	### STREAM-Algorithmus 
+		- Länge Vektoren: mind. 1000000 Elemente oder 4 x Gesamt-Cachegröße
+		- hier: Cache-Gesamtgröße = max. 19 x 16 kB = 1216 kB = 1.1875 MB
+		- Standard-Problemgröße = 2000000 Elemente, angemessen f. 4 MB Cache => reicht bei Weitem aus!
+		- Modul TRIAD: a[i] = b[i] + q * c[i]
 
 
 ## Folie 13
 	
-	- mündlich erklären + checken 
+	- mündlich erklären 
 	- Ergänze: Einmalige DB-Konfiguration für Benchmark nicht in Diagramm!
 
 
 ## Folie 14
 
 	- mündlich erklären 
+	- Beachte: Aufzeichnung der Messwerte wird nicht explizit gestartet, sondern implizit mit Programmaufruf!
 
 
 ## Folie 15
+
+	- Erklärung Tabelle (in Ausarbeitung, falls notwendig): 1. Stromverbrauch im Mittel pro ExperimentSuite; 2. max. Abweichung davon; 3. Zuwachs pro angeschaltetem RPi-Knoten; 4. Stromverbrauch im Mittel pro Messreihe
 
 	- Stromverbrauch RPi idle: ca. 2.3 +- 3 W; GPU verbraucht deutlich mehr Strom als CPU
 	- Stromverbrauch Server bei 80-90% CPU-Auslastung (theoretisch): ca. 26 W + 6.5 W (Netzteil-Overhead) 
