@@ -2,11 +2,12 @@
 
 
 	
-## Folie 3
+## Folie 4
 
 	- SDRAM: Synchronuos Dynamic Random Access Memory
 	- Nicht flüchtiger Speicher: Auch Festspeicher/persistenter Speicher
 	- Ethernet: In, Micro-USB: In, Audio: Out, Video: Out, USB: In, HDMI: Out
+	- Wo ist RAM?
 
 	### Unterschied Mini-/Micro-USB
 		- gleiche Funktion, doch seit 2011 wird fast ausschließlich Micro-USB-Technologie eingesetzt (geringere Größe, langlebiger)
@@ -14,7 +15,6 @@
 
 ## Folie 5
 
-	- RAID Level 1? 
 	- Beachte: L2-Cache geteilt zwar offizell geteilt zw. GPU und CPU, aber anscheinend werden CPU-Anfragen daran vorbei geroutet 
 	- Beowulf-Cluster: historisch ab ca. 1995
 	- Kosten Bramble insgesamt: ca. 2500 Euro 
@@ -110,9 +110,3 @@
 ## Folie 17
 
 	- mündlich erklären 	
-
-
-## Folie 25
-
-	- Netzwerk-Datendurchsatz checken (Erklärung wasserdicht!)
-
