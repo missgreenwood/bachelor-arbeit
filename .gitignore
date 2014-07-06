@@ -1,3 +1,5 @@
+archive/*
+
 Beispielskripte/*
 
 Papers-sekundaer/*
@@ -5,6 +7,8 @@ Papers-sekundaer/*
 Papers-unbearbeitet/*
 
 Raspberry_Pi_Benchmarks/*
+
+sources/*
 
 Tutorials/*
 
